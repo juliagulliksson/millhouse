@@ -12,7 +12,7 @@
 
 
 </head>
-
+<body>
 <header>
 
 
@@ -20,19 +20,23 @@ Bild
 
 
 </header>
-<body>
-
-=======
+<main>
+   <article>
+   <img src="">
+   <h3></h3>
+   <h2></h2>
+   <p></p>
+   <h4></h4>
     
     
-    <h1> Body </h1>
+    </article>
+    <article>
 
-test
-
-
-
+    </article>
 
 
->>>>>>> master
+    
+
+</main>
 </body>
 </html>
