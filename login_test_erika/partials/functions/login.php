@@ -28,7 +28,7 @@ if (password_verify($password, $fetched_user["password"]))
 
 
   //header("Location: index.php");
-    echo 'Welcome ' . $user;
+    echo 'Welcome ' . $fetched_user["username"];
 
 } 
     

@@ -25,6 +25,14 @@
                 value="SEND">
            </form>
            
+           <p>LOGOUT</p>
+           <form action="index.php"
+           method="GET">
+            <input type="submit"
+            name="end_session"
+            value="LOG OUT">
+           </form>
+           
         </div>
         
         <?php
@@ -40,6 +48,14 @@
              
              require "partials/functions/login.php";
              login($username, $password);
+         }
+         
+         
+         //Ifall användaren trycker på LOG OUT
+         elseif (isset($_GET["end_session"]))
+         {
+             require "partials/end_session.php";
+             end_session();
          }
          
          ?>
@@ -77,7 +93,7 @@
                     
                     $new_password = password_hash($_POST["register_password"], PASSWORD_DEFAULT);
                     
-                    $contributor = false;
+                    $is_distributor = false;
                     
                 
                     //Kollar ifall användarnamn redan finns
