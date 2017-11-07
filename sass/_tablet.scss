@@ -1,0 +1,84 @@
+html {
+
+    padding: 0px;
+    margin: 0px;
+    color: white;
+
+}
+
+.header_wrapper {
+    display: flex;
+    box-sizing: border-box;
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+}
+
+
+.nav_wrapper{
+display: flex;
+box-sizing: border-box;
+padding: 10px;
+background-color: #1b3145;
+max-width: 100%;
+
+
+
+}
+
+.nav_logo_1 {
+display: none;
+
+}
+
+.nav_logo_2 {
+
+display: flex;
+box-sizing: border-box;
+height: 100%;
+width: 100%;
+}
+
+.nav_logo_3 {
+display: none;
+
+}
+
+
+
+.nav_menu {
+
+box-sizing: border-box;
+height: 100%;
+width: 100%;
+
+ }
+
+.header_pic_1 {
+
+display: none;
+}
+
+.header_pic_2 {
+
+    display: flex;
+    box-sizing: border-box;
+    height: 400px;
+    max-width: 100%;
+    background-image: url("../images/hero.jpg");
+    background-size: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 65% 65%;
+    padding-top: 275px;
+    justify-content: center;
+
+}
+
+
+.header_pic_3 {
+display: none;
+
+
+
+}

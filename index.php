@@ -45,6 +45,11 @@
         </div>
         <!-- /.container-fluid -->
     </nav>
+
+    <div class="header_pic_1">
+<h3>An awesome and selling slogan</h3>
+
+    </div>
   </header>
 
 
