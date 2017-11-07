@@ -11,10 +11,37 @@
 <body>
 
 <header>
+<nav>
 
 
+    <div class="nav_logo">
+logo
+
+    </div>
+
+    <div class="nav_menu">
+
+menu
+
+    </div>
+
+
+
+</nav>
+
+
+
+
+<div class="header_pic">
+
+</div>
 
 </header>
+
+<div class="test">
+
+
+</div>
 
 <main>
     

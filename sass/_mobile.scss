@@ -1,0 +1,51 @@
+html {
+
+    padding: 0px;
+    margin: 0px;
+    color: white;
+
+}
+
+header {
+    display: flex;
+    border: 1px solid black;
+    box-sizing: border-box;
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+}
+
+
+nav{
+display: flex;
+padding: 25px;
+background-color: #1b3145;
+box-sizing: border-box;
+max-width: 100%;
+
+
+
+}
+
+.nav_logo {
+
+
+
+}
+
+
+.nav_menu {
+
+
+
+ }
+
+.header_pic {
+    display: flex;
+    box-sizing: border-box;
+    height: 200px;
+    max-width: 100%;
+    background-image: url("../images/hero.jpg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
