@@ -4,23 +4,14 @@
     <meta charset="UTF-8">
     <title>Millhouse</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<link rel="stylesheet" href="https://cdn.rawgit.com/tonsky/FiraCode/1.204/distr/fira_code.css">
-
-<link rel="stylesheet" type="text/css" href="css/style.css">
-
-
-
+    <link rel="stylesheet" href="https://cdn.rawgit.com/tonsky/FiraCode/1.204/distr/fira_code.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="shortcut icon" href="images/millhouse.ico">
 </head>
-
-<header>
-
-
-Bild
-
-
-</header>
 <body>
+    <header>
+    </header>
+
     
     <h1> Test </h1>
 
