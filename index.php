@@ -22,17 +22,22 @@ Bild
 </header>
 <main>
    <article>
-   <img src="">
-   <h3></h3>
-   <h2></h2>
-   <p></p>
-   <h4></h4>
-    
-    
+       <img src="images/clock-1.jpg">
+       <h3></h3>
+       <h2></h2>
+       <p></p>
+       <h4></h4>
     </article>
     <article>
-
+       <img src="images/clock-2.jpg">
+       <h3></h3>
+       <h2></h2>
+       <p></p>
+       <h4></h4>
     </article>
+    <aside>
+        <p></p>
+    </aside>
 
 
     
