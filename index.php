@@ -66,5 +66,4 @@ menu
 
 
 </main>
-</body>
-</html>
+<?php require 'partials/footer.php'; ?>
