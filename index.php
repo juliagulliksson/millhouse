@@ -16,28 +16,38 @@
 
 </header>
 
-<main>
-   <article>
-       <img src="images/clock-1.jpg">
-       <h3></h3>
-       <h2></h2>
-       <p></p>
-       <h4></h4>
-    </article>
-    <article>
-       <img src="images/clock-2.jpg">
-       <h3></h3>
-       <h2></h2>
-       <p></p>
-       <h4></h4>
-    </article>
-    <aside>
-        <p></p>
-    </aside>
+  <div class="wrapper">
+      <main>
+           <article>
+               <img src="images/clock-1.jpg">
+              <h3>NOVEMBER 8, 2017 | ADMIN</h3>
+               <h2>A super long title that is not short because it is long</h2>
+               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+               <h4>COMMENTS (12)</h4>
+            </article>
+            <article>
+               <img src="images/clock-2.jpg">
+               <h3>NOVEMBER 8, 2017 | ADMIN</h3>
+               <h2>Just a short title</h2>
+               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+               <h4>COMMENTS (12)</h4>
+            </article>
+      </main>
+        <aside>
+          <form>
+              <input type="text" name="title">
+              <br>             
+              <input type="text" name="createdBy">
+              <br>
+            <input class="button" type="submit" value="Skicka" />
+               
+          </form>
+           <article>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+           </article>    
+        </aside>
+    </div>
 
-
-
-
-</main>
 </body>
 </html>
