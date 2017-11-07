@@ -13,6 +13,7 @@
   <link rel="shortcut icon" href="images/millhouse.ico">
 </head>
 <body>
+
     <header>
       <nav class="navbar navbar-default navbar-static-top">
         <div class="container-fluid">
@@ -31,7 +32,6 @@
                   <img src="images/millhouse-logo.png" Alt="Millhouse logo">
                 </a>
             </div>
-
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
@@ -46,6 +46,8 @@
         <!-- /.container-fluid -->
     </nav>
   </header>
+
+
 
 <main>
    <article>
@@ -74,5 +76,4 @@
     </script>
 
 </main>
-</body>
-</html>
+<?php require 'partials/footer.php'; ?>
