@@ -11,7 +11,13 @@
 <body>
 
 <header>
+
+<header class="header_wrapper">
+
+
 <nav>
+
+<nav class="nav_wrapper">
 
 
     <div class="nav_logo_1">
@@ -31,7 +37,7 @@ Menu
 
     </div>
 
-
+</nav>
 
 </nav>
 
@@ -53,6 +59,8 @@ Menu
 <h1>"An awesome and selling slogan"</h1>
 
 </div>
+
+</header>
 
 </header>
 
