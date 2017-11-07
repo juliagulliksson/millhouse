@@ -1,0 +1,1 @@
+body{margin:auto}.container{display:flex;justify-content:space-around}.box_login,.box_register{flex-basis:45%;background:rgba(9,114,114,0.47);color:black;font-family:'Oswald', sans-serif;text-align:center;padding-top:20px;padding-bottom:20px}h1,h2,h3,h4,h5,h6,p{font-size:1.5em;font-weight:600;margin:0px}

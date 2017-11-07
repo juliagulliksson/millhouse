@@ -1,21 +1,21 @@
 <?php
 
-function check_if_dublette ($username)
+function check_if_dublette ($column, $value)
 {
       require "partials/database.php";
     
         $my_sql = $pdo->prepare(
-            "SELECT COUNT(username) 
+            "SELECT COUNT($column) as $column
             FROM users
-            WHERE username = '$username'"
+            WHERE $column = '$value'"
              ); 
 
 
         $my_sql->execute();
+        $existing = $my_sql->fetch(PDO::FETCH_NUM);
+        var_dump($existing);
     
-        $existing_usernames = $my_sql->fetch();
-    
-        if ($existing_usernames[0] >= 1)
+        if ($existing[0] >= 1)
         {
             $is_dublette = true;
         }
