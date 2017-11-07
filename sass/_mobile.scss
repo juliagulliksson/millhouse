@@ -8,7 +8,6 @@ html {
 
 header {
     display: flex;
-    border: 1px solid black;
     box-sizing: border-box;
     display: flex;
     height: 100%;
@@ -18,34 +17,68 @@ header {
 
 nav{
 display: flex;
-padding: 25px;
-background-color: #1b3145;
 box-sizing: border-box;
+padding: 10px;
+background-color: #1b3145;
 max-width: 100%;
 
 
 
 }
 
-.nav_logo {
+.nav_logo_1 {
+display: flex;
+box-sizing: border-box;
+height: 100%;
+width: 100%;
 
+}
 
+.nav_logo_2 {
+display: none;
+
+}
+
+.nav_logo_3 {
+display: none;
 
 }
 
 
 .nav_menu {
 
-
+box-sizing: border-box;
+height: 100%;
+width: 100%;
+text-align: right;
 
  }
 
-.header_pic {
+.header_pic_1 {
+
     display: flex;
     box-sizing: border-box;
     height: 200px;
     max-width: 100%;
     background-image: url("../images/hero.jpg");
     background-size: 100%;
+    background-size: cover;
     background-repeat: no-repeat;
+    background-position: 65% 65%;
+    padding-top: 125px;
+    justify-content: center;
+
+}
+
+.header_pic_2 {
+
+display: none;
+}
+
+
+.header_pic_3 {
+display: none;
+
+
+
 }
