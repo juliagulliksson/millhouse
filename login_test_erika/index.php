@@ -25,6 +25,45 @@
                 value="SEND">
            </form>
            
+           <?php
+          require "partials/start_session.php";
+          
+          
+          
+          
+          
+                   //Ifall fälten i login fylls i anropas funktionen login
+                 if (isset($_POST["username"]) &&
+                    isset($_POST["password"]))
+                 {
+                     $username = $_POST["username"];
+
+                     $password = $_POST["password"];
+
+                     require "partials/functions/login.php";
+
+                     login($username, $password);
+                 } 
+          
+          
+          
+                 if (isset($_SESSION["username"]))
+                 {
+                    echo $_SESSION["username"];    
+                 }
+          
+                    //if (session_status() == PHP_SESSION_ACTIVE)
+          //{
+              //$logged_in_user = (array(
+                //"username"    => $_SESSION["username"],
+                //"contributor" => $_SESSION["contributor"],  
+                //"logged_in"   => $_SESSION["logged_in"]
+              //));
+              
+              //echo $_SESSION["username"];
+          //}
+          ?>
+           
            <p>LOGOUT</p>
            <form action="index.php"
            method="GET">
@@ -37,22 +76,8 @@
         
         <?php
          
-         
-         //Ifall fälten i login fylls i anropas funktionen login
-         if (isset($_POST["username"]) &&
-            isset($_POST["password"]))
-         {
-             $username = $_POST["username"];
-             
-             $password = $_POST["password"];
-             
-             require "partials/functions/login.php";
-             login($username, $password);
-         }
-         
-         
          //Ifall användaren trycker på LOG OUT
-         elseif (isset($_GET["end_session"]))
+         if (isset($_GET["end_session"]))
          {
              require "partials/end_session.php";
              end_session();
@@ -93,7 +118,7 @@
                     
                     $new_password = password_hash($_POST["register_password"], PASSWORD_DEFAULT);
                     
-                    $is_distributor = false;
+                    $contributor = false;
                     
                 
                     //Kollar ifall användarnamn redan finns
@@ -137,10 +162,10 @@
                     
                         register($new_username, 
                              $new_password, 
-                             $is_distributor,
+                             $contributor,
                              $new_email); 
                         
-                        echo $new_username . ' was successfully registered!';
+                        
                     }
                 
                 

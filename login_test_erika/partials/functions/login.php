@@ -2,7 +2,7 @@
 
 function login ($username, $password)
 {
-require "partials/start_session.php";
+
 require "partials/database.php";
 
 $my_sql = $pdo->prepare(
@@ -11,24 +11,25 @@ $my_sql = $pdo->prepare(
 );
     
 $my_sql->execute(array(
-  ":username" => $username
+  ":username"    => $username
 ));
-
     
-$fetched_user = $my_sql->fetch(PDO::FETCH_ASSOC);
-    
-    //$hash = password_hash($fetched_user["password"], PASSWORD_DEFAULT);   
+$fetched_user = $my_sql->fetch(PDO::FETCH_ASSOC);   
  
 
 if (password_verify($password, $fetched_user["password"]))
 {
-    
-  $_SESSION["user"] = $fetched_user;
-  $_SESSION["loggedIn"] = true;
-
-
-  //header("Location: index.php");
-    echo 'Welcome ' . $fetched_user["username"];
+   $_SESSION["username"] = $fetched_user["username"];
+                     
+   $_SESSION["id"] = 
+   $fetched_user["id"];
+                     
+   $_SESSION["contributor"] = $fetched_user["contributor"];
+                     
+   $_SESSION["email"] = 
+   $fetched_user["email"];
+                     
+   $_SESSION["logged_in"] = true;
 
 } 
     
@@ -36,7 +37,6 @@ else
     
 {
 echo 'failed login';
-  //header("Location: failed_log_in.php");
   
 }
 }
