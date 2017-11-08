@@ -14,14 +14,20 @@
 <nav>
 
 
-    <div class="nav_logo">
-logo
-
+    <div class="nav_logo_1">
+            <img src="images/millhouse-logo.png" alt="Logo" height="50%" width="50%">
     </div>
+    <div class="nav_logo_2">
+            <img src="images/millhouse-logo.png" alt="Logo" height="40%" width="40%">
+    </div>
+    <div class="nav_logo_3">
+            <img src="images/millhouse-logo.png" alt="Logo" height="35%" width="35%">
+    </div>
+
 
     <div class="nav_menu">
 
-menu
+Menu
 
     </div>
 
@@ -38,30 +44,3 @@ menu
 
 </header>
 
-<div class="test">
-
-
-</div>
-
-<main>
-    
-  <h1> Test </h1>
-  <article>
-  <img src="">
-  <h3></h3>
-  <h2></h2>
-  <p></p>
-  <h4></h4>
-
-
-  </article>
-  <article>
-
-  </article>
-
-
-
-
-</main>
-</body>
-</html>
