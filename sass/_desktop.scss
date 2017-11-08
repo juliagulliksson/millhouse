@@ -3,4 +3,6 @@ html {
     margin: 0px;
 }
 
-
+ul li a[href="login.php?mobile=true"]{
+    display: none;
+}

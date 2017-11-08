@@ -1,8 +1,3 @@
-<?php
-
-require 'partials/sql.php';
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -42,7 +37,6 @@ require 'partials/sql.php';
 
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="blog.php">BLOG</a></li>
-                    <li><a href="login.php?mobile=true">LOGIN / REGISTER</a></li>
                     <li><a href="about.php">ABOUT</a></li>
                     <li><a href="contact.php">CONTACT</a></li>
                 </ul>
@@ -58,56 +52,25 @@ require 'partials/sql.php';
     </div>
   </header>
 
-  <div class="wrapper">
+<?php 
+if (isset($_GET['mobile'])):
+?>
 
-  <main>
-  <?php
-       foreach ($articles as $article):
-        ?>
-        <article>
-            <h2><?= $article['post_title']; ?></h2>
-            <h3>Category: <?= $article['title']; ?></h3>
-            <h3>Writer: <?php //$article['username'] ?></h3>
-            <p><?= $article['text'] ?></p>
-       </article>
+  <form action="login-form.php">
+    <input type="text" placeholder="Username">
+    <input type="password" placeholder="Password">
+    <input type="submit" value="Login">
+  </form>
 
-       <?php endforeach; ?>
+<?php endif; ?>
 
-       <div class="insert-form">
+<form action="register.php">
+    <input type="text" placeholder="Username">
+    <input type="password" placeholder="Password">
+    <input type="email" placeholder="Email">
+    <input type="submit" value="Register">
 
-        <form action="partials/insert.php" method="POST">
-            <input type="text" placeholder="Type your title here" name="blog_title">
-            <label for="category">Choose category: </label>
-            <select name="category">
-                <?php foreach($category as $categories):?>
-                <option value="<?= $categories['id']?>"><?= $categories['title']?></option>
-
-                 <?php endforeach; ?>
-       </select>
-       <textarea name="post_text" placeholder="Type your blog post here"></textarea>
-       <input type="submit" value="Submit">
-        </form>
-
-       </div>
-   </main>
-
-
-
-
-        <aside>
-            <h2>Log in</h2>
-          <form>
-              <input type="text" name="title">
-              <br>             
-              <input type="text" name="createdBy">
-              <br>
-            <input class="button" type="submit" value="Skicka" />
-               
-          </form>
-           
-        </aside>
-    </div> 
-
+</form>
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
