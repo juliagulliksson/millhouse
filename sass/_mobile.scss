@@ -29,7 +29,7 @@ body {
     margin: 20px 0;
 }
 
-.blog-posts {
+.blog-posts, .comments-box {
     background-color: rgba(51, 50, 51, 0.08);
     margin-bottom: 40px;
 }
@@ -83,6 +83,7 @@ h2 {
 }
 h3 {
     font-size: 1em;
+    font-weight: 700;
 }
 h4 {
     font-size: 0.75em;

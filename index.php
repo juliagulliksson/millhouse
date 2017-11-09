@@ -87,6 +87,22 @@ $today= date('Y-n-j');
 
        <?php endforeach; ?>
 
+       
+        <?php foreach($comments as $comment): 
+        
+            $source = $comment['date'];
+            $date = new DateTime($source);
+            echo $date->format('d.m.Y'); // 31.07.2012
+            echo $date->format('d-m-Y'); // 31-07-2012
+            ?>
+                <div class="comments-box">
+                    <h3>Comment created by: <?= $comment['username']?></h3>
+                    <p>On <?= $comment['date']?> </p>
+                    <p><?= $comment['text']?> </p>
+            </div>
+        <?php endforeach; ?>
+       
+
        <div class="insert-form">
  
 
