@@ -14,6 +14,8 @@ LEFT JOIN comments ON posts.id = comments.post_id
 GROUP BY
     posts.id*/
 
+
+
 $statement = $pdo->prepare("SELECT posts.date, posts.id as postID, 
 posts.text, posts.post_title, posts.date, categories.title, 
 users.username, users.id as user_id, COUNT(comments.post_id) AS comments
@@ -39,11 +41,14 @@ ORDER BY posts.id DESC
   LEFT JOIN comments c ON c.post_id = p.id
   LEFT JOIN users u ON u.id = p.author_id*/
 
-  $statement = $pdo->prepare("SELECT comments.text, comments.date, users.username
+  /*$statement = $pdo->prepare("SELECT comments.text, comments.date, users.username
   FROM comments 
   INNER JOIN users
   ON comments.user_id=users.id
   ORDER BY comments.id DESC
+  WHERE 
   ");
   $statement->execute();
   $comments = $statement->fetchAll(PDO::FETCH_ASSOC);
+*/
+ 

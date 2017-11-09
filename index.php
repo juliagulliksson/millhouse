@@ -70,7 +70,7 @@ $today = date('Y-n-j');
 
   <main>
   <?php
-
+    if(!isset($_GET['id'])):
        foreach ($articles as $article):
         ?>
         <div class="blog-posts">
@@ -80,7 +80,51 @@ $today = date('Y-n-j');
                 <h3>Writer: <?= $article['username'] ?></h3>
                 <h3><?= replace_date($article['date']) ?></h3>
                 <p><?= nl2br($article['text']) ?></p> <?php //replace n/ with <br> ?>
-                <span class="comments-count">Comments(<?= $article['comments']?>)</span>
+                <a href="index.php?id=<?= $article['postID'] ?>" class="comments-count">Comments(<?= $article['comments']?>)</a>
+            </article>
+            <div class="comment-field">
+            <h3>Comment the blog post here:</h3>
+            <form action="partials/comment_insert.php?post_id=<?= $article['postID']?>" method="POST">
+                <input type="hidden" value=<?= $article['user_id'] ?> name="user_id">
+                <input type="hidden" value="<?= $today ?>" name="date">
+                <textarea name="comment" placeholder="Type your comment"></textarea>
+                <input type="submit" name="comment_submit" value="Comment">
+            </form>
+            </div>
+       </div>
+
+       <?php endforeach;
+        endif;
+       ?>
+
+       <?php
+        if(isset($_GET['id'])):
+
+            $id = $_GET['id'];
+
+            $statement = $pdo->prepare("SELECT posts.date, posts.id as postID, 
+            posts.text, posts.post_title, posts.date, categories.title, 
+            users.username, users.id as user_id
+            FROM posts 
+            INNER JOIN categories 
+            ON posts.category_id=categories.id
+            INNER JOIN users
+            ON posts.user_id=users.id
+            WHERE posts.id = $id
+              ");
+              $statement->execute();
+              $article_single = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+        foreach ($article_single as $article):
+        ?>
+        <div class="blog-posts">
+            <article>
+                <h1><?= $article['post_title']; ?></h1>
+                <h3>Category: <?= $article['title']; ?></h3>
+                <h3>Writer: <?= $article['username'] ?></h3>
+                <h3><?= replace_date($article['date']) ?></h3>
+                <p><?= nl2br($article['text']) ?></p> <?php //replace n/ with <br> ?>
+                
             </article>
             <div class="comment-field">
             <h3>Comment the blog post here:</h3>
@@ -94,10 +138,25 @@ $today = date('Y-n-j');
        </div>
 
        <?php endforeach; ?>
+        
+       
 
     
        <h2>Comments:</h2>
-        <?php foreach($comments as $comment): 
+            <?php
+       $statement = $pdo->prepare("SELECT comments.text, comments.date, users.username
+        FROM comments 
+        INNER JOIN users
+        ON comments.user_id=users.id
+        WHERE comments.post_id=$id
+        ORDER BY comments.id DESC
+        ");
+        $statement->execute();
+        $comments = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+        foreach($comments as $comment): 
+
+        
         
             ?>
                 <div class="comments-box">
@@ -106,6 +165,7 @@ $today = date('Y-n-j');
                     <p><?= $comment['text']?> </p>
             </div>
         <?php endforeach; ?>
+        <?php endif; ?> <!-- END OF GET ID IF-->
        
 
        <div class="insert-form">
