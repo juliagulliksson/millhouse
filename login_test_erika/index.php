@@ -10,7 +10,7 @@
 <body>
    
    <main>
-     <div class="container">
+     <div class="login_wrapper">
       <div class="box_login">
           
            <h1>LOGIN</h1>
