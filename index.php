@@ -1,6 +1,7 @@
 <?php
 
 require 'partials/sql.php';
+$today= date('Y-n-j');
 ?>
 
 <!DOCTYPE html>
@@ -65,18 +66,29 @@ require 'partials/sql.php';
 
        foreach ($articles as $article):
         ?>
-        <article>
-            <h2><?= $article['post_title']; ?></h2>
-            <h3>Category: <?= $article['title']; ?></h3>
-            <h3>Writer: <?= $article['username'] ?></h3>
-            <h3><?= $article['date'] ?></h3>
-            <p><?= $article['text'] ?></p>
-       </article>
+        <div class="blog-posts">
+            <article>
+                <h2><?= $article['post_title']; ?></h2>
+                <h3>Category: <?= $article['title']; ?></h3>
+                <h3>Writer: <?= $article['username'] ?></h3>
+                <h3><?= $article['date'] ?></h3>
+                <p><?= nl2br($article['text']) ?></p> <?php //replace n/ with <br> ?>
+            </article>
+            <div class="comment-field">
+            <h3>Comment the blog post here:</h3>
+            <form action="partials/comment_insert.php?post_id=<?= $article['postID']?>" method="POST">
+                <input type="hidden" value=<?= $article['user_id'] ?> name="user_id">
+                <input type="hidden" value="<?= $today ?>" name="date">
+                <textarea name="comment" placeholder="Type your comment"></textarea>
+                <input type="submit" name="comment_submit" value="Comment">
+            </form>
+            </div>
+       </div>
 
        <?php endforeach; ?>
 
        <div class="insert-form">
-       <?php $today= date('Y-n-j')?>
+ 
 
         <form action="partials/insert.php" method="POST">
             <input type="text" placeholder="Type your title here" name="blog_title">

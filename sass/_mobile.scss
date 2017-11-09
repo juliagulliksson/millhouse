@@ -9,12 +9,29 @@ body {
     border-top: 2px solid grey;
 }
 
-textarea {
+.insert-form textarea {
     height: 200px;
     width: 500px;
     display: block;
     resize: none;
     margin-top: 10px;
+}
+
+.comment-field textarea {
+    height: 100px;
+    width: 500px;
+    display: block;
+    resize: none;
+    margin-top: 20px;
+}
+
+.comment-field input[type=submit]{
+    margin: 20px 0;
+}
+
+.blog-posts {
+    background-color: rgba(51, 50, 51, 0.08);
+    margin-bottom: 40px;
 }
 //Should be in desktop
 .wrapper {
