@@ -1,0 +1,98 @@
+body{
+    font-family: $millhouse_font;
+    background-color: #fff;
+    color: $dark_blue;
+}
+
+h2{
+    font-weight: 900;
+    margin: 0em 0em 0.3em 0em;
+}
+
+h3{
+    font-size: 0.8em;
+    margin: 1.5em 0em 0.8em 0em;
+}
+
+h4{
+    font-weight: 900;
+}
+
+.hero{
+    color: #fff;
+    font-weight: 900;
+    font-style: italic;
+    font-size: 2em;    
+    background-image: url("../images/hero.jpg");
+    background-size: cover;
+    width: 100%;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    text-align: center;
+}
+
+.wrapper{
+    width: 100%;
+    background-color: $light_gray;
+}
+
+.container{
+    padding: 2em;
+    width: 100%;
+    background: #fff;
+}
+
+.blog_post{
+    width: 100%;
+    padding-bottom: 2em;
+    img{
+        width: 100%;
+    }
+    p{
+        font-family: 'Fira Code', monospace;
+        font-size: 0.9em;
+        letter-spacing: 0.05em;
+        line-height: 1.5em;
+    }
+    a{
+        font-weight: 900;
+        color: $dark_blue;
+    }
+    a:hover{
+        color: $light_gray;
+    }
+}
+
+.footer_wrapper{
+    width: 100%;
+    background-color: $dark_blue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    p{
+        color: #fff;
+        margin-bottom: 20px;
+    }
+}
+
+.volt_image img{
+    height: 25px;
+    margin-bottom: 20px;
+}
+
+.footer_icons{
+    width: 7em;
+    display: flex;
+    justify-content: space-between;
+    img{
+        height: 40px;
+    }
+}
+
+.sidebar{
+    display: none;
+}
