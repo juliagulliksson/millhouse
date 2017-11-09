@@ -8,5 +8,7 @@ $post_id = $_GET['post_id'];
 $today = $_POST['date'];
 
 $statement = $pdo->prepare("INSERT INTO comments (post_id, text, date, user_id) 
-VALUES ($post_id, '$comment', '$today', 1)");
+VALUES ($post_id, '$comment', '$today', 2)");
 $statement->execute();
+
+header('location: ../index.php');

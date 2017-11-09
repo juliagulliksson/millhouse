@@ -1,8 +1,15 @@
 <?php
 
 require 'partials/sql.php';
-$today= date('Y-n-j');
+$today = date('Y-n-j');
+
+       function replace_date($date){
+            $source = $date;
+            $date = new DateTime($source);
+            return $date->format('F j, Y');
+       }
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -68,11 +75,12 @@ $today= date('Y-n-j');
         ?>
         <div class="blog-posts">
             <article>
-                <h2><?= $article['post_title']; ?></h2>
+                <h1><?= $article['post_title']; ?></h1>
                 <h3>Category: <?= $article['title']; ?></h3>
                 <h3>Writer: <?= $article['username'] ?></h3>
-                <h3><?= $article['date'] ?></h3>
+                <h3><?= replace_date($article['date']) ?></h3>
                 <p><?= nl2br($article['text']) ?></p> <?php //replace n/ with <br> ?>
+                <span class="comments-count">Comments(<?= $article['comments']?>)</span>
             </article>
             <div class="comment-field">
             <h3>Comment the blog post here:</h3>
@@ -87,17 +95,14 @@ $today= date('Y-n-j');
 
        <?php endforeach; ?>
 
-       
+    
+       <h2>Comments:</h2>
         <?php foreach($comments as $comment): 
         
-            $source = $comment['date'];
-            $date = new DateTime($source);
-            echo $date->format('d.m.Y'); // 31.07.2012
-            echo $date->format('d-m-Y'); // 31-07-2012
             ?>
                 <div class="comments-box">
                     <h3>Comment created by: <?= $comment['username']?></h3>
-                    <p>On <?= $comment['date']?> </p>
+                    <p>On <?= replace_date($comment['date']) ?> </p>
                     <p><?= $comment['text']?> </p>
             </div>
         <?php endforeach; ?>
