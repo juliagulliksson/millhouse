@@ -29,9 +29,6 @@
           require "partials/start_session.php";
           
           
-          
-          
-          
                    //Ifall fälten i login fylls i anropas funktionen login
                  if (isset($_POST["username"]) &&
                     isset($_POST["password"]))
@@ -52,16 +49,6 @@
                     echo $_SESSION["username"];    
                  }
           
-                    //if (session_status() == PHP_SESSION_ACTIVE)
-          //{
-              //$logged_in_user = (array(
-                //"username"    => $_SESSION["username"],
-                //"contributor" => $_SESSION["contributor"],  
-                //"logged_in"   => $_SESSION["logged_in"]
-              //));
-              
-              //echo $_SESSION["username"];
-          //}
           ?>
            
            <p>LOGOUT</p>

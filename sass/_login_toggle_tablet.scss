@@ -1,0 +1,25 @@
+.form_wrapper {
+    justify-content: space-around;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.form_input_wrapper {
+    display: inline-block;
+}
+
+@keyframes height {
+    0% {
+        height: 0px;
+    }
+    50% {
+        height: 60px;
+    }
+    100% {
+        height: 120px;
+    }
+}
+
+#login_toggle_button:checked ~ .login_toggle_box {
+    height: 120px;
+}
