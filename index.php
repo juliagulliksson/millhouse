@@ -99,7 +99,10 @@ $today = date('Y-n-j');
 
        <?php
         if(isset($_GET['id'])):
+            ?>
 
+            <a href="index.php" class="comments-count">Go back</a>
+            <?php
             $id = $_GET['id'];
 
             $statement = $pdo->prepare("SELECT posts.date, posts.id as postID, 
