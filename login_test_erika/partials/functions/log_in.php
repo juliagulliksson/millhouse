@@ -1,9 +1,7 @@
 <?php
 
-function login ($username, $password)
+function log_in ($username, $password)
 {
-
-require "partials/database.php";
 
 $my_sql = $pdo->prepare(
     "SELECT * FROM users 

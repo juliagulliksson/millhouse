@@ -15,10 +15,6 @@
                     $contributor = false;
                     
                 
-                    //Kollar ifall användarnamn redan finns
-                    require "partials/functions/check_if_dublette.php";
-                
-                
                     //Variabler med namnen på kolumnerna som ska kollas
                     $user_column = 'username';
                     $email_column = 'email';
@@ -52,16 +48,13 @@
                     elseif (!$is_dublette_email &&
                            !$is_dublette_username)
                     {
-                        require "partials/functions/register.php";
                     
                         register($new_username, 
                              $new_password, 
                              $contributor,
                              $new_email); 
                         
-                        
                     }
-                
                 
                 }
             

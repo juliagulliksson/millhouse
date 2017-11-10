@@ -1,8 +1,9 @@
 .login_wrapper {
     margin: 0px;
-    padding: 0px;
+    padding-left: 20px;
     font-family: $millhouse_font;
     color: $dark_gray;
+    height: 32px;
 }
 
 .login_toggle_box {
@@ -44,8 +45,6 @@
     margin-right: 20px;
 }
 
-
-
 form.form_toggle input {
     padding: 10px;
     border-radius: 3px;
@@ -75,18 +74,13 @@ input.submit_button {
 
 #login_toggle_button {
     display: none;
-    /*position: absolute;
-            appearance: none;
-            cursor: pointer;
-            left: -100%;
-            top: -100%;*/
 }
 
 #login_toggle_button + label {
     position: absolute;
     cursor: pointer;
     padding: 10px;
-    background: #26ae90;
+    background: $dark_blue;
     width: 80px;
     border-radius: 3px;
     color: #FFF;
@@ -95,7 +89,7 @@ input.submit_button {
     text-align: center;
     -webkit-font-smoothing: antialiased;
     cursor: pointer;
-    margin: 10px 10px;
+    margin: 10px;
     transition: all 300ms ease;
 }
 

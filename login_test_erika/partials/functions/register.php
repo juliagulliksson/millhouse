@@ -2,8 +2,6 @@
 
 function register ($username, $password, $boolean, $email)
 {
-      require "partials/database.php";
-    
         $my_sql = $pdo->prepare(
             "INSERT INTO users 
             (username, password, contributor, email) 
@@ -14,7 +12,7 @@ function register ($username, $password, $boolean, $email)
         $my_sql->execute(array( 
             ":username"         => $username,  
             ":password"         => $password,
-            ":contributor"   => $boolean,
+            ":contributor"      => $boolean,
             ":email"            => $email));
     
     echo $username . ' was successfully registered!';

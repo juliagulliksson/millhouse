@@ -14,6 +14,21 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700,900" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="shortcut icon" href="images/millhouse.ico">
+    
+    <?php
+    //Partials functions
+    require "partials/functions/end_session.php";
+    require "partials/functions/start_session.php";
+    require "partials/functions/log_in.php";
+    require "partials/functions/register.php";
+    require "partials/functions/check_if_dublette.php";
+    
+    //Partials
+    require "partials/database.php";
+    require "partials/register.php";
+    require "partials/log_in.php";
+    require "partials/log_out.php";
+    ?>
 </head>
 <body>
     <header>
@@ -106,10 +121,63 @@
 
     </div><!--.login_wrapper end-->
     
-    <?php
-    require "partials/log_in.php";
-    ?>
+       <div class="login_wrapper">
+       
+        <input type="checkbox" 
+        name="login_toggle_button" 
+        id="login_toggle_button" />
+        
+        <label for="login_toggle_button">
+        </label>
+        
+
+        <div class="login_toggle_box">
+           
+           <div class="form_wrapper"
+             id="login_form_wrapper">
+              
+               <form action="index.php"
+               class="form_toggle"
+               method="POST">
+                   
+                   <div class="form_input_wrapper">
+                   
+                        <label for="username">
+                        USERNAME
+                        </label>
+                        <input type="text" 
+                        id="input_login_username"
+                        name="username"
+                        placeholder="Username">
+
+                    </div>
+                    
+                    <div class="form_input_wrapper">
+                    
+                        <label for="password">
+                        PASSWORD
+                        </label>
+                        <input type="password" 
+                        id="input_login_password"
+                        name="password"
+                        placeholer="Password">
+                    
+                   </div>
+                   
+                   <div class="form_input_wrapper">
+                        <input type="submit"
+                        value="SUBMIT"
+                        class="submit_button"
+                        id="submit_login">
+                   </div>  
+               </form>
+           </div>
+
+        </div><!--login_toggle_box end-->
+
+    </div><!--.login_wrapper end-->
     
+   
     <div class="wrapper">
         <div class="container">
             <main>
