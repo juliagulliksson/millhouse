@@ -6,11 +6,6 @@ require 'database.php';
 //nl2br = gör så att varje line break i artikel-fält blir till br-taggar
 
 
-/*SELECT posts.post_title , posts.date, posts.user_id as uid, COUNT(comments.post_id) AS comments
-FROM posts 
-LEFT JOIN comments ON posts.id = comments.post_id
-GROUP BY
-    posts.id*/
 
 
 //Main article fetch
@@ -42,19 +37,5 @@ $statement = $pdo->prepare("SELECT DISTINCT MONTH(date) as month FROM posts");
 $statement->execute();
 $month_number = $statement->fetchAll(PDO::FETCH_ASSOC);
 
-  /*
-  SELECT p.*, c.*, u.* FROM posts p
-  LEFT JOIN comments c ON c.post_id = p.id
-  LEFT JOIN users u ON u.id = p.author_id*/
 
-  /*$statement = $pdo->prepare("SELECT comments.text, comments.date, users.username
-  FROM comments 
-  INNER JOIN users
-  ON comments.user_id=users.id
-  ORDER BY comments.id DESC
-  WHERE 
-  ");
-  $statement->execute();
-  $comments = $statement->fetchAll(PDO::FETCH_ASSOC);
-*/
  
