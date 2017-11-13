@@ -33,7 +33,7 @@ $today = date('Y-n-j');
                         <br />
                         <input type="submit"id="submit_register" value="Register">
                     </form>
-                    <b>Already signed up?</b> <a href="register.php">Login here!</a>
+                    <b>Already signed up?</b> <a href="login.php">Login here!</a>
                 </div>
             </main>
         </div>
