@@ -1,5 +1,8 @@
 
-<div class="blog-posts">
+<div class="container">
+    <main>
+    <div class="blog_posts">
+    
             <article>
                 <h1><?= $article['post_title']; ?></h1>
                 <h3>Category: <?= $article['title']; ?></h3>
@@ -18,4 +21,5 @@
                 <input type="submit" name="comment_submit" value="Comment">
             </form>
             </div>
-       </div>
+    </div>
+</div>

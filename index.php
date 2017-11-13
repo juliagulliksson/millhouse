@@ -1,6 +1,6 @@
 
 <?php
-
+require 'partials/database.php';
 require 'partials/sql.php';
 
       
@@ -11,6 +11,7 @@ $today = date('Y-n-j');
 ?>
 
   <div class="wrapper">
+      <div class="container">
 
   <main>
   <?php
@@ -47,13 +48,13 @@ $today = date('Y-n-j');
                 
             </article>
             <div class="comment-field">
-            <h3>Comment the blog post here:</h3>
-            <form action="partials/comment_insert.php?post_id=<?= $article['postID']?>" method="POST">
-                <input type="hidden" value=<?= $article['user_id'] ?> name="user_id">
-                <input type="hidden" value="<?= $today ?>" name="date">
-                <textarea name="comment" placeholder="Type your comment"></textarea>
-                <input type="submit" name="comment_submit" value="Comment">
-            </form>
+                <h3>Comment the blog post here:</h3>
+                <form action="partials/comment_insert.php?post_id=<?= $article['postID']?>" method="POST">
+                    <input type="hidden" value=<?= $article['user_id'] ?> name="user_id">
+                    <input type="hidden" value="<?= $today ?>" name="date">
+                    <textarea name="comment" placeholder="Type your comment"></textarea>
+                    <input type="submit" name="comment_submit" value="Comment">
+                </form>
             </div>
        </div>
 
@@ -131,18 +132,23 @@ if(isset($_GET['month'])):
         </form>
 
        </div>
+   
    </main>
 
-        <aside>
-            <h2>Log in</h2>
-          <form>
-              <input type="text" name="title">
-              <br>             
-              <input type="text" name="createdBy">
-              <br>
-            <input class="button" type="submit" value="Skicka" />
-               
-          </form>
+   <aside>
+                <div class="sidebar">
+                    <form action="login.php" method="post">
+                        <label for="username">Username:</label><br />
+                        <input type="text" name="username" placeholder="Username"><br />
+
+                        <label for="password">Password:</label><br />
+                        <input type="text" name="password" placeholder="Password">
+                    </form>
+                   
+                
+            
+
+
 
           <h3>Categories:</h3>
             <?php
@@ -174,16 +180,9 @@ if(isset($_GET['month'])):
 
 
           
-           
-        </aside>
-    </div> 
+               </div> <!-- sidebar end -->
+           </aside>
+       </div> <!-- container end -->
+    </div> <!-- wrapper end -->
 
-    
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
-            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-            crossorigin="anonymous">
-    </script>
-</body>
-</html>
+    <?php require 'partials/footer.php'; ?>
