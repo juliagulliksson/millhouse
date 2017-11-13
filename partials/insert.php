@@ -1,8 +1,9 @@
 
 <?php
+
 require 'database.php';
 
-
+header('location: ../index.php');
 
 var_dump($_POST);
 $title = $_POST['blog_title'];
@@ -19,8 +20,6 @@ $statement = $pdo->prepare("INSERT INTO posts (post_title, category_id, text, da
 VALUES ('$title', $category, '$body', '$today', 1)");
 $statement->execute();
   
- 
-  header('location: ../index.php');
  
 
   

@@ -11,4 +11,11 @@ function replace_month($month){
     return $dateObj->format('F');
 }
 
-
+function string_length($x, $length){
+    if(strlen($x)<= $length){
+      return $x;
+    }else{
+      $y = substr($x,0,$length) . '...';
+      return $y;
+    }
+  }

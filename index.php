@@ -16,17 +16,17 @@ $today = date('Y-n-j');
 
     <main>
     <?php
+    //Startpage blog posts
         if(!isset($_GET['id']) && !isset($_GET['category']) 
         && !isset($_GET['asc']) 
         && !isset($_GET['month'])):
-        foreach ($articles as $article):
+            foreach ($articles as $article):
             include 'partials/blog_posts.php';
-            ?>
-        <?php endforeach;
-            endif;
-        ?>
+            endforeach;
+        endif;
+        
 
-        <?php
+        
         //individual blog posts
         if(isset($_GET['id'])):
         ?>
@@ -40,14 +40,15 @@ $today = date('Y-n-j');
                 
             foreach ($article_single as $article):
             ?>
-            <div class="container">
+            
                 <div class="blog_post">
                     <article>
-                        <h1><?= $article['post_title']; ?></h1>
+                        <h2><?= $article['post_title']; ?></h2>
+                        
+                        <h3> <?= replace_date($article['date']) ?> | <?= $article['username'] ?></h3>
                         <h3>Category: <?= $article['title']; ?></h3>
-                        <h3>Writer: <?= $article['username'] ?></h3>
-                        <h3><?= replace_date($article['date']) ?></h3>
-                        <p><?= nl2br($article['text']) ?></p> <?php //replace n/ with <br> ?>
+                       
+                        <p><?= nl2br($article['text']) ?></p>
                         
                     </article>
                     <div class="comment-field">
@@ -58,15 +59,15 @@ $today = date('Y-n-j');
                                 <textarea name="comment" placeholder="Type your comment"></textarea>
                                 <input type="submit" name="comment_submit" value="Comment">
                             </form>
-                    </div>
+                   </div> 
                 </div>
-            </div>
+            
 
         <?php endforeach; ?>
         
         <h2>Comments:</h2>
                 <?php
-            //includes function_article.php where $comments is made
+            //function_article.php is where $comments is made
             foreach($comments as $comment): 
                 ?>
                     <div class="comments-box">
@@ -74,53 +75,50 @@ $today = date('Y-n-j');
                         <p>On <?= replace_date($comment['date']) ?> </p>
                         <p><?= $comment['text']?> </p>
                 </div>
-            <?php endforeach; ?>
+            <?php 
+            endforeach; 
 
-        <?php endif; //END OF GET ID IF ?>
+        endif; //END OF GET ID IF 
 
-        <?php
+        
         if(isset($_GET['category']) && !isset($_GET['asc'])):
             $categories = $_GET['category'];
             include 'partials/category_articles.php';  
-    ?>  
+        ?>  
             <a href="index.php?category=<?= $categories?>&asc=true">Order by oldest</a>
 
             <?php foreach($category_articles as $article):
                 include 'partials/blog_posts.php';
-            ?>
-            <?php endforeach; ?>        
+            
+            endforeach;       
                 
-        <?php elseif(isset($_GET['category']) && isset($_GET['asc'])):
+            elseif(isset($_GET['category']) && isset($_GET['asc'])):
             $categories = $_GET['category'];
             include 'partials/category_articles.php';
             ?>
             <a href="index.php?category=<?= $categories?>">Order by newest</a>
             <?php
             foreach($category_articles_asc as $article):
-            include 'partials/blog_posts.php';
-        ?>
+                include 'partials/blog_posts.php';
+        
+            endforeach; 
+    endif; //END OF CATEGORIES 
 
-            <?php endforeach; ?>
-    <?php endif; //END OF CATEGORIES ?>
-
-    <?php
+    
     if(isset($_GET['month'])):
         $month = $_GET['month'];
         include 'partials/month_articles.php';
-        ?>
         
-        <?php
         foreach($month_articles as $article):
-        include 'partials/blog_posts.php';
-    ?>
-
-        <?php endforeach; ?>
+            include 'partials/blog_posts.php';
+        endforeach; 
 
 
-    <?php endif; //END OF MONTHS ?>
+     endif; //END OF MONTHS ?>
 
 
         <div class="insert-form">
+            <h2>Write a new blog post:</h2>
             <form action="partials/insert.php" method="POST">
                 <input type="text" placeholder="Type your title here" name="blog_title">
                 <label for="category">Choose category: </label>
@@ -150,33 +148,30 @@ $today = date('Y-n-j');
                         </form>
 
             <h3>Categories:</h3>
-                <?php
-                foreach ($category as $categories):
-                    ?>
+                
                 
                     <div class="categories-list">
                         <ul>
-                            <li><a href="index.php?category=<?= $categories['id']?>"><?= $categories['title'] ?></a></li>
+                        <?php
+                        foreach ($category as $categories):
+                        ?>
+                                <li><a href="index.php?category=<?= $categories['id']?>"><?= $categories['title'] ?></a></li>
+                                <?php endforeach; ?>
                         </ul>
                     </div>
-                <?php endforeach; ?>
-
+                
                 <h3>Sort by months</h3>
 
-                <?php
-                foreach ($month_number as $months):
-                    $month = $months['month'];
-                    ?>
-                
                     <div class="categories-list">
                         <ul>
-                            <li><a href="index.php?month=<?= $months['month']?>"><?= replace_month($month) ?></a></li>
+                        <?php
+                        foreach ($month_number as $months):
+                        $month = $months['month'];
+                        ?>
+                                <li><a href="index.php?month=<?= $months['month']?>"><?= replace_month($month) ?></a></li>
+                                <?php endforeach; ?>
                         </ul>
                     </div>
-                <?php endforeach; ?>
-
-                
-
 
             
                 </div> <!-- sidebar end -->
