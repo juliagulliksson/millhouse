@@ -58,54 +58,21 @@
     </header>
 
     <div class="wrapper">
-        <div class="container">
+        <div class="input_container">
             <main>
-                <div class="blog_post">
-                    <img src="images/clock-1.jpg" Alt="Clock" />
-                    <h3>NOVEMBER 6, 2017 | ADMIN</h3>
-                    <h2>A super long title that is kind of long and not very short because it’s long</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-                    nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                    culpa qui officia dese... <a href="">Continue reading -></a></p>
-
-                    COMMENTS (12)
-                </div>
-                <div class="blog_post">
-                    <img src="images/clock-2.jpg" Alt="Clock" />
-                    <h3>NOVEMBER 4, 2017 | ADMIN</h3>
-                    <h2>A short title</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-                    nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                    culpa qui officia dese... <a href="">Continue reading -></a></p>
-
-                    COMMENTS (12)
+                <div class="login">
+                    <h1>Login</h1>
+                    <form action="index.php" class="form_toggle" id="login_form" method="POST">
+                        <label for="username" hidden>Username:</label>
+                        <input type="text" id="input_login_username" name="username" placeholder="Username">
+                        <br />
+                        <label for="password" hidden>Password:</label>
+                        <input type="password" id="input_login_password" name="password" placeholder="Password">
+                        <br />
+                        <input type="submit" id="submit_login" value="Login">
+                    </form>
                 </div>
             </main>
-
-            <aside>
-                <div class="sidebar">
-                    <form action="login.php" method="post">
-                        <label for="username">Username:</label><br />
-                        <input type="text" name="username" placeholder="Username"><br />
-
-                        <label for="password">Password:</label><br />
-                        <input type="text" name="password" placeholder="Password">
-                    </form>
-                    <br />
-                    <h4>Categories:</h4>
-                    <ul>
-                        <li>Clocks</li>
-                        <li>Sunglasses</li>
-                        <li>Interior</li>
-                    </ul>
-                </div>
-            </aside>
         </div>
         <!-- /.container-collapse -->
     </div> 
