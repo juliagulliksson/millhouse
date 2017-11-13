@@ -51,6 +51,16 @@ body {
     background-color: #FFF;
 }
 
+.categories-list ul{
+    margin-top: 20px;
+    li {
+        list-style-type: circle;
+        font-size: 1.2em;
+    }a {
+        color: $dark_blue;
+        font-weight: 700;
+    }
+}
 
 
 

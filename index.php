@@ -1,123 +1,39 @@
 <?php
 
 require 'partials/sql.php';
+
+      
+require 'partials/functions.php';
+require 'partials/head.php';
 $today = date('Y-n-j');
 
-       function replace_date($date){
-            $source = $date;
-            $date = new DateTime($source);
-            return $date->format('F j, Y');
-       }
 ?>
-
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Millhouse</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://cdn.rawgit.com/tonsky/FiraCode/1.204/distr/fira_code.css">
-  <link rel="stylesheet" 
-        href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-        crossorigin="anonymous">
-  <link rel="stylesheet" type="text/css" href="css/style.css">
-  <link rel="shortcut icon" href="images/millhouse.ico">
-</head>
-<body>
-
-    <header>
-      <nav class="navbar navbar-default navbar-static-top">
-        <div class="container-fluid">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed"
-                        data-toggle="collapse"
-                        data-target="#bs-example-navbar-collapse-1"
-                        aria-expanded="false">
-                  <span class="sr-only">Toggle navigation</span>
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="index.php">
-                  <img src="images/millhouse-logo.png" Alt="Millhouse logo">
-                </a>
-            </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="blog.php">BLOG</a></li>
-                    <li><a href="login.php?mobile=true">LOGIN / REGISTER</a></li>
-                    <li><a href="about.php">ABOUT</a></li>
-                    <li><a href="contact.php">CONTACT</a></li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container-fluid -->
-    </nav>
-
-    <div class="header_pic_1">
-<h3>An awesome and selling slogan</h3>
-
-    </div>
-  </header>
 
   <div class="wrapper">
 
   <main>
   <?php
-    if(!isset($_GET['id'])):
+    if(!isset($_GET['id']) && !isset($_GET['category']) 
+    && !isset($_GET['asc']) 
+    && !isset($_GET['month'])):
        foreach ($articles as $article):
+        include 'partials/blog_posts.php';
         ?>
-        <div class="blog-posts">
-            <article>
-                <h1><?= $article['post_title']; ?></h1>
-                <h3>Category: <?= $article['title']; ?></h3>
-                <h3>Writer: <?= $article['username'] ?></h3>
-                <h3><?= replace_date($article['date']) ?></h3>
-                <p><?= nl2br($article['text']) ?></p> <?php //replace n/ with <br> ?>
-                <a href="index.php?id=<?= $article['postID'] ?>" class="comments-count">Comments(<?= $article['comments']?>)</a>
-            </article>
-            <div class="comment-field">
-            <h3>Comment the blog post here:</h3>
-            <form action="partials/comment_insert.php?post_id=<?= $article['postID']?>" method="POST">
-                <input type="hidden" value=<?= $article['user_id'] ?> name="user_id">
-                <input type="hidden" value="<?= $today ?>" name="date">
-                <textarea name="comment" placeholder="Type your comment"></textarea>
-                <input type="submit" name="comment_submit" value="Comment">
-            </form>
-            </div>
-       </div>
-
        <?php endforeach;
         endif;
        ?>
 
-       <?php
-        if(isset($_GET['id'])):
-            ?>
+    <?php
+    if(isset($_GET['id'])):
+    ?>
 
-            <a href="index.php" class="comments-count">Go back</a>
-            <?php
-            $id = $_GET['id'];
+        <a href="index.php" class="comments-count">Go back</a>
+        <?php
+        $id = $_GET['id'];
 
-            $statement = $pdo->prepare("SELECT posts.date, posts.id as postID, 
-            posts.text, posts.post_title, posts.date, categories.title, 
-            users.username, users.id as user_id
-            FROM posts 
-            INNER JOIN categories 
-            ON posts.category_id=categories.id
-            INNER JOIN users
-            ON posts.user_id=users.id
-            WHERE posts.id = $id
-              ");
-              $statement->execute();
-              $article_single = $statement->fetchAll(PDO::FETCH_ASSOC);
-
+        //require SQL-queries
+        require 'partials/function_article.php';
+            
         foreach ($article_single as $article):
         ?>
         <div class="blog-posts">
@@ -141,26 +57,11 @@ $today = date('Y-n-j');
        </div>
 
        <?php endforeach; ?>
-        
-       
-
     
        <h2>Comments:</h2>
             <?php
-       $statement = $pdo->prepare("SELECT comments.text, comments.date, users.username
-        FROM comments 
-        INNER JOIN users
-        ON comments.user_id=users.id
-        WHERE comments.post_id=$id
-        ORDER BY comments.id DESC
-        ");
-        $statement->execute();
-        $comments = $statement->fetchAll(PDO::FETCH_ASSOC);
-
+        //includes function_article.php where $comments is made
         foreach($comments as $comment): 
-
-        
-        
             ?>
                 <div class="comments-box">
                     <h3>Comment created by: <?= $comment['username']?></h3>
@@ -168,12 +69,58 @@ $today = date('Y-n-j');
                     <p><?= $comment['text']?> </p>
             </div>
         <?php endforeach; ?>
-        <?php endif; ?> <!-- END OF GET ID IF-->
+
+    <?php endif; //END OF GET ID IF ?>
+
+    <?php
+    if(isset($_GET['category']) && !isset($_GET['asc'])):
+        $categories = $_GET['category'];
+        include 'partials/category_articles.php';  
+   ?>  
+        <a href="index.php?category=<?= $categories?>&asc=true">Order by oldest</a>
+
+        <?php foreach($category_articles as $article):
+            include 'partials/blog_posts.php';
+        ?>
+        <?php endforeach; ?>        
+            
+    <?php elseif(isset($_GET['category']) && isset($_GET['asc'])):
+        $categories = $_GET['category'];
+        include 'partials/category_articles.php';
+        ?>
+        <a href="index.php?category=<?= $categories?>">Order by newest</a>
+        <?php
+        foreach($category_articles_asc as $article):
+        include 'partials/blog_posts.php';
+    ?>
+
+        <?php endforeach; ?>
+<?php endif; //END OF CATEGORIES ?>
+
+<?php
+if(isset($_GET['month'])):
+    $month = $_GET['month'];
+    include 'partials/month_articles.php';
+    ?>
+    
+    <?php
+    foreach($month_articles as $article):
+    include 'partials/blog_posts.php';
+?>
+
+    <?php endforeach; ?>
+
+
+<?php endif; //END OF MONTHS ?>
+
+
+
+
+
+
        
 
        <div class="insert-form">
- 
-
         <form action="partials/insert.php" method="POST">
             <input type="text" placeholder="Type your title here" name="blog_title">
             <label for="category">Choose category: </label>
@@ -191,9 +138,6 @@ $today = date('Y-n-j');
        </div>
    </main>
 
-
-
-
         <aside>
             <h2>Log in</h2>
           <form>
@@ -204,6 +148,37 @@ $today = date('Y-n-j');
             <input class="button" type="submit" value="Skicka" />
                
           </form>
+
+          <h3>Categories:</h3>
+            <?php
+            foreach ($category as $categories):
+                ?>
+               
+                <div class="categories-list">
+                    <ul>
+                        <li><a href="index.php?category=<?= $categories['id']?>"><?= $categories['title'] ?></a></li>
+                    </ul>
+                </div>
+            <?php endforeach; ?>
+
+            <h3>Sort by months</h3>
+
+            <?php
+            foreach ($month_number as $months):
+                $month = $months['month'];
+                ?>
+               
+                <div class="categories-list">
+                    <ul>
+                        <li><a href="index.php?month=<?= $months['month']?>"><?= replace_month($month) ?></a></li>
+                    </ul>
+                </div>
+            <?php endforeach; ?>
+
+            
+
+
+          
            
         </aside>
     </div> 
