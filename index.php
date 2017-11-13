@@ -45,18 +45,18 @@ $today = date('Y-n-j');
                     <p><?= nl2br($article['text']) ?></p>
                         
                 </article>
-                    <div class="comment-field">
-                        <h3>Comment the blog post here:</h3>
-                        <form action="partials/comment_insert.php?post_id=<?= $article['postID']?>" method="POST">
-                            <input type="hidden" value=<?= $article['user_id'] ?> name="user_id">
-                            <input type="hidden" value="<?= $today ?>" name="date">
-                            <textarea name="comment" placeholder="Type your comment"></textarea>
-                            <input type="submit" name="comment_submit" value="Comment">
-                        </form>
-                    </div>
-                    <!-- /.comment-field-collapse -->
+                <div class="comment-field">
+                    <h3>Comment the blog post here:</h3>
+                    <form action="partials/comment_insert.php?post_id=<?= $article['postID']?>" method="POST">
+                        <input type="hidden" value=<?= $article['user_id'] ?> name="user_id">
+                        <input type="hidden" value="<?= $today ?>" name="date">
+                        <textarea name="comment" placeholder="Type your comment"></textarea>
+                        <input type="submit" name="comment_submit" value="Comment">
+                    </form>
                 </div>
-                <!-- /.blog_post-collapse -->
+                <!-- /.comment-field-collapse -->
+            </div>
+            <!-- /.blog_post-collapse -->
             
 
                 <?php endforeach; ?>
