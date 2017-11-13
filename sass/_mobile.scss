@@ -1,5 +1,5 @@
 body{
-    font-family: sans-serif;
+    font-family: $millhouse_font;
     background-color: #fff;
     color: $dark_blue;
 }
@@ -10,7 +10,8 @@ h2{
 }
 
 h3{
-    font-size: 0.8em;
+    font-size: 0.9em;
+    font-weight: 900;
     margin: 1.5em 0em 0.8em 0em;
 }
 
@@ -20,7 +21,6 @@ h4{
 
 .hero{
     color: #fff;
-    font-weight: 900;
     font-style: italic;
     font-size: 2em;    
     background-image: url("../images/hero.jpg");
@@ -107,7 +107,9 @@ h4{
     display: none;
 }
 
-input[type=text], input[type=password]{
+input[type=text], 
+input[type=email], 
+input[type=password]{
     width: 250px;
     height: 40px;
     padding: 10px;
@@ -122,16 +124,10 @@ input[type=text], input[type=password]{
 }
 
 input[type=submit]{
-    width: 250px;
-    height: 40px;
-    margin-bottom: 20px;
-    font-family: 'Fira Code', monospace;
+    @extend input[type=text];
     color: #fff;
-    background: #5d7e93;;
-    border: 0px;
-    border-radius: 3px;
-    -moz-border-radius: 3px;
-    -webkit-border-radius: 3px;
+    background: #5d7e93;
+    margin-bottom: 20px;
     box-shadow: 0px 3px 0px 0px $dark_blue;
     -webkit-box-shadow: 0px 3px 0px 0px $dark_blue;
     -moz-box-shadow: 0px 3px 0px 0px $dark_blue;
@@ -141,4 +137,7 @@ input[type=submit]:hover{
     color: #000;
     background-color: $light_gray;
     border: 0px;
+    box-shadow: 0px 3px 0px 0px $dark_gray;
+    -webkit-box-shadow: 0px 3px 0px 0px $dark_gray;
+    -moz-box-shadow: 0px 3px 0px 0px $dark_gray;
 }

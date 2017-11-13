@@ -1,9 +1,8 @@
-
 <?php
-
+header('location: ../index.php');
 require 'database.php';
 
-header('location: ../index.php');
+
 
 var_dump($_POST);
 $title = $_POST['blog_title'];

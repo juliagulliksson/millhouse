@@ -1,61 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Millhouse</title>
-    <link rel="stylesheet" 
-        href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-        crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,700i,900,900i" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.rawgit.com/tonsky/FiraCode/1.204/distr/fira_code.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700,900" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link rel="shortcut icon" href="images/millhouse.ico">
-</head>
-<body>
-    <header>
-        <nav class="navbar navbar-default navbar-static-top">
-            <div class="container-fluid">
-                <!-- Brand and toggle get grouped for better mobile display -->
-                <div class="navbar-header">
-                    <button type="button" 
-                            class="navbar-toggle collapsed"
-                            data-toggle="collapse"
-                            data-target="#bs-example-navbar-collapse-1"
-                            aria-expanded="false">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="index.php">
-                        <img src="images/millhouse-logo.png" Alt="Millhouse logo">
-                    </a>
-                </div>
-                <!-- /.navbar-header-collapse -->
-                <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav">
-                        <li><a href="index.php">BLOG</a></li>
-                        <li><a href="about.php">ABOUT</a></li>
-                        <li><a href="contact.php">CONTACT</a></li>
-                    </ul>
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a href="login.php">Login</a></li>
-                        <li><a href="register.php">Register</a></li>
-                    </ul>
-                </div>
-                <!-- /.navbar-collapse -->
-            </div>
-            <!-- /.container-fluid -->
-        </nav>
-        <div class="hero">
-            "An awesome and selling slogan"
-        </div>
-    </header>
+<?php
+require 'partials/database.php';
+require 'partials/sql.php';
+
+require 'partials/functions.php';
+require 'partials/head.php';
+$today = date('Y-n-j');
+
+?>
 
     <div class="wrapper">
         <div class="input_container">
@@ -71,7 +22,7 @@
                         <br />
                         <input type="submit" id="submit_login" value="Login">
                     </form>
-                    <a href="register.php">Register</a>
+                    <b>Not a member yet?</b> <a href="register.php">Register here!</a>
                 </div>
             </main>
         </div>
@@ -79,87 +30,4 @@
     </div> 
     <!-- /.wrapper-collapse -->
 
-    <footer>
-        <div class="footer_wrapper">
-            <div class="volt_image">
-                <img src="images/volt_studios-logo.png" Alt="Volt Studios Logo" />
-            </div>
-            <p>Just a footer with footer options</p>
-            <div class="footer_icons">
-                <img src="images/instagram-icon.png" Alt="Instagram" />
-                <img src="images/facebook-icon.png" Alt="Facebook" />
-            </div><!-- footer icons end -->
-        </div><!-- footer wrapper end -->
-    </footer>
-
-  <meta charset="UTF-8">
-  <title>Millhouse</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://cdn.rawgit.com/tonsky/FiraCode/1.204/distr/fira_code.css">
-  <link rel="stylesheet" 
-        href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-        crossorigin="anonymous">
-  <link rel="stylesheet" type="text/css" href="css/style.css">
-  <link rel="shortcut icon" href="images/millhouse.ico">
-</head>
-<body>
-
-    <header>
-      <nav class="navbar navbar-default navbar-static-top">
-        <div class="container-fluid">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed"
-                        data-toggle="collapse"
-                        data-target="#bs-example-navbar-collapse-1"
-                        aria-expanded="false">
-                  <span class="sr-only">Toggle navigation</span>
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="index.php">
-                  <img src="images/millhouse-logo.png" Alt="Millhouse logo">
-                </a>
-            </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="blog.php">BLOG</a></li>
-                    <li><a href="about.php">ABOUT</a></li>
-                    <li><a href="contact.php">CONTACT</a></li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container-fluid -->
-    </nav>
-
-    <div class="header_pic_1">
-<h3>An awesome and selling slogan</h3>
-
-    </div>
-  </header>
-
-<?php 
-if (isset($_GET['mobile'])):
-?>
-
-  <form action="login-form.php">
-    <input type="text" placeholder="Username">
-    <input type="password" placeholder="Password">
-    <input type="submit" value="Login">
-  </form>
-
-<?php endif; ?>
-
-<form action="register.php">
-    <input type="text" placeholder="Username">
-    <input type="password" placeholder="Password">
-    <input type="email" placeholder="Email">
-    <input type="submit" value="Register">
-
-</form>
-
+    <?php require 'partials/footer.php'; ?>
