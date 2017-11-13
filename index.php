@@ -1,133 +1,181 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Millhouse</title>
-    <link rel="stylesheet" 
-        href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-        crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,700i,900,900i" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.rawgit.com/tonsky/FiraCode/1.204/distr/fira_code.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700,900" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link rel="shortcut icon" href="images/millhouse.ico">
-</head>
-<body>
-    <header>
-        <nav class="navbar navbar-default navbar-static-top">
-            <div class="container-fluid">
-                <!-- Brand and toggle get grouped for better mobile display -->
-                <div class="navbar-header">
-                    <button type="button" 
-                            class="navbar-toggle collapsed"
-                            data-toggle="collapse"
-                            data-target="#bs-example-navbar-collapse-1"
-                            aria-expanded="false">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="index.php">
-                        <img src="images/millhouse-logo.png" Alt="Millhouse logo">
-                    </a>
+<?php
+require 'partials/database.php';
+require 'partials/sql.php';
+
+      
+require 'partials/functions.php';
+require 'partials/head.php';
+$today = date('Y-n-j');
+
+?>
+
+<div class="wrapper">
+    <div class="container">
+     
+
+    <main>
+    <?php
+    //Startpage blog posts
+        if(!isset($_GET['id']) && !isset($_GET['category']) 
+        && !isset($_GET['asc']) 
+        && !isset($_GET['month'])):
+            foreach ($articles as $article):
+            include 'partials/blog_posts.php';
+            endforeach;
+        endif;
+        
+
+        
+        //individual blog posts
+        if(isset($_GET['id'])):
+        ?>
+
+            <a href="index.php" class="comments-count">Go back</a>
+            <?php
+            $id = $_GET['id'];
+
+            //require SQL-queries
+            require 'partials/function_article.php';
+                
+            foreach ($article_single as $article):
+            ?>
+            
+                <div class="blog_post">
+                    <article>
+                        <h2><?= $article['post_title']; ?></h2>
+                        
+                        <h3> <?= replace_date($article['date']) ?> | <?= $article['username'] ?></h3>
+                        <h3>Category: <?= $article['title']; ?></h3>
+                       
+                        <p><?= nl2br($article['text']) ?></p>
+                        
+                    </article>
+                    <div class="comment-field">
+                            <h3>Comment the blog post here:</h3>
+                            <form action="partials/comment_insert.php?post_id=<?= $article['postID']?>" method="POST">
+                                <input type="hidden" value=<?= $article['user_id'] ?> name="user_id">
+                                <input type="hidden" value="<?= $today ?>" name="date">
+                                <textarea name="comment" placeholder="Type your comment"></textarea>
+                                <input type="submit" name="comment_submit" value="Comment">
+                            </form>
+                   </div> 
                 </div>
-                <!-- /.navbar-header-collapse -->
-                <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav">
-                        <li><a href="index.php">BLOG</a></li>
-                        <li><a href="about.php">ABOUT</a></li>
-                        <li><a href="contact.php">CONTACT</a></li>
-                    </ul>
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a href="login.php">Login</a></li>
-                        <li><a href="register.php">Register</a></li>
-                    </ul>
+            
+
+        <?php endforeach; ?>
+        
+        <h2>Comments:</h2>
+                <?php
+            //function_article.php is where $comments is made
+            foreach($comments as $comment): 
+                ?>
+                    <div class="comments-box">
+                        <h3>Comment created by: <?= $comment['username']?></h3>
+                        <p>On <?= replace_date($comment['date']) ?> </p>
+                        <p><?= $comment['text']?> </p>
                 </div>
-                <!-- /.navbar-collapse -->
-            </div>
-            <!-- /.container-fluid -->
-        </nav>
-        <div class="hero">
-            "An awesome and selling slogan"
+            <?php 
+            endforeach; 
+
+        endif; //END OF GET ID IF 
+
+        
+        if(isset($_GET['category']) && !isset($_GET['asc'])):
+            $categories = $_GET['category'];
+            include 'partials/category_articles.php';  
+        ?>  
+            <a href="index.php?category=<?= $categories?>&asc=true">Order by oldest</a>
+
+            <?php foreach($category_articles as $article):
+                include 'partials/blog_posts.php';
+            
+            endforeach;       
+                
+            elseif(isset($_GET['category']) && isset($_GET['asc'])):
+            $categories = $_GET['category'];
+            include 'partials/category_articles.php';
+            ?>
+            <a href="index.php?category=<?= $categories?>">Order by newest</a>
+            <?php
+            foreach($category_articles_asc as $article):
+                include 'partials/blog_posts.php';
+        
+            endforeach; 
+    endif; //END OF CATEGORIES 
+
+    
+    if(isset($_GET['month'])):
+        $month = $_GET['month'];
+        include 'partials/month_articles.php';
+        
+        foreach($month_articles as $article):
+            include 'partials/blog_posts.php';
+        endforeach; 
+
+
+     endif; //END OF MONTHS ?>
+
+
+        <div class="insert-form">
+            <h2>Write a new blog post:</h2>
+            <form action="partials/insert.php" method="POST">
+                <input type="text" placeholder="Type your title here" name="blog_title">
+                <label for="category">Choose category: </label>
+                <select name="category">
+                    <?php foreach($category as $categories):?>
+                    <option value="<?= $categories['id']?>"><?= $categories['title']?></option>
+
+                    <?php endforeach; ?>
+        </select>
+        <textarea name="post_text" placeholder="Type your blog post here"></textarea>
+        <input type="hidden" value="<?= $today ?>" name="date">
+        <input type="submit" value="Submit">
+            </form>
+
         </div>
-    </header>
+    
+    </main>
 
-    <div class="wrapper">
-        <div class="container">
-            <main>
-                <div class="blog_post">
-                    <img src="images/clock-1.jpg" Alt="Clock" />
-                    <h3>NOVEMBER 6, 2017 | ADMIN</h3>
-                    <h2>A super long title that is kind of long and not very short because it’s long</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-                    nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                    culpa qui officia dese... <a href="">Continue reading -></a></p>
+    <aside>
+                    <div class="sidebar">
+                        <form action="login.php" method="post">
+                            <label for="username">Username:</label><br />
+                            <input type="text" name="username" placeholder="Username"><br />
 
-                    COMMENTS (12)
-                </div>
-                <div class="blog_post">
-                    <img src="images/clock-2.jpg" Alt="Clock" />
-                    <h3>NOVEMBER 4, 2017 | ADMIN</h3>
-                    <h2>A short title</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-                    nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                    culpa qui officia dese... <a href="">Continue reading -></a></p>
+                            <label for="password">Password:</label><br />
+                            <input type="text" name="password" placeholder="Password">
+                        </form>
 
-                    COMMENTS (12)
-                </div>
-            </main>
+            <h3>Categories:</h3>
+                
+                
+                    <div class="categories-list">
+                        <ul>
+                        <?php
+                        foreach ($category as $categories):
+                        ?>
+                                <li><a href="index.php?category=<?= $categories['id']?>"><?= $categories['title'] ?></a></li>
+                                <?php endforeach; ?>
+                        </ul>
+                    </div>
+                
+                <h3>Sort by months</h3>
 
-            <aside>
-                <div class="sidebar">
-                    <form action="login.php" method="post">
-                        <label for="username">Username:</label><br />
-                        <input type="text" name="username" placeholder="Username"><br />
+                    <div class="categories-list">
+                        <ul>
+                        <?php
+                        foreach ($month_number as $months):
+                        $month = $months['month'];
+                        ?>
+                                <li><a href="index.php?month=<?= $months['month']?>"><?= replace_month($month) ?></a></li>
+                                <?php endforeach; ?>
+                        </ul>
+                    </div>
 
-                        <label for="password">Password:</label><br />
-                        <input type="text" name="password" placeholder="Password">
-                    </form>
-                    <br />
-                    <h4>Categories:</h4>
-                    <ul>
-                        <li>Clocks</li>
-                        <li>Sunglasses</li>
-                        <li>Interior</li>
-                    </ul>
-                </div>
+            
+                </div> <!-- sidebar end -->
             </aside>
-        </div>
-        <!-- /.container-collapse -->
-    </div> 
-    <!-- /.wrapper-collapse -->
+       </div> <!-- container end -->
+    </div> <!-- wrapper end -->
 
-    <footer>
-        <div class="footer_wrapper">
-            <div class="volt_image">
-                <img src="images/volt_studios-logo.png" Alt="Volt Studios Logo" />
-            </div>
-            <p>Just a footer with footer options</p>
-            <div class="footer_icons">
-                <img src="images/instagram-icon.png" Alt="Instagram" />
-                <img src="images/facebook-icon.png" Alt="Facebook" />
-            </div><!-- footer icons end -->
-        </div><!-- footer wrapper end -->
-    </footer>
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
-            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-            crossorigin="anonymous">
-    </script>
-</body>
-</html>
+    <?php require 'partials/footer.php'; ?>
