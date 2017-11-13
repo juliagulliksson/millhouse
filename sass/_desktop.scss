@@ -29,8 +29,7 @@
     background-color: $dark_blue;
     display: flex;
     flex-direction: row;
-    align-items:
-     center;
+    align-items: center;
     justify-content: space-around;
     p{
         color: #fff;
@@ -39,13 +38,10 @@
 
 .volt_image img{
     height: 25px;
-    margin-bottom: 20px;
 }
 
 .footer_icons{
     width: 7em;
-    display: flex;
-    justify-content: space-between;
     img{
         height: 40px;
     }
