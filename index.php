@@ -1,71 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Millhouse</title>
-    <link rel="stylesheet" 
-        href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-        crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,700i,900,900i" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.rawgit.com/tonsky/FiraCode/1.204/distr/fira_code.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700,900" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link rel="shortcut icon" href="images/millhouse.ico">
-    
-    <?php
-    //Partials functions
-    require "partials/functions/end_session.php";
-    require "partials/functions/start_session.php";
-    require "partials/functions/log_in.php";
-    require "partials/functions/register.php";
-    require "partials/functions/check_if_dublette.php";
-    
-    //Partials
-    require "partials/database.php";
-    require "partials/register.php";
-    require "partials/log_in.php";
-    require "partials/log_out.php";
-    ?>
-</head>
-<body>
-    <header>
-        <nav class="navbar navbar-default navbar-static-top">
-            <div class="container-fluid">
-                <!-- Brand and toggle get grouped for better mobile display -->
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="index.php">
-                        <img src="images/millhouse-logo.png" Alt="Millhouse logo">
-                    </a>
-                </div>
-
-                <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a href="index.php">BLOG</a></li>
-                        <li><a href="about.php">ABOUT</a></li>
-                        <li><a href="contact.php">CONTACT</a></li>
-                    </ul>
-                </div>
-                <!-- /.navbar-collapse -->
-            </div>
-            <!-- /.container-fluid -->
-        </nav>
-
-        <div class="hero">
-            "An awesome and selling slogan"
-        </div>
-    </header>
-
-   <div class="login_wrapper">
+<?php
+require "partials/header.php";
+?>
+   <div class="login_register_wrapper">
        
         <input type="checkbox" 
         name="login_toggle_button" 
@@ -75,16 +11,17 @@
         </label>
         
 
-        <div class="login_toggle_box">
+        <div class="login_register_toggle_box">
            
            <div class="form_wrapper"
              id="login_form_wrapper">
               
                <form action="index.php"
                class="form_toggle"
+               id="login_form"
                method="POST">
                    
-                   <div class="form_input_wrapper">
+                    <div class="form_input_wrapper">
                    
                         <label for="username">
                         USERNAME
@@ -121,23 +58,24 @@
 
     </div><!--.login_wrapper end-->
     
-       <div class="login_wrapper">
+      <div class="login_register_wrapper">
        
         <input type="checkbox" 
-        name="login_toggle_button" 
-        id="login_toggle_button" />
+        name="register_toggle_button" 
+        id="register_toggle_button" />
         
-        <label for="login_toggle_button">
+        <label for="register_toggle_button">
         </label>
         
 
-        <div class="login_toggle_box">
+        <div class="login_register_toggle_box">
            
            <div class="form_wrapper"
              id="login_form_wrapper">
               
                <form action="index.php"
                class="form_toggle"
+               id="register_form"
                method="POST">
                    
                    <div class="form_input_wrapper">
@@ -146,9 +84,21 @@
                         USERNAME
                         </label>
                         <input type="text" 
-                        id="input_login_username"
-                        name="username"
+                        id="input_register_username"
+                        name="register_username"
                         placeholder="Username">
+
+                    </div>
+                    
+                    <div class="form_input_wrapper">
+                   
+                        <label for="email">
+                        EMAIL
+                        </label>
+                        <input type="email" 
+                        id="input_register_email"
+                        name="register_email"
+                        placeholder="Email">
 
                     </div>
                     
@@ -158,8 +108,8 @@
                         PASSWORD
                         </label>
                         <input type="password" 
-                        id="input_login_password"
-                        name="password"
+                        id="input_register_password"
+                        name="register_password"
                         placeholer="Password">
                     
                    </div>
@@ -168,7 +118,7 @@
                         <input type="submit"
                         value="SUBMIT"
                         class="submit_button"
-                        id="submit_login">
+                        id="submit_register">
                    </div>  
                </form>
            </div>
