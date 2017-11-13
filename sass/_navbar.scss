@@ -1,16 +1,17 @@
 .navbar-default .navbar-nav > li > a {
-	color: #fff;
+    color: #fff;
+    text-align: center;
 }
 
 .navbar-default .navbar-nav>li>a:hover,
 .navbar-default .navbar-nav>li>a:focus {
-    color: #1c3145;
-    background-color: #a6cac7;
+    color: $dark_blue;
+    background-color: $light_gray;
 }
 
 .navbar, .navbar-default {
-    background-color: #1c3145;
-    border-color: #1c3145;
+    background-color: $dark_blue;
+    border-color: $dark_blue;
     margin: 0px;
 }
 
@@ -37,15 +38,15 @@ nav, .navbar-nav, .navbar-right{
 }
 
 .navbar-header .navbar-toggle:hover .icon-bar {
-    background-color: #a6cac7;
+    background-color: $light_gray;
 }
 
 .navbar-default .navbar-toggle {
-	border-color: #1c3145;
+	border-color: $dark_blue;
 }
 
 .navbar-default .navbar-toggle:hover,
 .navbar-default .navbar-toggle:focus {
-	background-color: #1c3145;
+	background-color: $dark_blue;
 }
 
