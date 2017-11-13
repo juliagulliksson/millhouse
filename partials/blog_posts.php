@@ -1,6 +1,6 @@
 
 <div class="container">
-    <main>
+   
     <div class="blog_posts">
     
             <article>
