@@ -1,0 +1,56 @@
+.navbar-nav .navbar-right > li > a {
+    background: #fff;
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: #fff;
+    text-align: center;
+}
+
+.navbar-default .navbar-nav>li>a:hover,
+.navbar-default .navbar-nav>li>a:focus {
+    color: $dark_blue;
+    background-color: $light_gray;
+}
+
+.navbar, .navbar-default {
+    background-color: $dark_blue;
+    border-color: $dark_blue;
+    margin: 0px;
+}
+
+.navbar-header .navbar-brand {
+	height: 100px;
+	img{
+		height: 100%;
+	}
+}
+
+nav, .navbar-nav, .navbar-right{
+	margin-top: 25px;
+}
+
+.navbar-toggle {
+	margin-top: 23px;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: #fff;
+    width: 40px;
+    height: 6px;
+    margin: 4px;
+}
+
+.navbar-header .navbar-toggle:hover .icon-bar {
+    background-color: $light_gray;
+}
+
+.navbar-default .navbar-toggle {
+	border-color: $dark_blue;
+}
+
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+	background-color: $dark_blue;
+}
+
