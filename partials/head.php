@@ -12,6 +12,26 @@
         crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="css/style.css">
   <link rel="shortcut icon" href="images/millhouse.ico">
+
+<?php
+
+//Require partials/functions
+require 'partials/functions/start_session.php';
+require 'partials/functions/end_session.php';
+require 'partials/functions/log_in.php';
+require 'partials/functions/register.php';
+require 'partials/functions/check_if_dublette.php';
+
+//Require partials
+require 'partials/database.php';
+require 'partials/sql.php';
+require 'partials/functions.php';
+require 'partials/log_in.php';
+require 'partials/log_out.php';
+require 'partials/register.php';
+
+?>
+
 </head>
 <body>
 

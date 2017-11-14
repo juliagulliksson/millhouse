@@ -1,13 +1,7 @@
 <?php
-require 'partials/database.php';
-require 'partials/sql.php';
-
-require 'partials/functions.php';
-require 'partials/head.php';
-$today = date('Y-n-j');
-
+    require 'partials/head.php';
 ?>
-    <div class="wrapper">
+<div class="wrapper">
         <div class="input_container">
             <main>
                 <div class="login">
