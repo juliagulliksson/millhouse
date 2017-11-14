@@ -12,7 +12,6 @@
         crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="css/style.css">
   <link rel="shortcut icon" href="images/millhouse.ico">
-
 <?php
 
 //Require partials/functions
@@ -31,6 +30,7 @@ require 'partials/log_out.php';
 require 'partials/register.php';
 
 ?>
+<script src="https://cdn.ckeditor.com/ckeditor5/1.0.0-alpha.1/classic/ckeditor.js"></script>
 
 </head>
 <body>

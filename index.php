@@ -2,26 +2,25 @@
 require 'partials/head.php';
 
 $today = date('Y-n-j');
-
 ?>
 
 <div class="wrapper">
     <div class="container">
-        <main>
-        <?php
-            //Startpage blog posts
-            if(!isset($_GET['id']) && !isset($_GET['category']) 
-            && !isset($_GET['asc']) 
-            && !isset($_GET['month'])):
-                foreach ($articles as $article):
+     
+    <main>
+    <?php
+    //Startpage blog posts
+        if(!isset($_GET['id']) && !isset($_GET['category']) 
+        && !isset($_GET['asc']) 
+        && !isset($_GET['month'])):
+            foreach ($articles as $article):
                 include 'partials/blog_posts.php';
-                endforeach;
-            endif;
-        
+            endforeach;
+        endif;
+      
             //individual blog posts
             if(isset($_GET['id'])):
         ?>
-
             <a href="index.php" class="comments-count">Go back</a>
             <?php
             $id = $_GET['id'];
@@ -31,6 +30,7 @@ $today = date('Y-n-j');
                 
             foreach ($article_single as $article):
             ?>
+
             
             <div class="blog_post">
                 <article>
@@ -49,40 +49,45 @@ $today = date('Y-n-j');
                         <input type="hidden" value="<?= $today ?>" name="date">
                         <textarea name="comment" placeholder="Type your comment"></textarea>
                         <input type="submit" name="comment_submit" value="Comment">
-                    </form>
+                  </form>
                 </div>
                 <!-- /.comment-field-collapse -->
             </div>
             <!-- /.blog_post-collapse -->
             
-
-                <?php endforeach; ?>
+          <?php endforeach; ?>
         
+       
+                <?php
+            //function_article.php is where $comments is made
+            if(count($comments) > 0):
+                ?>
                 <h2>Comments:</h2>
                 <?php
-                    //function_article.php is where $comments is made
-                    foreach($comments as $comment): 
+                foreach($comments as $comment): 
                 ?>
-                <div class="comments-box">
-                    <h3>Comment created by: <?= $comment['username']?></h3>
-                    <p>On <?= replace_date($comment['date']) ?> </p>
-                    <p><?= $comment['text']?> </p>
-                </div>
-                <!-- /.comments-box-collapse -->
-            <?php 
-            endforeach; 
+                    <div class="comments-box">
+                        <h3>Comment created by: <?= $comment['username']?></h3>
+                        <p>On <?= replace_date($comment['date']) ?> </p>
+                        <p><?= $comment['text']?> </p>
+                    </div>
+                  <!-- comments-box-collapse -->
+                <?php 
+                endforeach; 
+            endif; //END OF COUNT COMMENTS IF
 
             endif; //END OF GET ID IF 
 
-            if(isset($_GET['category']) && !isset($_GET['asc'])):
-                $categories = $_GET['category'];
-                include 'partials/category_articles.php';  
-            ?>  
+        if(isset($_GET['category']) && !isset($_GET['asc'])):
+            $categories = $_GET['category'];
+            include 'partials/category_articles.php';  
+        ?>  
 
             <a href="index.php?category=<?= $categories?>&asc=true">Order by oldest</a>
 
-            <?php foreach($category_articles as $article):
-                include 'partials/blog_posts.php';
+            <?php 
+            foreach($category_articles as $article):
+                    include 'partials/blog_posts.php';
             
             endforeach;       
                 
@@ -98,6 +103,8 @@ $today = date('Y-n-j');
             endforeach; 
             
             endif; //END OF CATEGORIES 
+
+
 
     
             if(isset($_GET['month'])):

@@ -2,9 +2,6 @@
 header('location: ../index.php');
 require 'database.php';
 
-
-
-var_dump($_POST);
 $title = $_POST['blog_title'];
 $category = $_POST['category'];
 $body = $_POST['post_text'];
@@ -16,9 +13,5 @@ echo $body;
 //echo $date;
 
 $statement = $pdo->prepare("INSERT INTO posts (post_title, category_id, text, date, user_id) 
-VALUES ('$title', $category, '$body', '$today', 1)");
+VALUES ('$title', $category, '$body', CURRENT_TIMESTAMP(), 1)");
 $statement->execute();
-  
- 
-
-  
