@@ -2,7 +2,6 @@
 header('location: ../index.php');
 require 'database.php';
 
-var_dump($_POST);
 $title = $_POST['blog_title'];
 $category = $_POST['category'];
 $body = $_POST['post_text'];
