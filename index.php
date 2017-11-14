@@ -11,7 +11,6 @@ require 'partials/head.php';
 <div class="wrapper">
     <div class="container">
      
-
     <main>
     <?php
     //Startpage blog posts
@@ -19,7 +18,7 @@ require 'partials/head.php';
         && !isset($_GET['asc']) 
         && !isset($_GET['month'])):
             foreach ($articles as $article):
-            include 'partials/blog_posts.php';
+                include 'partials/blog_posts.php';
             endforeach;
         endif;
         
@@ -74,7 +73,6 @@ require 'partials/head.php';
 
         endif; //END OF GET ID IF 
 
-        
         if(isset($_GET['category']) && !isset($_GET['asc'])):
             $categories = $_GET['category'];
             include 'partials/category_articles.php';  
@@ -91,6 +89,7 @@ require 'partials/head.php';
                 $categories = $_GET['category'];
                 include 'partials/category_articles.php';
                 ?>
+
                 <a href="index.php?category=<?= $categories?>">Order by newest</a>
 
                 <?php
@@ -119,8 +118,7 @@ require 'partials/head.php';
                 <label for="category">Choose category: </label>
                 <select name="category">
                 <?php foreach($category as $categories):?>
-                <option value="<?= $categories['id']?>"><?= $categories['title']?></option>
-
+                    <option value="<?= $categories['id']?>"><?= $categories['title']?></option>
                 <?php endforeach; ?>
                 </select>
                 <textarea name="post_text" placeholder="Type your blog post here"></textarea>
