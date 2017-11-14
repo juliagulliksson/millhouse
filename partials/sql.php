@@ -11,7 +11,7 @@ require 'database.php';
 //Main article fetch
 $statement = $pdo->prepare("SELECT posts.date, posts.id as postID, 
 posts.text, posts.post_title, categories.title, 
-users.username, users.id as user_id, COUNT(comments.post_id) AS comments
+users.username, users.email, users.id as user_id, COUNT(comments.post_id) AS comments
 FROM posts 
 INNER JOIN categories 
 ON posts.category_id=categories.id

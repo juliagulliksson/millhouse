@@ -37,7 +37,7 @@ require 'partials/head.php';
                 <div class="blog_post">
                     <article>
                         <h2><?= $article['post_title']; ?></h2>
-                        <h3> <?= replace_date($article['date']) ?> | <?= $article['username'] ?></h3>
+                        <h3> <?= replace_date($article['date']) ?> | <?= $article['username'] ?>  | <?= $article['email']?></h3>
                         <h3>Category: <?= $article['title']; ?></h3>
                         <p><?= nl2br($article['text']) ?></p>
                     </article>
@@ -75,12 +75,15 @@ require 'partials/head.php';
 
         if(isset($_GET['category']) && !isset($_GET['asc'])):
             $categories = $_GET['category'];
-            include 'partials/category_articles.php';  
-        ?>  
-        <h4>Sort by date | <a href="index.php?category=<?= $categories?>&asc=true">Oldest</a></h4>
-            
+            include 'partials/category_articles.php'; 
 
+            if (count($category_articles) > 1):
+            ?>  
+                <h4>Sort by date | <a href="index.php?category=<?= $categories?>&asc=true">Oldest</a></h4>
+                
             <?php 
+            endif;//End of count category_articles if
+
             foreach($category_articles as $article):
                     include 'partials/blog_posts.php';
             
@@ -90,8 +93,8 @@ require 'partials/head.php';
                 $categories = $_GET['category'];
                 include 'partials/category_articles.php';
                 ?>
-        <h4>Sort by date | <a href="index.php?category=<?= $categories?>">Newest</a></h4>
-                
+
+            <h4>Sort by date | <a href="index.php?category=<?= $categories?>">Newest</a></h4>
 
                 <?php
                 foreach($category_articles_asc as $article):
