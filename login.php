@@ -1,13 +1,8 @@
 <?php
-require 'partials/database.php';
-require 'partials/sql.php';
-
-require 'partials/functions.php';
 require 'partials/head.php';
+
 $today = date('Y-n-j');
-
 ?>
-
     <div class="wrapper">
         <div class="input_container">
             <main>
