@@ -77,7 +77,8 @@ require 'partials/head.php';
             $categories = $_GET['category'];
             include 'partials/category_articles.php';  
         ?>  
-            <a href="index.php?category=<?= $categories?>&asc=true">Order by oldest</a>
+        <h4>Sort by date | <a href="index.php?category=<?= $categories?>&asc=true">Oldest</a></h4>
+            
 
             <?php 
             foreach($category_articles as $article):
@@ -89,8 +90,8 @@ require 'partials/head.php';
                 $categories = $_GET['category'];
                 include 'partials/category_articles.php';
                 ?>
-
-                <a href="index.php?category=<?= $categories?>">Order by newest</a>
+        <h4>Sort by date | <a href="index.php?category=<?= $categories?>">Newest</a></h4>
+                
 
                 <?php
                 foreach($category_articles_asc as $article):
