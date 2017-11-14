@@ -79,7 +79,7 @@ require 'partials/head.php';
 
             if (count($category_articles) > 1):
             ?>  
-                <h4>Sort by date | <a href="index.php?category=<?= $categories?>&asc=true">Oldest</a></h4>
+                <h4>Sort by date | <a name="newest" href="index.php?category=<?= $categories?>&asc=true#oldest">Oldest</a></h4>
                 
             <?php 
             endif;//End of count category_articles if
@@ -94,13 +94,13 @@ require 'partials/head.php';
                 include 'partials/category_articles.php';
                 ?>
 
-            <h4>Sort by date | <a href="index.php?category=<?= $categories?>">Newest</a></h4>
+            <h4>Sort by date | <a name="oldest" href="index.php?category=<?= $categories?>#newest">Newest</a></h4>
 
                 <?php
                 foreach($category_articles_asc as $article):
                     include 'partials/blog_posts.php';
                 endforeach; 
-    endif; //END OF CATEGORIES 
+            endif; //END OF CATEGORIES 
 
     
     if(isset($_GET['month'])):
