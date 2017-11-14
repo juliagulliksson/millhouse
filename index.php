@@ -108,6 +108,7 @@ require 'partials/head.php';
             endif; //END OF CATEGORIES 
 
 
+
     
             if(isset($_GET['month'])):
                 $month = $_GET['month'];
@@ -171,4 +172,3 @@ require 'partials/head.php';
 </div> <!-- wrapper end -->
 
 <?php require 'partials/footer.php'; ?>
-

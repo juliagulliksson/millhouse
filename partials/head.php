@@ -12,6 +12,8 @@
         crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="css/style.css">
   <link rel="shortcut icon" href="images/millhouse.ico">
+<script src="https://cdn.ckeditor.com/ckeditor5/1.0.0-alpha.1/classic/ckeditor.js"></script>
+
 </head>
 <body>
 
