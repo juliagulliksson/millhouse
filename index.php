@@ -1,11 +1,7 @@
-
 <?php
-require 'partials/database.php';
-require 'partials/sql.php';
-
-require 'partials/functions.php';
 require 'partials/head.php';
 
+$today = date('Y-n-j');
 ?>
 
 <div class="wrapper">
@@ -21,9 +17,9 @@ require 'partials/head.php';
                 include 'partials/blog_posts.php';
             endforeach;
         endif;
-        
-        //individual blog posts
-        if(isset($_GET['id'])):
+      
+            //individual blog posts
+            if(isset($_GET['id'])):
         ?>
             <a href="index.php" class="comments-count">Go back</a>
             <?php
@@ -34,24 +30,33 @@ require 'partials/head.php';
                 
             foreach ($article_single as $article):
             ?>
-                <div class="blog_post">
-                    <article>
-                        <h2><?= $article['post_title']; ?></h2>
-                        <h3> <?= replace_date($article['date']) ?> | <?= $article['username'] ?>  | <?= $article['email']?></h3>
-                        <h3>Category: <?= $article['title']; ?></h3>
-                        <p><?= nl2br($article['text']) ?></p>
-                    </article>
-                    <div class="comment-field">
-                            <h3>Comment the blog post here:</h3>
-                            <form action="partials/comment_insert.php?post_id=<?= $article['postID']?>" method="POST">
-                                <input type="hidden" value=<?= $article['user_id'] ?> name="user_id">
-                                <textarea name="comment" placeholder="Type your comment"></textarea>
-                                <input type="submit" name="comment_submit" value="Comment">
-                            </form>
-                    </div> 
-                </div>
+
             
-        <?php endforeach; ?>
+            <div class="blog_post">
+                <article>
+                    <h2><?= $article['post_title']; ?></h2>
+                        
+                    <h3> <?= replace_date($article['date']) ?> | <?= $article['username'] ?></h3>
+                    <h3>Category: <?= $article['title']; ?></h3>
+                       
+                    <p><?= nl2br($article['text']) ?></p>
+                        
+                </article>
+                <div class="comment-field">
+                    <h3>Comment the blog post here:</h3>
+                    <form action="partials/comment_insert.php?post_id=<?= $article['postID']?>" method="POST">
+                        <input type="hidden" value=<?= $article['user_id'] ?> name="user_id">
+                        <input type="hidden" value="<?= $today ?>" name="date">
+                        <textarea name="comment" placeholder="Type your comment"></textarea>
+                        <input type="submit" name="comment_submit" value="Comment">
+                  </form>
+
+                </div>
+                <!-- /.comment-field-collapse -->
+            </div>
+            <!-- /.blog_post-collapse -->
+            
+          <?php endforeach; ?>
         
        
                 <?php
@@ -67,11 +72,12 @@ require 'partials/head.php';
                         <p>On <?= replace_date($comment['date']) ?> </p>
                         <p><?= $comment['text']?> </p>
                     </div>
+                  <!-- comments-box-collapse -->
                 <?php 
                 endforeach; 
-            endif;
+            endif; //END OF COUNT COMMENTS IF
 
-        endif; //END OF GET ID IF 
+            endif; //END OF GET ID IF 
 
         if(isset($_GET['category']) && !isset($_GET['asc'])):
             $categories = $_GET['category'];
@@ -100,77 +106,69 @@ require 'partials/head.php';
                 foreach($category_articles_asc as $article):
                     include 'partials/blog_posts.php';
                 endforeach; 
+
             endif; //END OF CATEGORIES 
 
-    
-    if(isset($_GET['month'])):
-        $month = $_GET['month'];
-        include 'partials/month_articles.php';
-        
-        foreach($month_articles as $article):
-            include 'partials/blog_posts.php';
-        endforeach; 
+
+            if(isset($_GET['month'])):
+                $month = $_GET['month'];
+                include 'partials/month_articles.php';
+                
+                foreach($month_articles as $article):
+                    include 'partials/blog_posts.php';
+                endforeach; 
 
 
-     endif; //END OF MONTHS ?>
+            endif; //END OF MONTHS ?>
 
 
-        <div class="insert-form">
-            <h2>Write a new blog post:</h2>
-            <form action="partials/insert.php" method="POST">
-                <input type="text" placeholder="Type your title here" name="blog_title">
-                <label for="category">Choose category: </label>
-                <select name="category">
-                <?php foreach($category as $categories):?>
-                    <option value="<?= $categories['id']?>"><?= $categories['title']?></option>
-                <?php endforeach; ?>
-                </select>
-                <textarea name="post_text" placeholder="Type your blog post here"></textarea>
-                <input type="submit" value="Submit">
-            </form>
-
-        </div>
-    
-    </main>
-
-    <aside>
-        <div class="sidebar">
-            <form action="login.php" method="post">
-                <label for="username">Username:</label><br />
-                <input type="text" name="username" placeholder="Username"><br />
-
-                <label for="password">Password:</label><br />
-                <input type="text" name="password" placeholder="Password">
-            </form>
-
-            <h3>Categories:</h3>
-
-            <div class="categories-list">
-                <ul>
-                <?php
-                foreach ($category as $categories):
-                ?>
-                        <li><a href="index.php?category=<?= $categories['id']?>"><?= $categories['title'] ?></a></li>
-                        <?php endforeach; ?>
-                </ul>
+            <div class="insert-form">
+                <h2>Write a new blog post:</h2>
+                <form action="partials/insert.php" method="POST">
+                    <input type="text" placeholder="Type your title here" name="blog_title">
+                    <label for="category">Choose category: </label>
+                    <select name="category">
+                    <?php foreach($category as $categories):?>
+                        <option value="<?= $categories['id']?>"><?= $categories['title']?></option>
+                    <?php endforeach; ?>
+                    </select>
+                    <textarea name="post_text" placeholder="Type your blog post here"></textarea>
+                    <input type="hidden" value="<?= $today ?>" name="date">
+                    <input type="submit" value="Submit">
+                </form>
             </div>
+            <!-- /.insert-form-collapse -->
+        </main>
+
+        <aside>
+            <div class="sidebar">
+                <h3>Categories:</h3>
+                <div class="categories-list">
+                    <ul>
+                    <?php foreach ($category as $categories): ?>
+                        <li>
+                            <a href="index.php?category=<?= $categories['id']?>"><?= $categories['title'] ?></a>
+                        </li>
+                    <?php endforeach; ?>
+                    </ul>
+                </div>
+                <!-- /.categories-list-collapse -->
                 
                 <h3>Sort by months</h3>
+                <div class="categories-list">
+                    <ul>
+                    <?php foreach ($month_number as $months):
+                        $month = $months['month'];
+                    ?>
+                        <li><a href="index.php?month=<?= $months['month']?>"><?= replace_month($month) ?></a></li>
+                    <?php endforeach; ?>
+                    </ul>
+                </div>
+                <!-- /. categories-list-collapse -->
+            </div>
+            <!-- /.sidebar-collapse -->
+        </aside>
+    </div> <!-- container end -->
+</div> <!-- wrapper end -->
 
-                    <div class="categories-list">
-                        <ul>
-                        <?php
-                        foreach ($month_number as $months):
-                            $month = $months['month'];
-                        ?>
-                                <li><a href="index.php?month=<?= $months['month']?>"><?= replace_month($month) ?></a></li>
-                        <?php endforeach; ?>
-                        </ul>
-                    </div> <!-- categories end -->
-            
-                </div> <!-- sidebar end -->
-            </aside>
-       </div> <!-- container end -->
-    </div> <!-- wrapper end -->
-
-    <?php require 'partials/footer.php'; ?>
+<?php require 'partials/footer.php'; ?>
