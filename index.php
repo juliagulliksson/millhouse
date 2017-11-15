@@ -6,7 +6,6 @@ $today = date('Y-n-j');
 
 <div class="wrapper">
     <div class="container">
-     
         <main>
             <?php
             // Startpage blog posts
@@ -32,7 +31,6 @@ $today = date('Y-n-j');
             foreach ($article_single as $article):
             ?>
 
-                
             <div class="blog_post">
                 <article>
                     <h2><?= $article['post_title']; ?></h2>
@@ -49,6 +47,7 @@ $today = date('Y-n-j');
                         <input type="hidden" value=<?= $article['user_id'] ?> name="user_id">
                         <input type="hidden" value="<?= $today ?>" name="date">
                         <textarea name="comment" placeholder="Type your comment"></textarea>
+                        <br />
                         <input type="submit" name="comment_submit" value="Comment">
                 </form>
                 </div>
@@ -102,8 +101,6 @@ $today = date('Y-n-j');
                 
             endif; //END OF CATEGORIES 
 
-
-
         
             if(isset($_GET['month'])):
                 $month = $_GET['month'];
@@ -113,27 +110,9 @@ $today = date('Y-n-j');
                     include 'partials/blog_posts.php';
                 endforeach; 
                 
-            endif; //END OF MONTHS ?>
+            endif; //END OF MONTHS
 
-
-            <div class="insert-form">
-                <h2>Write a new blog post:</h2>
-                <form action="partials/insert.php" method="POST">
-                    <input type="text" placeholder="Type your title here" name="blog_title">
-                    <br />
-                    <label for="category">Choose category:</label>
-                    <br />
-                    <select name="category">
-                    <?php foreach($category as $categories):?>
-                        <option value="<?= $categories['id']?>"><?= $categories['title']?></option>
-                    <?php endforeach; ?>
-                    </select>
-                    <textarea name="post_text" placeholder="Type your blog post here"></textarea>
-                    <input type="hidden" value="<?= $today ?>" name="date">
-                    <input type="submit" value="Submit">
-                </form>
-            </div>
-            <!-- /.insert-form-collapse -->
+            require 'partials/new_post.php';?>
         </main>
 
         <aside>

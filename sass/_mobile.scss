@@ -14,17 +14,19 @@ a:hover{
 
 h2{
     font-weight: 900;
-    margin: 0em 0em 0.3em 0em;
+    margin: 0em 0em 0.5em 0em;
 }
 
 h3{
+    margin: 0.8em 0em;
     font-size: 0.9em;
-    font-weight: 900;
-    margin: 1.5em 0em 0.8em 0em;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
 }
 
 h4{
     font-weight: 900;
+    margin: 0.2em 0em;
 }
 
 .hero{
@@ -52,7 +54,7 @@ h4{
 .container{
     padding: 2em;
     width: 100%;
-    background: #fff;
+    background-color: #fff;
 }
 
 .input_container{
@@ -125,24 +127,23 @@ h4{
         padding: 10px;
         margin-bottom: 15px;
         font-family: 'Fira Code', monospace;
+        color: $dark_blue;
         text-align: center;
-        background: $input;
+        background-color: $input;
         border: 0px;
         border-radius: 3px;
         -moz-border-radius: 3px;
         -webkit-border-radius: 3px;
     }
-
     input[type=submit]{
         @extend input[type=text];
         color: #fff;
-        background: #5d7e93;
+        background-color: #5d7e93;
         margin-bottom: 20px;
         box-shadow: 0px 3px 0px 0px $dark_blue;
         -webkit-box-shadow: 0px 3px 0px 0px $dark_blue;
         -moz-box-shadow: 0px 3px 0px 0px $dark_blue;
     }
-
     input[type=submit]:hover{
         color: $dark_blue;
         background-color: $light_gray;
@@ -158,6 +159,7 @@ select{
     padding: 10px;
     margin-bottom: 10px;
     font-family: 'Fira Code', monospace;
+    color: $dark_blue;
     background-color: $input;
     border: 0px;
     border-radius: 5px;
@@ -173,11 +175,9 @@ select{
         text-align: left;
     }
     textarea{
-        @extend input[type=text];
-        display: block;
-        resize: none;
+        @extend select;
         height: 150px;
-        margin: 20px 0px;
+        resize: none;
     }
     input[type=submit]{
         width: 100px;
@@ -197,18 +197,13 @@ select{
     width: 100%;
     background-color: $dark_blue;
     border: none;
-        border-top-left-radius: 5px;
-        border-top-right-radius: 5px;
-        -webkit-border-top-left-radius: 5px;
-        -webkit-border-top-right-radius: 5px;
-        -moz-border-radius-topleft: 5px;
-        -moz-border-radius-topright: 5px;
 }
 
-// Styling for textarea
+// Styling for CKEditor textarea
 .ck-editor__main{
     width: 100%;
     margin-bottom: 20px;
+    font-family: 'Fira Code', monospace;
     background-color: $input;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
@@ -218,7 +213,7 @@ select{
     -moz-border-radius-bottomright: 5px;
 }
 
-// Border on textarea
+// CKEditor textarea
 .ck-editor__editable
 .ck-rounded-corners, 
 .ck-rounded-corners
@@ -227,3 +222,42 @@ select{
     height: 200px;
 }
 
+.profile-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    background-color: $input;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+}
+
+.profile img{
+    max-width: 8em;
+}
+
+.profile-info{
+    width: 60%;
+}
+
+.amount-container{
+    @extend .profile-container;
+    justify-content: space-around;
+}
+
+.amount{
+    padding: 10px;
+    text-align: center;
+    background-color: $input;
+}
+
+.list-container{
+    @extend .amount-container;
+    display: block;
+    text-align: center;
+    padding: 10px;
+    ul{
+        list-style: none;
+    }
+}
