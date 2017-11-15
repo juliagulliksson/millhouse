@@ -25,16 +25,30 @@ require 'partials/functions/check_if_dublette.php';
 require 'partials/database.php';
 require 'partials/sql.php';
 require 'partials/functions.php';
-require 'partials/log_in.php';
+
 require 'partials/log_out.php';
 require 'partials/register.php';
 
 ?>
 <script src="https://cdn.ckeditor.com/ckeditor5/1.0.0-alpha.1/classic/ckeditor.js"></script>
+<style>
+.ck-editor__editable.ck-rounded-corners, 
+.ck-rounded-corners .ck-editor__editable{
+    border: none;
+}
+
+.ck-editor__top .ck-sticky-panel .ck-toolbar.ck-rounded-corners, 
+.ck-rounded-corners .ck-editor__top .ck-sticky-panel .ck-toolbar{
+    border-radius: 4px;
+}
+
+</style>
 
 </head>
 <body>
-
+<?php 
+start_session();
+?>
     <header>
         <nav class="navbar navbar-default navbar-static-top">
             <div class="container-fluid">
@@ -76,3 +90,6 @@ require 'partials/register.php';
             <h3>An awesome and selling slogan</h3>
         </div>
     </header>
+<?php 
+require 'partials/log_in.php';
+?>

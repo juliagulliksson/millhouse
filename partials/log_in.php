@@ -8,5 +8,6 @@ if (isset($_POST["username"]) && isset($_POST["password"])){
 
 if (isset($_SESSION["username"])){ 
     echo $_SESSION["username"]; 
+    
 } 
 ?>

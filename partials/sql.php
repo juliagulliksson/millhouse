@@ -2,10 +2,9 @@
 
 require 'database.php';
 
- 
-//nl2br = gör så att varje line break i artikel-fält blir till br-taggar
-
-
+//to select comments with posts
+//SELECT posts.id, posts.post_title, GROUP_CONCAT(comments.text), count(*) as coment_cnt 
+//FROM posts LEFT JOIN comments ON (posts.id = comments.post_id) GROUP BY posts.id
 
 
 //Main article fetch

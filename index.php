@@ -42,10 +42,13 @@ $today = date('Y-n-j');
                     <p><?= nl2br($article['text']) ?></p>
                         
                 </article>
+                <?php
+                 if(isset($_SESSION['username'])):
+                ?>
                 <div class="comment-field">
                     <h3>Comment the blog post here:</h3>
                     <form action="partials/comment_insert.php?post_id=<?= $article['postID']?>" method="POST">
-                        <input type="hidden" value=<?= $article['user_id'] ?> name="user_id">
+                        <input type="hidden" value=<?= $_SESSION['id'] ?> name="user_id">
                         <input type="hidden" value="<?= $today ?>" name="date">
                         <textarea name="comment" placeholder="Type your comment"></textarea>
                         <input type="submit" name="comment_submit" value="Comment">
@@ -56,27 +59,28 @@ $today = date('Y-n-j');
             </div>
             <!-- /.blog_post-collapse -->
             
-          <?php endforeach; ?>
+          <?php 
+                 endif; //end of isset username if
+            endforeach; ?>
         
        
                 <?php
             //function_article.php is where $comments is made
-            if(count($comments) > 0):
-                ?>
-                <h2>Comments:</h2>
-                <?php
-                foreach($comments as $comment): 
-                ?>
-                    <div class="comments-box">
-                        <h3>Comment created by: <?= $comment['username']?></h3>
-                        <p>On <?= replace_date($comment['date']) ?> </p>
-                        <p><?= $comment['text']?> </p>
-                    </div>
-                  <!-- comments-box-collapse -->
-                <?php 
-                endforeach; 
-            endif; //END OF COUNT COMMENTS IF
-
+                if(count($comments) > 0):
+                    ?>
+                    <h2>Comments:</h2>
+                    <?php
+                    foreach($comments as $comment): 
+                    ?>
+                        <div class="comments-box">
+                            <h3>Comment created by: <?= $comment['username']?></h3>
+                            <p>On <?= replace_date($comment['date']) ?> </p>
+                            <p><?= $comment['text']?> </p>
+                        </div>
+                    <!-- comments-box-collapse -->
+                    <?php 
+                    endforeach; 
+                endif; //END OF check session if
             endif; //END OF GET ID IF 
 
         if(isset($_GET['category']) && !isset($_GET['asc'])):
@@ -119,25 +123,13 @@ $today = date('Y-n-j');
                 endforeach; 
 
 
-            endif; //END OF MONTHS ?>
+            endif; //END OF MONTHS 
+            
 
+            require 'partials/new_post.php';
 
-            <div class="insert-form">
-                <h2>Write a new blog post:</h2>
-                <form action="partials/insert.php" method="POST">
-                    <input type="text" placeholder="Type your title here" name="blog_title">
-                    <label for="category">Choose category: </label>
-                    <select name="category">
-                    <?php foreach($category as $categories):?>
-                        <option value="<?= $categories['id']?>"><?= $categories['title']?></option>
-                    <?php endforeach; ?>
-                    </select>
-                    <textarea name="post_text" placeholder="Type your blog post here"></textarea>
-                    <input type="hidden" value="<?= $today ?>" name="date">
-                    <input type="submit" value="Submit">
-                </form>
-            </div>
-            <!-- /.insert-form-collapse -->
+            ?>
+
         </main>
 
         <aside>
