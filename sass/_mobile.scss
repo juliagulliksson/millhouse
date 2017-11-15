@@ -254,10 +254,11 @@ select{
 
 .list-container{
     @extend .amount-container;
-    display: block;
+    flex-direction: column;
     text-align: center;
-    padding: 10px;
+    padding: 10px 0px;
     ul{
         list-style: none;
+        padding-left: 0px;
     }
 }
