@@ -16,7 +16,7 @@
 
 //Require partials/functions
 require 'partials/functions/start_session.php';
-require 'partials/functions/end_session.php';
+//require 'partials/functions/end_session.php';
 require 'partials/functions/log_in.php';
 require 'partials/functions/register.php';
 require 'partials/functions/check_if_dublette.php';
@@ -47,8 +47,13 @@ require 'partials/register.php';
 </head>
 <body>
 <?php 
+ini_set('session.gc_maxlifetime', 10);
+session_set_cookie_params(10);
 start_session();
+
+require 'partials/log_in.php';
 ?>
+
     <header>
         <nav class="navbar navbar-default navbar-static-top">
             <div class="container-fluid">
@@ -77,8 +82,17 @@ start_session();
                         <li><a href="contact.php">CONTACT</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
+                        <?php
+                        if(!isset($_SESSION['signed_in'])):
+                        ?>
                         <li><a href="login.php">Login</a></li>
                         <li><a href="register.php">Register</a></li>
+                        <?php 
+                        else:
+                            ?>
+                            <li><a href="index.php?end_session=true">Log out</a></li>
+                        <?php endif; ?>
+
                     </ul>
                 </div>
                 <!-- /.navbar-collapse -->
@@ -90,6 +104,3 @@ start_session();
             <h3>An awesome and selling slogan</h3>
         </div>
     </header>
-<?php 
-require 'partials/log_in.php';
-?>

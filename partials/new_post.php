@@ -1,5 +1,7 @@
 <?php
-if (isset($_SESSION['username']) && $_SESSION['contributor'] == true && !isset($_GET['id'])):
+if (isset($_SESSION['username']) 
+&& $_SESSION['contributor'] == true 
+&& !isset($_GET['id'])):
     ?> 
 <div class="insert-form">
     <h2>Write a new blog post:</h2>

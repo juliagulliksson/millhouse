@@ -60,6 +60,9 @@ $today = date('Y-n-j');
             <!-- /.blog_post-collapse -->
             
           <?php 
+                    else:
+                        echo "<b>Sign in to comment</b>";
+
                  endif; //end of isset username if
             endforeach; ?>
         
