@@ -16,12 +16,40 @@
     width: 95%;
 }
 
-.comment-field,
-.insert-form{
-    input[type=text],
-    select,
+.form-group{
+    display: flex;
+    width: 70%;
+}
+
+.form-group__title,
+.form-group__category{
+    width: 100%;
+}
+
+.form-group__title{
+    margin-right: 20px; 
+}
+
+// Editor
+.ck-editor__top 
+.ck-sticky-panel
+.ck-toolbar
+.ck-rounded-corners, 
+.ck-rounded-corners
+.ck-editor__top
+.ck-sticky-panel
+.ck-toolbar,
+.ck-editor__main{
+    width: 70%;
+}
+
+.comment-field{
     textarea{
         width: 70%;
+    }
+    input[type=text],
+    select{
+        width: 100%;
     }
     input[type=submit]{
         width: 100px;
