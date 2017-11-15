@@ -16,21 +16,22 @@
     width: 95%;
 }
 
-.comment-field textarea, 
-.insert-form textarea {
-    width: 50%;
-    resize: none;
-    height: 90px;
-    display: block;
-    margin: 20px 0;
+.comment-field,
+.insert-form{
+    input[type=text],
+    select,
+    textarea{
+        width: 70%;
+    }
+    input[type=submit]{
+        width: 100px;
+        text-align: center;
+    }
 }
 
 .sidebar{
     display: block;
     width: 200px;
-    input{
-        width: 180px;
-    }
 }
 
 .footer_wrapper{
