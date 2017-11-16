@@ -8,6 +8,7 @@ if (isset($_POST["username"]) && isset($_POST["password"])){
 
 if (isset($_SESSION["username"])){ 
     echo "Hello " . $_SESSION["username"] . "!"; 
+    var_dump($_SESSION);
     
 } 
 ?>

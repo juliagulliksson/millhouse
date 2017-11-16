@@ -31,6 +31,5 @@ if (isset($_SESSION['username'])
         <input type="hidden" value="<?= $today ?>" name="date">
         <input type="submit" value="Submit">
     </form>
-</div>
-<!-- /.insert-form-collapse -->
+
 <?php endif; ?>

@@ -1,7 +1,7 @@
 <div class="blog_post">
     
             <article>
-                <?php
+            <?php
                 if(isset($_SESSION['signed_in'])):
                     if ($article['user_id'] == $_SESSION['id']):
                         ?>
@@ -13,7 +13,6 @@
                 endif;
                     ?>
 
-               
         <h3> <?= replace_date($article['date']) ?> | <?= $article['username'] ?></h3>
         <h2><?= $article['post_title']; ?></h2>
         <p><?= string_length($article['text'], 200)?></p>

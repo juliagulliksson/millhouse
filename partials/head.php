@@ -34,8 +34,8 @@ require 'partials/register.php';
 </head>
 <body>
 <?php 
-ini_set('session.gc_maxlifetime', 60);
-session_set_cookie_params(60);
+ini_set('session.gc_maxlifetime', 3600);
+session_set_cookie_params(3600);
 start_session();
 
 require 'partials/log_in.php';
@@ -71,14 +71,16 @@ require 'partials/log_in.php';
                     <ul class="nav navbar-nav navbar-right">
 
                         <?php
-                        if(!isset($_SESSION['signed_in'])):
+                        if(isset($_SESSION['signed_in'])):
                         ?>
-                        <li><a href="login.php">Login</a></li>
-                        <li><a href="register.php">Register</a></li>
+                            <li><a href="profile.php">My profile</a></li>
+                            <li><a href="index.php?end_session=true">Log out</a></li>
                         <?php 
                         else:
                             ?>
-                            <li><a href="index.php?end_session=true">Log out</a></li>
+                             <li><a href="login.php">Login</a></li>
+                            <li><a href="register.php">Register</a></li>
+                            
                         <?php endif; ?>
 
                     </ul>
