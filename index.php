@@ -6,43 +6,43 @@ $today = date('Y-n-j');
 
 <div class="wrapper">
     <div class="container">
-     
-    <main>
-    <?php
-    //Startpage blog posts
-        if(!isset($_GET['id']) && !isset($_GET['category']) 
-        && !isset($_GET['asc']) 
-        && !isset($_GET['month'])):
-            foreach ($articles as $article):
-                include 'partials/blog_posts.php';
-            endforeach;
-        endif;
-      
-            //individual blog posts
+        <main>
+            <?php
+            // Startpage blog posts
+            if(!isset($_GET['id']) && !isset($_GET['category']) 
+            && !isset($_GET['asc']) 
+            && !isset($_GET['month'])):
+                foreach ($articles as $article):
+                    include 'partials/blog_posts.php';
+                endforeach;
+            endif;
+        
+            // Individual blog posts
             if(isset($_GET['id'])):
-        ?>
+            ?>
+                
             <a href="index.php" class="comments-count">Go back</a>
             <?php
             $id = $_GET['id'];
 
             //require SQL-queries
             require 'partials/function_article.php';
-                
+                    
             foreach ($article_single as $article):
             ?>
 
-            
             <div class="blog_post">
                 <article>
                     <h2><?= $article['post_title']; ?></h2>
-                        
+                            
                     <h3> <?= replace_date($article['date']) ?> | <?= $article['username'] ?></h3>
                     <h3>Category: <?= $article['title']; ?></h3>
-                       
-                    <p><?= nl2br($article['text']) ?></p>
                         
+                    <p><?= nl2br($article['text']) ?></p>
+                            
                 </article>
                 <?php
+            endforeach;
                  if(isset($_SESSION['username'])):
                 ?>
                 <div class="comment-field">
@@ -51,20 +51,21 @@ $today = date('Y-n-j');
                         <input type="hidden" value=<?= $_SESSION['id'] ?> name="user_id">
                         <input type="hidden" value="<?= $today ?>" name="date">
                         <textarea name="comment" placeholder="Type your comment"></textarea>
+                        <br />
                         <input type="submit" name="comment_submit" value="Comment">
-                  </form>
-
+                </form>
+                  
                 </div>
                 <!-- /.comment-field-collapse -->
             </div>
             <!-- /.blog_post-collapse -->
-            
-          <?php 
+                
+                <?php 
                     else:
                         echo "<b>Sign in to comment</b>";
 
                  endif; //end of isset username if
-            endforeach; ?>
+                  ?>
         
        
                 <?php
@@ -83,12 +84,13 @@ $today = date('Y-n-j');
                     <!-- comments-box-collapse -->
                     <?php 
                     endforeach; 
-                endif; //END OF check session if
+                endif; //END OF count comments if
             endif; //END OF GET ID IF 
 
-        if(isset($_GET['category']) && !isset($_GET['asc'])):
-            $categories = $_GET['category'];
-            include 'partials/category_articles.php'; 
+            if(isset($_GET['category']) && !isset($_GET['asc'])):
+                $categories = $_GET['category'];
+                include 'partials/category_articles.php';  
+            
 
             if (count($category_articles) > 1):
             ?>  
@@ -98,9 +100,9 @@ $today = date('Y-n-j');
             endif;//End of count category_articles if
 
             foreach($category_articles as $article):
-                    include 'partials/blog_posts.php';
-            
+                include 'partials/blog_posts.php';    
             endforeach;       
+
                 
             elseif(isset($_GET['category']) && isset($_GET['asc'])): //ascending categories
                 $categories = $_GET['category'];
@@ -113,7 +115,6 @@ $today = date('Y-n-j');
                 foreach($category_articles_asc as $article):
                     include 'partials/blog_posts.php';
                 endforeach; 
-
             endif; //END OF CATEGORIES 
 
 
@@ -124,15 +125,11 @@ $today = date('Y-n-j');
                 foreach($month_articles as $article):
                     include 'partials/blog_posts.php';
                 endforeach; 
-
-
             endif; //END OF MONTHS 
             
 
             require 'partials/new_post.php';
-
-            ?>
-
+              ?>
         </main>
 
         <aside>
@@ -155,7 +152,9 @@ $today = date('Y-n-j');
                     <?php foreach ($month_number as $months):
                         $month = $months['month'];
                     ?>
-                        <li><a href="index.php?month=<?= $months['month']?>"><?= replace_month($month) ?></a></li>
+                        <li>
+                            <a href="index.php?month=<?= $months['month']?>"><?= replace_month($month) ?></a>
+                        </li>
                     <?php endforeach; ?>
                     </ul>
                 </div>

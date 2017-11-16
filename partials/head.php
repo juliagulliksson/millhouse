@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Millhouse</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://cdn.rawgit.com/tonsky/FiraCode/1.204/distr/fira_code.css">
-  <link href="https://fonts.googleapis.com/css?family=Roboto:400,900,900i" rel="stylesheet">
-  <link rel="stylesheet" 
-        href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-        crossorigin="anonymous">
-  <link rel="stylesheet" type="text/css" href="css/style.css">
-  <link rel="shortcut icon" href="images/millhouse.ico">
+    <meta charset="UTF-8">
+    <title>Millhouse</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/tonsky/FiraCode/1.204/distr/fira_code.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,900,900i" rel="stylesheet">
+    <link rel="stylesheet" 
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+          crossorigin="anonymous">
+    <script src="https://cdn.ckeditor.com/ckeditor5/1.0.0-alpha.1/classic/ckeditor.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="shortcut icon" href="images/millhouse.ico">
 <?php
 
 //Require partials/functions
@@ -29,19 +30,6 @@ require 'partials/log_out.php';
 require 'partials/register.php';
 
 ?>
-<script src="https://cdn.ckeditor.com/ckeditor5/1.0.0-alpha.1/classic/ckeditor.js"></script>
-<style>
-.ck-editor__editable.ck-rounded-corners, 
-.ck-rounded-corners .ck-editor__editable{
-    border: none;
-}
-
-.ck-editor__top .ck-sticky-panel .ck-toolbar.ck-rounded-corners, 
-.ck-rounded-corners .ck-editor__top .ck-sticky-panel .ck-toolbar{
-    border-radius: 4px;
-}
-
-</style>
 
 </head>
 <body>
@@ -81,6 +69,7 @@ require 'partials/log_in.php';
                         <li><a href="contact.php">CONTACT</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
+
                         <?php
                         if(!isset($_SESSION['signed_in'])):
                         ?>
@@ -100,6 +89,6 @@ require 'partials/log_in.php';
         </nav>
 
         <div class="hero">
-            <h3>An awesome and selling slogan</h3>
+            <h2>An awesome and selling slogan</h2>
         </div>
     </header>

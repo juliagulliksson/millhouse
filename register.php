@@ -4,7 +4,7 @@
 <div class="wrapper">
         <div class="input_container">
             <main>
-                <div class="login">
+                <div class="register">
                     <h1>Register</h1>
                     <form action="index.php" id="register_form" method="POST">
                         <label for="username" hidden>Username:</label>

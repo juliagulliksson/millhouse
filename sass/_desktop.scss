@@ -1,3 +1,7 @@
+.navbar, .navbar-default {
+    padding-right: 15px;
+}
+
 .hero{
     background-image: url("../images/hero.jpg");
     background-size: cover;
@@ -9,20 +13,65 @@
 .container{
     width: 85%;
     display: flex;
-    background: #fff;
+    background-color: #fff;
 }
 
 .blog_post{
     width: 95%;
 }
 
-.comment-field textarea, 
-.insert-form textarea {
-    width: 50%;
-    resize: none;
-    height: 90px;
-    display: block;
-    margin: 20px 0;
+.form-group{
+    display: flex;
+    width: 80%;
+    margin-bottom: 10px;
+}
+
+.form-group__title,
+.form-group__category{
+    width: 100%;
+}
+
+.form-group__title{
+    margin-right: 20px; 
+}
+
+// Editor
+.ck-editor__top 
+.ck-sticky-panel
+.ck-toolbar
+.ck-rounded-corners, 
+.ck-rounded-corners
+.ck-editor__top
+.ck-sticky-panel
+.ck-toolbar,
+.ck-editor__main{
+    width: 80%;
+}
+
+.comment-field{
+    input[type=text],
+    select{
+        width: 100%;
+    }
+    textarea{
+        width: 85%;
+    }
+    input[type=submit]{
+        width: 100px;
+        text-align: center;
+    }
+}
+
+.profile-container{
+    width: 80%;
+}
+
+.profile img{
+    max-width: 10em;
+}
+
+.profile-info{
+    width: 75%;
 }
 
 .ck-editor__editable.ck-rounded-corners, 
@@ -34,10 +83,7 @@
 
 .sidebar{
     display: block;
-    width: 200px;
-    input{
-        width: 180px;
-    }
+    width: 250px;
 }
 
 .footer_wrapper{
