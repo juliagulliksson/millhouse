@@ -113,7 +113,7 @@ $today = date('Y-n-j');
             endif; //END OF MONTHS
 
             require 'partials/new_post.php';
-            require 'partials/profile.php';?>
+            ?>
         </main>
 
         <aside>

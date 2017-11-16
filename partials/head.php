@@ -78,6 +78,6 @@ require 'partials/register.php';
         </nav>
 
         <div class="hero">
-            <h3>An awesome and selling slogan</h3>
+            <h2>An awesome and selling slogan</h2>
         </div>
     </header>
