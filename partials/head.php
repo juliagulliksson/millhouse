@@ -47,8 +47,8 @@ require 'partials/register.php';
 </head>
 <body>
 <?php 
-ini_set('session.gc_maxlifetime', 10);
-session_set_cookie_params(10);
+ini_set('session.gc_maxlifetime', 60);
+session_set_cookie_params(60);
 start_session();
 
 require 'partials/log_in.php';
