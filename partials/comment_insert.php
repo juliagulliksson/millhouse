@@ -1,12 +1,9 @@
 <?php
-
 require 'database.php';
-header('location: ../index.php');
-
-var_dump($_POST);
-var_dump($_GET);
-$comment = $_POST['comment'];
 $post_id = $_GET['post_id'];
+header("location: ../index.php?id=$post_id");
+$comment = $_POST['comment'];
+
 $today = $_POST['date'];
 $user_id = $_POST['user_id'];
 
