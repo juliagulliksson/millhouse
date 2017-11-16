@@ -1,6 +1,11 @@
 <?php
+
 require 'partials/head.php';
 require 'profile_includes/profile_sql.php';
+?>
+
+<?php
+if(!isset($_GET['newpost'])):
 ?>
 
 <div class="profile-container">
@@ -10,7 +15,7 @@ require 'profile_includes/profile_sql.php';
     <div class="profile-info">
         <h4><?= $_SESSION['username']?></h4>
         <h3><?= $_SESSION['email']?></h3>
-        <h3><?= var_dump($_SESSION)?></h3>
+        <a href="profile.php?newpost=true">Write a new blog post</a>
 
     </div>
 </div>
@@ -38,23 +43,37 @@ require 'profile_includes/profile_sql.php';
 <div class="list-container">
     <h4>5 recent blog posts:</h4>
     <ul>
-        <li>En ganska långt titel som inte är kort för den är lång och inte kort</li>
-        <li>Lorem ipsum tjohoooo</li>
-        <li>Blogginlägg</li>
-        <li>Test title</li>
-        <li>asdasdasd</li>
+        <?php
+        if(count($profile_blogposts) > 0):
+            foreach($profile_blogposts as $blogposts):
+        ?>
+            <li><a href="index.php?id=<?= $blogposts['id']?>"><?= $blogposts['post_title'] ?></a></li>
+            <?php
+            endforeach;
+        else:
+            echo "You have not written any blogposts yet";
+        endif;
+        ?>
     </ul>
     <br />
     <h4>5 recent comments:</h4>
     <ul>
-        <li>Kul blogg ;D</li>
-        <li>Gud vad jag älskar den här bloggen</li>
-        <li>Den här bloggen är bättre än Blondinbellas! :)</li>
-        <li>Hej hej!</li>
-        <li>asdasdasd</li>
+    <?php
+    if(count($profile_comments_title) > 0):
+        foreach($profile_comments_title as $comments):
+    ?>
+        <li><a href="index.php?id=<?= $comments['post_id'] ?>"><?= $comments['text']?></a></li>
+    <?php
+        endforeach;
+    else:
+        echo "You have not posted any comments yet";
+    endif;
+    ?>
     </ul>
 </div>
 
 <?php
+endif;
 require 'partials/footer.php';
+
 ?>

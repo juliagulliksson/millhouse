@@ -74,6 +74,7 @@ require 'partials/log_in.php';
                         <?php
                         if(isset($_SESSION['signed_in'])):
                         ?>
+                        <li><a href="#">You are logged in as <?= $_SESSION['username']?></a></li>
                             <li><a href="profile.php">My profile</a></li>
                             <li><a href="index.php?end_session=true">Log out</a></li>
                         <?php 
