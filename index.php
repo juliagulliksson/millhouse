@@ -6,41 +6,40 @@ $today = date('Y-n-j');
 
 <div class="wrapper">
     <div class="container">
-     
-    <main>
-    <?php
-    //Startpage blog posts
-        if(!isset($_GET['id']) && !isset($_GET['category']) 
-        && !isset($_GET['asc']) 
-        && !isset($_GET['month'])):
-            foreach ($articles as $article):
-                include 'partials/blog_posts.php';
-            endforeach;
-        endif;
-      
-            //individual blog posts
+        <main>
+            <?php
+            // Startpage blog posts
+            if(!isset($_GET['id']) && !isset($_GET['category']) 
+            && !isset($_GET['asc']) 
+            && !isset($_GET['month'])):
+                foreach ($articles as $article):
+                    include 'partials/blog_posts.php';
+                endforeach;
+            endif;
+        
+            // Individual blog posts
             if(isset($_GET['id'])):
-        ?>
+            ?>
+                
             <a href="index.php" class="comments-count">Go back</a>
             <?php
             $id = $_GET['id'];
 
             //require SQL-queries
             require 'partials/function_article.php';
-                
+                    
             foreach ($article_single as $article):
             ?>
 
-            
             <div class="blog_post">
                 <article>
                     <h2><?= $article['post_title']; ?></h2>
-                        
+                            
                     <h3> <?= replace_date($article['date']) ?> | <?= $article['username'] ?></h3>
                     <h3>Category: <?= $article['title']; ?></h3>
-                       
-                    <p><?= nl2br($article['text']) ?></p>
                         
+                    <p><?= nl2br($article['text']) ?></p>
+                            
                 </article>
                 <div class="comment-field">
                     <h3>Comment the blog post here:</h3>
@@ -48,93 +47,73 @@ $today = date('Y-n-j');
                         <input type="hidden" value=<?= $article['user_id'] ?> name="user_id">
                         <input type="hidden" value="<?= $today ?>" name="date">
                         <textarea name="comment" placeholder="Type your comment"></textarea>
+                        <br />
                         <input type="submit" name="comment_submit" value="Comment">
-                  </form>
+                </form>
                 </div>
                 <!-- /.comment-field-collapse -->
             </div>
             <!-- /.blog_post-collapse -->
+                
+            <?php endforeach; ?>
             
-          <?php endforeach; ?>
-        
-       
-                <?php
-            //function_article.php is where $comments is made
+            <?php
+            // Function_article.php is where $comments is made
             if(count($comments) > 0):
-                ?>
-                <h2>Comments:</h2>
-                <?php
-                foreach($comments as $comment): 
-                ?>
-                    <div class="comments-box">
-                        <h3>Comment created by: <?= $comment['username']?></h3>
-                        <p>On <?= replace_date($comment['date']) ?> </p>
-                        <p><?= $comment['text']?> </p>
-                    </div>
-                  <!-- comments-box-collapse -->
-                <?php 
+            ?>
+            <h2>Comments:</h2>
+            <?php foreach($comments as $comment): ?>
+            <div class="comments-box">
+                <h3>Comment created by: <?= $comment['username']?></h3>
+                <p>On <?= replace_date($comment['date']) ?> </p>
+                <p><?= $comment['text']?> </p>
+            </div>
+            <!-- comments-box-collapse -->
+            <?php 
                 endforeach; 
             endif; //END OF COUNT COMMENTS IF
 
             endif; //END OF GET ID IF 
 
-        if(isset($_GET['category']) && !isset($_GET['asc'])):
-            $categories = $_GET['category'];
-            include 'partials/category_articles.php';  
-        ?>  
+            if(isset($_GET['category']) && !isset($_GET['asc'])):
+                $categories = $_GET['category'];
+                include 'partials/category_articles.php';  
+            ?>  
 
             <a href="index.php?category=<?= $categories?>&asc=true">Order by oldest</a>
 
             <?php 
             foreach($category_articles as $article):
-                    include 'partials/blog_posts.php';
-            
+                include 'partials/blog_posts.php';    
             endforeach;       
-                
+                    
             elseif(isset($_GET['category']) && isset($_GET['asc'])):
-            $categories = $_GET['category'];
-            include 'partials/category_articles.php';
+                $categories = $_GET['category'];
+                include 'partials/category_articles.php';
             ?>
+
             <a href="index.php?category=<?= $categories?>">Order by newest</a>
             <?php
             foreach($category_articles_asc as $article):
                 include 'partials/blog_posts.php';
-        
-            endforeach; 
             
+            endforeach; 
+                
             endif; //END OF CATEGORIES 
 
-
-
-    
+        
             if(isset($_GET['month'])):
                 $month = $_GET['month'];
                 include 'partials/month_articles.php';
-                
+                    
                 foreach($month_articles as $article):
                     include 'partials/blog_posts.php';
                 endforeach; 
+                
+            endif; //END OF MONTHS
 
-
-            endif; //END OF MONTHS ?>
-
-
-            <div class="insert-form">
-                <h2>Write a new blog post:</h2>
-                <form action="partials/insert.php" method="POST">
-                    <input type="text" placeholder="Type your title here" name="blog_title">
-                    <label for="category">Choose category: </label>
-                    <select name="category">
-                    <?php foreach($category as $categories):?>
-                        <option value="<?= $categories['id']?>"><?= $categories['title']?></option>
-                    <?php endforeach; ?>
-                    </select>
-                    <textarea name="post_text" placeholder="Type your blog post here"></textarea>
-                    <input type="hidden" value="<?= $today ?>" name="date">
-                    <input type="submit" value="Submit">
-                </form>
-            </div>
-            <!-- /.insert-form-collapse -->
+            require 'partials/new_post.php';
+            ?>
         </main>
 
         <aside>
@@ -157,7 +136,9 @@ $today = date('Y-n-j');
                     <?php foreach ($month_number as $months):
                         $month = $months['month'];
                     ?>
-                        <li><a href="index.php?month=<?= $months['month']?>"><?= replace_month($month) ?></a></li>
+                        <li>
+                            <a href="index.php?month=<?= $months['month']?>"><?= replace_month($month) ?></a>
+                        </li>
                     <?php endforeach; ?>
                     </ul>
                 </div>
