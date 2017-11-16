@@ -1,9 +1,9 @@
 <?php
 
 function replace_date($date){
-            $date = new DateTime($date);
-            return $date->format('F j, Y');
-       }
+    $date = new DateTime($date);
+    return $date->format('F j, Y');
+}
 
        
 function replace_month($month){
@@ -11,11 +11,14 @@ function replace_month($month){
     return $dateObj->format('F');
 }
 
-function string_length($x, $length){
-    if(strlen($x)<= $length){
-      return $x;
-    }else{
-      $y = substr($x,0,$length) . '...';
-      return $y;
+function string_length($blog_string, $length){
+    $blog_array = (explode(" ", $blog_string));
+    $shorter_blog_array = array();
+    if (count($blog_array)> $length){
+        $shorter_blog_array = array_slice($blog_array, 0, $length);
+        $blog_string = implode(" " , $shorter_blog_array) . "...";
+        return $blog_string;
+    } else {
+    return $blog_string;
     }
   }

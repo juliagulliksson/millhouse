@@ -3,7 +3,6 @@ require 'database.php';
 $post_id = $_GET['post_id'];
 header("location: ../index.php?id=$post_id");
 $comment = $_POST['comment'];
-
 $today = $_POST['date'];
 $user_id = $_POST['user_id'];
 

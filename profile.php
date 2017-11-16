@@ -74,6 +74,16 @@ if(!isset($_GET['newpost'])):
 
 <?php
 endif;
+
+if(isset($_GET['newpost'])):
+
+    require 'partials/new_post.php';
+?>
+
+
+<?php
+endif; //End of newpost if
+
 require 'partials/footer.php';
 
 ?>
