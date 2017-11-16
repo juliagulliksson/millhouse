@@ -171,6 +171,12 @@ select{
     -moz-border-radius: 5px;
 }
 
+.form-group__title{
+   input[type=text]{
+       @extend select;
+   }
+}
+
 .comment-field,
 .insert-form{
     @extend .login;
