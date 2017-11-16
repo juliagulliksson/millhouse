@@ -1,19 +1,37 @@
+<?php
+require 'partials/head.php';
+require 'profile_includes/profile_sql.php';
+?>
+
 <div class="profile-container">
     <div class="profile">
         <img src="images/profile_photo.jpg" Alt="Profile photo" />
     </div>
     <div class="profile-info">
-        <h4>Username</h4>
-        <h3>username@username.com</h3>
+        <h4><?= $_SESSION['username']?></h4>
+        <h3><?= $_SESSION['email']?></h3>
+        <h3><?= var_dump($_SESSION)?></h3>
+
     </div>
 </div>
 <div class="amount-container">
     <div class="amount">
-        <h4>35</h4>
+       
+        <?php
+        foreach($profile_articles as $articles):
+        ?>
+        <h4><?= $articles['posts']?></h4>
+        <?php endforeach; ?>
         <p>Blog posts</p>
     </div>
     <div class="amount">
-        <h4>3</h4>
+        <?php
+        foreach($profile_comments as $comments):
+        ?>
+        <h4><?= $comments['comments']?></h4>
+        <?php
+        endforeach;
+        ?>
         <p>Comments</p>
     </div>
 </div>
@@ -36,3 +54,7 @@
         <li>asdasdasd</li>
     </ul>
 </div>
+
+<?php
+require 'partials/footer.php';
+?>
