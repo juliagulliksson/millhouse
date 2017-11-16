@@ -1,6 +1,8 @@
-<div class="insert-form">
-    <h2>Write a new blog post</h2>
-    <form action="partials/insert.php" method="POST">
+<?php
+if (isset($_SESSION['username']) 
+&& $_SESSION['contributor'] == true 
+&& !isset($_GET['id'])):
+    ?> 
         <div class="form-group">
             <div class="form-group__title">
                 <label for="title">Title:</label><br />
@@ -31,3 +33,4 @@
     </form>
 </div>
 <!-- /.insert-form-collapse -->
+<?php endif; ?>

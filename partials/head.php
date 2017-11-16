@@ -17,7 +17,6 @@
 
 //Require partials/functions
 require 'partials/functions/start_session.php';
-require 'partials/functions/end_session.php';
 require 'partials/functions/log_in.php';
 require 'partials/functions/register.php';
 require 'partials/functions/check_if_dublette.php';
@@ -26,7 +25,7 @@ require 'partials/functions/check_if_dublette.php';
 require 'partials/database.php';
 require 'partials/sql.php';
 require 'partials/functions.php';
-require 'partials/log_in.php';
+
 require 'partials/log_out.php';
 require 'partials/register.php';
 
@@ -34,6 +33,13 @@ require 'partials/register.php';
 
 </head>
 <body>
+<?php 
+ini_set('session.gc_maxlifetime', 60);
+session_set_cookie_params(60);
+start_session();
+
+require 'partials/log_in.php';
+?>
 
     <header>
         <nav class="navbar navbar-default navbar-static-top">
@@ -63,13 +69,18 @@ require 'partials/register.php';
                         <li><a href="contact.php">CONTACT</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
-                        <?php if (isset($_POST["username"]) && isset($_POST["password"])){
-                            echo "<li><a href='partials/log_out.php'>Log out</a></li>";
-                        } else{
-                            echo "<li><a href='login.php'>Login</a></li>
-                                  <li><a href='register.php'>Register</a></li>";
-                        }
+
+                        <?php
+                        if(!isset($_SESSION['signed_in'])):
                         ?>
+                        <li><a href="login.php">Login</a></li>
+                        <li><a href="register.php">Register</a></li>
+                        <?php 
+                        else:
+                            ?>
+                            <li><a href="index.php?end_session=true">Log out</a></li>
+                        <?php endif; ?>
+
                     </ul>
                 </div>
                 <!-- /.navbar-collapse -->

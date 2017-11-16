@@ -2,16 +2,15 @@
 
 require 'database.php';
 
- 
-//nl2br = gör så att varje line break i artikel-fält blir till br-taggar
-
-
+//to select comments with posts
+//SELECT posts.id, posts.post_title, GROUP_CONCAT(comments.text), count(*) as coment_cnt 
+//FROM posts LEFT JOIN comments ON (posts.id = comments.post_id) GROUP BY posts.id
 
 
 //Main article fetch
 $statement = $pdo->prepare("SELECT posts.date, posts.id as postID, 
 posts.text, posts.post_title, categories.title, 
-users.username, users.id as user_id, COUNT(comments.post_id) AS comments
+users.username, users.email, users.id as user_id, COUNT(comments.post_id) AS comments
 FROM posts 
 INNER JOIN categories 
 ON posts.category_id=categories.id
