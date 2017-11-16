@@ -16,7 +16,6 @@
 
 //Require partials/functions
 require 'partials/functions/start_session.php';
-//require 'partials/functions/end_session.php';
 require 'partials/functions/log_in.php';
 require 'partials/functions/register.php';
 require 'partials/functions/check_if_dublette.php';
