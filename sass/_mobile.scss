@@ -165,16 +165,10 @@ select{
     font-family: 'Fira Code', monospace;
     color: $dark_blue;
     background-color: $input;
-    border: 0px;
+    border: none;
     border-radius: 5px;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
-}
-
-.form-group__title{
-   input[type=text]{
-       @extend select;
-   }
 }
 
 .comment-field,
