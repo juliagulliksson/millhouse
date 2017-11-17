@@ -20,6 +20,13 @@ endif;
 $id = $_GET['id'];
 ?>
 
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="https://cdn.ckeditor.com/ckeditor5/1.0.0-alpha.1/classic/ckeditor.js"></script>
+</head>
+
 <form action="edit_blogpost.php?id=<?= $id ?>" method="POST">
 <label for="edit_title">Title:</label>
 <br/>
@@ -27,7 +34,16 @@ $id = $_GET['id'];
 <br/>
 <label for="edit_text">Edit:</label>
 <br/>
-<textarea name="edit_text" cols="70" rows="10"><?= $_GET['content']?></textarea>
+<textarea name="edit_text" id="editor"><?= $_GET['content']?></textarea>
+        <script>
+            ClassicEditor
+            .create(document.querySelector('#editor'))
+            .catch(error => {
+                console.error(error);
+            });
+        </script>
 <br/>
 <input type="submit" name="submit">
 <form>
+</body>
+</html>
