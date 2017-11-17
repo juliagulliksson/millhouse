@@ -19,3 +19,14 @@
     display: block;
     width: 180px;
 }
+
+.footer_wrapper{
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+    text-align: left;
+}
+
+.logo img{
+    height: 70px;
+}

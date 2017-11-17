@@ -6,15 +6,30 @@
   
     <footer>
         <div class="footer_wrapper">
-            <div class="volt_image">
-                <img src="images/volt_studios-logo.png" Alt="Volt Studios Logo" />
+            <div class="logo">
+                <img src="images/millhouse-logo.png" Alt="Millhouse Logo" />
             </div>
-            <p>Just a footer with footer options</p>
-            <div class="footer_icons">
-                <img src="images/instagram-icon.png" Alt="Instagram" />
-                <img src="images/facebook-icon.png" Alt="Facebook" />
+            <div class="footer-margin">
+                <b>OUR SHOPS</b>
+                <br />Watches
+                <br />Sunglasses
+                <br />Interior design
             </div>
-            <!-- footer-icons-collapse -->
+            <div class="footer-margin">
+                <b>ABOUT MILLHOUSE</b>
+                <br />Press
+                <br />Contact
+                <br />Sustainability
+                <br />Jobs
+                <br />Investors
+            </div>
+            <div>
+                <b>FOLLOW US</b>
+                <br />Instagram
+                <br />Facebook
+                <br />Newsletter
+                <br />YouTube
+            </div>
         </div>
         <!-- /.footer-wrapper-collapse -->
     </footer>

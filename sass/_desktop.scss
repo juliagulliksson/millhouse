@@ -70,27 +70,3 @@
     display: block;
     width: 250px;
 }
-
-.footer_wrapper{
-    width: 100%;
-    background-color: $dark_blue;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-    p{
-        color: #fff;
-    }
-}
-
-.volt_image img{
-    height: 25px;
-}
-
-.footer_icons{
-    width: 7em;
-    img{
-        height: 40px;
-    }
-}
-
