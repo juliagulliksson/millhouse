@@ -5,7 +5,7 @@ require 'profile_includes/profile_sql.php';
 ?>
 
 <?php
-if(!isset($_GET['newpost'])):
+if(!isset($_GET['newpost']) && !isset($_GET['editpost'])):
 ?>
 
 <div class="profile-container">
@@ -78,11 +78,14 @@ endif;
 if(isset($_GET['newpost'])):
 
     require 'partials/new_post.php';
-?>
 
-
-<?php
 endif; //End of newpost if
+
+if(isset($_GET['editpost'])):
+
+    require 'partials/edit_blogpost.php';
+
+endif;//end of editpost if
 
 require 'partials/footer.php';
 
