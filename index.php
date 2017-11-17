@@ -127,8 +127,6 @@ $today = date('Y-n-j');
                 endforeach; 
             endif; //END OF MONTHS 
             
-
-            require 'partials/new_post.php';
               ?>
         </main>
 
