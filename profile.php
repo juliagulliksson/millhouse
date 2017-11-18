@@ -41,7 +41,7 @@ if(!isset($_GET['newpost']) && !isset($_GET['editpost'])):
     </div>
 </div>
 <div class="list-container">
-    <h4>5 recent blog posts:</h4>
+    <h4>5 most recent blog posts:</h4>
     <ul>
         <?php
         if(count($profile_blogposts) > 0):
@@ -56,7 +56,7 @@ if(!isset($_GET['newpost']) && !isset($_GET['editpost'])):
         ?>
     </ul>
     <br />
-    <h4>5 recent comments:</h4>
+    <h4>5 most recent comments:</h4>
     <ul>
     <?php
     if(count($profile_comments_title) > 0):

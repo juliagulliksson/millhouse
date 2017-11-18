@@ -83,7 +83,16 @@
 
 .sidebar{
     display: block;
-    width: 250px;
+}
+
+aside {
+    flex-basis: 22%;
+    -webkit-flex-basis: 22%; 
+}
+
+main {
+    flex-basis: 78%;
+    -webkit-flex-basis: 78%; 
 }
 
 .footer_wrapper{
