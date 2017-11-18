@@ -1,9 +1,11 @@
 main {
-    width: 78%;
+    flex-basis: 78%;
+    -webkit-flex-basis: 78%; 
 }
 
 aside {
-    width: 22%;
+    flex-basis: 22%;
+    -webkit-flex-basis: 22%; 
 }
 
 .navbar, .navbar-default {
@@ -17,8 +19,7 @@ aside {
 
 .container{
     display: flex;
-    width: 100%;
-    justify-content: space-between;
+    justify-content: center;
 }
 
 .blog_post{
@@ -29,7 +30,7 @@ aside {
     display: block;
 }
 
-.footer_wrapper{
+.footer-wrapper{
     padding: 20px 0px 60px 0px;
     flex-direction: row;
     justify-content: space-around;
@@ -41,7 +42,7 @@ aside {
     margin-bottom: 0px;
 }
 
-.logo img{
+.footer img{
     height: 70px;
     margin-bottom: 0px;
 }

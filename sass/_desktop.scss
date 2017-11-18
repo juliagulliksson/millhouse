@@ -4,12 +4,7 @@
 
 .container{
     width: 85%;
-    display: flex;
     background-color: #fff;
-}
-
-.blog_post{
-    width: 100%;
 }
 
 .form-group{
@@ -54,10 +49,6 @@
     }
 }
 
-.profile-container{
-    width: 80%;
-}
-
 .profile img{
     max-width: 10em;
 }
@@ -72,8 +63,7 @@
     border-radius: 4px;
 }
 
-
-.sidebar{
-    display: block;
-    width: 250px;
+.footer-wrapper{
+    width: 100%;
+    background-color: $dark_blue;
 }

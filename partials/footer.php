@@ -1,12 +1,8 @@
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
-            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-            crossorigin="anonymous">
-    </script>
-  
+        </div> <!-- container end -->
+    </div> <!-- wrapper end -->
     <footer>
-        <div class="footer_wrapper">
-            <div class="logo">
+        <div class="footer-wrapper">
+            <div class="footer">
                 <img src="images/millhouse-logo.png" Alt="Millhouse Logo" />
             </div>
             <div class="footer-margin">
@@ -27,7 +23,7 @@
                     <li><a href="#">Investors</a></li>
                 </ul>
             </div>
-            <div>
+            <div class="footer">
                 <ul>
                     <li><b>FOLLOW US</b></li>
                     <li><a href="#">Instagram</a></li>
@@ -39,6 +35,10 @@
         </div>
         <!-- /.footer-wrapper-collapse -->
     </footer>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous">
+    </script>
 </body>
 </html>

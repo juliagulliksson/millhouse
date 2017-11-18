@@ -4,9 +4,9 @@ require 'partials/head.php';
 $today = date('Y-n-j');
 ?>
 
-<div class="wrapper">
+<!-- <div class="wrapper">
     <div class="container">
-        <main>
+        <main> -->
             <?php
             // Startpage blog posts
             if(!isset($_GET['id']) && !isset($_GET['category']) 
@@ -19,75 +19,9 @@ $today = date('Y-n-j');
         
             // Individual blog posts
             if(isset($_GET['id'])):
-            ?>
-                
-            
-            <?php
-            $id = $_GET['id'];
-
-            //require SQL-queries
-            require 'partials/function_article.php';
-                    
-            foreach ($article_single as $article):
-            ?>
-
-            <div class="blog_post">
-            <a href="index.php" class="comments-count">Go back</a>
-                <article>
-                    <h2><?= $article['post_title']; ?></h2>
-                            
-                    <h3> <?= replace_date($article['date']) ?> | <?= $article['username'] ?></h3>
-                    <h3>Category: <?= $article['title']; ?></h3>
-                        
-                    <p><?= nl2br($article['text']) ?></p>
-                            
-                </article>
-                <?php
-            endforeach;
-                 if(isset($_SESSION['username'])):
-                ?>
-                <div class="comment-field">
-                    <h3>Comment the blog post here:</h3>
-                    <form action="partials/comment_insert.php?post_id=<?= $article['postID']?>" method="POST">
-                        <input type="hidden" value=<?= $_SESSION['id'] ?> name="user_id">
-                        <input type="hidden" value="<?= $today ?>" name="date">
-                        <textarea name="comment" placeholder="Type your comment"></textarea>
-                        <br />
-                        <input type="submit" name="comment_submit" value="Comment">
-                </form>
-                  
-                </div>
-                <!-- /.comment-field-collapse -->
-            </div>
-            <!-- /.blog_post-collapse -->
-                
-                <?php 
-                    else:
-                        echo "<b>Sign in to comment</b>";
-
-                 endif; //end of isset username if
-                  ?>
-        
-       
-                <?php
-            //function_article.php is where $comments is made
-                if(count($comments) > 0):
-                    ?>
-                    <h2>Comments:</h2>
-                    <?php
-                    foreach($comments as $comment): 
-                    ?>
-                        <div class="comments-box">
-                            <h3>Comment created by: <?= $comment['username']?></h3>
-                            <p>On <?= replace_date($comment['date']) ?> </p>
-                            <p><?= $comment['text']?> </p>
-                        </div>
-                    <!-- comments-box-collapse -->
-                    <?php 
-                    endforeach; 
-                endif; //END OF count comments if
+                require 'partials/article_singles.php';
             endif; //END OF GET ID IF 
-
+            
             if(isset($_GET['category']) && !isset($_GET['asc'])):
                 $categories = $_GET['category'];
                 include 'partials/category_articles.php';  
@@ -133,26 +67,26 @@ $today = date('Y-n-j');
 
         <aside>
             <div class="sidebar">
-                <h3>Categories:</h3>
+                <h3>Categories</h3>
                 <div class="categories-list">
                     <ul>
-                    <?php foreach ($category as $categories): ?>
+                    <?php foreach ($category_disctinct as $categories): ?>
                         <li>
-                            <a href="index.php?category=<?= $categories['id']?>"><?= $categories['title'] ?></a>
+                            <a href="index.php?category=<?= $categories['id']?>"><?= $categories['title'] ?> (<?= $categories['posts']?>)</a>
                         </li>
                     <?php endforeach; ?>
                     </ul>
                 </div>
                 <!-- /.categories-list-collapse -->
                 
-                <h3>Sort by months</h3>
+                <h3>Archive</h3>
                 <div class="categories-list">
                     <ul>
                     <?php foreach ($month_number as $months):
                         $month = $months['month'];
                     ?>
                         <li>
-                            <a href="index.php?month=<?= $months['month']?>"><?= replace_month($month) ?></a>
+                            <a href="index.php?month=<?= $months['month']?>"><?= replace_month($month) ?> (<?= $months['posts']?>)</a>
                         </li>
                     <?php endforeach; ?>
                     </ul>
@@ -161,7 +95,5 @@ $today = date('Y-n-j');
             </div>
             <!-- /.sidebar-collapse -->
         </aside>
-    </div> <!-- container end -->
-</div> <!-- wrapper end -->
 
 <?php require 'partials/footer.php'; ?>
