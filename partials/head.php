@@ -1,4 +1,22 @@
+<?php
+ini_set('session.gc_maxlifetime', 3600);
+session_set_cookie_params(3600);
+require 'partials/functions/start_session.php';
+start_session();
 
+require 'partials/functions/log_in.php';
+require 'partials/log_in.php';
+require 'partials/functions/register.php';
+require 'partials/functions/check_if_dublette.php';
+
+//Require partials
+require 'partials/database.php';
+require 'partials/sql.php';
+require 'partials/functions.php';
+
+require 'partials/log_out.php';
+require 'partials/register.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,36 +30,11 @@
           integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
           crossorigin="anonymous">
     <script src="https://cdn.ckeditor.com/ckeditor5/1.0.0-alpha.1/classic/ckeditor.js"></script>
+    <script src="https://use.fontawesome.com/81bfe91082.js"></script>
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="shortcut icon" href="images/millhouse.ico">
-<?php
-
-//Require partials/functions
-require 'partials/functions/start_session.php';
-require 'partials/functions/log_in.php';
-require 'partials/functions/register.php';
-require 'partials/functions/check_if_dublette.php';
-
-//Require partials
-require 'partials/database.php';
-require 'partials/sql.php';
-require 'partials/functions.php';
-
-require 'partials/log_out.php';
-require 'partials/register.php';
-
-?>
-
 </head>
 <body>
-<?php 
-ini_set('session.gc_maxlifetime', 3600);
-session_set_cookie_params(3600);
-start_session();
-
-require 'partials/log_in.php';
-?>
-
     <header>
         <nav class="navbar navbar-default navbar-static-top">
             <div class="container-fluid">
@@ -74,7 +67,7 @@ require 'partials/log_in.php';
                         <?php
                         if(isset($_SESSION['signed_in'])):
                         ?>
-                        <li><a href="#">You are logged in as <?= $_SESSION['username']?></a></li>
+                        <li class="navbar-text">You are logged in as <?= $_SESSION['username']?></li>
                             <li><a href="profile.php">My profile</a></li>
                             <li><a href="index.php?end_session=true">Log out</a></li>
                         <?php 

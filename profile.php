@@ -5,7 +5,7 @@ require 'profile_includes/profile_sql.php';
 ?>
 
 <?php
-if(!isset($_GET['newpost'])):
+if(!isset($_GET['newpost']) && !isset($_GET['editpost'])):
 ?>
 
 <div class="profile-container">
@@ -41,7 +41,7 @@ if(!isset($_GET['newpost'])):
     </div>
 </div>
 <div class="list-container">
-    <h4>5 recent blog posts:</h4>
+    <h4>5 most recent blog posts:</h4>
     <ul>
         <?php
         if(count($profile_blogposts) > 0):
@@ -56,7 +56,7 @@ if(!isset($_GET['newpost'])):
         ?>
     </ul>
     <br />
-    <h4>5 recent comments:</h4>
+    <h4>5 most recent comments:</h4>
     <ul>
     <?php
     if(count($profile_comments_title) > 0):
@@ -78,11 +78,14 @@ endif;
 if(isset($_GET['newpost'])):
 
     require 'partials/new_post.php';
-?>
 
-
-<?php
 endif; //End of newpost if
+
+if(isset($_GET['editpost'])):
+
+    require 'partials/edit_blogpost.php';
+
+endif;//end of editpost if
 
 require 'partials/footer.php';
 

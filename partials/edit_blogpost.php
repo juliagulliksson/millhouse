@@ -1,40 +1,34 @@
 <?php
-
-if(isset($_POST['submit'])):
-
-    require 'database.php';
-    
-    $new_title = $_POST['edit_title'];
-    $id = $_GET['id'];
-    $new_text = $_POST['edit_text'];
-    
-    $statement = $pdo->prepare("UPDATE posts SET post_title = :newTitle, text = :newText WHERE id = :id");
-    $statement->execute(array(
-    ":newTitle" => $new_title,
-    ":newText" => $new_text,
-    ":id" => $id
-    ));
-    
-endif;
-
 $id = $_GET['id'];
+require 'sql.php';
 ?>
 
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<script src="https://cdn.ckeditor.com/ckeditor5/1.0.0-alpha.1/classic/ckeditor.js"></script>
-</head>
-
-<form action="edit_blogpost.php?id=<?= $id ?>" method="POST">
-<label for="edit_title">Title:</label>
-<br/>
-<input type="text" name="edit_title">
-<br/>
-<label for="edit_text">Edit:</label>
-<br/>
-<textarea name="edit_text" id="editor"><?= $_GET['content']?></textarea>
+<div class="insert-form">
+    <h2>Edit your blog post here</h2>
+    <form action="partials/edit_blogpost_sql.php?id=<?= $id ?>" method="POST">
+    <div class="form-group">
+            <div class="form-group__title">
+                <label for="edit_title">Title:</label><br />
+                <input type="text" class="form-control" name="edit_title" value="<?= $_GET['title'] ?>">
+            </div>
+            <div class="form-group__category">
+                <label for="category">Choose category:</label><br />
+                <select name="category">
+                <?php foreach($category as $categories):
+                if($_GET['category_id'] == $categories['id']){
+                    $selected = 'selected="selected"'; 
+                }else{
+                    $selected = ''; 
+                }
+                echo "<option value='" . $categories['id'] . "' $selected>" . $categories['title'] ."</option>";
+                     
+                endforeach; ?>
+                </select>
+            </div>
+        </div>
+        <!-- /.form-group-collapse -->
+   
+    <textarea name="edit_text" id="editor"><?= $_GET['content']?></textarea>
         <script>
             ClassicEditor
             .create(document.querySelector('#editor'))
@@ -42,8 +36,7 @@ $id = $_GET['id'];
                 console.error(error);
             });
         </script>
-<br/>
-<input type="submit" name="submit">
-<form>
-</body>
-</html>
+    <br/>
+    <input type="submit" name="submit" value="Submit">
+    <form>
+</div>
