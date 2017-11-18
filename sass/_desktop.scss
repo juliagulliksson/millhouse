@@ -9,7 +9,8 @@
 }
 
 .blog_post{
-    width: 95%;
+    width: 100%;
+    border: 1px solid red;
 }
 
 .form-group{
@@ -46,7 +47,7 @@
         width: 100%;
     }
     textarea{
-        width: 85%;
+        width: 90%;
     }
     input[type=submit]{
         width: 100px;

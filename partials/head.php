@@ -63,7 +63,7 @@ require 'partials/register.php';
                         <li><a href="contact.php">CONTACT</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
-                        <li class="logged_in">You're logged in as...</li>
+                        <li class="navbar-text">You're logged in as...</li>
                         <?php if (isset($_POST["username"]) && isset($_POST["password"])){
                             echo "<li><a href='partials/log_out.php'>Log out</a></li>";
                         } else{

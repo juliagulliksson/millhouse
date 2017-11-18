@@ -99,8 +99,19 @@ h4{
     align-items: center;
     background-color: $dark_blue;
     text-align: center;
-    //font-family: 'Fira Code', monospace;
     color: #fff;
+    ul{
+        list-style: none;
+        padding: 0px;
+        margin: 0px;
+    }
+    a{
+        color: #fff;
+    }
+    a:hover{
+        color: $light_gray;
+        text-decoration: none;
+    }
 }
 
 .footer-margin{

@@ -10,25 +10,31 @@
                 <img src="images/millhouse-logo.png" Alt="Millhouse Logo" />
             </div>
             <div class="footer-margin">
-                <b>OUR SHOPS</b>
-                <br />Watches
-                <br />Sunglasses
-                <br />Interior design
+                <ul>
+                    <li><b>OUR SHOPS</b></li>
+                    <li><a href="#">Watches</a></li>
+                    <li><a href="#">Sunglasses</a></li>
+                    <li><a href="#">Interior design</a></li>
+                </ul>
             </div>
             <div class="footer-margin">
-                <b>ABOUT MILLHOUSE</b>
-                <br />Press
-                <br />Contact
-                <br />Sustainability
-                <br />Jobs
-                <br />Investors
+                <ul>
+                    <li><b>ABOUT MILLHOUSE</b></li>
+                    <li><a href="#">Press</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Sustainability</a></li>
+                    <li><a href="#">Jobs</a></li>
+                    <li><a href="#">Investors</a></li>
+                </ul>
             </div>
             <div>
-                <b>FOLLOW US</b>
-                <br />Instagram
-                <br />Facebook
-                <br />Newsletter
-                <br />YouTube
+                <ul>
+                    <li><b>FOLLOW US</b></li>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Newsletter</a></li>
+                    <li><a href="#">YouTube</a></li>
+                </ul>
             </div>
         </div>
         <!-- /.footer-wrapper-collapse -->

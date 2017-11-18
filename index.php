@@ -21,7 +21,7 @@ $today = date('Y-n-j');
             if(isset($_GET['id'])):
             ?>
                 
-            <a href="index.php" class="comments-count">Go back</a>
+            
             <?php
             $id = $_GET['id'];
 
@@ -32,6 +32,7 @@ $today = date('Y-n-j');
             ?>
 
             <div class="blog_post">
+            <a href="index.php" class="comments-count">Go back</a>
                 <article>
                     <h2><?= $article['post_title']; ?></h2>
                             
