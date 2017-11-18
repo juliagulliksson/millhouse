@@ -10,7 +10,6 @@
 
 .blog_post{
     width: 100%;
-    border: 1px solid red;
 }
 
 .form-group{
@@ -66,6 +65,13 @@
 .profile-info{
     width: 75%;
 }
+
+.ck-editor__editable.ck-rounded-corners, 
+.ck-rounded-corners .ck-editor__editable{
+    height: 200px;
+    border-radius: 4px;
+}
+
 
 .sidebar{
     display: block;

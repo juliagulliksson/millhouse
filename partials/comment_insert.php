@@ -1,15 +1,12 @@
 <?php
-
 require 'database.php';
-header('location: ../index.php');
-
-var_dump($_POST);
-var_dump($_GET);
-$comment = $_POST['comment'];
 $post_id = $_GET['post_id'];
+header("location: ../index.php?id=$post_id");
+$comment = $_POST['comment'];
 $today = $_POST['date'];
+$user_id = $_POST['user_id'];
 
 $statement = $pdo->prepare("INSERT INTO comments (post_id, text, date, user_id) 
-VALUES ($post_id, '$comment', CURRENT_TIMESTAMP(), 2)");
+VALUES ($post_id, '$comment', CURRENT_TIMESTAMP(), $user_id)");
 $statement->execute();
 
