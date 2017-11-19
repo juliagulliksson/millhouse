@@ -17,7 +17,8 @@ function string_length($blog_string, $length, $link){
     if (count($blog_array)> $length){
         $shorter_blog_array = array_slice($blog_array, 0, $length);
         $blog_string = implode(" " , $shorter_blog_array) .
-        "<span class='continue'>...</span> <a href='index.php?id=$link#scroll'><b>Continue reading -></b></a>";
+        "<span class='continue'>...</span> <a href='index.php?id=$link#scroll'>
+        <b>Continue reading <i class='fa fa-arrow-right' aria-hidden='true'></i></b></a>";
         return $blog_string;
     } else {
     return $blog_string;
