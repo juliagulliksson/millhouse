@@ -4,7 +4,7 @@ require 'profile_includes/profile_sql.php';
 
 if(!isset($_GET['newpost']) && !isset($_GET['editpost'])):
 ?>
-    <div class="profile-container"">
+    <div class="profile-container">
         <div class="profile">
             <img src="images/profile_photo.jpg" Alt="Profile photo" />
         </div>
