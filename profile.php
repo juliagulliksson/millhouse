@@ -1,11 +1,11 @@
 <?php
-
 require 'partials/head.php';
 require 'profile_includes/profile_sql.php';
 ?>
 
 <?php
-if(!isset($_GET['newpost']) && !isset($_GET['editpost'])):
+if(!isset($_GET['newpost']) 
+&& !isset($_GET['editpost'])):
 ?>
 
 <div class="profile-container">
@@ -16,12 +16,11 @@ if(!isset($_GET['newpost']) && !isset($_GET['editpost'])):
         <h4><?= $_SESSION['username']?></h4>
         <h3><?= $_SESSION['email']?></h3>
         <a href="profile.php?newpost=true">Write a new blog post</a>
-
     </div>
 </div>
 <div class="amount-container">
     <div class="amount">
-       
+    
         <?php
         foreach($profile_articles as $articles):
         ?>
@@ -88,5 +87,4 @@ if(isset($_GET['editpost'])):
 endif;//end of editpost if
 
 require 'partials/footer.php';
-
 ?>

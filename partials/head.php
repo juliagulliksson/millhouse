@@ -69,7 +69,9 @@ require 'partials/register.php';
                         ?>
                         <li class="navbar-text">You are logged in as <?= $_SESSION['username']?></li>
                             <li><a href="profile.php">My profile</a></li>
+                           
                             <li><a href="index.php?end_session=true">Log out</a></li>
+                            
                         <?php 
                         else:
                             ?>
