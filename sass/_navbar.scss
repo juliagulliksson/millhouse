@@ -1,16 +1,21 @@
-.navbar-nav .navbar-right > li > a {
-    background: #fff;
-}
-
-.navbar-default .navbar-nav > li > a {
-    color: #fff;
-    text-align: center;
-}
-
+// Navbar background-color
 .navbar, .navbar-default {
     background-color: $dark_blue;
     border-color: $dark_blue;
     margin: 0px;
+}
+
+// Navbar plain text
+.navbar-default .navbar-nav > .navbar-text {
+    text-align: center;
+    color: #5d7e93;
+    font-style: italic;
+}
+
+// Navbar links
+.navbar-default .navbar-nav > li > a {
+    color: #fff;
+    text-align: center;
 }
 
 .navbar-default .navbar-nav>li>a:hover,
@@ -19,8 +24,7 @@
     background-color: $light_gray;
 }
 
-
-
+// Navbar logo
 .navbar-header .navbar-brand {
 	height: 100px;
 	img{
@@ -28,6 +32,7 @@
 	}
 }
 
+// Navbar margins of text
 nav, .navbar-nav, .navbar-right{
 	margin-top: 25px;
 }
@@ -36,6 +41,7 @@ nav, .navbar-nav, .navbar-right{
 	margin-top: 23px;
 }
 
+// Navbar hamburger
 .navbar-default .navbar-toggle .icon-bar {
     background-color: #fff;
     width: 40px;
@@ -56,6 +62,18 @@ nav, .navbar-nav, .navbar-right{
 	background-color: $dark_blue;
 }
 
-.navbar-default .navbar-nav > .navbar-text {
+input[type=submit]{
+    text-align: center;
+    padding: 10px 20px;
     color: #fff;
- }
+    background-color: $light_blue;
+    border: none;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+
+input[type=submit]:hover{
+    color: $dark_blue;
+    background-color: $light_gray;
+}

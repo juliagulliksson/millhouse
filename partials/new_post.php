@@ -3,8 +3,8 @@ if (isset($_SESSION['username'])
 && $_SESSION['contributor'] == true 
 && !isset($_GET['id'])):
     ?> 
-    <div class="insert-form">
-    <h2>Write a new blog post</h2>
+<div class="insert-form">
+    <div class="center-heading"><h2>Write a new blog post</h2></a></div>
     <form action="partials/insert.php" method="POST">
         <div class="form-group">
             <div class="form-group__title">
@@ -36,5 +36,5 @@ if (isset($_SESSION['username'])
         <input type="submit" value="Submit">
     </form>
 </div>
-<!-- /.insert-form-collapse -->
+
 <?php endif; ?>
