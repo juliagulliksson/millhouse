@@ -3,7 +3,6 @@ require 'partials/head.php';
 
 $today = date('Y-n-j');
 ?>
-
 <!-- <div class="wrapper">
     <div class="container">
         <main> -->
@@ -95,5 +94,7 @@ $today = date('Y-n-j');
             </div>
             <!-- /.sidebar-collapse -->
         </aside>
-
+    </div>
+    <!-- /.container-collapse 
+</div> /.wrapper-collapse -->
 <?php require 'partials/footer.php'; ?>

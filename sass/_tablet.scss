@@ -12,6 +12,13 @@ aside {
     padding-right: 15px;
 }
 
+.buttons{
+    flex-direction: row;
+    input[type=submit]{
+        margin: 5px 10px 10px 10px;
+    }
+}
+
 .hero{
     background-position: 0% 62%;
     height: 400px;
@@ -24,6 +31,19 @@ aside {
 
 .blog_post{
     width: 95%;
+}
+
+// Editor
+.ck-editor__top 
+.ck-sticky-panel
+.ck-toolbar
+.ck-rounded-corners, 
+.ck-rounded-corners
+.ck-editor__top
+.ck-sticky-panel
+.ck-toolbar,
+.ck-editor__main{
+    width: 100%;
 }
 
 .sidebar{

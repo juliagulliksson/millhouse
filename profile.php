@@ -1,12 +1,10 @@
 <?php
 require 'partials/head.php';
 require 'profile_includes/profile_sql.php';
-?>
 
-<?php
 if(!isset($_GET['newpost']) && !isset($_GET['editpost'])):
 ?>
-    <div class="profile-container">
+    <div class="profile-container"">
         <div class="profile">
             <img src="images/profile_photo.jpg" Alt="Profile photo" />
         </div>
@@ -72,15 +70,11 @@ if(!isset($_GET['newpost']) && !isset($_GET['editpost'])):
 endif;
 
 if(isset($_GET['newpost'])):
-
     require 'partials/new_post.php';
-
 endif; //End of newpost if
 
 if(isset($_GET['editpost'])):
-
     require 'partials/edit_blogpost.php';
-
 endif;//end of editpost if
 
 require 'partials/footer.php';

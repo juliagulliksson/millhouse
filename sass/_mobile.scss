@@ -10,7 +10,8 @@ a{
 }
 
 a:hover{
-    @extend a;
+    text-decoration: none;
+    color: $dark_blue;
 }
 
 h2{
@@ -27,6 +28,15 @@ h3{
 h4{
     font-weight: 900;
     margin: 0.2em 0em;
+}
+
+.buttons{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    input[type=submit]{
+        margin: 0px 0px 10px 0px;
+    }
 }
 
 .hero{
@@ -61,13 +71,13 @@ h4{
     background-color: #fff;
 }
 
-.input_container{
-    @extend .container;
-    padding: 10px 0px 40px 0px;
-    display: flex;
-    justify-content: center;
-    text-align: center;
-}
+// .input_container{
+//     @extend .container;
+//     padding: 10px 0px 40px 0px;
+//     display: flex;
+//     justify-content: center;
+//     text-align: center;
+// }
 
 .blog_post{
     width: 100%;
@@ -82,12 +92,27 @@ h4{
         line-height: 1.5em;
     }
     a{
-        font-weight: 900;
         color: $dark_blue;
     }
     a:hover{
         color: $light_gray;
+        text-decoration: none;
     }
+}
+
+.comments-counter{
+    font-size: 0.8em;
+}
+
+.continue{
+    font-size: 1.2em;
+    font-family: $millhouse_font;
+}
+
+.go-back{
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 10px;
 }
 
 .footer-wrapper{
@@ -127,8 +152,14 @@ h4{
     display: none;
 }
 
+.center-heading{
+    text-align: center;
+}
+
 .login,
 .register{
+    margin: 10px;
+    text-align: center;
     input[type=text], 
     input[type=email], 
     input[type=password]{
@@ -180,6 +211,8 @@ select{
 .comment-field,
 .insert-form{
     @extend .login;
+    margin: 0px;
+    text-align: left;
     input[type=text]{
         width: 100%;
         text-align: left;

@@ -7,10 +7,9 @@
             <span class="username"><?= $article['username'] ?><span>
         </h3>
         
-        <p><?= string_length($article['text'], 15, $article['postID'])?></p>
-        
-        <a href="index.php?id=<?= $article['postID'] ?>" class="comments-count">
-            Comments (<?= $article['comments']?>)
+        <p><?= string_length($article['text'], 25, $article['postID'])?></p>
+        <a href="index.php?id=<?= $article['postID'] ?>" class="comments-counter">
+            COMMENTS (<?= $article['comments']?>)
         </a>
     </article>
 </div>

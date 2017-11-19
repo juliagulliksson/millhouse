@@ -1,5 +1,4 @@
 <?php
-
 require 'database.php';
 
 //to select comments with posts
