@@ -1,4 +1,4 @@
-<div class="blog_post max-characters">
+<div class="blog-post max-characters">
     <article>
         <h2>
         <?= $article['post_title']; ?></h2>

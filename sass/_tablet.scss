@@ -20,6 +20,10 @@ aside {
     height: 400px;
 }
 
+.container-fluid{
+    max-width: 1200px;
+}
+
 .container{
     padding: 2em 3em;
     display: flex;
@@ -52,6 +56,10 @@ aside {
 }
 
 .footer-wrapper{
+    display: flex;
+    justify-content: center;
+}
+.footer-container{
     padding: 20px 0px 40px 0px;
     flex-direction: row;
     justify-content: space-around;
@@ -63,7 +71,7 @@ aside {
     margin-bottom: 0px;
 }
 
-.footer img{
+.footer-logo img{
     height: 70px;
     margin-bottom: 0px;
 }
