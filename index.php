@@ -63,7 +63,9 @@ $today = date('Y-n-j');
                 endforeach; 
             endif; //END OF MONTHS 
             
-              ?>
+              
+            include 'partials/pagination_links.php';
+            ?>
         </main>
 
         <aside>
