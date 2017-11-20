@@ -28,7 +28,8 @@ $today = date('Y-n-j');
 
             if (count($category_articles) > 1):
             ?>  
-                <h4>Sort by date | <a name="newest" href="index.php?category=<?= $categories?>&asc=true#oldest">Oldest</a></h4>
+                <h4>Sort by date | <a name="newest" href="index.php?category=<?= $categories?>
+                &asc=true#oldest">Oldest</a></h4>
                 
             <?php 
             endif;//End of count category_articles if
@@ -43,7 +44,8 @@ $today = date('Y-n-j');
                 include 'partials/category_articles.php';
                 ?>
 
-            <h4>Sort by date | <a name="oldest" href="index.php?category=<?= $categories?>#newest">Newest</a></h4>
+            <h4>Sort by date | <a name="oldest" href="index.php?category=<?= $categories?>
+            #newest">Newest</a></h4>
 
                 <?php
                 foreach($category_articles_asc as $article):
@@ -71,7 +73,8 @@ $today = date('Y-n-j');
                     <ul>
                     <?php foreach ($category_disctinct as $categories): ?>
                         <li>
-                            <a href="index.php?category=<?= $categories['id']?>"><?= $categories['title'] ?> (<?= $categories['posts']?>)</a>
+                            <a href="index.php?category=<?= $categories['id']?>#scroll">
+                            <?= $categories['title'] ?> (<?= $categories['posts']?>)</a>
                         </li>
                     <?php endforeach; ?>
                     </ul>
@@ -85,7 +88,8 @@ $today = date('Y-n-j');
                         $month = $months['month'];
                     ?>
                         <li>
-                            <a href="index.php?month=<?= $months['month']?>"><?= replace_month($month) ?> (<?= $months['posts']?>)</a>
+                            <a href="index.php?month=<?= $months['month']?>#scroll">
+                            <?= replace_month($month) ?> (<?= $months['posts']?>)</a>
                         </li>
                     <?php endforeach; ?>
                     </ul>

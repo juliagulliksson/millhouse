@@ -24,3 +24,5 @@ function string_length($blog_string, $length, $link){
     }
     
   }
+
+ 

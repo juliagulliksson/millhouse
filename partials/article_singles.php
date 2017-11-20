@@ -2,7 +2,7 @@
 $id = $_GET['id'];
 
 //require SQL-queries
-require 'partials/function_article.php';
+require 'partials/article_single_sql.php';
         
 foreach ($article_single as $article):
 ?>

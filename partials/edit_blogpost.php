@@ -13,14 +13,13 @@ require 'sql.php';
             <div class="form-group__category">
                 <label for="category">Choose category:</label><br />
                 <select name="category">
-                <?php foreach($category as $categories):
+                <?php foreach($category as $categories): 
                 if($_GET['category_id'] == $categories['id']){
                     $selected = 'selected="selected"'; 
                 }else{
                     $selected = ''; 
                 }
                 echo "<option value='" . $categories['id'] . "' $selected>" . $categories['title'] ."</option>";
-                     
                 endforeach; ?>
                 </select>
             </div>
