@@ -1,5 +1,6 @@
 <?php
 require 'database.php';
+require 'pagination.php';
 
 //to select comments with posts
 //SELECT posts.id, posts.post_title, GROUP_CONCAT(comments.text), count(*) as coment_cnt 
@@ -18,6 +19,7 @@ ON posts.user_id=users.id
 LEFT JOIN comments ON posts.id=comments.post_id
 GROUP BY posts.id
 ORDER BY posts.date DESC
+LIMIT 5 OFFSET $offset_number
   ");
 $statement->execute();
 $articles = $statement->fetchAll(PDO::FETCH_ASSOC);
