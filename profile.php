@@ -6,13 +6,9 @@ if(!isset($_SESSION['signed_in']) && empty($_SESSION['signed_in'])){
     exit();
 }
 require 'profile_includes/profile_sql.php';
-?>
 
-<?php
-if(!isset($_GET['newpost']) 
-&& !isset($_GET['editpost'])):
+if(!isset($_GET['newpost']) && !isset($_GET['editpost'])):
 ?>
-
 <div class="profile-container">
     <div class="profile">
         <img src="images/profile_photo.jpg" Alt="Profile photo" />
@@ -20,7 +16,7 @@ if(!isset($_GET['newpost'])
     <div class="profile-info">
         <h4><?= $_SESSION['username']?></h4>
         <h3><?= $_SESSION['email']?></h3>
-        <a href="profile.php?newpost=true">Write a new blog post</a>
+        <a href="profile.php?newpost=true#scroll">Write a new blog post</a>
     </div>
 </div>
 <div class="amount-container">

@@ -1,5 +1,5 @@
 <?php
-function check_if_dublette ($column, $value){
+function check_if_dublette($column, $value){
     require "partials/database.php";
         $my_sql = $pdo->prepare(
         "SELECT COUNT($column) as $column
