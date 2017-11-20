@@ -1,5 +1,10 @@
 <?php
 require 'partials/head.php';
+
+if(!isset($_SESSION['signed_in']) && empty($_SESSION['signed_in'])){
+    header('location: index.php');
+    exit();
+}
 require 'profile_includes/profile_sql.php';
 ?>
 
