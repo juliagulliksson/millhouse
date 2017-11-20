@@ -1,6 +1,5 @@
 <?php
 header('location: ../index.php');
-var_dump($_POST);
 require 'database.php';
 
 $new_title = $_POST['edit_title'];

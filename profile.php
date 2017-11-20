@@ -29,7 +29,7 @@ if(!isset($_GET['newpost'])
         <?php
         foreach($profile_articles as $articles):
         ?>
-        <h4><?= $articles['posts']?></h4>
+        <h4><?= $articles['number_of_posts']?></h4>
         <?php endforeach; ?>
         <p>Blog posts</p>
     </div>
@@ -37,7 +37,7 @@ if(!isset($_GET['newpost'])
         <?php
         foreach($profile_comments as $comments):
         ?>
-        <h4><?= $comments['comments']?></h4>
+        <h4><?= $comments['number_of_comments']?></h4>
         <?php
         endforeach;
         ?>
