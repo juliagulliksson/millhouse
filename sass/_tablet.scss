@@ -8,10 +8,6 @@ aside {
     -webkit-flex-basis: 22%; 
 }
 
-.navbar, .navbar-default {
-    padding-right: 15px;
-}
-
 .buttons{
     flex-direction: row;
     input[type=submit]{
@@ -25,7 +21,7 @@ aside {
 }
 
 .container{
-    padding: 2em 8em;
+    padding: 2em 3em;
     display: flex;
     justify-content: center;
 }

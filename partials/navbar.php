@@ -27,11 +27,11 @@
                     <ul class="nav navbar-nav navbar-right">
                         <?php if(isset($_SESSION['signed_in'])): ?>
                         <li class="navbar-text">You are logged in as <?= $_SESSION['username']?></li>
-                        <li><a href="profile.php#wrapper">My profile</a></li>
+                        <li><a href="profile.php#scroll">My profile</a></li>
                         <li><a href="index.php?end_session=true">Log out</a></li>
                         <?php else: ?>
                         <div class="buttons">
-                        <li class="login-margin">
+                        <li>
                             <form action="login.php#scroll">
                                 <input type="submit" value="Login" />
                             </form>
