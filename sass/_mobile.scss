@@ -61,28 +61,31 @@ h4{
 .wrapper{
     width: 100%;
     background-color: $light_gray;
-    display: flex;
-    justify-content: center;
 }
 
 .container{
-    max-width: 1200px;
+    max-width: 1088px;
     padding: 2em;
     width: 100%;
     background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-// .input_container{
-//     @extend .container;
-//     padding: 10px 0px 40px 0px;
-//     display: flex;
-//     justify-content: center;
-//     text-align: center;
-// }
+.sidebar{
+    display: block;
+    text-align: center;
+    max-width: 30ch;
+    ul{
+        list-style: none;
+        padding-left: 0px;
+    }
+}
 
 .blog-post{
-    width: 100%;
-    padding-bottom: 2em;
+    margin-bottom: 2em;
+    max-width: 75ch;
     img{
         width: 100%;
     }
@@ -103,17 +106,12 @@ h4{
     }
 }
 
-.max-characters{
-    max-width: 75ch;
-}
+// .max-characters{
+//     
+// }
 
 .comments-counter{
     font-size: 0.8em;
-}
-
-.continue{
-    font-size: 1.2em;
-    font-family: $millhouse_font;
 }
 
 .go-back{
@@ -157,10 +155,6 @@ h4{
 .footer-logo img{
     height: 60px;
     margin-bottom: 20px;
-}
-
-.sidebar{
-    display: none;
 }
 
 .center-heading{
