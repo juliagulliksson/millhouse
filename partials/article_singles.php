@@ -4,7 +4,7 @@ $id = $_GET['id'];
 //require SQL-queries
 require 'partials/article_single_sql.php';
 ?>
-<div class="blog_post">
+<div class="blog-post">
     <div class="go-back">
         <a href="index.php">
             <i class="fa fa-arrow-left" aria-hidden="true"></i>
