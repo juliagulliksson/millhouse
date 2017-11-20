@@ -2,9 +2,8 @@
 $id = $_GET['id'];
 require 'sql.php';
 ?>
-
 <div class="insert-form">
-    <h2>Edit your blog post here</h2>
+<div class="center-heading"><h2>Edit blogpost</h2></a></div>
     <form action="partials/edit_blogpost_sql.php?id=<?= $id ?>" method="POST">
     <div class="form-group">
             <div class="form-group__title">
@@ -29,14 +28,15 @@ require 'sql.php';
         <!-- /.form-group-collapse -->
    
     <textarea name="edit_text" id="editor"><?= $_GET['content']?></textarea>
-        <script>
-            ClassicEditor
-            .create(document.querySelector('#editor'))
-            .catch(error => {
-                console.error(error);
-            });
-        </script>
-    <br/>
+    <script>
+        ClassicEditor
+        .create(document.querySelector('#editor'))
+        .catch(error => {
+            console.error(error);
+        });
+    </script>
+    <br />
     <input type="submit" name="submit" value="Submit">
-    <form>
+    </form>
 </div>
+<!-- /.insert-form-collapse -->
