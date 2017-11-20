@@ -7,6 +7,9 @@ $today = $_POST['date'];
 $user_id = $_POST['user_id'];
 
 $statement = $pdo->prepare("INSERT INTO comments (post_id, text, date, user_id) 
-VALUES ($post_id, '$comment', CURRENT_TIMESTAMP(), $user_id)");
-$statement->execute();
-
+VALUES (:post_id, :comment, CURRENT_TIMESTAMP(), :user_id)");
+$statement->execute(array(
+    ":post_id" => $post_id,
+    ":comment" => $comment,
+    ":user_id" => $user_id
+));

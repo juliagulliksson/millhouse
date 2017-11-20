@@ -71,6 +71,7 @@ h4{
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 }
 
 .sidebar{
@@ -310,4 +311,17 @@ select{
         list-style: none;
         padding-left: 0px;
     }
+}
+
+.category-bold{
+    font-weight: 700;
+}
+
+.dot{
+    color: rgb(184, 182, 182);
+    padding: 0px 5px;
+}
+
+.username{
+    text-transform: none;
 }
