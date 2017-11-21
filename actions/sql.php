@@ -1,6 +1,6 @@
 <?php
 require 'partials/database.php';
-require 'pagination.php';
+require 'partials/pagination.php';
 
 //to select comments with posts
 //SELECT posts.id, posts.post_title, GROUP_CONCAT(comments.text), count(*) as coment_cnt 

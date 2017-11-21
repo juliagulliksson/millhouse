@@ -76,11 +76,5 @@ require 'partials/head.php';
         <aside>
             <?php require 'partials/aside.php'; ?>
         </aside>
->>>>>>> master
-    </div>
-    <!-- /.sidebar-collapse -->
-    </aside>
-</div>
-<!-- /.container-collapse -->
 
 <?php require 'partials/footer.php'; ?>
