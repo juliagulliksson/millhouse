@@ -71,7 +71,6 @@ h4{
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
 }
 
 .sidebar{
@@ -107,9 +106,17 @@ h4{
     }
 }
 
-// .max-characters{
-//     
-// }
+.comments-container{
+    margin: 20px 0px 0px 0px;
+    h4{
+        padding-bottom: 10px;
+        border-bottom: 1px solid $light_gray;
+    }
+    .comments{
+        padding: 10px 0px;
+        border-bottom: 1px solid $light_gray;
+    }
+}
 
 .comments-counter{
     font-size: 0.8em;
@@ -217,8 +224,11 @@ select{
 .comment-field,
 .insert-form{
     @extend .login;
-    margin: 0px;
+    margin: 20px 0px 0px 0px;
     text-align: left;
+    h4{
+        padding-bottom: 10px;
+    }
     input[type=text]{
         width: 100%;
         text-align: left;
@@ -233,6 +243,10 @@ select{
         width: 100px;
         text-align: center;
     }
+}
+
+.insert-form{
+    @extend .profile-wrapper;
 }
 
 // CKEditor WYSIWYG
@@ -272,6 +286,12 @@ select{
     height: 200px;
 }
 
+.profile-wrapper{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
 .profile-container{
     display: flex;
     justify-content: space-between;
@@ -307,6 +327,7 @@ select{
     flex-direction: column;
     text-align: center;
     padding: 10px 0px;
+    margin-bottom: 0px;
     ul{
         list-style: none;
         padding-left: 0px;
