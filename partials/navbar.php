@@ -16,7 +16,7 @@
                 <img src="images/millhouse-logo.png" Alt="Millhouse logo">
             </a>
         </div>
-        <!-- /.navbar-header-collapse -->
+        <!-- /.navbar-header-collapse -->     
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
@@ -26,13 +26,13 @@
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <?php if(isset($_SESSION['signed_in'])): ?>
-                    <li class="navbar-text">You are logged in as 
-                    <?= $_SESSION['username']?></li>
-                    <li><a href="profile.php#scroll">My profile</a></li>
-                    <li><a href="index.php?end_session=true">Log out</a></li>
+                <li class="navbar-text">You're logged in as 
+                <?= $_SESSION['username']?></li>
+                <li><a href="profile.php#scroll">My profile</a></li>
+                <li><a href="index.php?end_session=true">Log out</a></li>
                 <?php else: ?>
-                    <div class="buttons">
-                    <li class="login-margin">
+                <div class="buttons">
+                    <li>
                         <form action="login.php#scroll">
                             <input type="submit" value="Login" />
                         </form>
@@ -42,7 +42,8 @@
                             <input type="submit" value="Register" />
                         </form>
                     </li>
-                    </div>
+                </div>
+                <!-- /.buttons-collapse -->
                 <?php endif; ?>
             </ul>
         </div>
@@ -50,3 +51,4 @@
     </div>
     <!-- /.container-fluid -->
 </nav>
+
