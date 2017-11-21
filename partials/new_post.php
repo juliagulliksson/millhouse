@@ -2,6 +2,7 @@
 if (isset($_SESSION['username']) 
 && $_SESSION['contributor'] == true 
 && !isset($_GET['id'])):
+
     ?> 
 
 <div class="insert-form">
@@ -34,12 +35,30 @@ if (isset($_SESSION['username'])
 
         <input type="hidden" value="<?= $today ?>" name="date">
         <input type="hidden" value="<?= $_SESSION['id']?>" name="user_id">
+        <input type="submit" name="submit" value="Submit">
+    </form>
+</div>
+
+
+
+
         <input type="file" name="image">
         <textarea name="alt_text"
         cols="40" rows="1"
         placeholder="Write something about your image.."></textarea>
         <input type="submit" value="Submit">
     </form>
+
+<?php 
+
+if(isset($_GET['newpost'], $_GET['error'])) {
+echo "<h5>Error: All fields are required for submission.</h5>";
+
+}
+
+?>
+
+
 </div>
 <!-- /.insert-form-collapse -->
 <?php endif; ?>
