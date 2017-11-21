@@ -25,7 +25,7 @@
                         <li><a href="#">Investors</a></li>
                     </ul>
                 </div>
-                <div class="footer">
+                <div class="social-media">
                     <ul>
                         <li><b>FOLLOW US</b></li>
                         <li><a href="#">Instagram</a></li>

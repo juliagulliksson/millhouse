@@ -13,7 +13,7 @@ $today = date('Y-n-j');
         <br />
         <input type="submit" id="submit_login" value="Login">
     </form>
-    <b>Not a member yet?</b> <a href="register.php#register">Register here!</a>
+    <b>Not a member yet?</b> <a href="register.php#scroll">Register here!</a>
 </div>
 <!-- /.login-collapse -->
 <?php require 'partials/footer.php'; ?>

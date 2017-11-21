@@ -15,7 +15,7 @@ aside {
 .buttons{
     flex-direction: row;
     input[type=submit]{
-        margin: 5px 20px 10px 10px;
+        margin: 5px 0px 10px 10px;
     }
 }
 
@@ -25,12 +25,13 @@ aside {
 }
 
 .container{
-    padding: 2em 4em;
     flex-direction: row;
     align-items: flex-start;
+    justify-content: center;
+    padding: 2em 4em;
 }
 
-.blog-post{
+.blog-post,{
     width: 95%;
 }
 
@@ -40,6 +41,10 @@ aside {
 
 .profile-info{
     width: 75%;
+}
+
+.profile img{
+    max-width: 10em;
 }
 
 // Editor

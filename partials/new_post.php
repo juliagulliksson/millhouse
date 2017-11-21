@@ -6,8 +6,7 @@ if (isset($_SESSION['username'])
 
 <div class="insert-form">
     <div class="center-heading"><h2>Write a new blog post</h2></div>
-    <form action="partials/insert.php" method="POST"
-    enctype="multipart/form-data">
+    <form action="actions/insert_blogpost.php" method="POST">
         <div class="form-group">
             <div class="form-group__title">
                 <label for="title">Title:</label><br />
