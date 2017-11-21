@@ -25,7 +25,6 @@
         </ul>
     </div>
     <!-- /.categories-list-collapse -->
-                
     <h3>Archive</h3>
     <div class="categories-list">
         <ul>
