@@ -346,3 +346,14 @@ select{
 .username{
     text-transform: none;
 }
+
+a.profile-button{
+    background-color: $light_blue;
+    border: none;
+    color: #FFF;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    padding: 10px;
+    margin: 4px 5px;
+}
