@@ -11,31 +11,28 @@ require 'actions/article_single_sql.php';
         </a>
     </div>
     <article>
-        <h2><?= $article_single['post_title']; ?></h2>
-        <h3><span class="category-bold">
-            <?= $article_single['title']; ?></span>
-            <span class="dot">&bull;</span><?= replace_date($article_single['date']) ?> 
-            <span class="username">
-                <?= $article_single['username'] ?>
-                <?php // Edit and delete options
+        <h1><?= $article_single['post_title']; ?></h1>
+        <h3><span class="category-bold"><?= $article_single['title']; ?></span>
+            <span class="dot">&bull;</span>
+            <?= replace_date($article_single['date']) ?> 
+            <span class="dot">&bull;</span>
+            <span class="username"><?= $article_single['username'] ?></span>
+        </h3>
+        <p><?= ($article_single['text']) ?></p> 
+        <?php // Edit and delete options
                 if (isset($_SESSION['signed_in']) && $article_single['user_id'] == $_SESSION['id']):
                 ?>
                 <a class="profile-button" 
                 href="profile.php?editpost=true&id=<?= $article_single['postID']?>">
-                    Edit <i class="fa fa-pencil" aria-hidden="true"></i>
-                </a> 
+                Edit <i class="fa fa-pencil" aria-hidden="true"></i></a>
                 <a class="profile-button" 
                 href="actions/delete_blogpost.php?id=<?= $article_single['postID']?>">
-                    Delete <i class="fa fa-trash" aria-hidden="true"></i>
+                Delete <i class="fa fa-trash" aria-hidden="true"></i>
                 </a>
-            </span>
-            </h3>
-            <?php endif; ?>  
-        </h3>
-        <p><?= ($article_single['text']) ?></p> 
+                <?php endif; ?>  
     </article>
     <?php
-    //article_single_sql.php is where $comments is made
+    // article_single_sql.php is where $comments is made
     if(count($comments) > 0):
     ?>
     <div class="comments-container">
@@ -53,7 +50,7 @@ require 'actions/article_single_sql.php';
     </div>
     <!-- /.comments-container-collapse -->
     <?php 
-    endif; //END OF count comments if 
+    endif; // END OF count comments if 
 
     if(isset($_SESSION['signed_in'])):
     ?>
@@ -70,7 +67,7 @@ require 'actions/article_single_sql.php';
     <?php 
         else:
             echo "<br /><b><a href='login.php#scroll'>Sign in to comment</a></b>";
-        endif; //end of isset username if 
+        endif; // End of isset username if 
     ?>
 </div>
 <!-- /.blog_post-collapse -->

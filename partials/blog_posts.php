@@ -1,8 +1,8 @@
 <div class="blog-post">
     <article>
-        <h2>
+        <h1>
             <a href="index.php?id=<?= $article['postID'] ?>#scroll"><?= $article['post_title']; ?></a>
-        </h2>
+        </h1>
         <h3>
             <span class="category-bold"><?= $article['title']; ?></span>
             <span class="dot">&bull;</span><?= replace_date($article['date']) ?> | 

@@ -2,22 +2,25 @@
 header('location: ../index.php');
 require '../partials/database.php';
 
-if(!empty($_POST['blog_title']) && !empty($_POST['blog_title'] || $_POST['category']) && !empty($_POST['category'] || $_POST['post_text']) && !empty($_POST['post_text'] || $_POST['user_id']) && !empty($_POST['user_id'])) {
+$title      = $_POST['blog_title'];
+$category   = $_POST['category'];
+$body       = $_POST['post_text'];
+$user_id    = $_POST['user_id'];
 
-$title = $_POST['blog_title'];
-$category = $_POST['category'];
-$body = $_POST['post_text'];
-$user_id = $_POST['user_id'];
+if(!empty($title) 
+&& !empty($title || $category) 
+&& !empty($category || $body) 
+&& !empty($body || $user_id) 
+&& !empty($user_id)) {
 
-
-//If blog post with image is posted
+// If blog post with image is posted
 if (!empty($_FILES["image"]) && 
     !empty($_POST["alt_text"])) {
 require "upload_image.php";
 }//End if
 
 
-//If blog post without image is posted
+// If blog post without image is posted
 else {
     var_dump($_POST);
 $statement = $pdo->prepare(
@@ -43,11 +46,8 @@ $statement->execute(array(
     ":text" => $body, 
     ":user_id" => $user_id
 ));
-}//End else
+}// End else
 }
-
 else{
-
-header('Location: ../profile.php?newpost=error&error=error');
-
+    header('Location: ../profile.php?newpost=error&error=error');
 }
