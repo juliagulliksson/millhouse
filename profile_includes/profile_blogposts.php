@@ -1,19 +1,22 @@
-<!-- Be able to see a list of blogposts the user has made,
-with Delete and Edit buttons without having to click on
-the indv blogposts -->
-<div class="blog-post">
-    <article>
-        <h2><?= $article['post_title']; ?></h2>
-        <h3>
-            <span class="category-bold"><?= $article['title']; ?></span>
-            <span class="dot">&bull;</span><?= replace_date($article['date']) ?> | 
-            <span class="username"><?= $article['username'] ?><span>
-        </h3>
+<?php
+if(!isset($_GET['uid'])):
+    if(count($profile_all_articles) > 0):
+        foreach($profile_all_articles as $article):  
+            include 'profile_includes/profile_blogposts_indv.php';
+        endforeach; 
+    else:
+        header('location: profile.php');
+    endif; //End of count articles if
 
-        <p><?= string_length($article['text'], 15, $article['postID'])?></p>
-    
-        <a href="index.php?id=<?= $article['postID'] ?>" class="comments-count">
-           Comments (<?= $article['comments']?>)
-        </a>
-    </article>
-</div>
+    elseif(isset($_GET['uid'])):
+        require 'profile_includes/user_sql.php';
+        if(count($user_all_articles) > 0):
+            foreach ($user_all_articles as $article):
+                include 'profile_includes/profile_blogposts_indv.php';
+            endforeach;
+        else: 
+            header('location: user.php');
+        endif; //End of count if
+endif;//end of check get requests if
+
+    ?>

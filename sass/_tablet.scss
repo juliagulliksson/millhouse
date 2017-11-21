@@ -1,12 +1,14 @@
 main {
     flex-basis: 78%;
     -webkit-flex-basis: 78%; 
+    border-right: 1px solid #ebebeb;
+    margin-right: 30px;
 }
 
-aside {
-    flex-basis: 22%;
-    -webkit-flex-basis: 22%; 
-}
+// aside {
+//     flex-basis: 22%;
+//     -webkit-flex-basis: 22%; 
+// }
 
 .container-fluid{
     max-width: 1280px;

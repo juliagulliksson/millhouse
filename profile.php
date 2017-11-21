@@ -1,6 +1,7 @@
 <?php
 require 'partials/head.php';
 
+//checks if user is not logged in or has clicked on another user
 if(!isset($_SESSION['signed_in']) && empty($_SESSION['signed_in'])){
     header('location: index.php');
     exit();
@@ -17,14 +18,18 @@ if(!isset($_GET['newpost']) && !isset($_GET['editpost'])):
         <div class="profile-info">
             <h4><?= $_SESSION['username']?></h4>
             <h3><?= $_SESSION['email']?></h3>
+            <?php 
+            if($_SESSION['contributor'] == true):
+            ?>
             <a href="profile.php?newpost=true#scroll">Write a new blog post</a>
+            <?php endif; ?>
         </div>
     </div>
     <!-- /.profile-container-collapse -->
     <div class="amount-container">
         <div class="amount">
             <?php foreach($profile_articles as $articles): ?>
-            <h4><?= $articles['number_of_posts']?></h4>
+            <h4><a href="index.php?upost=true#scroll"><?= $articles['number_of_posts']?></a></h4>
             <?php endforeach; ?>
             <p>Blog posts</p>
         </div>
@@ -85,6 +90,8 @@ endif; //End of newpost if
 if(isset($_GET['editpost'])):
     require 'partials/edit_blogpost.php';
 endif;//end of editpost if
+
+
 
 require 'partials/footer.php';
 ?>

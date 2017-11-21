@@ -361,5 +361,15 @@ select{
 
 .nav-margin{
     margin-right: 0px;
+}
 
+a.profile-button{
+    background-color: $light_blue;
+    border: none;
+    color: #FFF;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    padding: 10px;
+    margin: 4px 5px;
 }
