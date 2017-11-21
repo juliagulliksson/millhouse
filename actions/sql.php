@@ -1,10 +1,10 @@
 <?php
-require 'database.php';
+require 'partials/database.php';
+require 'partials/pagination.php';
 
 //to select comments with posts
 //SELECT posts.id, posts.post_title, GROUP_CONCAT(comments.text), count(*) as coment_cnt 
 //FROM posts LEFT JOIN comments ON (posts.id = comments.post_id) GROUP BY posts.id
-
 
 //Main article fetch
 $statement = $pdo->prepare("SELECT posts.date, posts.id as postID, 
@@ -20,12 +20,14 @@ ON posts.user_id=users.id
 LEFT JOIN comments ON posts.id=comments.post_id
 GROUP BY posts.id
 ORDER BY posts.date DESC
+LIMIT 5 OFFSET $offset_number
   ");
 $statement->execute();
 $articles = $statement->fetchAll(PDO::FETCH_ASSOC);
 
 //Categories (number of posts)
-$statement = $pdo->prepare(" SELECT categories.title, categories.id, COUNT(posts.id) AS posts
+$statement = $pdo->prepare(" SELECT categories.title, categories.id, 
+COUNT(posts.id) AS posts
 FROM categories 
 LEFT JOIN posts 
 ON categories.id=posts.category_id 
@@ -42,7 +44,8 @@ $statement->execute();
 $category = $statement->fetchAll(PDO::FETCH_ASSOC);
 
 //Distinct months fetch
-$statement = $pdo->prepare("SELECT DISTINCT MONTH(date) as month, COUNT(posts.id) as posts 
+$statement = $pdo->prepare("SELECT DISTINCT MONTH(date) as month, 
+COUNT(posts.id) as posts 
 FROM posts 
 GROUP BY MONTH(date)
 ORDER BY MONTH(date) DESC");

@@ -3,11 +3,10 @@
 @import "_navbar.scss";
 @import "_mobile.scss";
 
-
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 768px){
     @import "_tablet.scss";
 }
 
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 992px){
     @import "_desktop.scss";
 }

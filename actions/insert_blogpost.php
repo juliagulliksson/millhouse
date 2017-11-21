@@ -1,6 +1,6 @@
 <?php
-//header('location: ../index.php');
-require 'database.php';
+header('location: ../index.php');
+require '../partials/database.php';
 
 $title = $_POST['blog_title'];
 $category = $_POST['category'];
