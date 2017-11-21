@@ -2,6 +2,7 @@
 if (isset($_SESSION['username']) 
 && $_SESSION['contributor'] == true 
 && !isset($_GET['id'])):
+
     ?> 
 <div class="insert-form">
     <div class="center-heading"><h2>Write a new blog post</h2></a></div>
@@ -33,8 +34,18 @@ if (isset($_SESSION['username'])
 
         <input type="hidden" value="<?= $today ?>" name="date">
         <input type="hidden" value="<?= $_SESSION['id']?>" name="user_id">
-        <input type="submit" value="Submit">
+        <input type="submit" name="submit" value="Submit">
     </form>
 </div>
+
+
+<?php 
+
+if(isset($_GET['newpost'], $_GET['error'])) {
+echo "<h5>Error: All fields are required for submission.</h5>";
+
+}
+
+?>
 
 <?php endif; ?>
