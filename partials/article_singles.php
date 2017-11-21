@@ -14,23 +14,50 @@ require 'actions/article_single_sql.php';
         <h2><?= $article_single['post_title']; ?></h2>
         <h3><span class="category-bold">
             <?= $article_single['title']; ?></span>
+<<<<<<< HEAD
             <span class="dot">&bull;</span><?= replace_date($article_single['date']) ?> | 
             <span class="username"><?= $article_single['username'] ?></span>
+=======
+            <span class="dot">&bull;</span><?= replace_date($article_single['date']) ?> 
+            <span class="username">
+                <?= $article_single['username'] ?>
+                <?php // Edit and delete options
+                if (isset($_SESSION['signed_in']) && $article_single['user_id'] == $_SESSION['id']):
+                ?> ///
+                <a href="profile.php?editpost=true&id=<?= $article_single['postID']?>">
+                    Edit <i class="fa fa-pencil" aria-hidden="true"></i>
+                </a> | 
+                <a href="partials/delete_blogpost.php?id=<?= $article_single['postID']?>">
+                    Delete <i class="fa fa-trash" aria-hidden="true"></i>
+                </a>
+            </span>
+            <?php endif; ?>  
+>>>>>>> 37d5a986e79e36e68af608dbb15e61f313c9105d
         </h3>
-        <p><?= ($article_single['text']) ?></p>   
+        <p><?= ($article_single['text']) ?></p> 
     </article>
-        <?php
-        if (isset($_SESSION['signed_in']) &&
-        $article_single['user_id'] == $_SESSION['id']):
-        ?>
-            <a href="profile.php?editpost=true&id=<?= $article_single['postID']?>">
-            Edit <i class="fa fa-pencil" aria-hidden="true"></i></a> | 
-            <a href="actions/delete_blogpost.php?id=<?= $article_single['postID']?>">
-            Delete <i class="fa fa-trash" aria-hidden="true"></i></a>
-        <?php 
-        endif;
+    <?php
+    //article_single_sql.php is where $comments is made
+    if(count($comments) > 0):
+    ?>
+    <div class="comments-container">
+        <h4>Comments:</h4>
+        <?php foreach($comments as $comment): ?>
+        <div class="comments">
+            <h3>
+                <?= replace_date($comment['date']) ?> | 
+                <span class="username"><?= $comment['username']?></span>
+            </h3>
+            <p><?= $comment['text']?> </p>
+        </div>
+        <!-- comments-collapse -->
+        <?php endforeach; ?>
+    </div>
+    <!-- /.comments-container-collapse -->
+    <?php 
+    endif; //END OF count comments if 
 
-        if(isset($_SESSION['signed_in'])):
+    if(isset($_SESSION['signed_in'])):
     ?>
     <div class="comment-field">
         <h4>Comment the blog post here:</h4>
@@ -42,28 +69,10 @@ require 'actions/article_single_sql.php';
         </form> 
     </div>
     <!-- /.comment-field-collapse -->
-</div>
-<!-- /.blog_post-collapse -->
     <?php 
         else:
-            echo "<b>Sign in to comment</b>";
-
-        endif; //end of isset username if
-        ?>
-    <?php
-//article_single_sql.php is where $comments is made
-    if(count($comments) > 0):
-        ?>
-        <h2>Comments:</h2>
-        <?php
-        foreach($comments as $comment): 
-        ?>
-            <div class="comments-box">
-            <h3><?= replace_date($comment['date']) ?> | <span class="username">
-            <?= $comment['username']?><span></h3>
-                <p><?= $comment['text']?> </p>
-            </div>
-        <!-- comments-box-collapse -->
-        <?php 
-        endforeach; 
-    endif; //END OF count comments if
+            echo "<br /><b><a href='login.php#scroll'>Sign in to comment</a></b>";
+        endif; //end of isset username if 
+    ?>
+</div>
+<!-- /.blog_post-collapse -->

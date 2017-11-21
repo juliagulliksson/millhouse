@@ -6,8 +6,7 @@ if (isset($_SESSION['username'])
 
 <div class="insert-form">
     <div class="center-heading"><h2>Write a new blog post</h2></div>
-    <form action="partials/insert.php" method="POST"
-    enctype="multipart/form-data">
+    <form action="actions/insert_blogpost.php" method="POST">
         <div class="form-group">
             <div class="form-group__title">
                 <label for="title">Title:</label><br />
@@ -41,6 +40,11 @@ if (isset($_SESSION['username'])
         placeholder="Write something about your image.."></textarea>
         <input type="submit" value="Submit">
     </form>
+    <?php 
+    if(isset($_GET['newpost'], $_GET['error'])) {
+    echo "<h5>Error: All fields are required for submission.</h5>";
+    }
+    ?>
 </div>
 <!-- /.insert-form-collapse -->
 <?php endif; ?>

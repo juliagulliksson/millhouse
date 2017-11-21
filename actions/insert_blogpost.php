@@ -2,6 +2,8 @@
 header('location: ../index.php');
 require '../partials/database.php';
 
+if(!empty($_POST['blog_title']) && !empty($_POST['blog_title'] || $_POST['category']) && !empty($_POST['category'] || $_POST['post_text']) && !empty($_POST['post_text'] || $_POST['user_id']) && !empty($_POST['user_id'])) {
+
 $title = $_POST['blog_title'];
 $category = $_POST['category'];
 $body = $_POST['post_text'];
@@ -42,3 +44,10 @@ $statement->execute(array(
     ":user_id" => $user_id
 ));
 }//End else
+}
+
+else{
+
+header('Location: ../profile.php?newpost=error&error=error');
+
+}
