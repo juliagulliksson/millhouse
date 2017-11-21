@@ -1,11 +1,10 @@
 <div class="sidebar">
-    <div class="">
+    <div>
         <h3>MILLHOUSE</h3>
         <p>
             Marabou är ett av Sveriges mest älskade varumärken, med
             choklad som får oss att säga Mmm...
         </p>
-
         <p>
             Marabou är en del av koncernen Mondelēz International, världens
             största chokladföretag. Förutom våra egna nordiska varumärken
