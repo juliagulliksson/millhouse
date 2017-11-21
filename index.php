@@ -7,7 +7,8 @@ require 'partials/head.php';
     if(!isset($_GET['id']) && !isset($_GET['category']) 
     && !isset($_GET['asc']) 
     && !isset($_GET['month'])
-    && !isset($_GET['upost'])):
+    && !isset($_GET['upost'])
+    && !isset($_GET['uid'])):
         foreach ($articles as $article):
             include 'partials/blog_posts.php';
         endforeach;
@@ -51,18 +52,16 @@ require 'partials/head.php';
             endforeach; 
         endif; //END OF MONTHS 
 
-        if(isset($_GET['upost'])):
+        if(isset($_GET['upost']) || isset($_GET['uid'])):
             require 'profile_includes/profile_sql.php';
-            foreach($profile_all_articles as $article):
-                require 'profile_includes/profile_blogposts.php';
-            endforeach;
-            endif;
+            require 'profile_includes/profile_blogposts.php';
+        endif;
             
-            if(!isset($_GET['id']) && !isset($_GET['category']) 
-            && !isset($_GET['asc']) 
-            && !isset($_GET['month'])):
-               include 'partials/pagination_links.php'; 
-            endif;
+        if(!isset($_GET['id']) && !isset($_GET['category']) 
+        && !isset($_GET['asc']) 
+        && !isset($_GET['month'])):
+            include 'partials/pagination_links.php'; 
+        endif;
             
             ?>
         </main>
