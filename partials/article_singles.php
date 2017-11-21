@@ -15,11 +15,12 @@ require 'actions/article_single_sql.php';
         <h3><span class="category-bold">
             <?= $article_single['title']; ?></span>
             <span class="dot">&bull;</span><?= replace_date($article_single['date']) ?> 
+            <span class="dot">&bull;</span>
             <span class="username">
                 <?= $article_single['username'] ?>
                 <?php // Edit and delete options
                 if (isset($_SESSION['signed_in']) && $article_single['user_id'] == $_SESSION['id']):
-                ?> ///
+                ?>
                 <a href="profile.php?editpost=true&id=<?= $article_single['postID']?>">
                     Edit <i class="fa fa-pencil" aria-hidden="true"></i>
                 </a> | 

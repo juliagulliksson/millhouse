@@ -346,3 +346,20 @@ select{
 .username{
     text-transform: none;
 }
+
+.button{
+    text-align: center;
+    a{
+        margin-bottom: 15px;
+        background-color: $light_blue;
+        border: none;
+        border-radius: 5px;
+        -moz-border-radius: 5px;
+        -webkit-border-radius: 5px;
+    }
+}
+
+.nav-margin{
+    margin-right: 0px;
+
+}
