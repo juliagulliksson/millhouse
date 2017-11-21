@@ -9,11 +9,13 @@ $statement = $pdo->prepare(" SELECT posts.date, posts.id as postID,
   INNER JOIN users
   ON posts.user_id=users.id
   LEFT JOIN comments ON posts.id=comments.post_id
-  WHERE posts.category_id = $categories
+  WHERE posts.category_id = :category_id
   GROUP BY posts.id
   ORDER BY posts.date DESC
     ");
-  $statement->execute();
+  $statement->execute(array(
+    ":category_id" => $categories
+  ));
   $category_articles = $statement->fetchAll(PDO::FETCH_ASSOC);
 
   $statement = $pdo->prepare(" SELECT posts.date, posts.id as postID, 
@@ -25,10 +27,12 @@ $statement = $pdo->prepare(" SELECT posts.date, posts.id as postID,
   INNER JOIN users
   ON posts.user_id=users.id
   LEFT JOIN comments ON posts.id=comments.post_id
-  WHERE posts.category_id = $categories
+  WHERE posts.category_id = :category_id
   GROUP BY posts.id
   ORDER BY posts.date ASC
     ");
-  $statement->execute();
+  $statement->execute(array(
+    ":category_id" => $categories
+  ));
   $category_articles_asc = $statement->fetchAll(PDO::FETCH_ASSOC);
 

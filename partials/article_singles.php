@@ -2,7 +2,7 @@
 $id = $_GET['id'];
 
 //require SQL-queries
-require 'partials/article_single_sql.php';
+require 'actions/article_single_sql.php';
 ?>
 <div class="blog-post">
     <div class="go-back">
@@ -28,14 +28,13 @@ require 'partials/article_single_sql.php';
             <?php endif; ?>  
         </h3>
         <p><?= ($article_single['text']) ?></p> 
-    
     </article>
    <?php
     if(isset($_SESSION['signed_in'])):
     ?>
     <div class="comment-field">
         <h4>Comment the blog post here:</h4>
-        <form action="partials/comment_insert.php?post_id=<?= $article_single['postID']?>" method="POST">
+        <form action="actions/comment_insert.php?post_id=<?= $article_single['postID']?>" method="POST">
             <input type="hidden" value=<?= $_SESSION['id'] ?> name="user_id">
             <textarea name="comment" placeholder="Type your comment"></textarea>
             <br />
@@ -53,7 +52,7 @@ require 'partials/article_single_sql.php';
 <!-- /.blog_post-collapse -->
     
     <?php
-//function_article.php is where $comments is made
+//article_single_sql.php is where $comments is made
     if(count($comments) > 0):
         ?>
         <h2>Comments:</h2>
