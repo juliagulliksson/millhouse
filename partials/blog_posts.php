@@ -13,5 +13,6 @@
         <a href="index.php?id=<?= $article['postID'] ?>#scroll" class="comments-counter">
         COMMENTS (<?= $article['comments']?>)
         </a>
+        </h3>
     </article>
 </div>
