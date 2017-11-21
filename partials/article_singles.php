@@ -14,25 +14,22 @@ require 'actions/article_single_sql.php';
         <h2><?= $article_single['post_title']; ?></h2>
         <h3><span class="category-bold">
             <?= $article_single['title']; ?></span>
-<<<<<<< HEAD
-            <span class="dot">&bull;</span><?= replace_date($article_single['date']) ?> | 
-            <span class="username"><?= $article_single['username'] ?></span>
-=======
             <span class="dot">&bull;</span><?= replace_date($article_single['date']) ?> 
             <span class="username">
                 <?= $article_single['username'] ?>
                 <?php // Edit and delete options
                 if (isset($_SESSION['signed_in']) && $article_single['user_id'] == $_SESSION['id']):
-                ?> ///
-                <a href="profile.php?editpost=true&id=<?= $article_single['postID']?>">
+                ?>
+                <a class="profile-button" 
+                href="profile.php?editpost=true&id=<?= $article_single['postID']?>">
                     Edit <i class="fa fa-pencil" aria-hidden="true"></i>
-                </a> | 
-                <a href="partials/delete_blogpost.php?id=<?= $article_single['postID']?>">
+                </a> 
+                <a class="profile-button" 
+                href="actions/delete_blogpost.php?id=<?= $article_single['postID']?>">
                     Delete <i class="fa fa-trash" aria-hidden="true"></i>
                 </a>
             </span>
             <?php endif; ?>  
->>>>>>> 37d5a986e79e36e68af608dbb15e61f313c9105d
         </h3>
         <p><?= ($article_single['text']) ?></p> 
     </article>
@@ -62,7 +59,7 @@ require 'actions/article_single_sql.php';
     <div class="comment-field">
         <h4>Comment the blog post here:</h4>
         <form action="actions/comment_insert.php?post_id=<?= $article_single['postID']?>" method="POST">
-            <input type="hidden" value=<?= $_SESSION['id'] ?> name="user_id">
+            <input type="hidden" value="<?= $_SESSION['id'] ?>" name="user_id">
             <textarea name="comment" placeholder="Type your comment"></textarea>
             <br />
             <input type="submit" name="comment_submit" value="Comment">

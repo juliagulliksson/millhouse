@@ -13,7 +13,7 @@ $user_id = $_POST['user_id'];
 //If blog post with image is posted
 if (!empty($_FILES["image"]) && 
     !empty($_POST["alt_text"])) {
-require "upload_image.php";
+require "partials/upload_image.php";
 }//End if
 
 
