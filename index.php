@@ -1,6 +1,7 @@
 <?php
 require 'partials/head.php';
 ?>
+<main>
     <?php
     // Startpage blog posts
     if(!isset($_GET['id']) && !isset($_GET['category']) 

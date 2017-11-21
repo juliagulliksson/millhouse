@@ -1,6 +1,5 @@
 <div class="page_number">
     <a href="index.php?page=1">HOME</a>
-    
     <?php 
     if($page -1 >= 1){ ?> 
     <a href="index.php?page=<?= $page - 1 ?>">&laquo;</a>
@@ -18,7 +17,7 @@
     if($page + 2 < $last_page ){ ?>
         <a href="index.php?page=<?= $page + 3 ?>"><?= $page + 3?></a>
         <?php  } 
-     
+    
     if($page < $last_page ){ ?>             
         <a href="index.php?page=<?= $page + 1 ?>">&raquo;</a>
     <?php }

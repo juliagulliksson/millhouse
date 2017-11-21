@@ -26,22 +26,14 @@
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <?php if(isset($_SESSION['signed_in'])): ?>
-                <li class="navbar-text">You're logged in as 
-                <?= $_SESSION['username']?></li>
-                <li><a href="profile.php#scroll">My profile</a></li>
-                <li><a href="index.php?end_session=true">Log out</a></li>
+                <li class="navbar-text">
+                    Logged in as <?= $_SESSION['username']?>
+                </li>
+                <li class="button nav-margin"><a href="profile.php#scroll">Profile</a></li>
+                <li class="button"><a href="index.php?end_session=true">Log out</a></li>
                 <?php else: ?>
-                <div class="buttons">
-                    <li>
-                        <form action="login.php#scroll">
-                            <input type="submit" value="Login" />
-                        </form>
-                    </li>
-                    <li>
-                        <form action="register.php#scroll">
-                            <input type="submit" value="Register" />
-                        </form>
-                    </li>
+                <li class="button nav-margin"><a href="login.php#scroll">Login</a></li>
+                <li class="button"><a href="register.php#scroll">Register</a></li>
                 </div>
                 <!-- /.buttons-collapse -->
                 <?php endif; ?>
