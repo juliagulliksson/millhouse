@@ -15,7 +15,7 @@ require 'actions/article_single_sql.php';
         <h3><span class="category-bold">
             <?= $article_single['title']; ?></span>
             <span class="dot">&bull;</span><?= replace_date($article_single['date']) ?> | 
-            <span class="username"><?= $article_single['username'] ?><span>
+            <span class="username"><?= $article_single['username'] ?></span>
         </h3>
         <p><?= ($article_single['text']) ?></p>   
     </article>

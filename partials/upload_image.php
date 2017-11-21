@@ -1,5 +1,5 @@
 <?php 
-     $target = "article_images/" . basename($_FILES["image"]["name"]);
+     $target = "partials/article_images/" . basename($_FILES["image"]["name"]);
      $path = $_FILES["image"]["tmp_name"]; 
      $filename = $_FILES["image"]["name"]; 
      $alt_text = $_POST["alt_text"]; 
