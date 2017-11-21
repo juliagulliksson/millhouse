@@ -1,5 +1,5 @@
+        
         </div>
-        <!-- /.container-collapse -->
     </div> <!-- /.wrapper-collapse -->
     <footer>
         <div class="footer-wrapper">

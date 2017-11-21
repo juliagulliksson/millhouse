@@ -13,7 +13,7 @@ require 'partials/functions/string_length.php';
 
 //Require partials
 require 'partials/database.php';
-require 'partials/sql.php';
+require 'actions/sql.php';
 require 'partials/log_out.php';
 require 'partials/register.php';
 ?>
