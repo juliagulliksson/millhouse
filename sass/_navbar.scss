@@ -62,22 +62,6 @@ nav, .navbar-nav, .navbar-right{
 	background-color: $dark_blue;
 }
 
-input[type=submit]{
-    text-align: center;
-    padding: 10px 20px;
-    color: #fff;
-    background-color: $light_blue;
-    border: none;
-    border-radius: 5px;
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
-}
-
-input[type=submit]:hover{
-    color: $dark_blue;
-    background-color: $light_gray;
-}
-
 .button{
     a{
         background-color: $light_blue;
