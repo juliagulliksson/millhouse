@@ -45,4 +45,3 @@ require 'partials/register.php';
     </header>
     <div class="wrapper" id="scroll">
         <div class="container">
-            <main>

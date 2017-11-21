@@ -1,7 +1,7 @@
 <?php
 require 'partials/head.php';
 ?>
-
+<main>
     <?php
     // Startpage blog posts
     if(!isset($_GET['id']) && !isset($_GET['category']) 
@@ -68,8 +68,13 @@ require 'partials/head.php';
                 endforeach; 
             endif; //END OF MONTHS 
             
+            if(!isset($_GET['id']) && !isset($_GET['category']) 
+            && !isset($_GET['asc']) 
+            && !isset($_GET['month'])):
+               include 'partials/pagination_links.php'; 
+            endif;
               
-            include 'partials/pagination_links.php';
+            
             ?>
         </main>
 
