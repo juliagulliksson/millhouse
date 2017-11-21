@@ -63,8 +63,13 @@ $today = date('Y-n-j');
                 endforeach; 
             endif; //END OF MONTHS 
             
+            if(!isset($_GET['id']) && !isset($_GET['category']) 
+            && !isset($_GET['asc']) 
+            && !isset($_GET['month'])):
+               include 'partials/pagination_links.php'; 
+            endif;
               
-            include 'partials/pagination_links.php';
+            
             ?>
         </main>
 
