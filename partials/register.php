@@ -1,8 +1,8 @@
 <?php
     //If fields for register is filled
-    if (isset($_POST["register_username"]) &&
-        isset($_POST["register_password"]) &&
-        isset($_POST["register_email"])){
+    if (!empty($_POST["register_username"]) &&
+        !empty($_POST["register_password"]) &&
+        !empty($_POST["register_email"])){
         
         $new_username = $_POST["register_username"];
                 
