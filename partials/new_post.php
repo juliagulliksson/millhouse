@@ -3,6 +3,7 @@ if (isset($_SESSION['username'])
 && $_SESSION['contributor'] == true 
 && !isset($_GET['id'])):
     ?> 
+
 <div class="insert-form">
     <div class="center-heading"><h2>Write a new blog post</h2></div>
     <form action="actions/insert_blogpost.php" method="POST">
@@ -33,8 +34,12 @@ if (isset($_SESSION['username'])
 
         <input type="hidden" value="<?= $today ?>" name="date">
         <input type="hidden" value="<?= $_SESSION['id']?>" name="user_id">
+        <input type="file" name="image">
+        <textarea name="alt_text"
+        cols="40" rows="1"
+        placeholder="Write something about your image.."></textarea>
         <input type="submit" value="Submit">
     </form>
 </div>
-
+<!-- /.insert-form-collapse -->
 <?php endif; ?>
