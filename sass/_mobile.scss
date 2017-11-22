@@ -6,23 +6,28 @@ body{
 }
 
 a{
-    color: $light_blue;
+    color: $dark_blue;
 }
 
 a:hover{
     text-decoration: none;
-    color: $dark_blue;
+    color: $light_gray;
 }
 
 h1{
     font-weight: 900;
-    margin: 0em 0em 0.5em 0em;
+    margin: 0px 0px 5px 0px;
+}
+
+h2{
+    //font-weight: 900;
+    font-size: 1.7em;
 }
 
 h3{
-    margin: 0.8em 0em;
-    font-size: 0.9em;
-    text-transform: uppercase;
+    font-size: 1.1em;
+    font-weight: bold;
+    margin: 0px 0px 5px 0px;
 }
 
 h4{
@@ -86,6 +91,12 @@ h4{
 .blog-post{
     margin-bottom: 2em;
     max-width: 75ch;
+    h3{
+        margin: 0.8em 0em;
+        font-size: 0.9em;
+        font-weight: normal;
+        text-transform: uppercase;
+    }
     img{
         width: 100%;
     }
@@ -96,13 +107,6 @@ h4{
         line-height: 1.5em;
         text-align: justify;
         text-justify: inter-word;
-    }
-    a{
-        color: $dark_blue;
-    }
-    a:hover{
-        color: $light_gray;
-        text-decoration: none;
     }
 }
 
@@ -304,6 +308,16 @@ select{
     -moz-border-radius: 5px;
 }
 
+
+.profile-info{ 
+    h4{
+        margin: 0.8em 0em;
+        font-size: 0.9em;
+        font-weight: normal;
+        text-transform: uppercase;
+    }
+}
+
 .profile img{
     max-width: 8em;
     margin-right: 30px;
@@ -378,4 +392,44 @@ a.profile-button{
 a:hover.profile-button{
     color: $dark_blue;
     background-color: $light_gray;
+}
+
+#current-page{
+    padding: 10px;
+    color: #fff;
+    background-color: $light_blue;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    
+}
+#current-page:hover{
+    color: $dark_blue;
+    background-color: $light_gray;
+}
+
+.page-number{
+    a:link{
+    @extend #current-page;
+    background-color: $light_gray;
+    padding: 5px;
+    margin-right: 5px;
+    }
+    a:hover{
+        @extend #current-page;
+        color: #fff;
+        background-color: $light_blue;
+    }
+}
+
+.profile-image img{
+    margin: 5px 15px 0px 0px;
+    max-width: 40px;
+    border-radius: 25px;
+    -moz-border-radius: 25px;
+    -webkit-border-radius: 25px;
+}
+
+.profile-image img{
+    display: none;
 }

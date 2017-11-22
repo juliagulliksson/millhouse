@@ -40,7 +40,7 @@ require 'partials/register.php';
     <header>
         <?php require 'navbar.php'; ?>
         <div class="hero">
-            <h2>An awesome and selling slogan</h2>
+            <h2>Feel the magic of Millhouse</h2>
         </div>
     </header>
     <div class="wrapper" id="scroll">

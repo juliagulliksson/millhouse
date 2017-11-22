@@ -16,8 +16,8 @@ if(!isset($_GET['newpost']) && !isset($_GET['editpost'])):
             <img src="images/profile_photo.jpg" Alt="Profile photo" />
         </div>
         <div class="profile-info">
-            <h4><?= $_SESSION['username']?></h4>
-            <h3><?= $_SESSION['email']?></h3>
+            <h3><?= $_SESSION['username']?></h3>
+            <h4><?= $_SESSION['email']?></h4>
             <?php 
             if($_SESSION['contributor'] == true):
             ?>
