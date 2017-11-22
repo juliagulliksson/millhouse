@@ -1,12 +1,12 @@
-<div class="page_number">
+<div class="page-number">
     <a href="index.php?page=1">HOME</a>
     <?php 
     if($page -1 >= 1){ ?> 
-    <a href="index.php?page=<?= $page - 1 ?>">&laquo;</a>
+    <a class="current" href="index.php?page=<?= $page - 1 ?>">&laquo;</a>
     <?php }
     if($page -1 >= 1){ ?>       
         <a href="index.php?page=<?= $page - 1 ?>"><?= $page - 1; } ?></a>
-        <a id="current_page" href="index.php?page=<?= $page ?>"><?= $page ?></a>
+        <a id="current-page" href="index.php?page=<?= $page ?>"><?= $page ?></a>
     <?php 
     if($page < $last_page ){ ?>
         <a href="index.php?page=<?= $page + 1 ?>"><?= $page + 1 ?></a>
