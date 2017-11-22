@@ -23,20 +23,28 @@ require 'profile_includes/user_sql.php';
     <!-- /.profile-container-collapse -->
     <div class="amount-container">
         <div class="amount">
-            <?php foreach($user_articles as $article): ?>
-            <h4><a href="index.php?upost=true&uid=<?= $user_info['id'] ?>#scroll"><?= $article['number_of_posts']?></a></h4>
+            <?php 
+            if($user_info['contributor'] == true):
+            foreach($user_articles as $article): ?>
+            <h4><a href="index.php?upost=true&uid=<?= $user_info['id'] ?>
+            #scroll"><?= $article['number_of_posts']?></a></h4>
             <?php endforeach; ?>
             <p>Blog posts</p>
         </div>
+            <?php endif; //end of check if contributor ?>
         <div class="amount">
             <?php foreach($user_comments as $comment): ?>
-            <h4><?= $comment['number_of_comments']?></h4>
+            <h4><a href="index.php?ucomments=true&ucid=<?= $user_info['id'] ?>
+            #scroll"><?= $comment['number_of_comments']?></a></h4>
             <?php endforeach; ?>
             <p>Comments</p>
         </div>
     </div>
     <!-- /.amount-container-collapse -->
     <div class="list-container">
+        <?php
+        if($user_info['contributor'] == true):
+        ?>
         <h4>Most recent blog posts:</h4>
         <ul>
             <?php
@@ -44,7 +52,7 @@ require 'profile_includes/user_sql.php';
                 foreach($user_blogposts as $blogpost):
             ?>
             <li>
-                <a href="index.php?id=<?= $blogpost['id']?>">
+                <a href="index.php?id=<?= $blogpost['id']?>#scroll">
                 <?= $blogpost['post_title'] ?></a>
             </li>
             <?php
@@ -54,6 +62,7 @@ require 'profile_includes/user_sql.php';
             endif;
             ?>
         </ul>
+        <?php endif;//end of check if contributor ?>
         <h4>Most recent comments:</h4>
         <ul>
             <?php
@@ -61,7 +70,7 @@ require 'profile_includes/user_sql.php';
                 foreach($user_comments_title as $comment):
             ?>
             <li>
-                <a href="index.php?id=<?= $comment['post_id'] ?>">
+                <a href="index.php?id=<?= $comment['post_id'] ?>#scroll">
                 <?= $comment['text']?></a>
             </li>
             <?php

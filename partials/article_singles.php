@@ -11,18 +11,16 @@ require 'actions/article_single_sql.php';
         </a>
     </div>
     <article>
-        <h1><?= $article_single['post_title']; ?></h1>
-        <h3><span class="category-bold"><?= $article_single['title']; ?></span>
+        <h2><?= $article_single['post_title']; ?></h2>
+        <h3><span class="category-bold">
+            <?= $article_single['title']; ?></span>
             <span class="dot">&bull;</span>
-            <?= replace_date($article_single['date']) ?> 
-            <span class="dot">&bull;</span>
-            <span class="username"><?= $article_single['username'] ?></span>
-        </h3>
-        <img src="partials/<?=$article_single['image']?>" 
-        alt="<?=$article_single['alt_text']?>" 
-        class="article_image"
-        <p><?= ($article_single['text']) ?></p> 
-        <?php // Edit and delete options
+            <?= replace_date($article_single['date']) ?>
+            <span class="dot">&bull;</span> 
+            <span class="username">
+                <a href="user.php?uid=<?= $article_single['user_id'] ?>#scroll">
+                <?= $article_single['username'] ?></a>
+                <?php // Edit and delete options
                 if (isset($_SESSION['signed_in']) && $article_single['user_id'] == $_SESSION['id']):
                 ?>
                 <a class="profile-button" 
@@ -33,6 +31,9 @@ require 'actions/article_single_sql.php';
                 Delete <i class="fa fa-trash" aria-hidden="true"></i>
                 </a>
                 <?php endif; ?>  
+            </span>
+            </h3>
+        <p><?= ($article_single['text']) ?></p> 
     </article>
     <?php
     // article_single_sql.php is where $comments is made
@@ -44,7 +45,23 @@ require 'actions/article_single_sql.php';
         <div class="comments">
             <h3>
                 <?= replace_date($comment['date']) ?> | 
-                <span class="username"><?= $comment['username']?></span>
+                <span class="username">
+                    <a href="user.php?uid=<?= $comment['user_id']?>#scroll">
+                    <?= $comment['username']?></a>
+                </span>
+                <?php
+                if (isset($_SESSION['signed_in']) 
+                && $comment['user_id'] == $_SESSION['id']):
+                ?> 
+                <a class="profile-button" 
+                href="profile.php?editcomment=true&comment_id=<?= $comment['comment_id']?>">
+                    Edit <i class="fa fa-pencil" aria-hidden="true"></i>
+                </a>
+                <a class="profile-button" 
+                href="actions/delete_comment.php?id=<?= $comment['comment_id']?>">
+                    Delete <i class="fa fa-trash" aria-hidden="true"></i>
+                </a>
+                <?php endif; ?>
             </h3>
             <p><?= $comment['text']?> </p>
         </div>
