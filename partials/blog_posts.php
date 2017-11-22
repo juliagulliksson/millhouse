@@ -8,7 +8,7 @@
             <span class="dot">&bull;</span><?= replace_date($article['date']) ?> | 
             <span class="username"><?= $article['username'] ?></span>
         </h3>
-        <img src="<?=$article['image']?>" 
+        <img src="partials/<?=$article['image']?>" 
         alt="<?=$article['alt_text']?>" 
         class="article_image">
         <p><?= string_length($article['text'], 65, $article['postID'])?></p>

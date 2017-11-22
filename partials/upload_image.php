@@ -1,5 +1,5 @@
 <?php 
-     $target = "partials/article_images/" . basename($_FILES["image"]["name"]);
+     $target = "article_images/" . basename($_FILES["image"]["name"]);
      $path = $_FILES["image"]["tmp_name"]; 
      $filename = $_FILES["image"]["name"]; 
      $alt_text = $_POST["alt_text"]; 
@@ -22,7 +22,7 @@
      }//End elseif 
      
          if($upload_ok &&
-           move_uploaded_file($path, $target)) {
+           move_uploaded_file($path, '../partials/' . $target)) {
             $statement = $pdo->prepare(
                  "INSERT INTO posts 
                  (post_title, 
