@@ -14,7 +14,7 @@ a:hover{
     color: $dark_blue;
 }
 
-h2{
+h1{
     font-weight: 900;
     margin: 0em 0em 0.5em 0em;
 }
@@ -296,6 +296,7 @@ select{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    justify-content: flex-start;
     margin-bottom: 20px;
     background-color: $input;
     border-radius: 5px;
@@ -305,10 +306,7 @@ select{
 
 .profile img{
     max-width: 8em;
-}
-
-.profile-info{
-    width: 60%;
+    margin-right: 30px;
 }
 
 .amount-container{
@@ -345,4 +343,39 @@ select{
 
 .username{
     text-transform: none;
+}
+
+.button{
+    text-align: center;
+    a{
+        margin-bottom: 15px;
+        background-color: $light_blue;
+        border: none;
+        border-radius: 5px;
+        -moz-border-radius: 5px;
+        -webkit-border-radius: 5px;
+    }
+}
+
+.nav-margin{
+    margin-right: 0px;
+}
+
+a.profile-button{
+    margin: 0px 5px 0px 0px;
+    padding: 5px 10px;
+    color: #FFF;
+    font-size: 0.9em;
+    letter-spacing: 0.08em;
+    background-color: $light_blue;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    .fa{
+        color: $dark_blue;
+    }
+}
+a:hover.profile-button{
+    color: $dark_blue;
+    background-color: $light_gray;
 }
