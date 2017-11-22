@@ -4,10 +4,11 @@
             <a href="index.php?id=<?= $article['postID'] ?>#scroll"><?= $article['post_title']; ?></a>
         </h1>
         <h3>
-            <span class="category-bold"><?= $article['title']; ?></span>
+            <span class="category-bold"><a href="index.php?category=<?= $article['category_id']?>">
+            <?= $article['title']; ?></a></span>
             <span class="dot">&bull;</span><?= replace_date($article['date']) ?>
             <span class="dot">&bull;</span>
-            <span class="username"><a href="user.php?uid=<?= $article['user_id'] ?>">
+            <span class="username"><a href="user.php?uid=<?= $article['user_id'] ?>#scroll">
             <?= $article['username'] ?></a></span>
         </h3>
 

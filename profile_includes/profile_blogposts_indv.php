@@ -6,17 +6,21 @@
             <span class="dot">&bull;</span><?= replace_date($article['date']) ?> 
             <span class="username">
                 <?php // Edit and delete options
-                if (isset($_SESSION['signed_in']) && $article['user_id'] == $_SESSION['id']):
+                if (isset($_SESSION['signed_in'])):
+                    if($article['user_id'] == $_SESSION['id'] 
+                    || $_SESSION['admin'] == true):
                 ?> 
-                <a class="profile-button" 
-                href="profile.php?editpost=true&id=<?= $article['postID']?>">
-                    Edit <i class="fa fa-pencil" aria-hidden="true"></i>
-                </a>
-                <a class="profile-button" 
-                href="actions/delete_blogpost.php?id=<?= $article['postID']?>">
-                    Delete <i class="fa fa-trash" aria-hidden="true"></i>
-                </a>
-                <?php endif; ?> 
+                        <a class="profile-button" 
+                        href="profile.php?editpost=true&id=<?= $article['postID']?>">
+                            Edit <i class="fa fa-pencil" aria-hidden="true"></i>
+                        </a>
+                        <a class="profile-button" 
+                        href="actions/delete_blogpost.php?id=<?= $article['postID']?>">
+                            Delete <i class="fa fa-trash" aria-hidden="true"></i>
+                        </a>
+                <?php 
+                    endif;//end of check admin/user
+                endif;//end of check logged in ?> 
             </span>
         </h3>
         <p><?= $article['text'] ?></p>

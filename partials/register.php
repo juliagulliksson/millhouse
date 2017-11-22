@@ -11,6 +11,8 @@
         $new_password = password_hash($_POST["register_password"], PASSWORD_DEFAULT);
                     
         $contributor = false;
+
+        $admin = false;
                     
                 
         //Variables with the name of the column to be checked
@@ -46,6 +48,7 @@
         register($new_username, 
             $new_password, 
             $contributor,
-            $new_email);                 
+            $new_email,
+            $admin);                 
         }}
 ?>

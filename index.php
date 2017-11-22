@@ -35,7 +35,7 @@ require 'partials/head.php';
         
     elseif(isset($_GET['category']) && isset($_GET['asc'])): //ascending categories
         $categories = $_GET['category'];
-        include 'partials/category_articles.php';
+        include 'actions/category_articles.php';
         ?>
     <h4>Sort by date | <a name="oldest" href="index.php?category=<?= $categories?>
     #newest">Newest</a></h4>
