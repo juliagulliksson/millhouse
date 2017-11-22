@@ -8,7 +8,9 @@ require 'partials/head.php';
     && !isset($_GET['asc']) 
     && !isset($_GET['month'])
     && !isset($_GET['upost'])
-    && !isset($_GET['uid'])):
+    && !isset($_GET['uid'])
+    && !isset($_GET['ucomments'])
+    && !isset($_GET['ucid'])):
         foreach ($articles as $article):
             include 'partials/blog_posts.php';
         endforeach;
@@ -55,6 +57,11 @@ require 'partials/head.php';
         if(isset($_GET['upost']) || isset($_GET['uid'])):
             require 'profile_includes/profile_sql.php';
             require 'profile_includes/profile_blogposts.php';
+        endif;
+
+        if(isset($_GET['ucomments']) || isset($_GET['ucid'])):
+            require 'profile_includes/profile_sql.php';
+            require 'profile_includes/profile_comments.php';
         endif;
             
         if(!isset($_GET['id']) && !isset($_GET['category']) 

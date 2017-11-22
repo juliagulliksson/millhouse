@@ -1,7 +1,7 @@
 <?php
 require 'partials/head.php';
 
-//checks if user is not logged in or has clicked on another user
+//checks if user is not logged in
 if(!isset($_SESSION['signed_in']) && empty($_SESSION['signed_in'])){
     header('location: index.php');
     exit();
@@ -34,8 +34,8 @@ if(!isset($_GET['newpost']) && !isset($_GET['editpost'])):
             <p>Blog posts</p>
         </div>
         <div class="amount">
-            <?php foreach($profile_comments as $comments): ?>
-            <h4><?= $comments['number_of_comments']?></h4>
+            <?php foreach($profile_comments as $comment): ?>
+            <h4><a href="index.php?ucomments=true#scroll"><?= $comment['number_of_comments']?></a></h4>
             <?php endforeach; ?>
             <p>Comments</p>
         </div>
@@ -46,11 +46,11 @@ if(!isset($_GET['newpost']) && !isset($_GET['editpost'])):
         <ul>
             <?php
             if(count($profile_blogposts) > 0):
-                foreach($profile_blogposts as $blogposts):
+                foreach($profile_blogposts as $blogpost):
             ?>
             <li>
-                <a href="index.php?id=<?= $blogposts['id']?>">
-                <?= $blogposts['post_title'] ?></a>
+                <a href="index.php?id=<?= $blogpost['id']?>">
+                <?= $blogpost['post_title'] ?></a>
             </li>
             <?php
                 endforeach;

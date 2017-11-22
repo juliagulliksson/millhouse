@@ -64,3 +64,4 @@ $statement->execute(array(
     ":id" => $user_id
 ));
 $user_all_articles = $statement->fetchAll(PDO::FETCH_ASSOC);
+

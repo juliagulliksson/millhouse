@@ -16,7 +16,8 @@ require 'actions/article_single_sql.php';
             <?= $article_single['title']; ?></span>
             <span class="dot">&bull;</span><?= replace_date($article_single['date']) ?> 
             <span class="username">
-                <?= $article_single['username'] ?>
+                <a href="user.php?uid=<?= $article_single['user_id'] ?>#scroll">
+                <?= $article_single['username'] ?></a>
                 <?php // Edit and delete options
                 if (isset($_SESSION['signed_in']) && $article_single['user_id'] == $_SESSION['id']):
                 ?>
@@ -28,10 +29,9 @@ require 'actions/article_single_sql.php';
                 href="actions/delete_blogpost.php?id=<?= $article_single['postID']?>">
                     Delete <i class="fa fa-trash" aria-hidden="true"></i>
                 </a>
+                <?php endif; ?>  
             </span>
             </h3>
-            <?php endif; ?>  
-        </h3>
         <p><?= ($article_single['text']) ?></p> 
     </article>
     <?php
@@ -44,7 +44,23 @@ require 'actions/article_single_sql.php';
         <div class="comments">
             <h3>
                 <?= replace_date($comment['date']) ?> | 
-                <span class="username"><?= $comment['username']?></span>
+                <span class="username">
+                    <a href="user.php?uid=<?= $comment['user_id']?>#scroll">
+                    <?= $comment['username']?></a>
+                </span>
+                <?php
+                if (isset($_SESSION['signed_in']) 
+                && $comment['user_id'] == $_SESSION['id']):
+                ?> 
+                <a class="profile-button" 
+                href="profile.php?editpost=true&id=<?= $comment['comment_id']?>">
+                    Edit <i class="fa fa-pencil" aria-hidden="true"></i>
+                </a>
+                <a class="profile-button" 
+                href="actions/delete_comment.php?id=<?= $comment['comment_id']?>">
+                    Delete <i class="fa fa-trash" aria-hidden="true"></i>
+                </a>
+                <?php endif; ?>
             </h3>
             <p><?= $comment['text']?> </p>
         </div>
