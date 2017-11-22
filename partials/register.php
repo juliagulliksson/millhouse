@@ -18,30 +18,30 @@
         $email_column = 'email';
                 
                     
-        //Checks if username already excists
-        $is_dublette_username = check_if_dublette($user_column, $new_username);
+        //Checks if username already exists
+        $is_duplicate_username = check_if_duplicate($user_column, $new_username);
                 
                 
-        //Checks if email already excists
-        $is_dublette_email =
-        check_if_dublette($email_column,
+        //Checks if email already exists
+        $is_duplicate_email =
+        check_if_duplicate($email_column,
         $new_email);
                 
                 
         //Checks if username is already registered
-        if ($is_dublette_username){
+        if ($is_duplicate_username){
             echo 'The username already exists! <br/>';
         }
                 
                 
         //Checks if email is aldready registered
-        elseif ($is_dublette_email){
+        elseif ($is_duplicate_email){
             echo 'The email address is already registered!';
         }
 
-        //If email or username doesn't excsists the function for register runs
-        elseif (!$is_dublette_email &&
-                !$is_dublette_username){
+        //If email or username doesn't exists the function for register runs
+        elseif (!$is_duplicate_email &&
+                !$is_duplicate_username){
                     
         register($new_username, 
             $new_password, 

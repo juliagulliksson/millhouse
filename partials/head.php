@@ -9,7 +9,7 @@ start_session();
 require 'partials/functions/log_in.php';
 require 'partials/log_in.php';
 require 'partials/functions/register.php';
-require 'partials/functions/check_if_dublette.php';
+require 'partials/functions/check_if_duplicate.php';
 require 'partials/functions/date_replace.php';
 require 'partials/functions/string_length.php';
 
