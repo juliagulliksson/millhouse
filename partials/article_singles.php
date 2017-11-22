@@ -57,7 +57,7 @@ require 'actions/article_single_sql.php';
     <div class="comment-field">
         <h4>Comment the blog post here:</h4>
         <form action="actions/comment_insert.php?post_id=<?= $article_single['postID']?>" method="POST">
-            <input type="hidden" value=<?= $_SESSION['id'] ?> name="user_id">
+            <input type="hidden" value="<?= $_SESSION['id'] ?>" name="user_id">
             <textarea name="comment" placeholder="Type your comment"></textarea>
             <br />
             <input type="submit" name="comment_submit" value="Comment">

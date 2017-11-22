@@ -1,5 +1,5 @@
 <?php
-header('location: ../index.php');
+//header('location: ../index.php');
 require '../partials/database.php';
 
 $title      = $_POST['blog_title'];
@@ -16,7 +16,7 @@ if(!empty($title)
 // If blog post with image is posted
 if (!empty($_FILES["image"]) && 
     !empty($_POST["alt_text"])) {
-require "upload_image.php";
+require "../partials/upload_image.php";
 }//End if
 
 
