@@ -21,16 +21,20 @@ require 'actions/article_single_sql.php';
                 <a href="user.php?uid=<?= $article_single['user_id'] ?>#scroll">
                 <?= $article_single['username'] ?></a>
                 <?php // Edit and delete options
-                if (isset($_SESSION['signed_in']) && $article_single['user_id'] == $_SESSION['id']):
+                if (isset($_SESSION['signed_in'])):
+                    if($article_single['user_id'] == $_SESSION['id'] 
+                    || $_SESSION['admin'] == true):
                 ?>
-                <a class="profile-button" 
-                href="profile.php?editpost=true&id=<?= $article_single['postID']?>">
-                Edit <i class="fa fa-pencil" aria-hidden="true"></i></a>
-                <a class="profile-button" 
-                href="actions/delete_blogpost.php?id=<?= $article_single['postID']?>">
-                Delete <i class="fa fa-trash" aria-hidden="true"></i>
-                </a>
-                <?php endif; ?>  
+                        <a class="profile-button" 
+                        href="profile.php?editpost=true&id=<?= $article_single['postID']?>">
+                        Edit <i class="fa fa-pencil" aria-hidden="true"></i></a>
+                        <a class="profile-button" 
+                        href="actions/delete_blogpost.php?id=<?= $article_single['postID']?>">
+                        Delete <i class="fa fa-trash" aria-hidden="true"></i>
+                        </a>
+                <?php
+                    endif;//end of check user/admin 
+                endif;//end of signed in if ?>  
             </span>
             </h3>
         <p><?= ($article_single['text']) ?></p>
@@ -55,18 +59,21 @@ require 'actions/article_single_sql.php';
                     <?= $comment['username']?></a>
                 </span>
                 <?php
-                if (isset($_SESSION['signed_in']) 
-                && $comment['user_id'] == $_SESSION['id']):
+                if (isset($_SESSION['signed_in'])):
+                    if($comment['user_id'] == $_SESSION['id'] 
+                    || $_SESSION['admin'] == true):
                 ?> 
-                <a class="profile-button" 
-                href="profile.php?editcomment=true&comment_id=<?= $comment['comment_id']?>">
-                    Edit <i class="fa fa-pencil" aria-hidden="true"></i>
-                </a>
-                <a class="profile-button" 
-                href="actions/delete_comment.php?id=<?= $comment['comment_id']?>">
-                    Delete <i class="fa fa-trash" aria-hidden="true"></i>
-                </a>
-                <?php endif; ?>
+                        <a class="profile-button" 
+                        href="profile.php?editcomment=true&comment_id=<?= $comment['comment_id']?>#scroll">
+                            Edit <i class="fa fa-pencil" aria-hidden="true"></i>
+                        </a>
+                        <a class="profile-button" 
+                        href="actions/delete_comment.php?id=<?= $comment['comment_id']?>#scroll">
+                            Delete <i class="fa fa-trash" aria-hidden="true"></i>
+                        </a>
+                <?php 
+                    endif;//end of check user/admin
+                endif;//end of signed in if ?>
             </h3>
             <p><?= $comment['text']?> </p>
         </div>

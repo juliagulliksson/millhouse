@@ -1,18 +1,19 @@
 <?php
-function register ($username, $password, $boolean, $email){
+function register ($username, $password, $boolean, $email, $admin){
     require "partials/database.php";
     
 $my_sql = $pdo->prepare(
     "INSERT INTO users 
-    (username, password, contributor, email) 
-    VALUES (:username, :password, :contributor, :email)"
+    (username, password, contributor, email, admin) 
+    VALUES (:username, :password, :contributor, :email, :admin)"
 ); 
 
 $my_sql->execute(array( 
     ":username"         => $username,  
     ":password"         => $password,
     ":contributor"      => $boolean,
-    ":email"            => $email
+    ":email"            => $email,
+    ":admin"            => $admin
 ));
     echo $username . ' was successfully registered!';
 }

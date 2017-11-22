@@ -5,4 +5,5 @@ if (isset($_POST["username"]) && isset($_POST["password"])){
     $password = $_POST["password"]; 
     log_in($username, $password);  
 } 
+
 ?>

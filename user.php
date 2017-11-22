@@ -1,10 +1,16 @@
 <?php
 require 'partials/head.php';
 
-//check if the get request is numeric and the user id equals the logged in user
-if(!is_numeric($_GET['uid']) && $_GET['uid'] == $_SESSION['id']){
+//check if the get request is numeric
+if(!is_numeric($_GET['uid'])){
     header('location: index.php');
     exit();
+}
+//check if the user id equals the logged in user, if so redirect to profile
+if(isset($_SESSION['signed_in'])){
+    if($_GET['uid'] == $_SESSION['id']){
+    header('location: profile.php');
+    }
 }
 
 require 'profile_includes/user_sql.php';
@@ -22,20 +28,24 @@ require 'profile_includes/user_sql.php';
     </div>
     <!-- /.profile-container-collapse -->
     <div class="amount-container">
+        <?php 
+        if($user_info['contributor'] == true):
+        ?>
+            <div class="amount">
+                <?php 
+                foreach($user_articles as $article): ?>
+                    <h4><a href="index.php?upost=true&uid=<?= $user_info['id'] ?>
+                    #scroll"><?= $article['number_of_posts']?></a></h4>
+                <?php endforeach; ?>
+                <p>Blog posts</p>
+            </div>
+        <?php endif; //end of check if contributor ?>
         <div class="amount">
             <?php 
-            if($user_info['contributor'] == true):
-            foreach($user_articles as $article): ?>
-            <h4><a href="index.php?upost=true&uid=<?= $user_info['id'] ?>
-            #scroll"><?= $article['number_of_posts']?></a></h4>
-            <?php endforeach; ?>
-            <p>Blog posts</p>
-        </div>
-            <?php endif; //end of check if contributor ?>
-        <div class="amount">
-            <?php foreach($user_comments as $comment): ?>
-            <h4><a href="index.php?ucomments=true&ucid=<?= $user_info['id'] ?>
-            #scroll"><?= $comment['number_of_comments']?></a></h4>
+            foreach($user_comments as $comment): 
+            ?>
+                <h4><a href="index.php?ucomments=true&ucid=<?= $user_info['id'] ?>
+                #scroll"><?= $comment['number_of_comments']?></a></h4>
             <?php endforeach; ?>
             <p>Comments</p>
         </div>
@@ -45,21 +55,21 @@ require 'profile_includes/user_sql.php';
         <?php
         if($user_info['contributor'] == true):
         ?>
-        <h4>Most recent blog posts:</h4>
-        <ul>
-            <?php
-            if(count($user_blogposts) > 0):
-                foreach($user_blogposts as $blogpost):
-            ?>
-            <li>
-                <a href="index.php?id=<?= $blogpost['id']?>#scroll">
-                <?= $blogpost['post_title'] ?></a>
-            </li>
-            <?php
-                endforeach;
+            <h4>Most recent blog posts:</h4>
+            <ul>
+                <?php
+                if(count($user_blogposts) > 0):
+                    foreach($user_blogposts as $blogpost):
+                ?>
+                <li>
+                    <a href="index.php?id=<?= $blogpost['id']?>#scroll">
+                    <?= $blogpost['post_title'] ?></a>
+                </li>
+                <?php
+                    endforeach;
             else:
-                echo "You have not written any blogposts yet";
-            endif;
+                echo "This user has not written any blogposts yet";
+        endif;
             ?>
         </ul>
         <?php endif;//end of check if contributor ?>
@@ -76,7 +86,7 @@ require 'profile_includes/user_sql.php';
             <?php
                 endforeach;
             else:
-                echo "You have not posted any comments yet";
+                echo "This user has not posted any comments yet";
             endif;
             ?>
         </ul>

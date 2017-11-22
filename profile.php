@@ -1,7 +1,7 @@
 <?php
 require 'partials/head.php';
 
-//checks if user is not logged in
+//checks if user is logged in
 if(!isset($_SESSION['signed_in']) && empty($_SESSION['signed_in'])){
     header('location: index.php');
     exit();
@@ -58,7 +58,7 @@ if(!isset($_GET['newpost']) && !isset($_GET['editpost'])
                 foreach($profile_blogposts as $blogpost):
             ?>
             <li>
-                <a href="index.php?id=<?= $blogpost['id']?>">
+                <a href="index.php?id=<?= $blogpost['id']?>#scroll">
                 <?= $blogpost['post_title'] ?></a>
             </li>
             <?php
@@ -76,7 +76,7 @@ if(!isset($_GET['newpost']) && !isset($_GET['editpost'])
                 foreach($profile_comments_title as $comments):
             ?>
             <li>
-                <a href="index.php?id=<?= $comments['post_id'] ?>">
+                <a href="index.php?id=<?= $comments['post_id'] ?>#scroll">
                 <?= $comments['text']?></a>
             </li>
             <?php

@@ -28,6 +28,9 @@ if (password_verify($password, $fetched_user["password"])){
        $fetched_user["email"];
     
    $_SESSION["signed_in"] = true;
+
+   $_SESSION["admin"] =
+        $fetched_user["admin"];
 } 
 else {
     echo 'Failed login';}}
