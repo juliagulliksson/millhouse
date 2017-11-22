@@ -13,7 +13,8 @@ require 'actions/article_single_sql.php';
     <article>
         <h2><?= $article_single['post_title']; ?></h2>
         <h3><span class="category-bold">
-            <?= $article_single['title']; ?></span>
+            <a href="index.php?category=<?= $article_single['category_id'] ?>#scroll">
+            <?= $article_single['title']; ?></a></span>
             <span class="dot">&bull;</span>
             <?= replace_date($article_single['date']) ?>
             <span class="dot">&bull;</span> 
@@ -37,12 +38,13 @@ require 'actions/article_single_sql.php';
                 endif;//end of signed in if ?>  
             </span>
             </h3>
+            <?php if(!empty($article_single['image'])): ?>
+                <img src="partials/<?=$article_single['image']?>" 
+                alt="<?=$article_single['alt_text']?>" 
+                class="article_image">
+            <?php endif; ?> 
         <p><?= ($article_single['text']) ?></p>
-        <?php if(!empty($article['image'])): ?>
-            <img src="partials/<?=$article_single['image']?>" 
-            alt="<?=$article_single['alt_text']?>" 
-            class="article_image">
-        <? endif; ?> 
+        
     </article>
     <?php
     // article_single_sql.php is where $comments is made
@@ -57,8 +59,7 @@ require 'actions/article_single_sql.php';
                 <span class="username">
                     <a href="user.php?uid=<?= $comment['user_id']?>#scroll">
                     <?= $comment['username']?></a>
-                </span>
-                <?php
+                    <?php
                 if (isset($_SESSION['signed_in'])):
                     if($comment['user_id'] == $_SESSION['id'] 
                     || $_SESSION['admin'] == true):
@@ -74,6 +75,8 @@ require 'actions/article_single_sql.php';
                 <?php 
                     endif;//end of check user/admin
                 endif;//end of signed in if ?>
+                </span>
+               
             </h3>
             <p><?= $comment['text']?> </p>
         </div>
