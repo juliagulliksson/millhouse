@@ -15,8 +15,9 @@ a:hover{
 }
 
 h1{
-    font-weight: 900;
-    margin: 0px 0px 10px 0px;
+    font-weight: 800;
+    letter-spacing: 0em;
+    margin: 0px;
 }
 
 h2{
@@ -32,7 +33,7 @@ h3{
 
 h4{
     font-weight: 900;
-    margin: 0.2em 0em;
+    margin: 20px 0px 0px 0px;
 }
 
 .buttons{
@@ -60,7 +61,7 @@ h4{
     text-align: center;
     h2{
         font-size: 1.7em;
-        font-weight: normal;
+        font-weight: bold;
     }
     img{
         margin-top: -50px;
@@ -250,6 +251,9 @@ select{
         width: 100px;
         text-align: center;
     }
+    input[type=file]{
+        background-color: $light_blue;
+    }
 }
 
 .insert-form{
@@ -324,6 +328,12 @@ select{
 .profile img{
     max-width: 8em;
     margin-right: 30px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    -webkit-border-top-left-radius: 5px;
+    -webkit-border-bottom-left-radius: 5px;
+    -moz-border-radius-topleft: 5px;
+    -moz-border-radius-bottomleft: 5px;
 }
 
 .amount-container{
@@ -381,6 +391,7 @@ select{
 a.profile-button{
     margin: 0px 5px 0px 0px;
     padding: 5px 10px;
+    font-family: 'Fira Code', monospace;
     color: #FFF;
     font-size: 0.9em;
     letter-spacing: 0.08em;
@@ -400,6 +411,7 @@ a:hover.profile-button{
 #current-page{
     padding: 10px;
     color: #fff;
+    font-size: 0.9em;
     background-color: $light_blue;
     border-radius: 5px;
     -moz-border-radius: 5px;
@@ -414,6 +426,7 @@ a:hover.profile-button{
 .page-number{
     a:link{
     @extend #current-page;
+    font-size: 0.8em;
     background-color: $light_gray;
     padding: 5px;
     margin-right: 5px;
