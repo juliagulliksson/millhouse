@@ -1,5 +1,5 @@
 <?php
-//header('location: ../index.php');
+header('location: ../index.php');
 require '../partials/database.php';
 
 $title      = $_POST['blog_title'];
