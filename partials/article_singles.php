@@ -34,9 +34,11 @@ require 'actions/article_single_sql.php';
             </span>
             </h3>
         <p><?= ($article_single['text']) ?></p>
-        <img src="partials/<?=$article_single['image']?>" 
-        alt="<?=$article_single['alt_text']?>" 
-        class="article_image"> 
+        <?php if(!empty($article['image'])): ?>
+            <img src="partials/<?=$article_single['image']?>" 
+            alt="<?=$article_single['alt_text']?>" 
+            class="article_image">
+        <? endif; ?> 
     </article>
     <?php
     // article_single_sql.php is where $comments is made
