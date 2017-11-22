@@ -6,12 +6,12 @@
             <span class="dot">&bull;</span><?= replace_date($article['date']) ?> 
             <span class="username">
                 <?php // Edit and delete options
-                if (isset($_SESSION['signed_in']) && $article['user_id'] == $_SESSION['id']):
+                if (isset($_SESSION['signed_in']) 
+                && $article['user_id'] == $_SESSION['id']):
                 ?> 
                 <a class="profile-button" 
                 href="profile.php?editpost=true&id=<?= $article['postID']?>">
-                    Edit <i class="fa fa-pencil" aria-hidden="true"></i>
-                </a>
+                    Edit <i class="fa fa-pencil" aria-hidden="true"></i></a>
                 <a class="profile-button" 
                 href="actions/delete_blogpost.php?id=<?= $article['postID']?>">
                     Delete <i class="fa fa-trash" aria-hidden="true"></i>

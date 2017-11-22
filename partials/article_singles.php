@@ -32,11 +32,11 @@ require 'actions/article_single_sql.php';
                 </a>
                 <?php endif; ?>  
             </span>
-            </h3>
-        <p><?= ($article_single['text']) ?></p>
+        </h3>
         <img src="partials/<?=$article_single['image']?>" 
-        alt="<?=$article_single['alt_text']?>" 
-        class="article_image"> 
+             alt="<?=$article_single['alt_text']?>" 
+             class="article_image">
+        <p><?= ($article_single['text']) ?></p>
     </article>
     <?php
     // article_single_sql.php is where $comments is made
