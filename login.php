@@ -3,7 +3,7 @@ require 'partials/head.php';
 $today = date('Y-n-j');
 ?>
 <div class="login">
-    <h2>Login</h2>
+    <h1>Login</h1>
     <form action="index.php" class="form_toggle" id="login_form" method="POST">
         <label for="username" hidden>Username:</label>
         <input type="text" id="input_login_username" name="username" placeholder="Username">
