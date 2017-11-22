@@ -9,7 +9,7 @@ start_session();
 require 'partials/functions/log_in.php';
 require 'partials/log_in.php';
 require 'partials/functions/register.php';
-require 'partials/functions/check_if_dublette.php';
+require 'partials/functions/check_if_duplicate.php';
 require 'partials/functions/date_replace.php';
 require 'partials/functions/string_length.php';
 
@@ -40,7 +40,7 @@ require 'partials/register.php';
     <header>
         <?php require 'navbar.php'; ?>
         <div class="hero">
-            <h2>An awesome and selling slogan</h2>
+            <h2>Feel the magic of Millhouse</h2>
         </div>
     </header>
     <div class="wrapper" id="scroll">
