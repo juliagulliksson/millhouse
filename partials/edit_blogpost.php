@@ -9,8 +9,8 @@ $statement->execute(array(
 $edit_post = $statement->fetch(PDO::FETCH_ASSOC);
 ?>
 <div class="insert-form">
-<div class="center-heading"><h2>Edit blogpost</h2></a></div>
-    <form action="actions/edit_blogpost_sql.php?id=<?= $post_id ?>" method="POST">
+<div class="center-heading"><h2>Edit blogpost</h2></div>
+    <form action="actions/edit_blogpost_sql.php?id=<?= $post_id ?>" method="POST" enctype="multipart/form-data">
     <div class="form-group">
         <div class="form-group__title">
             <label for="edit_title">Title:</label><br />
@@ -41,6 +41,16 @@ $edit_post = $statement->fetch(PDO::FETCH_ASSOC);
         });
     </script>
     <br />
+    <div class="form-group">
+        <div class="form-group__title">
+            <label for="edit_image">Choose image:</label><br />
+            <input type="file" name="edit_image">
+        </div><!--/.form-group__title-collapse-->
+        <div class="form-group__category">
+            <label for="edit_alt_text">Image text:</label><br />
+            <input type="text" name="edit_alt_text" placeholder="Write something about your image..">
+        </div><!--/.form-group__category-collapse-->
+    </div><!--/.form-group-collapse-->
     <input type="submit" name="submit" value="Submit">
     </form>
 </div>
