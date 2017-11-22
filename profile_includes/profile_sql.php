@@ -32,7 +32,7 @@ $statement->execute(array(
 ));
 $profile_blogposts = $statement->fetchAll(PDO::FETCH_ASSOC);
 
-//Fetch all user comments made by the user, limit to 5
+//Fetch the title of comments made by the user, limit to 5
 $statement = $pdo->prepare("SELECT * FROM comments 
 WHERE user_id = :id
 LIMIT 5
@@ -59,3 +59,17 @@ $statement->execute(array(
     ":id" => $id
 ));
 $profile_all_articles = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+//Fetch all comments made by user
+$statement = $pdo->prepare("SELECT posts.id AS postID, posts.post_title, 
+comments.text, comments.date, comments.user_id, comments.id AS comment_id
+FROM posts
+INNER JOIN users
+ON posts.user_id=users.id
+RIGHT JOIN comments ON posts.id=comments.post_id
+WHERE comments.user_id = :id
+ORDER BY comments.date DESC");
+$statement->execute(array(
+    ":id" => $id
+));
+$profile_all_comments = $statement->fetchAll(PDO::FETCH_ASSOC);
