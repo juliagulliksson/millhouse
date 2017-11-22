@@ -1,7 +1,8 @@
 <?php
 
 $statement = $pdo->prepare(" SELECT posts.date, posts.id as postID, 
-  posts.text, posts.post_title, posts.date, categories.title, 
+  posts.image, posts.alt_text, posts.text, 
+  posts.post_title, posts.date, categories.title, 
   users.username, users.id as user_id, COUNT(comments.post_id) AS comments
   FROM posts 
   INNER JOIN categories 
@@ -19,7 +20,8 @@ $statement = $pdo->prepare(" SELECT posts.date, posts.id as postID,
   $category_articles = $statement->fetchAll(PDO::FETCH_ASSOC);
 
   $statement = $pdo->prepare(" SELECT posts.date, posts.id as postID, 
-  posts.text, posts.post_title, posts.date, categories.title, 
+  posts.image, posts.alt_text, posts.text, 
+  posts.post_title, posts.date, categories.title, 
   users.username, users.id as user_id, COUNT(comments.post_id) AS comments
   FROM posts 
   INNER JOIN categories 
