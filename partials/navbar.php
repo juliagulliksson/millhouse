@@ -26,6 +26,9 @@
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <?php if(isset($_SESSION['signed_in'])): ?>
+                <li class="profile-image">
+                    <img src="images/profile_photo.jpg" Alt="Profile photo" />
+                </li>
                 <li class="navbar-text">
                     Logged in as <?= $_SESSION['username']?>
                 </li>

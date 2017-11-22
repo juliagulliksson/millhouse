@@ -7,6 +7,15 @@
     @import "_tablet.scss";
 }
 
+@media screen and (min-width: 768px) and (max-width: 900px){
+    .navbar-default .navbar-text{
+        display: none;
+    }
+    .profile-image img{
+        display: block;
+    }
+}
+
 @media screen and (min-width: 992px){
     @import "_desktop.scss";
 }

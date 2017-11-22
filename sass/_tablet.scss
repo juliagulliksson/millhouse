@@ -1,22 +1,32 @@
 main {
     flex-basis: 78%;
     -webkit-flex-basis: 78%; 
+    border-right: 1px solid #ebebeb;
+    margin-right: 30px;
 }
 
-aside {
-    flex-basis: 22%;
-    -webkit-flex-basis: 22%; 
-}
+// aside {
+//     flex-basis: 22%;
+//     -webkit-flex-basis: 22%; 
+// }
 
 .container-fluid{
     max-width: 1280px;
 }
 
-.buttons{
-    flex-direction: row;
-    input[type=submit]{
-        margin: 5px 0px 10px 10px;
+// Navbar margins of text
+nav, .navbar-nav, .navbar-right{
+    margin: 25px 15px 0px 0px;
+}
+
+.button{
+    a{
+        margin-bottom: 0px;
     }
+}
+
+.nav-margin{
+    margin-right: 15px;
 }
 
 .hero{
@@ -37,10 +47,6 @@ aside {
 
 .sidebar{
     text-align: left;
-}
-
-.profile-info{
-    width: 75%;
 }
 
 .profile img{
@@ -79,4 +85,8 @@ aside {
 .footer-logo img{
     height: 70px;
     margin-bottom: 0px;
+}
+
+.profile-image img{
+    display: none;
 }

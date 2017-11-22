@@ -3,7 +3,9 @@
 //single articles fetch
 $statement = $pdo->prepare("SELECT posts.date, posts.id as postID, 
 posts.text, posts.post_title, posts.date, categories.title, categories.id AS category_id,
-users.username, users.email, users.id as user_id
+users.username, users.email, users.id as user_id,
+image,
+alt_text
 FROM posts 
 INNER JOIN categories 
 ON posts.category_id=categories.id

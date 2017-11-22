@@ -1,6 +1,6 @@
 <div class="sidebar">
     <div>
-        <h3>MILLHOUSE</h3>
+        <h3>Millhouse</h3>
         <p>
             Marabou är ett av Sveriges mest älskade varumärken, med
             choklad som får oss att säga Mmm...

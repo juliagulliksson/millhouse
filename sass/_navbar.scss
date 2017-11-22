@@ -8,7 +8,7 @@
 // Navbar plain text
 .navbar-default .navbar-nav > .navbar-text {
     text-align: center;
-    color: #5d7e93;
+    color: #f9c029;
     font-style: italic;
 }
 
@@ -34,7 +34,7 @@
 
 // Navbar margins of text
 nav, .navbar-nav, .navbar-right{
-    margin: 25px 15px 0px 0px;
+    margin: 10px 0px 0px 0px;
 }
 
 .navbar-toggle {
@@ -60,18 +60,4 @@ nav, .navbar-nav, .navbar-right{
 .navbar-default .navbar-toggle:hover,
 .navbar-default .navbar-toggle:focus {
 	background-color: $dark_blue;
-}
-
-.button{
-    a{
-        background-color: $light_blue;
-        border: none;
-        border-radius: 5px;
-        -moz-border-radius: 5px;
-        -webkit-border-radius: 5px;
-    }
-}
-
-.nav-margin{
-    margin-right: 15px;
 }

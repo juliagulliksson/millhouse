@@ -22,7 +22,7 @@
      }//End elseif 
      
          if($upload_ok &&
-           move_uploaded_file($path, $target)) {
+           move_uploaded_file($path, '../partials/' . $target)) {
             $statement = $pdo->prepare(
                  "INSERT INTO posts 
                  (post_title, 
