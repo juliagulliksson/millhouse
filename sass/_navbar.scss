@@ -22,6 +22,9 @@
 .navbar-default .navbar-nav>li>a:focus {
     color: $dark_blue;
     background-color: $light_gray;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
 }
 
 // Navbar logo

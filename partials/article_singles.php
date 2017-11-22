@@ -37,7 +37,12 @@ require 'actions/article_single_sql.php';
                 endif;//end of signed in if ?>  
             </span>
             </h3>
-        <p><?= ($article_single['text']) ?></p> 
+        <p><?= ($article_single['text']) ?></p>
+        <?php if(!empty($article['image'])): ?>
+            <img src="partials/<?=$article_single['image']?>" 
+            alt="<?=$article_single['alt_text']?>" 
+            class="article_image">
+        <? endif; ?> 
     </article>
     <?php
     // article_single_sql.php is where $comments is made

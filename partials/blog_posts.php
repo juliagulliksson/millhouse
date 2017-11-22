@@ -12,9 +12,11 @@
             <?= $article['username'] ?></a></span>
         </h3>
 
+       <?php if(!empty($article['image'])): ?>
         <img src="partials/<?=$article['image']?>" 
         alt="<?=$article['alt_text']?>" 
         class="article_image">
+        <? endif; ?>
         <p><?= string_length($article['text'], 65, $article['postID'])?></p>
         <a href="index.php?id=<?= $article['postID'] ?>#scroll" class="comments-counter">
         COMMENTS (<?= $article['comments']?>)

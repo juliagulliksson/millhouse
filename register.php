@@ -1,6 +1,6 @@
 <?php require 'partials/head.php'; ?>
 <div class="register">
-    <h2>Register</h2>
+    <h1>Register</h1>
     <form action="index.php" id="register_form" method="POST">
         <label for="username" hidden>Username:</label>
         <input type="text" 
