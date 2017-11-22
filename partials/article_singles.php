@@ -11,7 +11,7 @@ require 'actions/article_single_sql.php';
         </a>
     </div>
     <article>
-        <h2><?= $article_single['post_title']; ?></h2>
+        <h1><?= $article_single['post_title']; ?></h1>
         <h3><span class="category-bold">
             <?= $article_single['title']; ?></span>
             <span class="dot">&bull;</span>
@@ -21,7 +21,8 @@ require 'actions/article_single_sql.php';
                 <a href="user.php?uid=<?= $article_single['user_id'] ?>#scroll">
                 <?= $article_single['username'] ?></a>
                 <?php // Edit and delete options
-                if (isset($_SESSION['signed_in']) && $article_single['user_id'] == $_SESSION['id']):
+                if (isset($_SESSION['signed_in']) 
+                && $article_single['user_id'] == $_SESSION['id']):
                 ?>
                 <a class="profile-button" 
                 href="profile.php?editpost=true&id=<?= $article_single['postID']?>">

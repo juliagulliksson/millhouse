@@ -23,6 +23,7 @@
                 <li><a href="index.php">BLOG</a></li>
                 <li><a href="about.php">ABOUT</a></li>
                 <li><a href="contact.php">CONTACT</a></li>
+                <li class="categories"><a href="#categories">CATEGORIES</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <?php if(isset($_SESSION['signed_in'])): ?>

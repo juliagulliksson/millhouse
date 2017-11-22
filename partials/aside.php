@@ -1,5 +1,5 @@
 <div class="sidebar">
-    <div>
+    <div class="sidebar-about">
         <h3>Millhouse</h3>
         <p>
             Marabou är ett av Sveriges mest älskade varumärken, med
@@ -13,7 +13,7 @@
         </p>
     </div>
     <br /><!-- This one is just temporary and should be replaced with margin/padding-styling -->
-    <h3>Categories</h3>
+    <h3 id="categories">Categories</h3>
     <div class="categories-list">
         <ul>
         <?php foreach ($category_disctinct as $categories): ?>
