@@ -1,10 +1,17 @@
 <?php
-if (isset($_SESSION['username']) 
-&& $_SESSION['contributor'] == true 
-&& !isset($_GET['id'])):
+if (!isset($_SESSION['username']) 
+&& $_SESSION['contributor'] !== true 
+&& isset($_GET['id'])):
+    header('location: index.php');
+endif;
     ?> 
 
 <div class="insert-form">
+    <?php 
+    if(isset($_GET['newpost'], $_GET['error'])) {
+    echo "<h5>Error: All fields are required for submission.</h5>";
+    }
+    ?>
     <div class="center-heading"><h2>Write a new blog post</h2></div>
     <form action="actions/insert_blogpost.php" method="POST">
         <div class="form-group">
@@ -40,11 +47,6 @@ if (isset($_SESSION['username'])
         placeholder="Write something about your image.."></textarea>
         <input type="submit" value="Submit">
     </form>
-    <?php 
-    if(isset($_GET['newpost'], $_GET['error'])) {
-    echo "<h5>Error: All fields are required for submission.</h5>";
-    }
-    ?>
+   
 </div>
 <!-- /.insert-form-collapse -->
-<?php endif; ?>

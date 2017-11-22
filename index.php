@@ -47,7 +47,7 @@ require 'partials/head.php';
 
         if(isset($_GET['month'])):
             $month = $_GET['month'];
-            include 'partials/month_articles.php';
+            include 'actions/month_articles.php';
             
             foreach($month_articles as $article):
                 include 'partials/blog_posts.php';

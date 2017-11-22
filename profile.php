@@ -8,7 +8,8 @@ if(!isset($_SESSION['signed_in']) && empty($_SESSION['signed_in'])){
 }
 require 'profile_includes/profile_sql.php';
 
-if(!isset($_GET['newpost']) && !isset($_GET['editpost'])):
+if(!isset($_GET['newpost']) && !isset($_GET['editpost'])
+&& !isset($_GET['editcomment'])):
 ?>
 <div class="profile-wrapper">
     <div class="profile-container">
@@ -27,12 +28,17 @@ if(!isset($_GET['newpost']) && !isset($_GET['editpost'])):
     </div>
     <!-- /.profile-container-collapse -->
     <div class="amount-container">
+        <?php
+        if($_SESSION['contributor'] == true):
+        ?>
         <div class="amount">
             <?php foreach($profile_articles as $articles): ?>
             <h4><a href="index.php?upost=true#scroll"><?= $articles['number_of_posts']?></a></h4>
             <?php endforeach; ?>
             <p>Blog posts</p>
         </div>
+        <?php 
+        endif; //end of check if contributor ?>
         <div class="amount">
             <?php foreach($profile_comments as $comment): ?>
             <h4><a href="index.php?ucomments=true#scroll"><?= $comment['number_of_comments']?></a></h4>
@@ -42,6 +48,9 @@ if(!isset($_GET['newpost']) && !isset($_GET['editpost'])):
     </div>
     <!-- /.amount-container-collapse -->
     <div class="list-container">
+        <?php 
+        if($_SESSION['contributor'] == true):
+        ?>
         <h4>Most recent blog posts:</h4>
         <ul>
             <?php
@@ -59,6 +68,7 @@ if(!isset($_GET['newpost']) && !isset($_GET['editpost'])):
             endif;
             ?>
         </ul>
+        <?php endif;//end of check if contributor ?>
         <h4>Most recent comments:</h4>
         <ul>
             <?php
@@ -91,6 +101,9 @@ if(isset($_GET['editpost'])):
     require 'partials/edit_blogpost.php';
 endif;//end of editpost if
 
+if(isset($_GET['editcomment'])):
+    require 'profile_includes/edit_comment_profile.php';
+endif;//end of editcomment if
 
 
 require 'partials/footer.php';

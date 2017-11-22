@@ -53,7 +53,7 @@ require 'actions/article_single_sql.php';
                 && $comment['user_id'] == $_SESSION['id']):
                 ?> 
                 <a class="profile-button" 
-                href="profile.php?editpost=true&id=<?= $comment['comment_id']?>">
+                href="profile.php?editcomment=true&comment_id=<?= $comment['comment_id']?>">
                     Edit <i class="fa fa-pencil" aria-hidden="true"></i>
                 </a>
                 <a class="profile-button" 
