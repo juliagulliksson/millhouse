@@ -18,6 +18,9 @@ require 'actions/article_single_sql.php';
             <span class="dot">&bull;</span>
             <span class="username"><?= $article_single['username'] ?></span>
         </h3>
+        <img src="partials/<?=$article_single['image']?>" 
+        alt="<?=$article_single['alt_text']?>" 
+        class="article_image"
         <p><?= ($article_single['text']) ?></p> 
         <?php // Edit and delete options
                 if (isset($_SESSION['signed_in']) && $article_single['user_id'] == $_SESSION['id']):
