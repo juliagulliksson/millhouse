@@ -10,6 +10,7 @@ if(!is_numeric($_GET['uid'])){
 if(isset($_SESSION['signed_in'])){
     if($_GET['uid'] == $_SESSION['id']){
     header('location: profile.php');
+    exit();
     }
 }
 

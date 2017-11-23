@@ -1,6 +1,7 @@
 <?php
 //ucid = user comments id
 if(!isset($_GET['ucid'])):
+    require 'profile_includes/profile_sql.php';
     if(count($profile_all_comments) > 0):
         foreach($profile_all_comments as $comment):  
             include 'profile_includes/profile_comments_indv.php';

@@ -54,13 +54,11 @@ require 'partials/head.php';
             endforeach; 
         endif; //END OF MONTHS 
 
-        if(isset($_GET['upost']) || isset($_GET['uid'])):
-            require 'profile_includes/profile_sql.php';
+        if(isset($_GET['upost']) || isset($_GET['uid'])): 
             require 'profile_includes/profile_blogposts.php';
         endif;
 
         if(isset($_GET['ucomments']) || isset($_GET['ucid'])):
-            require 'profile_includes/profile_sql.php';
             require 'profile_includes/profile_comments.php';
         endif;
             
