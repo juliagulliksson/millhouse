@@ -49,5 +49,5 @@ $statement->execute(array(
 }// End else
 }
 else{
-    header('Location: ../profile.php?newpost=error&error=error');
+    header('Location: ../profile.php?newpost=error&error=error#scroll');
 }

@@ -20,7 +20,7 @@ $article_single = $statement->fetch(PDO::FETCH_ASSOC);
 
 //comments fetch
 $statement = $pdo->prepare("SELECT comments.text, comments.date, users.username,
-comments.id AS comment_id, comments.user_id
+comments.id AS comment_id, comments.user_id, comments.post_id
 FROM comments 
 INNER JOIN users
 ON comments.user_id=users.id

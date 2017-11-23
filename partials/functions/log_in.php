@@ -32,6 +32,9 @@ if (password_verify($password, $fetched_user["password"])){
    $_SESSION["admin"] =
         $fetched_user["admin"];
 } 
-else {
-    echo 'Failed login';}}
+    else {
+        header('location: login.php?login=fail#scroll');
+        exit();
+    }
+}
 ?>

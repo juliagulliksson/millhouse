@@ -10,7 +10,7 @@ $edit_post = $statement->fetch(PDO::FETCH_ASSOC);
 ?>
 <div class="insert-form">
 <div class="go-back">
-    <a href="index.php">
+    <a href="index.php?id=<?= $post_id ?>#scroll">
         <i class="fa fa-arrow-left" aria-hidden="true"></i>
     </a>
 </div>
