@@ -15,7 +15,7 @@ if(!isset($_GET['newpost']) && !isset($_GET['editpost'])
     <div class="profile-container">
     
         <div class="profile">
-            <img src="images/profile_photo.jpg" Alt="Profile photo" />
+            <img src="images/profile_photo.jpg" alt="Profile photo" />
         </div>
         <div class="profile-info">
             <h1><?= $_SESSION['username']?></h1>

@@ -28,6 +28,14 @@
     -moz-border-radius: 5px;
 }
 
+.navbar-image > a img{
+    margin-top: -10px;
+    width: 40px;
+    border-radius: 25px;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+}
+
 // Navbar logo
 .navbar-header .navbar-brand {
 	height: 100px;
