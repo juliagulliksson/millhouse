@@ -22,7 +22,7 @@ $edit_comment = $statement->fetch(PDO::FETCH_ASSOC);
             <i class="fa fa-arrow-left" aria-hidden="true"></i>
         </a>
     </div>
-    <div class="center-heading"><h2>Edit comment</h2></div>
+    <div class="center-heading"><h1>Edit comment</h1></div>
     <form action="actions/edit_comment.php?comment_id=<?= $comment_id ?>" method="POST">
     <textarea name="edit_comment"><?= $edit_comment['text']?></textarea>
     <input type="submit" name="submit" value="Submit">

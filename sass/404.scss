@@ -1,0 +1,33 @@
+.four-o-four{
+    height: 96vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #fff;
+    font-family: 'Open Sans', sans-serif;
+    color: #1c3145;
+    text-align: center;
+    h1{
+        margin: 0px;
+        font-size: 3em;
+        font-weight: 800;
+    }
+    h2{
+        margin: 0px;
+        padding: 0px;
+        font-size: 8em;
+    }
+    p{
+        font-family: 'Fira Code', monospace;
+        font-size: 0.9em;
+        line-height: 1.8em;
+    }
+    a:link, a:visited, a:active{
+        font-weight: 700;
+        color: #1c3145;
+        text-decoration: none;
+    }
+    a:hover{
+        color: #d4d1d2;
+    }
+}

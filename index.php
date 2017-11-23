@@ -15,6 +15,7 @@ require 'partials/head.php';
         foreach ($articles as $article):
             include 'partials/blog_posts.php';
         endforeach;
+         include 'partials/pagination_links.php';
     endif;
     // Individual blog posts
     if(isset($_GET['id'])):
@@ -49,7 +50,6 @@ require 'partials/head.php';
         if(isset($_GET['month'])):
             $month = $_GET['month'];
             include 'actions/month_articles.php';
-            
             foreach($month_articles as $article):
                 include 'partials/blog_posts.php';
             endforeach; 
@@ -62,13 +62,7 @@ require 'partials/head.php';
         if(isset($_GET['ucomments']) || isset($_GET['ucid'])):
             require 'profile_includes/profile_comments.php';
         endif;
-            
-        if(!isset($_GET['id']) && !isset($_GET['category']) 
-        && !isset($_GET['asc']) 
-        && !isset($_GET['month'])):
-            include 'partials/pagination_links.php'; 
-        endif;
-            
+        
             ?>
         </main>
         <aside>

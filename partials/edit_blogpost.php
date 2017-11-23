@@ -14,7 +14,7 @@ $edit_post = $statement->fetch(PDO::FETCH_ASSOC);
         <i class="fa fa-arrow-left" aria-hidden="true"></i>
     </a>
 </div>
-<div class="center-heading"><h2>Edit blogpost</h2></div>
+<div class="center-heading"><h1>Edit blogpost</h1></div>
     <form action="actions/edit_blogpost_sql.php?id=<?= $post_id ?>" method="POST" enctype="multipart/form-data">
     <div class="form-group">
         <div class="form-group__title">
