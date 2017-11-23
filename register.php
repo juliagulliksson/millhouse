@@ -12,18 +12,18 @@
             header('location: index.php');
             exit();
         elseif($_GET['register'] == 'success' && $exists == true):?>
-           <p class="success_message"><?= $username ?> was successfully registered!
-           <a href="login.php#scroll">Click here to log in</a></p>
+           <p class="success-message"><?= $username ?> was successfully registered!
+           <a href="login.php#scroll">Login here!</a></p>
            <?php
         endif;//end of check exist
     endif;//end of check GET
 
     if(isset($_GET['user'])){?>
-    <p class="error_message">This username already exists!</p>
+    <p class="error-message">This username already exists!</p>
      <?php
     }
     if(isset($_GET['email'])){?>
-        <p class="error_message">This email adress is already registered!</p>
+        <p class="error-message">This email adress is already registered!</p>
     <?php
     }
     ?>
