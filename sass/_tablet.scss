@@ -66,11 +66,19 @@ nav, .navbar-nav, .navbar-right{
     h1{
         font-size: 1.8em;
     }
+    h3{
+        font-size: 1.2em;
+    }
 }
 
 .profile img{
     max-width: 140px;
     margin-right: 30px;
+}
+
+.amount-container{
+    justify-content: space-between;
+    padding: 0% 30%;
 }
 
 // Editor
