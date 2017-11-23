@@ -1,16 +1,16 @@
 <?php
 require 'partials/head.php';
 
-//check if the get request is numeric
+// Check if the get request is numeric
 if(!is_numeric($_GET['uid'])){
     header('location: index.php');
     exit();
 }
-//check if the user id equals the logged in user, if so redirect to profile
+// Check if the user id equals the logged in user, if so redirect to profile
 if(isset($_SESSION['signed_in'])){
     if($_GET['uid'] == $_SESSION['id']){
-    header('location: profile.php');
-    exit();
+		header('location: profile.php');
+		exit();
     }
 }
 
