@@ -19,8 +19,8 @@ $upload_ok = check_image_before_upload($image_size,
 
 
 //Inserts to database
-if($upload_ok && 
-   move_uploaded_file($path, '../partials/' . $target)) { 
+if(gettype($upload_ok) == 'boolean'){
+  if(move_uploaded_file($path, '../partials/' . $target)) { 
     $statement = $pdo->prepare( 
         "INSERT INTO posts 
         (post_title, 
@@ -47,7 +47,8 @@ if($upload_ok &&
         ":image"       => $target, 
         ":alt_text"    => $alt_text 
     )); 
-} 
+  } 
+}
     else { 
         echo $upload_ok; 
     }//end if
