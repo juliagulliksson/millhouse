@@ -13,12 +13,13 @@ if(!isset($_GET['newpost']) && !isset($_GET['editpost'])
 ?>
 <div class="profile-wrapper">
     <div class="profile-container">
+    
         <div class="profile">
             <img src="images/profile_photo.jpg" Alt="Profile photo" />
         </div>
         <div class="profile-info">
-            <h3><?= $_SESSION['username']?></h3>
-            <h4><?= $_SESSION['email']?></h4>
+            <h1><?= $_SESSION['username']?></h1>
+            <h2><?= $_SESSION['email']?></h2>
             <?php 
             if($_SESSION['contributor'] == true):
             ?>
