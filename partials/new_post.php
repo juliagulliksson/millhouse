@@ -7,6 +7,11 @@ endif;
     ?> 
 
 <div class="insert-form">
+    <div class="go-back">
+        <a href="index.php">
+            <i class="fa fa-arrow-left" aria-hidden="true"></i>
+        </a>
+    </div>
     <?php 
     if(isset($_GET['newpost'], $_GET['error'])) {
     echo "<h5>Error: All fields are required for submission.</h5>";
