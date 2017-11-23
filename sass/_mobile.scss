@@ -464,3 +464,17 @@ a:hover.profile-button{
 .profile-image img{
     display: none;
 }
+
+.error_message{
+    color: indianred;
+    font-weight: 700;
+    font-size: 1.2em;
+    text-align: center;
+}
+
+.success_message{
+    color: rgb(25, 124, 25);
+    font-weight: 700;
+    font-size: 1.2em;
+    text-align: center;
+}

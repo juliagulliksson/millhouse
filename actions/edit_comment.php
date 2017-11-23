@@ -1,9 +1,7 @@
 <?php
-$comment_id = $_GET['comment_id'];
-var_dump($_POST);
-var_dump($_GET);
 header("location: ../index.php?#scroll");
 require '../partials/database.php';
+$comment_id = $_GET['comment_id'];
 $new_text = $_POST['edit_comment'];
 
 $statement = $pdo->prepare("UPDATE comments SET text = :newText

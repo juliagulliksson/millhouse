@@ -10,7 +10,15 @@ $edit_comment = $statement->fetch(PDO::FETCH_ASSOC);
 ?>
 <div class="insert-form">
     <div class="go-back">
-        <a href="index.php">
+        <?php
+        if(isset($_GET['post_id'])):
+        ?>
+        <a href="index.php?id=<?= $_GET['post_id'] ?>#scroll">
+        <?php 
+        elseif(!isset($_GET['post_id'])):
+        ?>
+        <a href="profile.php#scroll">
+        <?php endif; ?>
             <i class="fa fa-arrow-left" aria-hidden="true"></i>
         </a>
     </div>
