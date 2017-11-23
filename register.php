@@ -20,12 +20,6 @@
                name="register_password"
                placeholder="Password">
         <br />
-        <label for="password" hidden>Verify password:</label>
-        <input type="password" 
-               id="input_verify_password"
-               name="verify_password"
-               placeholder="Verify password">
-        <br />
         <input type="submit"id="submit_register" value="Register">
     </form>
     <b>Already signed up?</b> <a href="login.php#scroll">Login here!</a>

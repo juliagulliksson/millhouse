@@ -9,6 +9,11 @@ $statement->execute(array(
 $edit_comment = $statement->fetch(PDO::FETCH_ASSOC);
 ?>
 <div class="insert-form">
+    <div class="go-back">
+        <a href="index.php">
+            <i class="fa fa-arrow-left" aria-hidden="true"></i>
+        </a>
+    </div>
     <div class="center-heading"><h2>Edit comment</h2></div>
     <form action="actions/edit_comment.php?comment_id=<?= $comment_id ?>" method="POST">
     <textarea name="edit_comment"><?= $edit_comment['text']?></textarea>

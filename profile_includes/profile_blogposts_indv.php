@@ -1,6 +1,6 @@
  <div class="blog-post">
     <article>
-        <h2><?= $article['post_title']; ?></h2>
+        <h1><?= $article['post_title']; ?></h1>
         <h3><span class="category-bold">
             <?= $article['title']; ?></span>
             <span class="dot">&bull;</span><?= replace_date($article['date']) ?> 

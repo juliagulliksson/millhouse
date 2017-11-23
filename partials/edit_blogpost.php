@@ -9,6 +9,11 @@ $statement->execute(array(
 $edit_post = $statement->fetch(PDO::FETCH_ASSOC);
 ?>
 <div class="insert-form">
+<div class="go-back">
+    <a href="index.php">
+        <i class="fa fa-arrow-left" aria-hidden="true"></i>
+    </a>
+</div>
 <div class="center-heading"><h2>Edit blogpost</h2></div>
     <form action="actions/edit_blogpost_sql.php?id=<?= $post_id ?>" method="POST" enctype="multipart/form-data">
     <div class="form-group">
