@@ -32,13 +32,13 @@
                 
         //Checks if username is already registered
         if ($is_duplicate_username){
-            echo 'The username already exists! <br/>';
+            header('location: register.php?user=fail#scroll');
         }
                 
                 
         //Checks if email is aldready registered
         elseif ($is_duplicate_email){
-            echo 'The email address is already registered!';
+            header('location: register.php?email=fail#scroll');
         }
 
         //If email or username doesn't exists the function for register runs

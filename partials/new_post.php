@@ -8,16 +8,15 @@ endif;
 
 <div class="insert-form">
     <div class="go-back">
-        <a href="index.php">
+        <a href="profile.php#scroll">
             <i class="fa fa-arrow-left" aria-hidden="true"></i>
         </a>
     </div>
     <?php 
-    if(isset($_GET['newpost'], $_GET['error'])) {
-    echo "<h5>Error: All fields are required for submission.</h5>";
-    }
-    ?>
-    <div class="center-heading"><h1>Write a new blog post</h1></div>
+    if(isset($_GET['newpost'], $_GET['error'])) { ?>
+    <p class="error_message">Error: All fields are required for submission.</p>
+   <?php } ?>
+    <div class="center-heading"><h2>Write a new blog post</h2></div>
     <form action="actions/insert_blogpost.php" method="POST"
        enctype="multipart/form-data">
         <div class="form-group">

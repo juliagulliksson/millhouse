@@ -63,7 +63,8 @@ $profile_all_articles = $statement->fetchAll(PDO::FETCH_ASSOC);
 
 //Fetch all comments made by user
 $statement = $pdo->prepare("SELECT posts.id AS postID, posts.post_title, 
-comments.text, comments.date, comments.user_id, comments.id AS comment_id
+comments.text, comments.date, comments.post_id,
+comments.user_id, comments.id AS comment_id
 FROM posts
 INNER JOIN users
 ON posts.user_id=users.id

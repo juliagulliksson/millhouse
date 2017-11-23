@@ -33,7 +33,7 @@ require 'actions/article_single_sql.php';
             || $_SESSION['admin'] == true):
         ?>
         <a class="profile-button" 
-            href="profile.php?editpost=true&id=<?= $article_single['postID']?>">
+            href="profile.php?editpost=true&id=<?= $article_single['postID']?>#scroll">
             Edit <i class="fa fa-pencil" aria-hidden="true"></i></a>
         <a class="profile-button" 
             href="actions/delete_blogpost.php?id=<?= $article_single['postID']?>">
@@ -64,7 +64,8 @@ require 'actions/article_single_sql.php';
                 || $_SESSION['admin'] == true):
             ?>
             <a  class="profile-button"
-                href="profile.php?editcomment=true&comment_id=<?= $comment['comment_id']?>#scroll">
+                href="profile.php?editcomment=true&comment_id=<?= $comment['comment_id']?>
+                &post_id=<?= $comment['post_id'] ?>#scroll">
                 Edit comment <i class="fa fa-pencil" aria-hidden="true"></i></a>
             <a class="profile-button"
                 href="actions/delete_comment.php?id=<?= $comment['comment_id']?>#scroll">
