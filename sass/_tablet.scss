@@ -29,12 +29,17 @@ nav, .navbar-nav, .navbar-right{
     margin-right: 15px;
 }
 
+ li.categories{
+    display: none;
+}
+
 .hero{
     background-position: 0% 62%;
     height: 400px;
 }
 
 .container{
+    width: 100%;
     flex-direction: row;
     align-items: flex-start;
     justify-content: center;
@@ -47,6 +52,14 @@ nav, .navbar-nav, .navbar-right{
 
 .sidebar{
     text-align: left;
+}
+
+.sidebar-about{
+    display: block;
+}
+
+.profile-wrapper{
+    padding: 0em 6em;
 }
 
 .profile img{

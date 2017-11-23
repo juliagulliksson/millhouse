@@ -11,40 +11,37 @@ require 'actions/article_single_sql.php';
         </a>
     </div>
     <article>
-        <h2><?= $article_single['post_title']; ?></h2>
-        <h3><span class="category-bold">
-            <a href="index.php?category=<?= $article_single['category_id'] ?>#scroll">
-            <?= $article_single['title']; ?></a></span>
+        <h1><?= $article_single['post_title']; ?></h1>
+        <h3><b><?= $article_single['title']; ?></b>
             <span class="dot">&bull;</span>
             <?= replace_date($article_single['date']) ?>
             <span class="dot">&bull;</span> 
             <span class="username">
                 <a href="user.php?uid=<?= $article_single['user_id'] ?>#scroll">
-                <?= $article_single['username'] ?></a>
-                <?php // Edit and delete options
-                if (isset($_SESSION['signed_in'])):
-                    if($article_single['user_id'] == $_SESSION['id'] 
-                    || $_SESSION['admin'] == true):
-                ?>
-                        <a class="profile-button" 
-                        href="profile.php?editpost=true&id=<?= $article_single['postID']?>">
-                        Edit <i class="fa fa-pencil" aria-hidden="true"></i></a>
-                        <a class="profile-button" 
-                        href="actions/delete_blogpost.php?id=<?= $article_single['postID']?>">
-                        Delete <i class="fa fa-trash" aria-hidden="true"></i>
-                        </a>
-                <?php
-                    endif;//end of check user/admin 
-                endif;//end of signed in if ?>  
+                <?= $article_single['username'] ?></a>  
             </span>
-            </h3>
-            <?php if(!empty($article_single['image'])): ?>
-                <img src="partials/<?=$article_single['image']?>" 
-                alt="<?=$article_single['alt_text']?>" 
-                class="article_image">
-            <?php endif; ?> 
+        </h3>
+        <?php if(!empty($article_single['image'])): ?>
+        <img src="partials/<?=$article_single['image']?>" 
+             alt="<?=$article_single['alt_text']?>" 
+             class="article_image">
+        <?php endif; ?> 
         <p><?= ($article_single['text']) ?></p>
-        
+        <?php // Edit and delete blog post options
+        if(isset($_SESSION['signed_in'])):
+            if($article_single['user_id'] == $_SESSION['id'] 
+            || $_SESSION['admin'] == true):
+        ?>
+        <a class="profile-button" 
+            href="profile.php?editpost=true&id=<?= $article_single['postID']?>">
+            Edit <i class="fa fa-pencil" aria-hidden="true"></i></a>
+        <a class="profile-button" 
+            href="actions/delete_blogpost.php?id=<?= $article_single['postID']?>">
+            Delete <i class="fa fa-trash" aria-hidden="true"></i></a>
+        <?php
+            endif;// End of check user/admin 
+        endif;// End of signed in if 
+        ?>  <!-- End of edit and delete buttons -->
     </article>
     <?php
     // article_single_sql.php is where $comments is made
@@ -55,30 +52,26 @@ require 'actions/article_single_sql.php';
         <?php foreach($comments as $comment): ?>
         <div class="comments">
             <h3>
-                <?= replace_date($comment['date']) ?> | 
-                <span class="username">
-                    <a href="user.php?uid=<?= $comment['user_id']?>#scroll">
-                    <?= $comment['username']?></a>
-                    <?php
-                if (isset($_SESSION['signed_in'])):
-                    if($comment['user_id'] == $_SESSION['id'] 
-                    || $_SESSION['admin'] == true):
-                ?> 
-                        <a class="profile-button" 
-                        href="profile.php?editcomment=true&comment_id=<?= $comment['comment_id']?>#scroll">
-                            Edit <i class="fa fa-pencil" aria-hidden="true"></i>
-                        </a>
-                        <a class="profile-button" 
-                        href="actions/delete_comment.php?id=<?= $comment['comment_id']?>#scroll">
-                            Delete <i class="fa fa-trash" aria-hidden="true"></i>
-                        </a>
-                <?php 
-                    endif;//end of check user/admin
-                endif;//end of signed in if ?>
-                </span>
-               
+                <b><a href="user.php?uid=<?= $comment['user_id']?>#scroll">
+                <?= $comment['username']?></a></b>
+                <br />
+                <?= replace_date($comment['date']) ?>
             </h3>
             <p><?= $comment['text']?> </p>
+            <?php // Edit and delete comment options
+            if(isset($_SESSION['signed_in'])):
+                if($comment['user_id'] == $_SESSION['id'] 
+                || $_SESSION['admin'] == true):
+            ?>
+            <a  class="profile-button"
+                href="profile.php?editcomment=true&comment_id=<?= $comment['comment_id']?>#scroll">
+                Edit comment <i class="fa fa-pencil" aria-hidden="true"></i></a>
+            <a class="profile-button"
+                href="actions/delete_comment.php?id=<?= $comment['comment_id']?>#scroll">
+                Delete comment <i class="fa fa-trash" aria-hidden="true"></i></a>
+            <?php 
+                endif;//end of check user/admin
+            endif;//end of signed in if ?>
         </div>
         <!-- comments-collapse -->
         <?php endforeach; ?>
