@@ -31,7 +31,7 @@
                     <img src="images/profile_photo.jpg" alt="Profile photo" />
                 </li>
                 <li class="navbar-image">
-                    <a class="navbar-link" href="profile.php?newpost=true#scroll">
+                    <a href="profile.php?newpost=true#scroll">
                         <img src="images/pen.jpg" alt="Write new blog post" />
                     </a>
                 </li>
