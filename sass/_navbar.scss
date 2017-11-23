@@ -28,7 +28,7 @@
     -moz-border-radius: 5px;
 }
 
-.nav >.navbar-image > a img{
+.nav > .navbar-image > a img{
     margin-top: -10px;
     width: 40px;
     border-radius: 25px;
@@ -36,10 +36,9 @@
     -moz-border-radius: 25px;
 }
 
-.nav >.navbar-image > a:hover{
-    background-color: $dark_blue !important;
+ul.nav.navbar-nav.navbar-right > li:nth-child(2) > a:hover{
+    background-color: transparent;
 }
-
 
 // Navbar logo
 .navbar-header .navbar-brand {

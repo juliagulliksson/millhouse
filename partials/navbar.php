@@ -35,6 +35,9 @@
                         <img src="images/pen.jpg" alt="Write new blog post" />
                     </a>
                 </li>
+                <li class="new-blogpost">
+                    <a href="profile.php?newpost=true#scroll">NEW BLOGPOST</a>
+                </li>
                 <li class="button nav-margin"><a href="profile.php#scroll">Profile</a></li>
                 <li class="button"><a href="index.php?end_session=true">Log out</a></li>
                 <?php else: ?>
