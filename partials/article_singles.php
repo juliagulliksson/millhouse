@@ -18,8 +18,7 @@ require 'actions/article_single_sql.php';
             <span class="dot">&bull;</span> 
             <span class="username">
                 <a href="user.php?uid=<?= $article_single['user_id'] ?>#scroll">
-                <?= $article_single['username'] ?></a>
-                
+                <?= $article_single['username'] ?></a>  
             </span>
         </h3>
         <?php if(!empty($article_single['image'])): ?>

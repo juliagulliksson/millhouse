@@ -44,7 +44,8 @@ $profile_comments_title = $statement->fetchAll(PDO::FETCH_ASSOC);
 
 //Fetch all blogposts made by the user
 $statement = $pdo->prepare("SELECT posts.date, posts.id as postID, 
-posts.text, posts.post_title, categories.title, categories.id AS category_id, posts.user_id,
+posts.image, posts.alt_text, posts.text, posts.post_title, 
+categories.title, categories.id AS category_id, posts.user_id,
 COUNT(comments.post_id) AS comments
 FROM posts 
 INNER JOIN categories 

@@ -23,6 +23,11 @@
                 endif;//end of check logged in ?> 
             </span>
         </h3>
+        <?php if(!empty($article['image'])): ?>
+                <img src="partials/<?=$article['image']?>" 
+                alt="<?=$article['alt_text']?>" 
+                class="article_image">
+            <?php endif; ?> 
         <p><?= $article['text'] ?></p>
         <a href="index.php?id=<?= $article['postID'] ?>" class="comments-count">
         Comments (<?= $article['comments']?>)
