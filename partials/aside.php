@@ -12,7 +12,6 @@
             Côte d’Or och Suchard.
         </p>
     </div>
-    <br /><!-- This one is just temporary and should be replaced with margin/padding-styling -->
     <h3 id="categories">Categories</h3>
     <div class="categories-list">
         <ul>

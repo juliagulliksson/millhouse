@@ -62,8 +62,15 @@ nav, .navbar-nav, .navbar-right{
     padding: 0em 6em;
 }
 
+.profile-info{
+    h1{
+        font-size: 1.8em;
+    }
+}
+
 .profile img{
-    max-width: 10em;
+    max-width: 140px;
+    margin-right: 30px;
 }
 
 // Editor
