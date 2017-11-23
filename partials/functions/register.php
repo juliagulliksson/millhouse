@@ -15,6 +15,6 @@ $my_sql->execute(array(
     ":email"            => $email,
     ":admin"            => $admin
 ));
-    echo $username . ' was successfully registered!';
+    header("location: register.php?register=success&username=$username");
 }
 ?>
