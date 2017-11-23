@@ -31,9 +31,12 @@
                     <img src="images/profile_photo.jpg" alt="Profile photo" />
                 </li>
                 <li class="navbar-image">
-                    <a class="navbar-link" href="profile.php?newpost=true#scroll">
+                    <a href="profile.php?newpost=true#scroll">
                         <img src="images/pen.jpg" alt="Write new blog post" />
                     </a>
+                </li>
+                <li class="new-blogpost">
+                    <a href="profile.php?newpost=true#scroll">NEW BLOGPOST</a>
                 </li>
                 <li class="button nav-margin"><a href="profile.php#scroll">Profile</a></li>
                 <li class="button"><a href="index.php?end_session=true">Log out</a></li>
