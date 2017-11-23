@@ -49,7 +49,7 @@ h4{
 .hero{
     color: #fff;
     font-style: italic;
-    font-size: 2em;    
+    font-size: 1.5em;    
     background-image: url("../images/hero.jpg");
     background-size: cover;
     background-position: 0% 60%;
@@ -334,13 +334,24 @@ select{
 .profile-info{
     h1{
         font-size: 1.1em;
+        margin: 0px 0px 5px 0px;
     }
     h2{
-        margin: 0.8em 0em;
+        margin: 0px 0px 2px 0px;
         font-size: 0.9em;
         font-weight: normal;
         text-transform: uppercase;
     }
+    h3{
+        font-size: 1em;
+        letter-spacing: 0em;
+        font-weight: 800;
+        margin: 0px;
+    }
+}
+
+.user-info{
+    margin-right: 30px;
 }
 
 .profile img{
@@ -458,27 +469,45 @@ a:hover.profile-button{
     }
 }
 
-.profile-image img{
-    margin: 5px 15px 0px 0px;
-    max-width: 40px;
-    border-radius: 25px;
-    -moz-border-radius: 25px;
-    -webkit-border-radius: 25px;
-}
-
-.profile-image img{
+.navbar-image img{
     display: none;
 }
 
-.error_message{
-    color: indianred;
+li.new-blogpost {
+    display: block;
+    margin-bottom: 15px;
+}
+
+.about-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    h1{
+        font-size: 2.2em;
+    }
+    h2{
+        font-size: 1.8em;
+    }
+    img{
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+.about-text{
+    max-width: 75ch;
+}
+
+.error-message{
+    color: rgb(205, 92, 92);
     font-weight: 700;
     font-size: 1.2em;
     text-align: center;
 }
 
-.success_message{
-    color: rgb(25, 124, 25);
+.success-message{
+    color: #5ccd7f;
     font-weight: 700;
     font-size: 1.2em;
     text-align: center;

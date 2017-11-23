@@ -28,6 +28,18 @@
     -moz-border-radius: 5px;
 }
 
+.nav > .navbar-image > a img{
+    margin-top: -10px;
+    width: 40px;
+    border-radius: 25px;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+}
+
+ul.nav.navbar-nav.navbar-right > li.navbar-image > a:hover{
+    background-color: transparent;
+}
+
 // Navbar logo
 .navbar-header .navbar-brand {
 	height: 100px;

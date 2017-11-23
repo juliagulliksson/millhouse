@@ -15,7 +15,7 @@ if(!isset($_GET['newpost']) && !isset($_GET['editpost'])
     <div class="profile-container">
     
         <div class="profile">
-            <img src="images/profile_photo.jpg" Alt="Profile photo" />
+            <img src="images/profile_photo.jpg" alt="Profile photo" />
         </div>
         <div class="profile-info">
             <h1><?= $_SESSION['username']?></h1>
@@ -23,7 +23,11 @@ if(!isset($_GET['newpost']) && !isset($_GET['editpost'])
             <?php 
             if($_SESSION['contributor'] == true):
             ?>
-            <a href="profile.php?newpost=true#scroll">Write a new blog post</a>
+            <h3>
+                <a href="profile.php?newpost=true#scroll">
+                   Write a new blog post <i class="fa fa-pencil" aria-hidden="true"></i>
+                </a>
+            </h3>
             <?php endif; ?>
         </div>
     </div>
@@ -34,7 +38,9 @@ if(!isset($_GET['newpost']) && !isset($_GET['editpost'])
         ?>
         <div class="amount">
             <?php foreach($profile_articles as $articles): ?>
-            <h4><a href="index.php?upost=true#scroll"><?= $articles['number_of_posts']?></a></h4>
+            <h4>
+                <a href="index.php?upost=true#scroll"><?= $articles['number_of_posts']?></a>
+            </h4>
             <?php endforeach; ?>
             <p>Blog posts</p>
         </div>
@@ -42,7 +48,9 @@ if(!isset($_GET['newpost']) && !isset($_GET['editpost'])
         endif; //end of check if contributor ?>
         <div class="amount">
             <?php foreach($profile_comments as $comment): ?>
-            <h4><a href="index.php?ucomments=true#scroll"><?= $comment['number_of_comments']?></a></h4>
+            <h4>
+                <a href="index.php?ucomments=true#scroll"><?= $comment['number_of_comments']?></a>
+            </h4>
             <?php endforeach; ?>
             <p>Comments</p>
         </div>

@@ -8,15 +8,6 @@
     @import "_tablet.scss";
 }
 
-@media screen and (min-width: 768px) and (max-width: 940px){
-    .navbar-default .navbar-text{
-        display: none;
-    }
-    .profile-image img{
-        display: block;
-    }
-}
-
 @media screen and (min-width: 950px){
     @import "_desktop.scss";
 }

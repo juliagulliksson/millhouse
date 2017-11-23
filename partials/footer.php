@@ -28,10 +28,18 @@
                 <div class="social-media">
                     <ul>
                         <li><b>FOLLOW US</b></li>
-                        <li><a href="#">Instagram</a></li>
-                        <li><a href="#">Facebook</a></li>
-                        <li><a href="#">Newsletter</a></li>
-                        <li><a href="#">YouTube</a></li>
+                        <li><a href="http://www.instagram.com" target="_blank">
+                            <i class="fa fa-instagram" aria-hidden="true"></i> Instagram
+                        </a></li>
+                        <li><a href="http://www.facebook.com" target="_blank">
+                            <i class="fa fa-facebook-square" aria-hidden="true"></i> Facebook
+                        </a></li>
+                        <li><a href="#">
+                            <i class="fa fa-envelope" aria-hidden="true"></i> Newsletter
+                        </a></li>
+                        <li><a href="http://www.youtube.com" target="_blank">
+                            <i class="fa fa-youtube" aria-hidden="true"></i> YouTube
+                        </a></li>
                     </ul>
                 </div>
             </div>
