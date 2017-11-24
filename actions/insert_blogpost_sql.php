@@ -16,7 +16,7 @@ if(!empty($title)
 // If blog post with image is posted
 if (!empty($_FILES["image"]) && 
     !empty($_POST["alt_text"])) {
-require "../partials/upload_image.php";
+require "upload_image_sql.php";
 }//End if
 
 
