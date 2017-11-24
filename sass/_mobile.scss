@@ -240,11 +240,6 @@ select{
     -moz-border-radius: 5px;
 }
 
-.form-group__image img {
-    width: 100%;
-    max-width: 768px;
-}
-
 .comment-field,
 .insert-form{
     @extend .login;
@@ -278,6 +273,29 @@ select{
 
 .insert-form{
     @extend .profile-wrapper;
+}
+
+.form-group,
+.form-group__image{
+    width: 100%;
+    margin-bottom: 10px;
+    img {
+        max-height: 60px;
+        margin-right: 10px;
+    }
+}
+
+.file-input {
+    display: flex;
+    vertical-align: baseline;
+}
+
+.form-image {
+    flex-basis: 15%;
+}
+
+.form-group__file {
+    flex-basis: 85%;
 }
 
 // CKEditor WYSIWYG
