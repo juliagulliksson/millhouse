@@ -19,10 +19,10 @@
     <h3 id="categories">Categories</h3>
     <div class="categories-list">
         <ul>
-        <?php foreach ($category_disctinct as $categories): ?>
+        <?php foreach ($categories_disctinct as $category): ?>
             <li>
-                <a href="index.php?category=<?= $categories['id']?>">
-                <?= $categories['title'] ?> (<?= $categories['posts']?>)</a>
+                <a href="index.php?category=<?= $category['id']?>">
+                <?= $category['title'] ?> (<?= $category['number_of_posts']?>)</a>
             </li>
         <?php endforeach; ?>
         </ul>
@@ -31,12 +31,12 @@
     <h3 class="archive">Archive</h3>
     <div class="categories-list">
         <ul>
-        <?php foreach ($month_number as $months):
-            $month = $months['month'];
+        <?php foreach ($months_number as $month):
+            $month_number = $month['month'];
         ?>
             <li>
-                <a href="index.php?month=<?= $months['month']?>">
-                <?= replace_month($month) ?> (<?= $months['posts']?>)</a>
+                <a href="index.php?month=<?= $month['month']?>">
+                <?= replace_month($month_number) ?> (<?= $month['number_of_posts']?>)</a>
             </li>
         <?php endforeach; ?>
         </ul>

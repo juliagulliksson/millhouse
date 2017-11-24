@@ -15,7 +15,7 @@ $statement = $pdo->prepare(" SELECT posts.date, posts.id as postID,
   ORDER BY posts.date DESC
     ");
   $statement->execute(array(
-    ":category_id" => $categories
+    ":category_id" => $category
   ));
   $category_articles = $statement->fetchAll(PDO::FETCH_ASSOC);
 
@@ -34,7 +34,7 @@ $statement = $pdo->prepare(" SELECT posts.date, posts.id as postID,
   ORDER BY posts.date ASC
     ");
   $statement->execute(array(
-    ":category_id" => $categories
+    ":category_id" => $category
   ));
   $category_articles_asc = $statement->fetchAll(PDO::FETCH_ASSOC);
 

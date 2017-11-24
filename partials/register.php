@@ -12,7 +12,7 @@ if(!empty($_POST["register-user"])) {
 /* Form Required Field Validation */
 foreach($_POST as $key=>$value) {
 	if(empty($_POST[$key])) {
-	$error_message = "All Fields are required";
+	$error_message = "All fields are required";
 	break;
 	}
 }
@@ -23,13 +23,13 @@ foreach($_POST as $key=>$value) {
 
 	if(!isset($error_message)) {
     if(preg_match('/\s/',$user) ) {
-		$error_message = "Whitespace not allowed in Username.";
+		$error_message = "Whitespace not allowed in Username";
 		}
         }
 
 	if(!isset($error_message)) {
     if(preg_match('/\s/',$pass) ) {
-		$error_message = "Whitespace not allowed in Password.";
+		$error_message = "Whitespace not allowed in Password";
 		}
         }
 
@@ -37,13 +37,13 @@ foreach($_POST as $key=>$value) {
 	/* Username Validation */
 	if(!isset($error_message)) {
 		if (strlen($user) > 20) {
-		$error_message = "Maximum is 20 characters";
+		$error_message = "Maximum username length is 20 characters";
 		}
         }
 
 	/* Password Matching Validation */
 	if($pass != $pass_verify){ 
-	$error_message = 'Passwords should be same<br>'; 
+	$error_message = 'Passwords do not match <br>'; 
 	}
 
 	/* Email Validation */

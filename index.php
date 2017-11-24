@@ -25,11 +25,11 @@ require 'partials/head.php';
     endif; //end of get id if
 
     if(isset($_GET['category']) && !isset($_GET['asc'])):
-        $categories = $_GET['category'];
+        $category = $_GET['category'];
         include 'actions/category_articles.php';  
     if (count($category_articles) > 1):
     ?>  
-        <h4>Sort by date | <a name="newest" href="index.php?category=<?= $categories?>
+        <h4>Sort by date | <a name="newest" href="index.php?category=<?= $category ?>
         &asc=true#oldest">Oldest</a></h4>
         
     <?php 
@@ -40,10 +40,10 @@ require 'partials/head.php';
     endforeach;       
         
     elseif(isset($_GET['category']) && isset($_GET['asc'])): //ascending categories
-        $categories = $_GET['category'];
+        $category = $_GET['category'];
         include 'actions/category_articles.php';
         ?>
-    <h4>Sort by date | <a name="oldest" href="index.php?category=<?= $categories?>
+    <h4>Sort by date | <a name="oldest" href="index.php?category=<?= $category ?>
     #newest">Newest</a></h4>
         <?php
         foreach($category_articles_asc as $article):
