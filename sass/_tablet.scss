@@ -53,12 +53,13 @@ li.new-blogpost {
     width: 95%;
 }
 
-.sidebar{
-    text-align: left;
-}
 
 .sidebar-about{
     display: block;
+    text-align: justify;
+    .sidebar-heading{
+        margin-bottom: 10px;
+    }
 }
 
 .profile-wrapper{

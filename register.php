@@ -13,7 +13,7 @@
             exit();
         elseif($_GET['register'] == 'success' && $exists == true):?>
            <p class="success-message"><?= $username ?> was successfully registered!
-           <a href="login.php#scroll">Login here!</a></p>
+           <a href="login.php#scroll">Login here</a></p>
            <?php
         endif;//end of check exist
     endif;//end of check GET

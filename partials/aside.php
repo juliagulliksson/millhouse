@@ -1,6 +1,6 @@
 <div class="sidebar">
     <div class="sidebar-about">
-        <h3>Millhouse</h3>
+        <h3 class="sidebar-heading">Millhouse</h3>
         <p>
             Based in the heart of Stockholm, Millhouse brings you some of the finest
             fashion items of the world.
@@ -28,7 +28,7 @@
         </ul>
     </div>
     <!-- /.categories-list-collapse -->
-    <h3>Archive</h3>
+    <h3 class="archive">Archive</h3>
     <div class="categories-list">
         <ul>
         <?php foreach ($month_number as $months):
