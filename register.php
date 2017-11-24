@@ -68,10 +68,7 @@ if(isset($_GET['email'])){?>
                placeholder="Verify Password">
 		<br />
         <input type="submit" name="register-user" value="Register" class="btnRegister">
-		<?php if(!empty($error_message)) { ?>	
-		<div class="error-message"><?php if(isset($error_message)) echo $error_message; ?></div>
-		<?php } ?>
-		
+
 		<br />
     </form>    
     <b>Already signed up?</b> <a href="login.php#scroll">Login here!</a>
