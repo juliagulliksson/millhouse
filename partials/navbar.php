@@ -29,15 +29,15 @@
                 <?php 
                 if(isset($_SESSION['signed_in'])): ?>
                 <li class="navbar-image">
-                    <img src="images/profile_photo.jpg" alt="Profile photo" />
+                    <img src="images/profile-photo.jpg" alt="Profile photo" />
                 </li>
                 <?php 
                 if($_SESSION['contributor'] == true): ?>
-                <li class="navbar-image">
+                <li class="navbar-image margin-minus">
                     <a href="profile.php?newpost=true#scroll">
                         <img src="images/pen.jpg" alt="Write new blog post" />
-                        </a>
-                    </li>
+                    </a>
+                </li>
                 <?php endif; ?>
                 <li class="new-blogpost">
                     <a class="new-blogpost-image" 
