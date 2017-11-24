@@ -393,10 +393,45 @@ select{
     flex-direction: column;
     text-align: center;
     padding: 10px 0px;
-    margin-bottom: 0px;
+    margin-bottom: 20px;
     ul{
         list-style: none;
         padding-left: 0px;
+    }
+}
+
+.delete-account{
+    @extend .amount-container;
+    flex-direction: column;
+    text-align: center;
+    padding: 10px 0px;
+    margin-bottom: 0px;
+    a.delete{
+        padding: 10px;
+        margin: 15px;
+        background-color: indianred;
+        color: #FFF;
+        font-family: 'Fira Code';
+        border: 1px solid rgb(68, 68, 68);
+        border-radius: 3px;
+        box-shadow: 0px 3px 0px 0px $dark_blue;
+        -webkit-box-shadow: 0px 3px 0px 0px $dark_blue;
+        -moz-box-shadow: 0px 3px 0px 0px $dark_blue;
+    }
+    a:hover.delete{
+        background-color: $dark_gray;
+    }
+    p{
+        margin: 10px;
+        font-weight: 700;
+        font-size: 1.3em;
+    }
+    .delete-go-back{
+        font-size: 1.2em;
+        margin: 10px 0px;
+        .fa{
+            margin-right: 4px;
+        }
     }
 }
 

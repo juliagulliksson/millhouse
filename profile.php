@@ -9,7 +9,8 @@ if(!isset($_SESSION['signed_in']) && empty($_SESSION['signed_in'])){
 require 'profile_includes/profile_sql.php';
 
 if(!isset($_GET['newpost']) && !isset($_GET['editpost'])
-&& !isset($_GET['editcomment'])):
+&& !isset($_GET['editcomment']) 
+&& !isset($_GET['delete'])):
 ?>
 <div class="profile-wrapper">
     <div class="profile-container">
@@ -95,12 +96,28 @@ if(!isset($_GET['newpost']) && !isset($_GET['editpost'])
             endif;
             ?>
         </ul>
+        
     </div>
     <!-- /.list-container-collapse -->
+    <div class="delete-account">
+            <a class="delete" href="profile.php?delete=true#scroll">Delete account</a>
+            
+    </div>
 </div>
 <!-- /.profile-wrapper-collapse -->
 <?php
-endif;
+endif;//end of main get if
+
+if(isset($_GET['delete'])):?>
+    <div class="delete-account">
+        <p>Are you sure? You will delete all your comments and blogposts</p>
+        <a href="profile.php" class="delete-go-back">
+        <i class="fa fa-arrow-left" aria-hidden="true"></i>Go back</a>
+        <a class="delete" href="actions/delete_account.php?id=<?= $_SESSION['id']?>">
+        Delete account</a>          
+    </div>
+<?php 
+endif; //end of delete if
 
 if(isset($_GET['newpost'])):
     require 'partials/new_post.php';
@@ -113,6 +130,8 @@ endif;//end of editpost if
 if(isset($_GET['editcomment'])):
     require 'profile_includes/edit_comment_profile.php';
 endif;//end of editcomment if
+
+
 
 
 require 'partials/footer.php';
