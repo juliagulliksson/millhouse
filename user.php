@@ -23,8 +23,8 @@ require 'profile_includes/user_sql.php';
             <img src="images/profile-photo.jpg" Alt="Profile photo" />
         </div>
         <div class="profile-info">
-            <h4><?= $user_info['username']?></h4>
-            <h3><?= $user_info['email']?></h3>
+            <h1><?= $user_info['username']?></h1>
+            <h2><?= $user_info['email']?></h2>
         </div>
     </div>
     <!-- /.profile-container-collapse -->
