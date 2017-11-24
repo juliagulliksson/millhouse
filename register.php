@@ -51,9 +51,6 @@ name="register_password" value="" placeholder="Password">
 
 <input type="submit" name="register-user" value="Register" class="btnRegister">
 
-		<?php if(!empty($success_message)) { ?>	
-		<div class="success-message"><?php if(isset($success_message)) echo $success_message; ?></div>
-		<?php } ?>
 		<?php if(!empty($error_message)) { ?>	
 		<div class="error-message"><?php if(isset($error_message)) echo $error_message; ?></div>
 		<?php } ?>
