@@ -9,7 +9,7 @@ $filename = $_FILES["image"]["name"];
 $image_size = $_FILES["image"]["size"]; 
 $alt_text = $_POST["alt_text"]; 
 $check_image = getimagesize($path); 
-$image_type = check_image[2]; 
+$image_type = $check_image[2]; 
 
 
 //Check image before upload
@@ -49,7 +49,7 @@ if(gettype($upload_ok) == 'boolean'){
     )); 
   } 
 }
-    else { 
+    elseif(gettype($upload_ok) == 'string') { 
         echo $upload_ok; 
     }//end if
 ?>
