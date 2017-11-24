@@ -11,7 +11,7 @@
                     || $_SESSION['admin'] == true):
                 ?> 
                         <a class="profile-button" 
-                        href="profile.php?editpost=true&id=<?= $article['postID']?>">
+                        href="profile.php?editpost=true&id=<?= $article['postID']?>#scroll">
                             Edit <i class="fa fa-pencil" aria-hidden="true"></i>
                         </a>
                         <a class="profile-button" 

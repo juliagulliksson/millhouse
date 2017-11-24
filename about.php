@@ -1,4 +1,7 @@
-<?php require 'partials/head.php'; ?>
+<?php 
+require 'partials/includes.php';
+require 'partials/head.php'; 
+?>
 
 <div class="about-container">
     <h1>About Millhouse</h1>

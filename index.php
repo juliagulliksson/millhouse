@@ -1,4 +1,5 @@
 <?php
+require 'partials/includes.php';
 require 'partials/head.php';
 ?>
 <main>

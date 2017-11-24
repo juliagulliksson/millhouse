@@ -1,6 +1,5 @@
 <?php
 require 'partials/head.php';
-$today = date('Y-n-j');
 ?>
 <div class="login">
     <?php

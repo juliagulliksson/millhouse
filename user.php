@@ -1,5 +1,6 @@
 <?php
-require 'partials/head.php';
+
+require 'partials/includes.php';
 
 // Check if the get request is numeric
 if(!is_numeric($_GET['uid'])){
@@ -13,7 +14,7 @@ if(isset($_SESSION['signed_in'])){
 		exit();
     }
 }
-
+require 'partials/head.php';
 require 'profile_includes/user_sql.php';
 
 ?>
@@ -95,6 +96,5 @@ require 'profile_includes/user_sql.php';
     <!-- /.list-container-collapse -->
 </div>
 <!-- /.profile-wrapper-collapse -->
-<?php
 
-require 'partials/footer.php'; ?>
+<?php require 'partials/footer.php'; ?>

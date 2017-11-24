@@ -1,38 +1,43 @@
-<?php require 'partials/head.php'; 
-?>
+<?php 
+require 'partials/includes.php';
+if(isset($_GET['register'], $_GET['username'])){
+    $username = $_GET['username'];
+    $user_column = 'username';
+    $get_username = $username;
+    //check if the username is present in the database
+    $exists = check_if_duplicate($user_column, $get_username);
+    if(!$exists){
+        header('location: index.php');
+        exit();
+    }
+}
+require 'partials/head.php'; ?>
 <div class="register">
-    <?php
-    if(isset($_GET['register'], $_GET['username'])):
-        $username = $_GET['username'];
-        $user_column = 'username';
-        $get_username = $username;
-        //check if the username is present in the database
-        $exists = check_if_duplicate($user_column, $get_username);
-        if(!$exists):
-            header('location: index.php');
-            exit();
-        elseif($_GET['register'] == 'success' && $exists == true):?>
-           <p class="success-message"><?= $username ?> was successfully registered!
-           <a href="login.php#scroll">Login here</a></p>
-           <?php
-        endif;//end of check exist
-    endif;//end of check GET
+<?php
+if(isset($_GET['register'], $_GET['username'])){
+    if($_GET['register'] == 'success' && $exists == true){ ?>
+        <p class="success-message"><?= $username ?> was successfully registered!
+        <a href="login.php#scroll">Login here</a></p>
+        <?php
+    }//end of check exist
+}
 
-    if(isset($_GET['user'])){?>
-    <p class="error-message">This username already exists!</p>
-     <?php
-    }
-    if(isset($_GET['email'])){?>
-        <p class="error-message">This email adress is already registered!</p>
-    <?php
-    }
-    ?>
 
-		<?php if(!empty($error_message)) { ?>	
-		<div class="error-message"><?php if(isset($error_message)) echo $error_message; ?></div>
-		<?php } ?>
-		
-		<br />
+if(isset($_GET['user'])){?>
+<p class="error-message">This username already exists!</p>
+    <?php
+}
+if(isset($_GET['email'])){?>
+    <p class="error-message">This email adress is already registered!</p>
+<?php
+}
+?>
+
+<?php if(!empty($error_message)) { ?>	
+<div class="error-message"><?php if(isset($error_message)) echo $error_message; ?></div>
+<?php } ?>
+
+<br />
     <h1>Register</h1>
 <form name="frmRegistration" method="POST" action="register.php">
 

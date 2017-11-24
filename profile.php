@@ -1,12 +1,14 @@
 <?php
-require 'partials/head.php';
+require 'partials/includes.php';
 
 //checks if user is logged in
 if(!isset($_SESSION['signed_in']) && empty($_SESSION['signed_in'])){
     header('location: index.php');
     exit();
 }
+require 'partials/head.php';
 require 'profile_includes/profile_sql.php';
+
 
 if(!isset($_GET['newpost']) && !isset($_GET['editpost'])
 && !isset($_GET['editcomment']) 
@@ -130,9 +132,6 @@ endif;//end of editpost if
 if(isset($_GET['editcomment'])):
     require 'profile_includes/edit_comment_profile.php';
 endif;//end of editcomment if
-
-
-
 
 require 'partials/footer.php';
 ?>

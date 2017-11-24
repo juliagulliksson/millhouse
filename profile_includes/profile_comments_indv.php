@@ -11,8 +11,7 @@
         || $_SESSION['admin'] == true):
     ?> 
             <a class="profile-button" 
-            href="profile.php?editcomment=true&comment_id=
-            <?= $comment['comment_id']?>#scroll">
+            href="profile.php?editcomment=true&comment_id=<?= $comment['comment_id']?>#scroll">
                 Edit <i class="fa fa-pencil" aria-hidden="true"></i>
             </a>
             <a class="profile-button" 
