@@ -28,7 +28,7 @@
             <ul class="nav navbar-nav navbar-right">
                 <?php if(isset($_SESSION['signed_in'])): ?>
                 <li class="navbar-image">
-                    <img src="images/profile_photo.jpg" alt="Profile photo" />
+                    <img src="images/profile-photo.jpg" alt="Profile photo" />
                 </li>
                 <li class="navbar-image">
                     <a href="profile.php?newpost=true#scroll">
@@ -36,7 +36,7 @@
                     </a>
                 </li>
                 <li class="new-blogpost">
-                    <a href="profile.php?newpost=true#scroll">NEW BLOGPOST</a>
+                    <a href="profile.php?newpost=true#scroll">WRITE A NEW BLOGPOST</a>
                 </li>
                 <li class="button nav-margin"><a href="profile.php#scroll">Profile</a></li>
                 <li class="button"><a href="index.php?end_session=true">Log out</a></li>
@@ -52,4 +52,3 @@
     </div>
     <!-- /.container-fluid -->
 </nav>
-

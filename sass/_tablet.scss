@@ -36,11 +36,6 @@ li.new-blogpost {
     display: none;
 }
 
-.hero{
-    background-position: 0% 60%;
-    height: 300px;
-}
-
 .container{
     width: 100%;
     flex-direction: row;
@@ -59,6 +54,7 @@ li.new-blogpost {
 
 .sidebar-about{
     display: block;
+    text-align: justify;
 }
 
 .profile-wrapper{

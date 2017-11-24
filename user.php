@@ -20,7 +20,7 @@ require 'profile_includes/user_sql.php';
 <div class="profile-wrapper">
     <div class="profile-container">
         <div class="profile">
-            <img src="images/profile_photo.jpg" Alt="Profile photo" />
+            <img src="images/profile-photo.jpg" Alt="Profile photo" />
         </div>
         <div class="profile-info">
             <h4><?= $user_info['username']?></h4>

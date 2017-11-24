@@ -98,6 +98,7 @@ h4{
 
 .sidebar-about{
     display: none;
+    margin-bottom: 20px;
 }
 
 .blog-post{
@@ -398,7 +399,7 @@ select{
 }
 
 .username{
-    text-transform: none;
+    text-transform: lowercase;
     font-weight: 700;
 }
 

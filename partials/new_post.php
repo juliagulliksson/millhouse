@@ -4,8 +4,7 @@ if (!isset($_SESSION['username'])
 && isset($_GET['id'])):
     header('location: index.php');
 endif;
-    ?> 
-
+?> 
 <div class="insert-form">
     <div class="go-back">
         <a href="profile.php#scroll">
