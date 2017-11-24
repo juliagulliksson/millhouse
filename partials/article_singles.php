@@ -64,12 +64,11 @@ require 'actions/article_single_sql.php';
                 || $_SESSION['admin'] == true):
             ?>
             <a  class="profile-button"
-                href="profile.php?editcomment=true&comment_id=<?= $comment['comment_id']?>
-                &post_id=<?= $comment['post_id'] ?>#scroll">
-                Edit comment <i class="fa fa-pencil" aria-hidden="true"></i></a>
+            href="profile.php?editcomment=true&comment_id=<?= $comment['comment_id']?>&post_id=<?= $comment['post_id']?>#scroll">
+            Edit comment <i class="fa fa-pencil" aria-hidden="true"></i></a>
             <a class="profile-button"
-                href="actions/delete_comment.php?id=<?= $comment['comment_id']?>#scroll">
-                Delete comment <i class="fa fa-trash" aria-hidden="true"></i></a>
+            href="actions/delete_comment.php?id=<?= $comment['comment_id']?>#scroll">
+            Delete comment <i class="fa fa-trash" aria-hidden="true"></i></a>
             <?php 
                 endif;//end of check user/admin
             endif;//end of signed in if ?>

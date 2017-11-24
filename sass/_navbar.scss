@@ -80,3 +80,7 @@ nav, .navbar-nav, .navbar-right{
 .navbar-default .navbar-toggle:focus {
 	background-color: $dark_blue;
 }
+
+.navbar-nav>li>a.new-blogpost-image{
+    padding-left: 0px;
+}
