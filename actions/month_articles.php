@@ -1,5 +1,4 @@
 <?php
-
 //Months fetch
 $statement = $pdo->prepare("SELECT posts.date, posts.id as postID, 
 posts.image, posts.alt_text, posts.text, 

@@ -1,12 +1,11 @@
 <?php
 require 'partials/head.php';
-$today = date('Y-n-j');
 ?>
 <div class="login">
     <?php
     if(isset($_GET['login'])):
             if($_GET['login'] == 'fail'): ?>
-                <p class="error_message">Login failed! Incorrect username or password</p>
+                <p class="error-message">Login failed! Incorrect username or password</p>
             <?php
             endif;
     endif;

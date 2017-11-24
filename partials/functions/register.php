@@ -15,6 +15,6 @@ $my_sql->execute(array(
     ":email"            => $email,
     ":admin"            => $admin
 ));
-    header("location: register.php?register=success&username=$username");
+    header("location: register.php?register=success&username=$username#scroll");
 }
 ?>
