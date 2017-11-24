@@ -24,10 +24,9 @@ if (!empty($_FILES["edit_image"]) &&
         $upload_ok = check_image_before_upload($new_image_size,
                                               $new_image_type,
                                               $new_target);
-}
 
-if(gettype($upload_ok) == 'boolean'){
-    if(move_uploaded_file($new_path, '../partials/' . $new_target)) {
+if(gettype($upload_ok) == 'boolean' &&
+   move_uploaded_file($new_path, '../partials/' . $new_target)) {
         $statement = $pdo->prepare(
         "UPDATE posts 
         SET post_title = :new_title, 
@@ -46,13 +45,15 @@ if(gettype($upload_ok) == 'boolean'){
         ":new_alt_text" => $new_alt_text,
         ":id"           => $post_id
         ));
-    }       
-}
-elseif(!empty($new_target)) {
+    }//End if
+    
+elseif(gettype($upload_ok) == 'string') {
     echo $upload_ok;
-}
+    }//End elseif
+}//End if(!empty..)
+
 else {
-            $statement = $pdo->prepare(
+        $statement = $pdo->prepare(
         "UPDATE posts 
         SET post_title = :new_title, 
         text           = :new_text, 

@@ -28,27 +28,42 @@
     }
     ?>
     <h1>Register</h1>
-    <form action="index.php" id="register_form" method="POST">
-        <label for="username" hidden>Username:</label>
+    <form name="frmRegistration" method="POST" action="register.php">
         <input type="text" 
-               id="input_register_username"
-               name="register_username"
+               class="demoInputBox"
+               id="input_register_username" 
+               name="register_username" 
+               value="<?php if(isset($_POST["register_username"])) echo $_POST["register_username"]; ?>" 
                placeholder="Username">
         <br />
-        <label for="email" hidden>E-mail:</label>
-        <input type="email" 
+        <input type="email"
+               class="demoInputBox"
                id="input_register_email"
                name="register_email"
+               value="<?php if(isset($_POST['register_email'])) echo $_POST['register_email']; ?>"
                placeholder="E-mail">
-        <br />
-        <label for="password" hidden>Password:</label>
-        <input type="password" 
+		<br />
+        <input type="password"
+               class="demoInputBox"
                id="input_register_password"
-               name="register_password"
+               name="register_password" 
+               value="" 
                placeholder="Password">
-        <br />
-        <input type="submit"id="submit_register" value="Register">
-    </form>
+		<br />
+        <input type="password" 
+               class="demoInputBox"
+               id="input_verify_password"
+               name="verify_password"
+               value=""
+               placeholder="Verify Password">
+		<br />
+        <input type="submit" name="register-user" value="Register" class="btnRegister">
+		<?php if(!empty($error_message)) { ?>	
+		<div class="error-message"><?php if(isset($error_message)) echo $error_message; ?></div>
+		<?php } ?>
+		
+		<br />
+    </form>    
     <b>Already signed up?</b> <a href="login.php#scroll">Login here!</a>
 </div>
 <!-- /.register-collapse -->

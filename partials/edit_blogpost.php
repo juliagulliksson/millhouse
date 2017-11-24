@@ -46,15 +46,19 @@ $edit_post = $statement->fetch(PDO::FETCH_ASSOC);
         });
     </script>
     <br />
+
     <div class="form-group">
-        <div class="form-group__title">
-            <label for="edit_image">Choose image:</label><br />
+        <div class="form-group__image">
+            <label for="edit_image">Choose new image:</label><br />
             <input type="file" name="edit_image">
-        </div><!--/.form-group__title-collapse-->
-        <div class="form-group__category">
+        </div><!--/.form-group__image-collapse-->
+        <div class="form-group__image">
+            <img src="partials/<?=$edit_post['image']?>" class="edit_blogpost">
+        </div>
+        <div class="form-group__image">
             <label for="edit_alt_text">Image text:</label><br />
-            <input type="text" name="edit_alt_text" placeholder="Write something about your image..">
-        </div><!--/.form-group__category-collapse-->
+            <input type="text" name="edit_alt_text" value="<?=$edit_post['alt_text'] ?>">
+        </div><!--/.form-group__image-collapse-->
     </div><!--/.form-group-collapse-->
     <input type="submit" name="submit" value="Submit">
     </form>
