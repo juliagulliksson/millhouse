@@ -14,21 +14,6 @@
     }
 }
 
-.form-group{
-    display: flex;
-    width: 100%;
-    margin-bottom: 10px;
-}
-
-.form-group__title,
-.form-group__category{
-    width: 100%;
-}
-
-.form-group__title{
-    margin-right: 20px; 
-}
-
 .comment-field{
     input[type=text],
     select{
