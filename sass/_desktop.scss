@@ -29,8 +29,13 @@
     width: 100%;
 }
 
-.form-group__title{
+.form-group__title,
+.form-group__image{
     margin-right: 20px; 
+}
+
+.form-group__image img {
+    max-width: 80px;
 }
 
 .comment-field{
