@@ -7,11 +7,10 @@ $category   = $_POST['category'];
 $body       = $_POST['post_text'];
 $user_id    = $_POST['user_id'];
 
-if(!empty($title) 
-&& !empty($title || $category) 
-&& !empty($category || $body) 
-&& !empty($body || $user_id) 
-&& !empty($user_id)) {
+if(empty($body) || empty($category)
+|| empty($title)){
+    header('Location: ../profile.php?newpost=error&error=error#scroll');
+}else{
 
 // If blog post with image is posted
 if (!empty($_FILES["image"]) && 
@@ -19,10 +18,9 @@ if (!empty($_FILES["image"]) &&
 require "upload_image_sql.php";
 }//End if
 
-
 // If blog post without image is posted
 else {
-    var_dump($_POST);
+    //var_dump($_POST);
 $statement = $pdo->prepare(
     "INSERT INTO posts 
     (post_title, 
@@ -47,7 +45,5 @@ $statement->execute(array(
     ":user_id" => $user_id
 ));
 }// End else
-}
-else{
-    header('Location: ../profile.php?newpost=error&error=error#scroll');
-}
+
+}//end else

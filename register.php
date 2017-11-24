@@ -22,10 +22,9 @@ if(isset($_GET['register'], $_GET['username'])){
     }//end of check exist
 }
 
-
 if(isset($_GET['user'])){?>
-<p class="error-message">This username already exists!</p>
-    <?php
+    <p class="error-message">This username already exists!</p>
+<?php
 }
 if(isset($_GET['email'])){?>
     <p class="error-message">This email adress is already registered!</p>

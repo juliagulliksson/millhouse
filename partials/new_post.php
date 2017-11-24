@@ -43,8 +43,6 @@ endif;
                 console.error(error);
             });
         </script>
-
-        <input type="hidden" value="<?= $today ?>" name="date">
         <input type="hidden" value="<?= $_SESSION['id']?>" name="user_id">
         <div class="form-group">
         <div class="form-group__title">
