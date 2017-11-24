@@ -6,7 +6,6 @@ if (!isset($_SESSION['username'])
     exit();
 endif;
 ?> 
-
 <div class="insert-form">
     <div class="go-back">
         <a href="profile.php#scroll">

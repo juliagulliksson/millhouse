@@ -25,6 +25,7 @@ $profile_comments = $statement->fetchAll(PDO::FETCH_ASSOC);
 //Fetch all blogposts made by the user, limit to 5
 $statement = $pdo->prepare("SELECT * FROM posts 
 WHERE user_id = :id
+ORDER BY `posts`.`date` DESC
 LIMIT 5
 ");
 $statement->execute(array(
@@ -35,6 +36,7 @@ $profile_blogposts = $statement->fetchAll(PDO::FETCH_ASSOC);
 //Fetch the title of comments made by the user, limit to 5
 $statement = $pdo->prepare("SELECT * FROM comments 
 WHERE user_id = :id
+ORDER BY `comments`.`date` DESC
 LIMIT 5
 ");
 $statement->execute(array(

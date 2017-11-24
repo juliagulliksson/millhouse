@@ -9,16 +9,14 @@ if(!isset($_SESSION['signed_in']) && empty($_SESSION['signed_in'])){
 require 'partials/head.php';
 require 'profile_includes/profile_sql.php';
 
-
 if(!isset($_GET['newpost']) && !isset($_GET['editpost'])
 && !isset($_GET['editcomment']) 
 && !isset($_GET['delete'])):
 ?>
 <div class="profile-wrapper">
     <div class="profile-container">
-    
         <div class="profile">
-            <img src="images/profile_photo.jpg" alt="Profile photo" />
+            <img src="images/profile-photo.jpg" alt="Profile photo" />
         </div>
         <div class="profile-info">
             <h1><?= $_SESSION['username']?></h1>
@@ -76,7 +74,7 @@ if(!isset($_GET['newpost']) && !isset($_GET['editpost'])
             <?php
                 endforeach;
             else:
-                echo "You have not written any blogposts yet";
+                echo "<i>You have not written any blogposts yet</i>";
             endif;
             ?>
         </ul>
@@ -94,16 +92,14 @@ if(!isset($_GET['newpost']) && !isset($_GET['editpost'])
             <?php
                 endforeach;
             else:
-                echo "You have not posted any comments yet";
+                echo "<i>You have not posted any comments yet</i>";
             endif;
             ?>
-        </ul>
-        
+        </ul>    
     </div>
     <!-- /.list-container-collapse -->
     <div class="delete-account">
-            <a class="delete" href="profile.php?delete=true#scroll">Delete account</a>
-            
+        <a class="delete" href="profile.php?delete=true#scroll">Delete account</a>  
     </div>
 </div>
 <!-- /.profile-wrapper-collapse -->
@@ -111,13 +107,13 @@ if(!isset($_GET['newpost']) && !isset($_GET['editpost'])
 endif;//end of main get if
 
 if(isset($_GET['delete'])):?>
-    <div class="delete-account">
-        <p>Are you sure? You will delete all your comments and blogposts</p>
-        <a href="profile.php" class="delete-go-back">
-        <i class="fa fa-arrow-left" aria-hidden="true"></i>Go back</a>
-        <a class="delete" href="actions/delete_account.php?id=<?= $_SESSION['id']?>">
-        Delete account</a>          
-    </div>
+<div class="delete-account">
+    <p>Are you sure? You will delete all your comments and blogposts</p>
+    <a href="profile.php" class="delete-go-back">
+    <i class="fa fa-arrow-left" aria-hidden="true"></i>Go back</a>
+    <a class="delete" href="actions/delete_account.php?id=<?= $_SESSION['id']?>">
+    Delete account</a>          
+</div>
 <?php 
 endif; //end of delete if
 

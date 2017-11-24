@@ -110,6 +110,7 @@ h4{
 
 .sidebar-about{
     display: none;
+    margin-bottom: 20px;
 }
 
 .blog-post{
@@ -399,6 +400,9 @@ select{
     text-align: center;
     padding: 10px 0px;
     margin-bottom: 20px;
+    h4{
+        margin-bottom: 5px;
+    }
     ul{
         list-style: none;
         padding-left: 0px;
@@ -414,22 +418,25 @@ select{
     a.delete{
         padding: 10px;
         margin: 15px;
-        background-color: indianred;
-        color: #FFF;
+        background-color: #cd5c5c;
+        color: #fff;
         font-family: 'Fira Code';
-        border: 1px solid rgb(68, 68, 68);
         border-radius: 3px;
-        box-shadow: 0px 3px 0px 0px $dark_blue;
-        -webkit-box-shadow: 0px 3px 0px 0px $dark_blue;
-        -moz-box-shadow: 0px 3px 0px 0px $dark_blue;
+        box-shadow: 0px 3px 0px 0px #983939;
+        -webkit-box-shadow: 0px 3px 0px 0px #983939;
+        -moz-box-shadow: 0px 3px 0px 0px #983939;
     }
     a:hover.delete{
-        background-color: $dark_gray;
+        color: $dark_blue;
+        background-color: $light_gray;
+        box-shadow: 0px 3px 0px 0px $dark_gray;
+        -webkit-box-shadow: 0px 3px 0px 0px $dark_gray;
+        -moz-box-shadow: 0px 3px 0px 0px $dark_gray;
     }
     p{
         margin: 10px;
         font-weight: 700;
-        font-size: 1.3em;
+        font-size: 1em;
     }
     .delete-go-back{
         font-size: 1.2em;
@@ -450,7 +457,7 @@ select{
 }
 
 .username{
-    text-transform: none;
+    text-transform: lowercase;
     font-weight: 700;
 }
 
