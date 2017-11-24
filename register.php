@@ -27,6 +27,12 @@
     <?php
     }
     ?>
+
+		<?php if(!empty($error_message)) { ?>	
+		<div class="error-message"><?php if(isset($error_message)) echo $error_message; ?></div>
+		<?php } ?>
+		
+		<br />
     <h1>Register</h1>
 <form name="frmRegistration" method="POST" action="register.php">
 
@@ -50,12 +56,6 @@ name="register_password" value="" placeholder="Password">
 
 
 <input type="submit" name="register-user" value="Register" class="btnRegister">
-
-		<?php if(!empty($error_message)) { ?>	
-		<div class="error-message"><?php if(isset($error_message)) echo $error_message; ?></div>
-		<?php } ?>
-		
-		<br />
 
 
 
