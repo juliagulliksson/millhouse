@@ -1,0 +1,30 @@
+#current-page{
+    padding: 10px;
+    color: #fff;
+    font-size: 0.9em;
+    background-color: $light_blue;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    
+}
+#current-page:hover{
+    color: $dark_blue;
+    background-color: $light_gray;
+}
+
+.page-number{
+    text-align: center;
+    a:link{
+    @extend #current-page;
+    font-size: 0.8em;
+    background-color: $light_gray;
+    padding: 5px;
+    margin-right: 5px;
+    }
+    a:hover{
+        @extend #current-page;
+        color: #fff;
+        background-color: $light_blue;
+    }
+}

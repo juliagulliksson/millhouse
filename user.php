@@ -30,27 +30,24 @@ require 'profile_includes/user_sql.php';
     </div>
     <!-- /.profile-container-collapse -->
     <div class="amount-container">
-        <?php 
-        if($user_info['contributor'] == true):
-        ?>
+    <?php if($user_info['contributor'] == true): ?>
+        <a href="index.php?upost=true&uid=<?= $user_info['id'] ?>#scroll">
             <div class="amount">
-                <?php 
-                foreach($user_articles as $article): ?>
-                    <h4><a href="index.php?upost=true&uid=<?= $user_info['id'] ?>
-                    #scroll"><?= $article['number_of_posts']?></a></h4>
-                <?php endforeach; ?>
+                <h4><?= $article['number_of_posts']?></h4>
                 <p>Blog posts</p>
             </div>
+            <!-- /.amount-collapse -->
+        </a>
         <?php endif; //end of check if contributor ?>
-        <div class="amount">
-            <?php 
-            foreach($user_comments as $comment): 
-            ?>
-                <h4><a href="index.php?ucomments=true&ucid=<?= $user_info['id'] ?>
-                #scroll"><?= $comment['number_of_comments']?></a></h4>
-            <?php endforeach; ?>
-            <p>Comments</p>
-        </div>
+        <a href="index.php?ucomments=true&ucid=<?= $user_info['id'] ?>#scroll">
+            <div class="amount">
+                <?php foreach($user_comments as $comment): ?>
+                <h4><?= $comment['number_of_comments']?></h4>
+                <?php endforeach; ?>
+                <p>Comments</p>
+            </div>
+        <!-- /.amount-collapse -->
+        </a>
     </div>
     <!-- /.amount-container-collapse -->
     <div class="list-container">

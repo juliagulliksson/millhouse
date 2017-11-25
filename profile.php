@@ -36,25 +36,40 @@ if(!isset($_GET['newpost']) && !isset($_GET['editpost'])
     <div class="amount-container">
         <?php
         if($_SESSION['contributor'] == true):
+            if($profile_articles[0]['number_of_posts'] > 0){
+                echo "<a href='index.php?upost=true#scroll'>";
+        }
         ?>
-        <div class="amount">
-            <?php foreach($profile_articles as $articles): ?>
-            <h4>
-                <a href="index.php?upost=true#scroll"><?= $articles['number_of_posts']?></a>
-            </h4>
-            <?php endforeach; ?>
-            <p>Blog posts</p>
-        </div>
-        <?php 
-        endif; //end of check if contributor ?>
-        <div class="amount">
-            <?php foreach($profile_comments as $comment): ?>
-            <h4>
-                <a href="index.php?ucomments=true#scroll"><?= $comment['number_of_comments']?></a>
-            </h4>
-            <?php endforeach; ?>
-            <p>Comments</p>
-        </div>
+            <div class="amount">
+                <h4>
+                    <?= $profile_articles[0]['number_of_posts'] ?>
+                </h4>
+                <p>Blog posts</p>
+            </div>
+            <!-- /.amount-collapse -->
+        <?php
+            if($profile_articles[0]['number_of_posts'] > 0){
+                echo "</a>";
+            }
+        
+        endif; //end of check if contributor 
+
+        if($profile_comments[0]['number_of_comments'] > 0){
+            echo "<a href='index.php?ucomments=true#scroll'>";
+        }
+        ?>
+            <div class="amount">
+                <h4>
+                    <?= $profile_comments[0]['number_of_comments'] ?>
+                </h4>
+                <p>Comments</p>
+            </div>
+            <!-- /.amount-collapse -->
+        <?php
+        if($profile_comments[0]['number_of_comments'] > 0){
+            echo "</a>";
+        }
+        ?>
     </div>
     <!-- /.amount-container-collapse -->
     <div class="list-container">
