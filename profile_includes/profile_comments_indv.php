@@ -10,14 +10,11 @@
         if($comment['user_id'] == $_SESSION['id']
         || $_SESSION['admin'] == true):
     ?> 
-            <a class="profile-button" 
-            href="profile.php?editcomment=true&comment_id=<?= $comment['comment_id']?>#scroll">
-                Edit <i class="fa fa-pencil" aria-hidden="true"></i>
-            </a>
-            <a class="profile-button" 
-            href="actions/delete_comment.php?id=<?= $comment['comment_id']?>">
-                Delete <i class="fa fa-trash" aria-hidden="true"></i>
-            </a>
+    <a class="edit-button" href="profile.php?editcomment=true&comment_id=<?= $comment['comment_id']?>#scroll">
+        Edit <i class="fa fa-pencil" aria-hidden="true"></i></a>
+    <a class="delete-button" href="actions/delete_comment.php?id=<?= $comment['comment_id']?>">
+        Delete <i class="fa fa-trash" aria-hidden="true"></i>
+    </a>
     <?php 
         endif;//end of check if signed in
     endif;//end of user/admin check ?>  
