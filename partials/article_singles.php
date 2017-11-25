@@ -32,10 +32,10 @@ require 'actions/article_single_sql.php';
             if($article_single['user_id'] == $_SESSION['id'] 
             || $_SESSION['admin'] == true):
         ?>
-        <a class="profile-button" 
+        <a class="edit-button" 
             href="profile.php?editpost=true&id=<?= $article_single['postID']?>#scroll">
             Edit <i class="fa fa-pencil" aria-hidden="true"></i></a>
-        <a class="profile-button" 
+        <a class="delete-button" 
             href="actions/delete_blogpost.php?id=<?= $article_single['postID']?>">
             Delete <i class="fa fa-trash" aria-hidden="true"></i></a>
         <?php
@@ -63,10 +63,10 @@ require 'actions/article_single_sql.php';
                 if($comment['user_id'] == $_SESSION['id'] 
                 || $_SESSION['admin'] == true):
             ?>
-                    <a  class="profile-button"href=
+                    <a class="edit-button"href=
                     "profile.php?editcomment=true&comment_id=<?= $comment['comment_id']?>&post_id=<?= $comment['post_id']?>#scroll">
                     Edit comment <i class="fa fa-pencil" aria-hidden="true"></i></a>
-                    <a class="profile-button"
+                    <a class="delete-button"
                     href="actions/delete_comment.php?id=<?= $comment['comment_id']?>#scroll">
                     Delete comment <i class="fa fa-trash" aria-hidden="true"></i></a>
                     <?php 
@@ -94,7 +94,7 @@ require 'actions/article_single_sql.php';
     <!-- /.comment-field-collapse -->
     <?php 
         else:
-            echo "<br /><b><a href='login.php#scroll'>Sign in to comment</a></b>";
+            echo "<b><a href='login.php#scroll'>Sign in to comment</a></b>";
         endif; // End of isset username if 
     ?>
 </div>

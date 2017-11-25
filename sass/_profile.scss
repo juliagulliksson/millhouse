@@ -1,0 +1,116 @@
+.profile-wrapper{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+    background-color: $input;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+}
+
+
+.profile-info{
+    h1{
+        font-size: 1.1em;
+        margin: 0px 0px 5px 0px;
+    }
+    h2{
+        margin: 0px 0px 2px 0px;
+        font-size: 0.9em;
+        font-weight: normal;
+        text-transform: uppercase;
+    }
+    h3{
+        font-size: 1em;
+        letter-spacing: 0em;
+        font-weight: 800;
+        margin: 0px;
+    }
+}
+
+.user-info{
+    margin-right: 30px;
+}
+
+.profile img{
+    max-width: 110px;
+    margin-right: 20px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    -webkit-border-top-left-radius: 5px;
+    -webkit-border-bottom-left-radius: 5px;
+    -moz-border-radius-topleft: 5px;
+    -moz-border-radius-bottomleft: 5px;
+}
+
+.amount-container{
+    @extend .profile-container;
+    justify-content: space-around;
+}
+
+.amount{
+    padding: 10px;
+    text-align: center;
+    background-color: $input;
+}
+
+.list-container{
+    @extend .amount-container;
+    flex-direction: column;
+    text-align: center;
+    padding: 10px 0px;
+    margin-bottom: 20px;
+    h4{
+        margin-bottom: 5px;
+    }
+    ul{
+        list-style: none;
+        padding-left: 0px;
+    }
+}
+
+.delete-account{
+    @extend .amount-container;
+    flex-direction: column;
+    text-align: center;
+    padding: 10px 0px;
+    margin-bottom: 0px;
+    a.delete{
+        padding: 10px;
+        margin: 15px;
+        background-color: #cd5c5c;
+        color: #fff;
+        font-family: 'Fira Code';
+        border-radius: 3px;
+        box-shadow: 0px 3px 0px 0px #983939;
+        -webkit-box-shadow: 0px 3px 0px 0px #983939;
+        -moz-box-shadow: 0px 3px 0px 0px #983939;
+    }
+    a:hover.delete{
+        color: $dark_blue;
+        background-color: $light_gray;
+        box-shadow: 0px 3px 0px 0px $dark_gray;
+        -webkit-box-shadow: 0px 3px 0px 0px $dark_gray;
+        -moz-box-shadow: 0px 3px 0px 0px $dark_gray;
+    }
+    p{
+        margin: 10px;
+        font-weight: 700;
+        font-size: 1em;
+    }
+    .delete-go-back{
+        font-size: 1.2em;
+        margin: 10px 0px;
+        .fa{
+            margin-right: 4px;
+        }
+    }
+}

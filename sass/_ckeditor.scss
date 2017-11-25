@@ -1,0 +1,36 @@
+// CKEditor WYSIWYG
+.ck-editor__top
+.ck-sticky-panel
+.ck-toolbar
+.ck-rounded-corners, 
+.ck-rounded-corners
+.ck-editor__top
+.ck-sticky-panel
+.ck-toolbar{
+    width: 100%;
+    background-color: $dark_blue;
+    border: none;
+}
+
+// Styling for CKEditor textarea
+.ck-editor__main{
+    width: 100%;
+    margin-bottom: 20px;
+    font-family: $millhouse_font;
+    background-color: $input;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    -webkit-border-bottom-left-radius: 5px;
+    -webkit-border-bottom-right-radius: 5px;
+    -moz-border-radius-bottomleft: 5px;
+    -moz-border-radius-bottomright: 5px;
+}
+
+// CKEditor textarea
+.ck-editor__editable
+.ck-rounded-corners, 
+.ck-rounded-corners
+.ck-editor__editable{
+    border: none;
+    height: 200px;
+}
