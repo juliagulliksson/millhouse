@@ -33,7 +33,9 @@ require 'profile_includes/user_sql.php';
     <?php if($user_info['contributor'] == true): ?>
         <a href="index.php?upost=true&uid=<?= $user_info['id'] ?>#scroll">
             <div class="amount">
+            <?php foreach($user_articles as $article): ?>
                 <h4><?= $article['number_of_posts']?></h4>
+            <?php endforeach; ?>
                 <p>Blog posts</p>
             </div>
             <!-- /.amount-collapse -->
@@ -42,7 +44,7 @@ require 'profile_includes/user_sql.php';
         <a href="index.php?ucomments=true&ucid=<?= $user_info['id'] ?>#scroll">
             <div class="amount">
                 <?php foreach($user_comments as $comment): ?>
-                <h4><?= $comment['number_of_comments']?></h4>
+                    <h4><?= $comment['number_of_comments']?></h4>
                 <?php endforeach; ?>
                 <p>Comments</p>
             </div>
