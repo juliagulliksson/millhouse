@@ -16,8 +16,8 @@
             luxurious twist. Making your home the talk of the town (in a good way).
         </p>
     </div>
-    <h3 id="categories">Categories</h3>
     <div class="categories-list">
+        <h3 id="categories">Categories</h3>
         <ul>
         <?php foreach ($categories_disctinct as $category): ?>
             <li>
@@ -28,8 +28,8 @@
         </ul>
     </div>
     <!-- /.categories-list-collapse -->
-    <h3 class="archive">Archive</h3>
     <div class="categories-list">
+        <h3 class="archive">Archive</h3>
         <ul>
         <?php foreach ($months_number as $month):
             $month_number = $month['month'];

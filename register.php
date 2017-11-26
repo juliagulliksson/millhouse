@@ -27,7 +27,7 @@ require 'partials/head.php'; ?>
     <?php
     endif;
     if(isset($_GET['email'])): ?>
-    <p class="error-message">This email adress is already registered!</p>
+    <p class="error-message">This e-mail adress is already registered!</p>
     <?php
     endif;
 

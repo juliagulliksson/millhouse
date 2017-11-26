@@ -16,10 +16,8 @@ require 'actions/article_single_sql.php';
             <span class="dot">&bull;</span>
             <?= replace_date($article_single['date']) ?>
             <span class="dot">&bull;</span> 
-            <span class="username">
-                <a href="user.php?uid=<?= $article_single['user_id'] ?>#scroll">
-                <?= $article_single['username'] ?></a>  
-            </span>
+            <b><a href="user.php?uid=<?= $article_single['user_id'] ?>#scroll">
+               <?= $article_single['username'] ?></a></b>
         </h3>
         <?php if(!empty($article_single['image'])): ?>
         <img src="partials/<?=$article_single['image']?>" 
@@ -54,7 +52,7 @@ require 'actions/article_single_sql.php';
             <h3>
                 <b><a href="user.php?uid=<?= $comment['user_id']?>#scroll">
                 <?= $comment['username']?></a></b>
-                <br />
+                <span class="dot">&bull;</span>
                 <?= replace_date($comment['date']) ?>
             </h3>
             <p><?= $comment['text']?> </p>
