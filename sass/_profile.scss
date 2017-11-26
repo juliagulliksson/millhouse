@@ -57,7 +57,7 @@
 }
 
 .amount{
-    padding: 10px;
+    padding-bottom: 10px;
     text-align: center;
     background-color: $input;
 }
@@ -66,10 +66,10 @@
     @extend .amount-container;
     flex-direction: column;
     text-align: center;
-    padding: 10px 0px;
+    padding: 10px 10px;
     margin-bottom: 20px;
     h4{
-        margin-bottom: 5px;
+        margin: 5px 0px 5px 0px;
     }
     ul{
         list-style: none;
