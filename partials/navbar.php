@@ -40,8 +40,7 @@
                 </li>
                 <?php endif; ?>
                 <li class="new-blogpost">
-                    <a class="new-blogpost-image" 
-                    href="profile.php?newpost=true#scroll">WRITE A NEW BLOGPOST</a>
+                    <a href="profile.php?newpost=true#scroll">WRITE A NEW BLOGPOST</a>
                 </li>
                 <li class="button nav-margin"><a href="profile.php#scroll">Profile</a></li>
                 <li class="button"><a href="index.php?end_session=true">Log out</a></li>
