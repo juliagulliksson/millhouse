@@ -1,7 +1,7 @@
 <?php
 require 'partials/includes.php';
 
-//checks if user is logged in
+// Checks if user is logged in
 if(!isset($_SESSION['signed_in']) && empty($_SESSION['signed_in'])){
     header('location: index.php');
     exit();
@@ -36,9 +36,9 @@ if(!isset($_GET['newpost']) && !isset($_GET['editpost'])
     <div class="amount-container">
         <?php
         if($_SESSION['contributor'] == true):
-            if($profile_articles[0]['number_of_posts'] > 0){
+            if($profile_articles[0]['number_of_posts'] > 0):
                 echo "<a href='index.php?upost=true#scroll'>";
-        }
+            endif;
         ?>
             <div class="amount">
                 <h4>
@@ -48,15 +48,14 @@ if(!isset($_GET['newpost']) && !isset($_GET['editpost'])
             </div>
             <!-- /.amount-collapse -->
         <?php
-            if($profile_articles[0]['number_of_posts'] > 0){
+            if($profile_articles[0]['number_of_posts'] > 0):
                 echo "</a>";
-            }
-        
-        endif; //end of check if contributor 
+            endif;
+        endif; // End of check if contributor 
 
-        if($profile_comments[0]['number_of_comments'] > 0){
+        if($profile_comments[0]['number_of_comments'] > 0):
             echo "<a href='index.php?ucomments=true#scroll'>";
-        }
+        endif;
         ?>
             <div class="amount">
                 <h4>
@@ -93,7 +92,7 @@ if(!isset($_GET['newpost']) && !isset($_GET['editpost'])
             endif;
             ?>
         </ul>
-        <?php endif;//end of check if contributor ?>
+        <?php endif; // End of check if contributor ?>
         <h4>Most recent comments:</h4>
         <ul>
             <?php
@@ -113,36 +112,41 @@ if(!isset($_GET['newpost']) && !isset($_GET['editpost'])
         </ul>    
     </div>
     <!-- /.list-container-collapse -->
-    <div class="delete-account">
+    <div class="delete-container">
         <a class="delete" href="profile.php?delete=true#scroll">Delete account</a>  
     </div>
 </div>
 <!-- /.profile-wrapper-collapse -->
 <?php
-endif;//end of main get if
+endif;// End of main get if
 
+// Delete account
 if(isset($_GET['delete'])):?>
 <div class="delete-account">
-    <p>Are you sure? You will delete all your comments and blogposts</p>
-    <a href="profile.php" class="delete-go-back">
-    <i class="fa fa-arrow-left" aria-hidden="true"></i>Go back</a>
+    <h3><i class="fa fa-frown-o" aria-hidden="true"></i></h3>
+    <h1>Are you sure you want to delete your account?</h1>
+    <p>Deleting your account will also delete all your comments and blogposts.
+    <br />No take backsies.</p>
+    <h2><a href="profile.php">
+        <i class="fa fa-arrow-left" aria-hidden="true"></i> No, please! Take me back!
+    </a></h2>
     <a class="delete" href="actions/delete_account.php?id=<?= $_SESSION['id']?>">
     Delete account</a>          
 </div>
 <?php 
-endif; //end of delete if
+endif; // End of delete if
 
 if(isset($_GET['newpost'])):
     require 'partials/new_post.php';
-endif; //End of newpost if
+endif; // End of newpost if
 
 if(isset($_GET['editpost'])):
     require 'partials/edit_blogpost.php';
-endif;//end of editpost if
+endif;// End of editpost if
 
 if(isset($_GET['editcomment'])):
     require 'profile_includes/edit_comment_profile.php';
-endif;//end of editcomment if
+endif;// End of editcomment if
 
 require 'partials/footer.php';
 ?>

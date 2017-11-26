@@ -241,18 +241,17 @@ select{
     max-width: 75ch;
 }
 
-.error-message{
-    color: #cd5c5c;
+.success-message{
+    margin-bottom: 15px;
+    color: #419459;
     font-weight: 700;
     font-size: 1.2em;
     text-align: center;
 }
 
-.success-message{
-    color: #419459;
-    font-weight: 700;
-    font-size: 1.2em;
-    text-align: center;
+.error-message{
+    @extend .success-message;
+    color: #cd5c5c;
 }
 
 @import '_pagination.scss';
