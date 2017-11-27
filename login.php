@@ -4,10 +4,16 @@ require 'partials/head.php';
 <div class="login">
     <?php
     if(isset($_GET['login'])):
-            if($_GET['login'] == 'fail'): ?>
-                <p class="error-message">Login failed! Incorrect username or password</p>
-            <?php
-            endif;
+        if($_GET['login'] == 'fail'): ?>
+            <p class="error-message">Login failed! Incorrect username</p>
+        <?php
+        endif;
+    endif;
+    if(isset($_GET['password'])):
+        if($_GET['password'] == 'fail'): ?>
+            <p class="error-message">Login failed! Incorrect password</p>
+        <?php
+        endif;
     endif;
     ?>
 
