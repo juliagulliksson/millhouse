@@ -22,7 +22,7 @@ endif;
         <div class="form-group">
             <div class="form-group__title">
                 <label for="title">Title:</label><br />
-                <input type="text" class="form-control" name="blog_title">
+                <input type="text" class="form-control" name="blog_title" required>
             </div>
             <div class="form-group__category">
                 <label for="category">Choose category:</label><br />
@@ -35,7 +35,7 @@ endif;
         </div>
         <!-- /.form-group-collapse -->
         
-        <textarea name="post_text" id="editor"></textarea>
+        <textarea name="post_text" id="editor" required></textarea>
         <script>
             ClassicEditor
             .create(document.querySelector('#editor'))

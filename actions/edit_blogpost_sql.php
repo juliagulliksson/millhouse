@@ -1,7 +1,6 @@
 <?php
 $post_id = $_GET['id'];
-//header("location: ../index.php?id=$post_id#scroll");
-var_dump($_POST);
+header("location: ../index.php?id=$post_id#scroll");
 require '../partials/database.php';
 $new_title = $_POST['edit_title'];
 $new_text = $_POST['edit_text'];

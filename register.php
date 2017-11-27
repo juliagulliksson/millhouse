@@ -1,5 +1,6 @@
 <?php 
 require 'partials/includes.php';
+require 'partials/register.php';
 if(isset($_GET['register'], $_GET['username'])){
     $username = $_GET['username'];
     $user_column = 'username';
@@ -33,22 +34,22 @@ if(!empty($error_message)) {
         <input type="text" 
                name="register_username" 
                value="<?php if(isset($_POST["register_username"])){ echo $_POST["register_username"];} ?>" 
-               placeholder="Username">
+               placeholder="Username" required>
         <br />
         <input type="email"
                name="register_email"
                value="<?php if(isset($_POST['register_email'])){ echo $_POST['register_email'];} ?>"
-               placeholder="E-mail">
+               placeholder="E-mail" required>
 		<br />
         <input type="password"
                name="register_password" 
                value="" 
-               placeholder="Password">
+               placeholder="Password" required>
 		<br />
         <input type="password" 
                name="verify_password"
                value=""
-               placeholder="Verify Password">
+               placeholder="Verify Password" required>
 		<br />
         <input type="submit" name="register-user" value="Register">
 		<br />

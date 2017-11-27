@@ -14,5 +14,5 @@ require 'partials/functions/string_length.php';
 require 'partials/database.php';
 require 'actions/sql.php';
 require 'partials/log_out.php';
-require 'partials/register.php';
+
 ?>
