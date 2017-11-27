@@ -42,11 +42,11 @@ if($pass != $pass_verify){
 
 // Email Validation
 if (!filter_var($mail, FILTER_VALIDATE_EMAIL)){
-    $error_message[] = "Invalid e-mail address";
+    $error_messages[] = "Invalid e-mail address";
 }
 
         
-if(!isset($error_message)){
+if(!isset($error_messages)){
     $new_username = $_POST["register_username"];     
     $new_email = $_POST["register_email"];        
     $new_password = password_hash($_POST["register_password"], PASSWORD_DEFAULT);     
