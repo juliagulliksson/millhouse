@@ -6,7 +6,7 @@ function string_length($blog_string, $length, $link){
         $shorter_blog_array = array_slice($blog_array, 0, $length);
         $blog_string = implode(" " , $shorter_blog_array) .
         "... <a href='index.php?id=$link#scroll'>
-        <b>Continue reading <i class='fa fa-arrow-right' aria-hidden='true'></i></b></a>";
+        <b>CONTINUE READING <i class='fa fa-arrow-right' aria-hidden='true'></i></b></a>";
         return $blog_string;
     } else {
     return $blog_string;

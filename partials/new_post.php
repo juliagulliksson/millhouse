@@ -6,7 +6,6 @@ if (!isset($_SESSION['username'])
     exit();
 endif;
 ?> 
-
 <div class="insert-form">
     <div class="go-back">
         <a href="profile.php#scroll">
@@ -44,7 +43,6 @@ endif;
                 console.error(error);
             });
         </script>
-
         <input type="hidden" value="<?= $_SESSION['id']?>" name="user_id">
         <div class="form-group">
         <div class="form-group__title">

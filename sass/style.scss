@@ -2,7 +2,7 @@
 @import "_normalize.scss";
 @import "_navbar.scss";
 @import "_mobile.scss";
-@import "404.scss";
+@import "_404.scss";
 
 @media screen and (min-width: 768px){
     @import "_tablet.scss";

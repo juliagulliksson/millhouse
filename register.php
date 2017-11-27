@@ -4,7 +4,7 @@ if(isset($_GET['register'], $_GET['username'])){
     $username = $_GET['username'];
     $user_column = 'username';
     $get_username = $username;
-    //check if the username is present in the database
+    // Check if the username is present in the database
     $exists = check_if_duplicate($user_column, $get_username);
     if(!$exists){
         header('location: index.php');
@@ -28,34 +28,31 @@ if(!empty($error_message)) {
             <?php 
         }
 } ?>
-
-<br />
     <h1>Register</h1>
-<form method="POST" action="register.php">
-
-		
-<input type="text" name="register_username" value="<?php if(isset($_POST["register_username"])) echo $_POST["register_username"]; ?>" placeholder="Username">
-<br/>	        
-
-<input type="password"
-name="register_password" value="" placeholder="Password">
-		        <br />
-
-
-<input type="password" name="verify_password" value="" placeholder="Verify Password">
-		        <br />
-
-<input type="text" name="register_email" value="<?php if(isset($_POST['register_email'])) echo $_POST['register_email']; ?>" placeholder="E-mail">
-		
-
-		        <br />
-
-
-<input type="submit" name="register-user" value="Register">
-
-
-
-</form>    
+    <form method="POST" action="register.php">
+        <input type="text" 
+               name="register_username" 
+               value="<?php if(isset($_POST["register_username"])){ echo $_POST["register_username"];} ?>" 
+               placeholder="Username">
+        <br />
+        <input type="email"
+               name="register_email"
+               value="<?php if(isset($_POST['register_email'])){ echo $_POST['register_email'];} ?>"
+               placeholder="E-mail">
+		<br />
+        <input type="password"
+               name="register_password" 
+               value="" 
+               placeholder="Password">
+		<br />
+        <input type="password" 
+               name="verify_password"
+               value=""
+               placeholder="Verify Password">
+		<br />
+        <input type="submit" name="register-user" value="Register">
+		<br />
+    </form>    
     <b>Already signed up?</b> <a href="login.php#scroll">Login here!</a>
 </div>
 <!-- /.register-collapse -->

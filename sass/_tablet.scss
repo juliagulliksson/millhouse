@@ -16,16 +16,20 @@ nav, .navbar-nav, .navbar-right{
 
 .navbar-image img{
     display: block;
-        margin: 5px 0px 0px 0px;
-        max-width: 40px;
-        border-radius: 25px;
-        -moz-border-radius: 25px;
-        -webkit-border-radius: 25px;
-    
+    margin: 5px 15px 0px 0px;
+    max-width: 40px;
+    border-radius: 25px;
+    -moz-border-radius: 25px;
+    -webkit-border-radius: 25px;
 }
 
 .nav-margin{
     margin-right: 15px;
+}
+
+.margin-minus{
+    margin-left: -15px;
+    margin-right: -15px;
 }
 
 li.new-blogpost {
@@ -36,9 +40,8 @@ li.new-blogpost {
     display: none;
 }
 
-.hero{
-    background-position: 0% 60%;
-    height: 300px;
+.sidebar > .categories-list{
+    text-align: left;
 }
 
 .container{
@@ -49,10 +52,28 @@ li.new-blogpost {
     padding: 2em 4em;
 }
 
-.blog-post,{
+.blog-post{
     width: 95%;
 }
 
+.form-group{
+    display: flex;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.form-group__title{
+    margin-right: 20px; 
+}
+
+.form-group__title,
+.form-group__category{
+    width: 100%;
+}
+
+.sidebar{
+    text-align: left;
+}
 
 .sidebar-about{
     display: block;
@@ -83,6 +104,10 @@ li.new-blogpost {
 .amount-container{
     justify-content: space-around;
     padding: 0% 30%;
+}
+
+.list-container{
+    padding: 10px 10px;
 }
 
 // Editor

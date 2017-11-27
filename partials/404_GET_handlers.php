@@ -1,5 +1,5 @@
 <?php
-//$_GET['id] error checks
+// $_GET['id] error checks
 if(isset($_GET['id'])):
     $get_id = $_GET['id'];
     $statement = $pdo->prepare(
@@ -10,7 +10,7 @@ if(isset($_GET['id'])):
         ":id" => $get_id
     ));
     $existing = $statement->fetch(PDO::FETCH_NUM);
-    //check if post exists
+    // Check if post exists
     if($existing[0] <= 0):
         header('location: 404.php');
         exit();
@@ -25,4 +25,4 @@ if(isset($_GET['id'])):
         header('location: 404.php');
         exit();
     endif;
-endif;//end of $_GET['id] error checks
+endif;// End of $_GET['id] error checks

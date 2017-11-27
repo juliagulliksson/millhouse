@@ -1,0 +1,80 @@
+.blog-post{
+    margin-bottom: 2em;
+    max-width: 75ch;
+    h3{
+        margin: 0.8em 0em;
+        font-size: 0.9em;
+        font-weight: normal;
+        text-transform: uppercase;
+    }
+    img{
+        width: 100%;
+    }
+    p{
+        font-family: $millhouse_font;
+        font-size: 1em;
+        letter-spacing: 0.05em;
+        line-height: 1.5em;
+        text-align: justify;
+        text-justify: inter-word;
+    }
+}
+
+.category-bold{
+    font-weight: 700;
+}
+
+.dot{
+    color: rgb(184, 182, 182);
+    padding: 0px 5px;
+}
+
+// .username{
+//     text-transform: lowercase;
+//     font-weight: 700;
+// }
+
+.comments-container{
+    margin: 20px 0px 10px 0px;
+    a{
+        margin-bottom: 10px;
+    }
+    h4{
+        padding-bottom: 10px;
+        border-bottom: 1px solid $light_gray;
+    }
+    .comments{
+        padding: 10px 0px;
+        border-bottom: 1px solid $light_gray;
+    }
+}
+
+.comments-counter{
+    font-size: 0.8em;
+}
+
+a.edit-button,
+a.delete-button{
+    margin: 0px 5px 0px 0px;
+    padding: 5px 10px;
+    font-family: 'Fira Code', monospace;
+    color: #fff;
+    font-size: 0.9em;
+    letter-spacing: 0.08em;
+    background-color: $light_blue;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    .fa{
+        color: $dark_blue;
+    }
+}
+a:hover.edit-button,
+a:hover.delete-button{
+    color: $dark_blue;
+    background-color: $light_gray;
+}
+
+.insert-form{
+    @extend .profile-wrapper;
+}

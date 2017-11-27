@@ -1,7 +1,3 @@
-.hero{
-    background-position: 0% 60%;
-}
-
 .container{
     width: 80%;
     padding: 2em 8em;
@@ -16,26 +12,6 @@
     h1{
         font-size: 2em;
     }
-}
-
-.form-group{
-    display: flex;
-    width: 100%;
-    margin-bottom: 10px;
-}
-
-.form-group__title,
-.form-group__category{
-    width: 100%;
-}
-
-.form-group__title,
-.form-group__image{
-    margin-right: 20px; 
-}
-
-.form-group__image img {
-    max-width: 80px;
 }
 
 .comment-field{

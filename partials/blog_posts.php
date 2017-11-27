@@ -8,8 +8,8 @@
             <?= $article['title']; ?></a></span>
             <span class="dot">&bull;</span><?= replace_date($article['date']) ?>
             <span class="dot">&bull;</span>
-            <span class="username"><a href="user.php?uid=<?= $article['user_id'] ?>#scroll">
-            <?= $article['username'] ?></a></span>
+            <b><a href="user.php?uid=<?= $article['user_id'] ?>#scroll">
+            <?= $article['username'] ?></a></b>
         </h3>
         <?php if(!empty($article['image'])): ?>
         <img src="partials/<?=$article['image']?>" 
