@@ -5,7 +5,7 @@ require 'partials/head.php';
     <?php
     if(isset($_GET['login'])):
         if($_GET['login'] == 'fail'): ?>
-            <p class="error-message">Login failed! Incorrect username</p>
+            <p class="error-message">Login failed! Username does not exist</p>
         <?php
         endif;
     endif;
