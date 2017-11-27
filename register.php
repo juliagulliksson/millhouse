@@ -1,5 +1,6 @@
 <?php 
 require 'partials/includes.php';
+require 'partials/register.php';
 if(isset($_GET['register'], $_GET['username'])){
     $username = $_GET['username'];
     $user_column = 'username';
