@@ -35,24 +35,19 @@ if(!empty($error_message)) {
                name="register_username" 
                value="<?php if(isset($_POST["register_username"])){ echo $_POST["register_username"];} ?>" 
                placeholder="Username" required>
-        <br />
         <input type="email"
                name="register_email"
                value="<?php if(isset($_POST['register_email'])){ echo $_POST['register_email'];} ?>"
                placeholder="E-mail" required>
-		<br />
         <input type="password"
                name="register_password" 
                value="" 
                placeholder="Password" required>
-		<br />
         <input type="password" 
                name="verify_password"
                value=""
                placeholder="Verify Password" required>
-		<br />
         <input type="submit" name="register-user" value="Register">
-		<br />
     </form>    
     <b>Already signed up?</b> <a href="login.php#scroll">Login here!</a>
 </div>

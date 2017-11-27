@@ -19,6 +19,7 @@ if(empty($body) || empty($category)
 
     // If blog post without image is posted
     else {
+        
     $statement = $pdo->prepare(
         "INSERT INTO posts (post_title, category_id, text, 
         date, user_id, image, alt_text) 

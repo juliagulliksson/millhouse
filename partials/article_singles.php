@@ -15,13 +15,14 @@ require 'actions/article_single_sql.php';
     </div>
     <article>
         <h1><?= $article_single['post_title']; ?></h1>
-        <h3><b><a href="index.php?category=<?= $article_single['category_id']?>"><?= $article_single['title']; ?></a></b>
+        <h3><b><a href="index.php?category=<?= $article_single['category_id']?>">
+        <?= $article_single['title']; ?></a></b>
             <span class="dot">&bull;</span>
             <?= replace_date($article_single['date']) ?>
             <span class="dot">&bull;</span> 
             <b><a href="user.php?uid=<?= $article_single['user_id'] ?>#scroll">
                <?= $article_single['username'] ?></a></b>
-        </h3>
+        </h2>
         <?php if(!empty($article_single['image'])): ?>
         <img src="partials/<?=$article_single['image']?>" 
              alt="<?=$article_single['alt_text']?>" 
@@ -52,12 +53,12 @@ require 'actions/article_single_sql.php';
         <h4>Comments:</h4>
         <?php foreach($comments as $comment): ?>
         <div class="comments">
-            <h3>
+            <h2>
                 <b><a href="user.php?uid=<?= $comment['user_id']?>#scroll">
                 <?= $comment['username']?></a></b>
                 <span class="dot">&bull;</span>
                 <?= replace_date($comment['date']) ?>
-            </h3>
+            </h2>
             <p><?= $comment['text']?> </p>
             <?php // Edit and delete comment options
             if(isset($_SESSION['signed_in'])):
