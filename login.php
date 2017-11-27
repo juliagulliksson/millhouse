@@ -18,13 +18,11 @@ require 'partials/head.php';
                id="input_login_username"
                name="username"
                placeholder="Username" required>
-        <br />
         <label for="password" hidden>Password:</label>
         <input type="password" 
                id="input_login_password"
                name="password"
                placeholder="Password" required>
-        <br />
         <input type="submit"
                id="submit_login"
                value="Login">
