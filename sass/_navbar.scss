@@ -28,6 +28,7 @@
     -moz-border-radius: 5px;
 }
 
+// Navbar icons
 .nav > .navbar-image > a img{
     margin-top: -10px;
     width: 40px;
@@ -36,8 +37,25 @@
     -moz-border-radius: 25px;
 }
 
-ul.nav.navbar-nav.navbar-right > li.navbar-image > a:hover{
+ul.nav.navbar-nav.navbar-right > 
+li.navbar-image > a:hover,
+ul.nav.navbar-nav.navbar-right > 
+li.navbar-image > a:focus{
     background-color: transparent;
+}
+
+// Navbar buttons
+.button{
+    text-align: center;
+    a{
+        margin-bottom: 15px;
+        font-family: 'Fira Code', monospace;
+        background-color: $light_blue;
+        border: none;
+        border-radius: 5px;
+        -moz-border-radius: 5px;
+        -webkit-border-radius: 5px;
+    }
 }
 
 // Navbar logo

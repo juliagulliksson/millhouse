@@ -27,30 +27,32 @@ $articles = $statement->fetchAll(PDO::FETCH_ASSOC);
 
 //Categories (number of posts)
 $statement = $pdo->prepare(" SELECT categories.title, categories.id, 
-COUNT(posts.id) AS posts
+COUNT(posts.id) AS number_of_posts
 FROM categories 
 LEFT JOIN posts 
 ON categories.id=posts.category_id 
 GROUP BY categories.id
 ");
 $statement->execute();
-$category_disctinct = $statement->fetchAll(PDO::FETCH_ASSOC);
-  
+$categories_disctinct = $statement->fetchAll(PDO::FETCH_ASSOC);
+
 //Categories fetch
+
 $statement = $pdo->prepare("SELECT *
 FROM categories
 ");
 $statement->execute();
 $category = $statement->fetchAll(PDO::FETCH_ASSOC);
 
+
 //Distinct months fetch
 $statement = $pdo->prepare("SELECT DISTINCT MONTH(date) as month, 
-COUNT(posts.id) as posts 
+COUNT(posts.id) as number_of_posts
 FROM posts 
 GROUP BY MONTH(date)
 ORDER BY MONTH(date) DESC");
 $statement->execute();
-$month_number = $statement->fetchAll(PDO::FETCH_ASSOC);
+$months_number = $statement->fetchAll(PDO::FETCH_ASSOC);
 
 
  

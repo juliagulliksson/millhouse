@@ -1,11 +1,11 @@
 <?php
 if (!isset($_SESSION['username']) 
-&& $_SESSION['contributor'] !== true 
-&& isset($_GET['id'])):
+|| $_SESSION['contributor'] == false 
+|| isset($_GET['id'])):
     header('location: index.php');
+    exit();
 endif;
-    ?> 
-
+?> 
 <div class="insert-form">
     <div class="go-back">
         <a href="profile.php#scroll">
@@ -14,7 +14,7 @@ endif;
     </div>
     <?php 
     if(isset($_GET['newpost'], $_GET['error'])) { ?>
-    <p class="error_message">Error: All fields are required for submission.</p>
+    <p class="error-message">Error: All fields are required for submission.</p>
    <?php } ?>
     <div class="center-heading"><h2>Write a new blog post</h2></div>
     <form action="actions/insert_blogpost_sql.php" method="POST"
@@ -43,8 +43,6 @@ endif;
                 console.error(error);
             });
         </script>
-
-        <input type="hidden" value="<?= $today ?>" name="date">
         <input type="hidden" value="<?= $_SESSION['id']?>" name="user_id">
         <div class="form-group">
         <div class="form-group__title">
