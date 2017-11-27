@@ -20,7 +20,8 @@ if(!isset($_GET['newpost']) && !isset($_GET['editpost'])
         </div>
         <div class="profile-info">
             <h1><?= $_SESSION['username']?></h1>
-            <h2><?= $_SESSION['email']?></h2>
+            <h2><?php require 'partials/functions/split_email.php';
+                echo split_email($_SESSION['email']);?></h2>
             <?php 
             if($_SESSION['contributor'] == true):
             ?>
