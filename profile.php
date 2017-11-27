@@ -8,6 +8,7 @@ if(!isset($_SESSION['signed_in']) && empty($_SESSION['signed_in'])){
 }
 require 'partials/head.php';
 require 'profile_includes/profile_sql.php';
+require 'partials/functions/split_email.php';
 
 if(!isset($_GET['newpost']) && !isset($_GET['editpost'])
 && !isset($_GET['editcomment']) 
@@ -20,8 +21,7 @@ if(!isset($_GET['newpost']) && !isset($_GET['editpost'])
         </div>
         <div class="profile-info">
             <h1><?= $_SESSION['username']?></h1>
-            <h2><?php require 'partials/functions/split_email.php';
-                echo split_email($_SESSION['email']);?></h2>
+            <h2><?= split_email($_SESSION['email']);?></h2>
             <?php 
             if($_SESSION['contributor'] == true):
             ?>
