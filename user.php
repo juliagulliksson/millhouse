@@ -16,6 +16,7 @@ if(isset($_SESSION['signed_in'])){
 }
 require 'partials/head.php';
 require 'profile_includes/user_sql.php';
+require 'partials/functions/split_email.php';
 
 ?>
 <div class="profile-wrapper">
@@ -25,30 +26,49 @@ require 'profile_includes/user_sql.php';
         </div>
         <div class="profile-info">
             <h1><?= $user_info['username']?></h1>
-            <h2><?= $user_info['email']?></h2>
+            <h2><?= split_email($user_info['email']);?></h2>
         </div>
     </div>
     <!-- /.profile-container-collapse -->
     <div class="amount-container">
-    <?php if($user_info['contributor'] == true): ?>
-        <a href="index.php?upost=true&uid=<?= $user_info['id'] ?>#scroll">
+    <?php if($user_info['contributor'] == true): 
+            if($user_articles[0]['number_of_posts'] > 0): ?>
+                <a href="index.php?upost=true&uid=<?= $user_info['id'] ?>#scroll">
+            <?php
+            endif;
+        ?>
             <div class="amount">
-            <?php foreach($user_articles as $article): ?>
-                <h4><?= $article['number_of_posts']?></h4>
-            <?php endforeach; ?>
+                <h4>
+                    <?= $user_articles[0]['number_of_posts'] ?>
+                </h4>
                 <p>Blog posts</p>
             </div>
             <!-- /.amount-collapse -->
-        </a>
-        <?php endif; //end of check if contributor ?>
-        <a href="index.php?ucomments=true&ucid=<?= $user_info['id'] ?>#scroll">
+        <?php
+            if($user_articles[0]['number_of_posts'] > 0):
+                echo "</a>";
+            endif;
+
+        endif; //end of check if contributor ?>
+        
+            <?php
+            if($user_comments[0]['number_of_comments'] > 0): ?>
+                <a href="index.php?ucomments=true&ucid=<?= $user_info['id'] ?>#scroll">
+            <?php
+            endif;
+        ?>
             <div class="amount">
-                <?php foreach($user_comments as $comment): ?>
-                    <h4><?= $comment['number_of_comments']?></h4>
-                <?php endforeach; ?>
+                <h4>
+                    <?= $user_comments[0]['number_of_comments'] ?>
+                </h4>
                 <p>Comments</p>
             </div>
-        <!-- /.amount-collapse -->
+            <!-- /.amount-collapse -->
+        <?php
+            if($user_comments[0]['number_of_comments'] > 0):
+                echo "</a>";
+            endif; ?>
+            
         </a>
     </div>
     <!-- /.amount-container-collapse -->
@@ -69,7 +89,7 @@ require 'profile_includes/user_sql.php';
                 <?php
                     endforeach;
             else:
-                echo "This user has not written any blogposts yet";
+                echo "<i>This user has not written any blogposts yet</i>";
         endif;
             ?>
         </ul>
@@ -87,7 +107,7 @@ require 'profile_includes/user_sql.php';
             <?php
                 endforeach;
             else:
-                echo "This user has not posted any comments yet";
+                echo "<i>This user has not posted any comments yet</i>";
             endif;
             ?>
         </ul>

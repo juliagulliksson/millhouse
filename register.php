@@ -1,5 +1,6 @@
 <?php 
 require 'partials/includes.php';
+require 'partials/register.php';
 if(isset($_GET['register'], $_GET['username'])){
     $username = $_GET['username'];
     $user_column = 'username';
@@ -30,22 +31,30 @@ if(!empty($error_message)) {
 } ?>
     <h1>Register</h1>
     <form method="POST" action="register.php">
+        <label for="register_username" class="visuallyhidden">Username:</label>
         <input type="text" 
                name="register_username" 
-               value="<?php if(isset($_POST["register_username"])){ echo $_POST["register_username"];} ?>" 
+               value="<?php if(isset($_POST["register_username"])){
+                    echo $_POST["register_username"];} ?>" 
                placeholder="Username">
+        <br />
+        <label for="register_email" class="visuallyhidden">E-mail:</label>
         <input type="email"
                name="register_email"
-               value="<?php if(isset($_POST['register_email'])){ echo $_POST['register_email'];} ?>"
+               value="<?php if(isset($_POST['register_email'])){
+                    echo $_POST['register_email'];} ?>"
                placeholder="E-mail">
+        <br />
+        <label for="register_password" class="visuallyhidden">Password:</label>
         <input type="password"
                name="register_password" 
-               value="" 
                placeholder="Password">
+        <br />
+        <label for="verify_password" class="visuallyhidden">Verify password:</label>
         <input type="password" 
                name="verify_password"
-               value=""
                placeholder="Verify Password">
+        <br />
         <input type="submit" name="register-user" value="Register">
     </form>    
     <b>Already signed up?</b> <a href="login.php#scroll">Login here!</a>

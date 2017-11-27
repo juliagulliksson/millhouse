@@ -6,8 +6,19 @@ if(!isset($_SESSION['signed_in']) && empty($_SESSION['signed_in'])){
     header('location: index.php');
     exit();
 }
+//if newpost is set and user is not logged in, redirect to index
+if(isset($_GET['newpost'])):
+    if (!isset($_SESSION['username']) 
+    || $_SESSION['contributor'] == false 
+    || isset($_GET['id'])):
+        header('location: index.php');
+        exit();
+    endif;
+endif;
+
 require 'partials/head.php';
 require 'profile_includes/profile_sql.php';
+require 'partials/functions/split_email.php';
 
 if(!isset($_GET['newpost']) && !isset($_GET['editpost'])
 && !isset($_GET['editcomment']) 
@@ -20,7 +31,7 @@ if(!isset($_GET['newpost']) && !isset($_GET['editpost'])
         </div>
         <div class="profile-info">
             <h1><?= $_SESSION['username']?></h1>
-            <h2><?= $_SESSION['email']?></h2>
+            <h2><?= split_email($_SESSION['email']);?></h2>
             <?php 
             if($_SESSION['contributor'] == true):
             ?>
@@ -122,17 +133,17 @@ endif;// End of main get if
 
 // Delete account
 if(isset($_GET['delete'])):?>
-<div class="delete-account">
-    <h3><i class="fa fa-frown-o" aria-hidden="true"></i></h3>
-    <h1>Are you sure you want to delete your account?</h1>
-    <p>Deleting your account will also delete all your comments and blogposts.
-    <br />No take backsies.</p>
-    <h2><a href="profile.php">
-        <i class="fa fa-arrow-left" aria-hidden="true"></i> No, please! Take me back!
-    </a></h2>
-    <a class="delete" href="actions/delete_account.php?id=<?= $_SESSION['id']?>">
-    Delete account</a>          
-</div>
+    <div class="delete-account">
+        <h3><i class="fa fa-frown-o" aria-hidden="true"></i></h3>
+        <h1>Are you sure you want to delete your account?</h1>
+        <p>Deleting your account will also delete all your comments and blogposts.
+        <br />No take backsies.</p>
+        <h2><a href="profile.php">
+            <i class="fa fa-arrow-left" aria-hidden="true"></i> No, please! Take me back!
+        </a></h2>
+        <a class="delete" href="actions/delete_account.php?id=<?= $_SESSION['id']?>">
+        Delete account</a>          
+    </div>
 <?php 
 endif; // End of delete if
 

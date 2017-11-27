@@ -8,15 +8,15 @@ if(!empty($_POST["register-user"])){
     
 /// Form Required Field Validation
 foreach($_POST as $key=>$value){
-	if(empty($_POST[$key])) {
-	$error_message = "All fields are required";
-	break;
-	}
+    if(empty($_POST[$key])){
+    $error_message = "All fields are required";
+    break;
+    }
 }
     
 // No spaces
 if(!isset($error_message)){
-    if(preg_match('/\s/',$user) ) {
+    if(preg_match('/\s/',$user) ){
         $error_message = "Blank space is not allowed in username";
     }
 }
@@ -63,27 +63,24 @@ $is_duplicate_username = check_if_duplicate($user_column, $new_username);
 // Checks if email already exists
 $is_duplicate_email = check_if_duplicate($email_column, $new_email);
                 
-        //Checks if username is already registered
-        if ($is_duplicate_username && !isset($error_message)){
-            $error_message = "This username already exists!";
-        }
+// Checks if username is already registered
+if($is_duplicate_username && !isset($error_message)){
+    $error_message = "This username already exists!";
+}
                 
-        //Checks if email is aldready registered
-        elseif ($is_duplicate_email && !isset($error_message)){
-            $error_message = "This email adress is already registered!";
-        }
+    // Checks if email is aldready registered
+    elseif($is_duplicate_email && !isset($error_message)){
+        $error_message = "This email adress is already registered!";
+    }
 
-        //If email or username doesn't exists the function for register runs
-        elseif (!$is_duplicate_email &&
-                !$is_duplicate_username){
-                    
-        register($new_username, 
-            $new_password, 
-            $contributor,
-            $new_email,
-            $admin);                 
-        }
+    // If email or username doesn't exists the function for register runs
+    elseif(!$is_duplicate_email &&
+        !$is_duplicate_username){
+            register($new_username, 
+                $new_password, 
+                $contributor,
+                $new_email,
+                $admin);                 
+    }
     }
 }
-
-?>

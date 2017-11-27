@@ -1,6 +1,9 @@
 <?php
 $id = $_GET['id'];
-
+//post_id=<?= $article_single['postID']
+if(isset($_POST['comment_submit'])):
+    include 'actions/comment_insert.php';
+endif;
 //require SQL-queries
 require 'actions/article_single_sql.php';
 ?>
@@ -12,7 +15,8 @@ require 'actions/article_single_sql.php';
     </div>
     <article>
         <h1><?= $article_single['post_title']; ?></h1>
-        <h2><b><?= $article_single['title']; ?></b>
+        <h2><b><a href="index.php?category=<?= $article_single['category_id']?>">
+        <?= $article_single['title']; ?></a></b>
             <span class="dot">&bull;</span>
             <?= replace_date($article_single['date']) ?>
             <span class="dot">&bull;</span> 
@@ -80,15 +84,20 @@ require 'actions/article_single_sql.php';
 
     if(isset($_SESSION['signed_in'])):
     ?>
-    <div class="comment-field">
-        <h4>Comment the blog post here:</h4>
-        <form action="actions/comment_insert.php?post_id=<?= $article_single['postID']?>" method="POST">
-            <input type="hidden" value="<?= $_SESSION['id'] ?>" name="user_id">
-            <textarea name="comment" placeholder="Type your comment"></textarea>
-            <br />
-            <input type="submit" name="comment_submit" value="Comment">
-        </form> 
-    </div>
+        <div class="comment-field">
+            <?php 
+            if(!empty($error_message)): ?>
+                <p class="error-message"><?= $error_message ?></p>
+            <?php endif;
+            ?>
+            <h4>Comment the blog post here:</h4>
+            <form action="index.php?id=<?= $id ?>" method="POST">
+                <input type="hidden" value="<?= $_SESSION['id'] ?>" name="user_id">
+                <textarea name="comment" placeholder="Type your comment" required></textarea>
+                <br />
+                <input type="submit" name="comment_submit" value="Comment">
+            </form> 
+        </div>
     <!-- /.comment-field-collapse -->
     <?php 
         else:
