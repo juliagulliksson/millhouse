@@ -4,7 +4,7 @@ function log_in ($username, $password){
 
 $my_sql = $pdo->prepare(
     "SELECT * FROM users 
-    WHERE username = :username"
+    WHERE BINARY username = :username"
 );
     
 $my_sql->execute(array(
