@@ -27,8 +27,8 @@ endif;
             <div class="form-group__category">
                 <label for="category">Choose category:</label><br />
                 <select name="category">
-                <?php foreach($category as $categories):?>
-                    <option value="<?= $categories['id']?>"><?= $categories['title']?></option>
+                <?php foreach($categories as $category):?>
+                    <option value="<?= $category['id']?>"><?= $category['title']?></option>
                 <?php endforeach; ?>
                 </select>
             </div>
