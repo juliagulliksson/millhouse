@@ -1,7 +1,10 @@
 .blog-post{
     margin-bottom: 2em;
     max-width: 75ch;
-    h3{
+    h1{
+        margin: 0px 0px 10px 0px;
+    }
+    h2{
         margin: 0.8em 0em;
         font-size: 0.9em;
         font-weight: normal;
@@ -28,11 +31,6 @@
     color: rgb(184, 182, 182);
     padding: 0px 5px;
 }
-
-// .username{
-//     text-transform: lowercase;
-//     font-weight: 700;
-// }
 
 .comments-container{
     margin: 20px 0px 10px 0px;
