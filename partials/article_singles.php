@@ -15,7 +15,7 @@ require 'actions/article_single_sql.php';
     </div>
     <article>
         <h1><?= $article_single['post_title']; ?></h1>
-        <h3><b><a href="index.php?category=<?= $article_single['category_id']?>">
+        <h2><b><a href="index.php?category=<?= $article_single['category_id']?>">
         <?= $article_single['title']; ?></a></b>
             <span class="dot">&bull;</span>
             <?= replace_date($article_single['date']) ?>
