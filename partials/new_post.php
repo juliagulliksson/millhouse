@@ -28,8 +28,8 @@ endif;
             <div class="form-group__category">
                 <label for="category">Choose category:</label><br />
                 <select name="category">
-                <?php foreach($category as $categories):?>
-                    <option value="<?= $categories['id']?>"><?= $categories['title']?></option>
+                <?php foreach($categories as $category):?>
+                    <option value="<?= $category['id']?>"><?= $category['title']?></option>
                 <?php endforeach; ?>
                 </select>
             </div>
@@ -45,7 +45,6 @@ endif;
             });
         </script>
 
-        <input type="hidden" value="<?= $today ?>" name="date">
         <input type="hidden" value="<?= $_SESSION['id']?>" name="user_id">
         <div class="form-group">
         <div class="form-group__title">

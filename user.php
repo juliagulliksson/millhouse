@@ -46,8 +46,10 @@ require 'profile_includes/user_sql.php';
             <?php 
             foreach($user_comments as $comment): 
             ?>
-                <h4><a href="index.php?ucomments=true&ucid=<?= $user_info['id'] ?>
-                #scroll"><?= $comment['number_of_comments']?></a></h4>
+                <h4>
+                <a href="index.php?ucomments=true&ucid=<?= $user_info['id'] ?>
+                #scroll"><?= $comment['number_of_comments']?></a>
+                </h4>
             <?php endforeach; ?>
             <p>Comments</p>
         </div>

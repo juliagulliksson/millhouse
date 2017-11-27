@@ -8,6 +8,7 @@ if(!isset($_GET['ucid'])):
         endforeach; 
     else:
         header('location: profile.php');
+        exit();
     endif; //end of count if
 
 

@@ -50,12 +50,17 @@ if(!isset($_GET['newpost']) && !isset($_GET['editpost'])
         <?php 
         endif; //end of check if contributor ?>
         <div class="amount">
-            <?php foreach($profile_comments as $comment): ?>
             <h4>
-                <a href="index.php?ucomments=true#scroll"><?= $comment['number_of_comments']?></a>
+                <?php 
+                if($profile_comments[0]['number_of_comments'] > 1): ?>
+                    <a href="index.php?ucomments=true#scroll">
+                    <?= $profile_comments[0]['number_of_comments'];?> <p>Comments</p></a>
+                    <?php 
+                    else: 
+                        echo $profile_comments[0]['number_of_comments'] . "<p>Comments</p>";
+                endif; ?>
+                
             </h4>
-            <?php endforeach; ?>
-            <p>Comments</p>
         </div>
     </div>
     <!-- /.amount-container-collapse -->

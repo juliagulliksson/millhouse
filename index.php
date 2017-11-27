@@ -1,5 +1,10 @@
 <?php
 require 'partials/includes.php';
+
+if(isset($_GET['id'])):
+    require 'partials/404_GET_handlers.php';
+endif;
+
 require 'partials/head.php';
 ?>
 <main>
@@ -20,7 +25,6 @@ require 'partials/head.php';
     endif;
     // Individual blog posts
     if(isset($_GET['id'])):
-        require 'partials/404_GET_handlers.php';
         require 'partials/article_singles.php';
     endif; //end of get id if
 

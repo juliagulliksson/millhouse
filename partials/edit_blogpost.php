@@ -24,13 +24,13 @@ $edit_post = $statement->fetch(PDO::FETCH_ASSOC);
         <div class="form-group__category">
             <label for="category">Choose category:</label><br />
             <select name="category">
-            <?php foreach($category as $categories): 
-                if($edit_post['category_id'] == $categories['id']){
+            <?php foreach($categories as $category): 
+                if($edit_post['category_id'] == $category['id']){
                     $selected = 'selected="selected"'; 
                 }else{
                     $selected = ''; 
                 }
-                echo "<option value='" . $categories['id'] . "' $selected>" . $categories['title'] ."</option>";
+                echo "<option value='" . $category['id'] . "' $selected>" . $category['title'] ."</option>";
             endforeach; ?>
             </select>
         </div>

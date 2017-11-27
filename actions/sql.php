@@ -41,7 +41,7 @@ $statement = $pdo->prepare("SELECT *
 FROM categories
 ");
 $statement->execute();
-$category = $statement->fetchAll(PDO::FETCH_ASSOC);
+$categories = $statement->fetchAll(PDO::FETCH_ASSOC);
 
 //Distinct months fetch
 $statement = $pdo->prepare("SELECT DISTINCT MONTH(date) as month, 

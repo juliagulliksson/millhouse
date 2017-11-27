@@ -10,6 +10,7 @@ require 'partials/head.php';
             endif;
     endif;
     ?>
+
     <h1>Login</h1>
     <form action="index.php" class="form_toggle" id="login_form" method="POST">
         <label for="username" hidden>Username:</label>
