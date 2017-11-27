@@ -5,8 +5,7 @@ if(!isset($_GET['uid'])):
         foreach($profile_all_articles as $article):  
             include 'profile_includes/profile_blogposts_indv.php';
         endforeach; 
-    else:
-        header('location: profile.php');
+
     endif; //End of count articles if
 
 elseif(isset($_GET['uid'])):
@@ -15,8 +14,7 @@ elseif(isset($_GET['uid'])):
         foreach ($user_all_articles as $article):
             include 'profile_includes/profile_blogposts_indv.php';
         endforeach;
-    else: 
-        header('location: user.php');
+        
     endif; //End of count if
 endif;//end of check get requests if
 
