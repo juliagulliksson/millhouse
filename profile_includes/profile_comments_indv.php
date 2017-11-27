@@ -1,8 +1,8 @@
 <div class="blog-post">
     <article>
-    <h2> Posted on: <a href="index.php?id=<?= $comment['postID']?>">
-    <?= $comment['post_title'] ?></a></h2>
-    <h3><?= replace_date($comment['date']) ?></h3>
+    <h1 id="smaller-heading"><span id="normal">Posted on:</span> <a href="index.php?id=<?= $comment['postID']?>">
+    <?= $comment['post_title'] ?></a></h1>
+    <h2><?= replace_date($comment['date']) ?></h2>
     <p><?= $comment['text'] ?></p>
 
     <?php // Edit and delete options

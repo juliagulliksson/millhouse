@@ -1,10 +1,10 @@
  <div class="blog-post">
     <article>
         <h1><?= $article['post_title']; ?></h1>
-        <h3><span class="category-bold">
+        <h2><span class="category-bold">
             <?= $article['title']; ?></span>
             <span class="dot">&bull;</span><?= replace_date($article['date']) ?> 
-        </h3>
+        </h2>
         <?php if(!empty($article['image'])): ?>
                 <img src="partials/<?=$article['image']?>" 
                 alt="<?=$article['alt_text']?>" 
