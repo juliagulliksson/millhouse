@@ -88,7 +88,7 @@ require 'profile_includes/user_sql.php';
                 <?php
                     endforeach;
             else:
-                echo "This user has not written any blogposts yet";
+                echo "<i>This user has not written any blogposts yet</i>";
         endif;
             ?>
         </ul>
@@ -106,7 +106,7 @@ require 'profile_includes/user_sql.php';
             <?php
                 endforeach;
             else:
-                echo "This user has not posted any comments yet";
+                echo "<i>This user has not posted any comments yet</i>";
             endif;
             ?>
         </ul>

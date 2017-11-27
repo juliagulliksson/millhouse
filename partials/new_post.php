@@ -1,11 +1,3 @@
-<?php
-if (!isset($_SESSION['username']) 
-|| $_SESSION['contributor'] == false 
-|| isset($_GET['id'])):
-    header('location: index.php');
-    exit();
-endif;
-?> 
 <div class="insert-form">
     <div class="go-back">
         <a href="profile.php#scroll">
