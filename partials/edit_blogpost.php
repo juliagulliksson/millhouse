@@ -26,13 +26,13 @@ $edit_post = $statement->fetch(PDO::FETCH_ASSOC);
         <div class="form-group__category">
             <label for="category">Choose category:</label><br />
             <select name="category">
-            <?php foreach($category as $categories): 
-                if($edit_post['category_id'] == $categories['id']){
+            <?php foreach($categories as $category): 
+                if($edit_post['category_id'] == $category['id']){
                     $selected = 'selected="selected"'; 
                 }else{
                     $selected = ''; 
                 }
-                echo "<option value='" . $categories['id'] . "' $selected>" . $categories['title'] ."</option>";
+                echo "<option value='" . $category['id'] . "' $selected>" . $category['title'] ."</option>";
             endforeach; ?>
             </select>
         </div>
@@ -49,18 +49,21 @@ $edit_post = $statement->fetch(PDO::FETCH_ASSOC);
     </script>
     <br />
 
+            
     <div class="form-group">
-        <div class="form-group__image">
+       <div class="file-input">
+       <div class="form-image">
+       <img src="partials/<?=$edit_post['image']?>" class="edit_blogpost">
+           </div>
+        <div class="form-group__file">
             <label for="edit_image">Choose new image:</label><br />
             <input type="file" name="edit_image">
-        </div><!--/.form-group__image-collapse-->
-        <div class="form-group__image">
-            <img src="partials/<?=$edit_post['image']?>" class="edit_blogpost">
-        </div>
-        <div class="form-group__image">
+           </div><!--/.file-input-collapse-->
+        </div><!--/.form-group__file-collapse-->
+        <div class="form-group__alt_text">
             <label for="edit_alt_text">Image text:</label><br />
             <input type="text" name="edit_alt_text" value="<?=$edit_post['alt_text'] ?>">
-        </div><!--/.form-group__image-collapse-->
+        </div><!--/.form-group__alt_text-collapse-->
     </div><!--/.form-group-collapse-->
     <input type="submit" name="submit" value="Submit">
     </form>

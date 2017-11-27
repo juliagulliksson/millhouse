@@ -2,13 +2,15 @@
 require 'partials/head.php';
 ?>
 <div class="login">
-<?php
-if(isset($_GET['login'])):
-    if($_GET['login'] == 'fail'): ?>
-    <p class="error-message">Login failed! Incorrect username or password.</p>
-<?php endif;
-endif;
-?>
+    <?php
+    if(isset($_GET['login'])):
+            if($_GET['login'] == 'fail'): ?>
+                <p class="error-message">Login failed! Incorrect username or password</p>
+            <?php
+            endif;
+    endif;
+    ?>
+
     <h1>Login</h1>
     <form action="index.php" class="form_toggle" id="login_form" method="POST">
         <label for="username" hidden>Username:</label>

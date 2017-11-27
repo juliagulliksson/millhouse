@@ -58,17 +58,24 @@ li.new-blogpost {
 
 .form-group{
     display: flex;
+    align-items: center;
     width: 100%;
-    margin-bottom: 10px;
-}
-
-.form-group__title{
-    margin-right: 20px; 
+    img {
+        max-height: 60px;
+        margin-right: 20px;
+    }
 }
 
 .form-group__title,
-.form-group__category{
+.form-group__category,
+.form-group__alt_text,
+.file-input{
     width: 100%;
+}
+
+.form-group__title,
+.file-input{
+    margin-right: 20px;
 }
 
 .sidebar{

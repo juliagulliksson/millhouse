@@ -1,12 +1,13 @@
 <?php
 $post_id = $_GET['id'];
-// header("location: ../index.php?id=$post_id#scroll");
+header("location: ../index.php?id=$post_id#scroll");
 require '../partials/database.php';
 $new_title = $_POST['edit_title'];
 $new_text = $_POST['edit_text'];
 $category = $_POST['category'];
 
-if (!empty($_FILES["edit_image"]) && 
+
+if (!empty($_FILES["edit_image"]["name"]) && 
    !empty($_POST["edit_alt_text"])) {
     require "../partials/functions/check_image_before_upload.php";
     
@@ -52,7 +53,7 @@ elseif(gettype($upload_ok) == 'string') {
     }//End elseif
 }//End if(!empty..)
 
-else {
+if (empty($_FILES["edit_image"]["name"])) {
         $statement = $pdo->prepare(
         "UPDATE posts 
         SET post_title = :new_title, 

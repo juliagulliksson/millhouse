@@ -63,23 +63,27 @@ $is_duplicate_username = check_if_duplicate($user_column, $new_username);
 // Checks if email already exists
 $is_duplicate_email = check_if_duplicate($email_column, $new_email);
                 
-// Checks if username is already registered
-if($is_duplicate_username){
-    header('location: register.php?user=fail#scroll');
-}
+        //Checks if username is already registered
+        if ($is_duplicate_username && !isset($error_message)){
+            $error_message = "This username already exists!";
+        }
                 
-// Checks if email is aldready registered
-elseif($is_duplicate_email){
-    header('location: register.php?email=fail#scroll');
+        //Checks if email is aldready registered
+        elseif ($is_duplicate_email && !isset($error_message)){
+            $error_message = "This email adress is already registered!";
+        }
+
+        //If email or username doesn't exists the function for register runs
+        elseif (!$is_duplicate_email &&
+                !$is_duplicate_username){
+                    
+        register($new_username, 
+            $new_password, 
+            $contributor,
+            $new_email,
+            $admin);                 
+        }
+    }
 }
 
-// If email or username doesn't exists the function for register runs
-elseif(!$is_duplicate_email && !$is_duplicate_username){                
-    register($new_username, 
-             $new_password, 
-             $contributor,
-             $new_email,
-             $admin);                 
-    }}
-}
 ?>
