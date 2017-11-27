@@ -1,6 +1,7 @@
 <?php 
 require 'partials/includes.php';
 require 'partials/register.php';
+
 if(isset($_GET['register'], $_GET['username'])){
     $username = $_GET['username'];
     $user_column = 'username';
@@ -23,11 +24,11 @@ if(isset($_GET['register'], $_GET['username'])){
     }//end of check exist
 }
 
-if(!empty($error_message)) {
-        if(isset($error_message)){ ?>
-             <p class="error-message"><?= $error_message ?></p>
-            <?php 
-        }
+if(!empty($error_messages)) {
+    foreach($error_messages as $error){ ?>
+            <p class="error-message"><?= $error ?></p>
+        <?php 
+    }
 } ?>
     <h1>Register</h1>
     <form method="POST" action="register.php">
