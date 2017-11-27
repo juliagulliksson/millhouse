@@ -16,7 +16,7 @@ endif;
     if(isset($_GET['newpost'], $_GET['error'])) { ?>
     <p class="error-message">Error: All fields are required for submission.</p>
    <?php } ?>
-    <div class="center-heading"><h2>Write a new blog post</h2></div>
+    <div class="center-heading"><h1>Write a new blog post</h1></div>
     <form action="actions/insert_blogpost_sql.php" method="POST"
        enctype="multipart/form-data">
         <div class="form-group">

@@ -17,7 +17,7 @@ a:hover{
 h1{
     font-weight: 800;
     letter-spacing: 0em;
-    margin: 0px 0px 10px 0px;
+    margin: 0px 0px 20px 0px;
 }
 
 h2{
@@ -140,7 +140,7 @@ li.new-blogpost {
         height: 40px;
         padding: 10px;
         margin-bottom: 15px;
-        font-family: 'Fira Code', monospace;
+        display: block;
         color: $dark_blue;
         text-align: center;
         background-color: $input;
@@ -151,6 +151,7 @@ li.new-blogpost {
     }
     input[type=submit]{
         @extend input[type=text];
+        font-family: 'Fira Code', monospace;
         color: #fff;
         background-color: #5d7e93;
         margin-bottom: 20px;
@@ -172,7 +173,7 @@ select{
     height: 40px;
     padding: 10px;
     margin-bottom: 10px;
-    font-family: 'Fira Code', monospace;
+    //font-family: 'Fira Code', monospace;
     color: $dark_blue;
     background-color: $input;
     border: none;
