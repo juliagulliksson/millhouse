@@ -23,6 +23,7 @@ require 'partials/head.php';
         endforeach;
          include 'partials/pagination_links.php';
     endif;
+    
     // Individual blog posts
     if(isset($_GET['id'])):
         require 'partials/article_singles.php';
