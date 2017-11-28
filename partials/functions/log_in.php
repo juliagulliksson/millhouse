@@ -1,16 +1,11 @@
 <?php
 function log_in ($username, $password){
     require "partials/database.php";
+    require "partials/functions/check_if_duplicate.php";
 
     //check if username is present in database
-    $statement = $pdo->prepare(
-        "SELECT COUNT(id) AS user_id FROM users 
-        WHERE BINARY username = :username"
-    );
-    $statement->execute(array(
-        ":username"    => $username
-    ));
-    $username_exist = $statement->fetch(PDO::FETCH_ASSOC);
+    $user_column = 'username';
+    $existing_username = check_if_duplicate($user_column, $username);
 
     $my_sql = $pdo->prepare(
         "SELECT * FROM users 
@@ -23,7 +18,7 @@ function log_in ($username, $password){
 
     //Initiates session variables if password is correct
     if (password_verify($password, $fetched_user["password"]) 
-    && $username_exist['user_id'] > 0){ 
+    && $existing_username){ 
     $_SESSION["username"] = 
         $fetched_user["username"];
         
@@ -40,10 +35,10 @@ function log_in ($username, $password){
 
     $_SESSION["admin"] =
             $fetched_user["admin"];
-            
-    }elseif($username_exist['user_id'] <= 0) {
-            header('location: login.php?login=fail#scroll');
-            exit();
+
+    }elseif(!$existing_username){
+        header('location: login.php?login=fail#scroll');
+        exit();
     }elseif(!password_verify($password, $fetched_user["password"])){
             header('location: login.php?password=fail#scroll');
             exit();

@@ -1,6 +1,5 @@
 <?php
 require 'partials/includes.php';
-
 // Checks if user is logged in
 if(!isset($_SESSION['signed_in']) && empty($_SESSION['signed_in'])){
     header('location: index.php');
