@@ -14,7 +14,7 @@
         <div class="form-group">
             <div class="form-group__title">
                 <label for="title">Title:</label><br />
-                <input type="text" class="form-control" name="blog_title" required>
+                <input type="text" class="form-control" name="blog_title">
             </div>
             <div class="form-group__category">
                 <label for="category">Choose category:</label><br />
@@ -27,7 +27,7 @@
         </div>
         <!-- /.form-group-collapse -->
         
-        <textarea name="post_text" id="editor" required></textarea>
+        <textarea name="post_text" id="editor"></textarea>
         <script>
             ClassicEditor
             .create(document.querySelector('#editor'))
