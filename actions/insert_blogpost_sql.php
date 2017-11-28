@@ -1,6 +1,5 @@
 <?php
-header('location: ../index.php');
-require '../partials/database.php';
+require 'partials/database.php';
 $title      = $_POST['blog_title'];
 $category   = $_POST['category'];
 $body       = $_POST['post_text'];
@@ -8,17 +7,10 @@ $user_id    = $_POST['user_id'];
 
 if(empty($body) || empty($category)
 || empty($title)){
-    header('Location: ../profile.php?newpost=error&error=error#scroll');
-}else{
-
-    // If blog post with image is posted
-    if (!empty($_FILES["image"]) && 
-        !empty($_POST["alt_text"])) {
-    require "upload_image_sql.php";
-    }//End if
-
+    header('Location: profile.php?newpost=error&error=error#scroll');
+}elseif(empty($_FILES["image"]) && empty($_POST["alt_text"])){
     // If blog post without image is posted
-    else {
+    
         
     $statement = $pdo->prepare(
         "INSERT INTO posts (post_title, category_id, text, 
@@ -32,7 +24,8 @@ if(empty($body) || empty($category)
         ":category_id" => $category, 
         ":text" => $body, 
         ":user_id" => $user_id
+        
     ));
-    }// End else
+    header('location: index.php');
+}// End elseif
 
-}//end else
