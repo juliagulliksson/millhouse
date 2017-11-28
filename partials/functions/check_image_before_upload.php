@@ -1,21 +1,21 @@
 <?php
 function check_image_before_upload($image_size, $image_type, $target) {
-     $error_message = array(0, 1, 2);
+     $error_message = array();
      $upload_ok = false;
      if (in_array($image_type, array(IMAGETYPE_GIF, IMAGETYPE_JPEG,  IMAGETYPE_PNG, IMAGETYPE_BMP))) {
          $upload_ok = true;
      }
         else {
-             $error_message[0] = "Image type must be gif, jpeg, pgn or bmp! <br/>";
+             $error_message[] = "Image type must be gif, jpeg, pgn or bmp! <br/>";
              $upload_ok = false;
         }//End if
          
      if ($image_size > 500000000) { 
-         $error_message[1] = "The file is too large";
+         $error_message[] = "The image file is too large";
          $upload_ok = false;
-     }   
-     if (file_exists("..partials/" . $target)) {
-         $error_message[2] = "The file already exists";
+     }
+     elseif (file_exists("partials/" . $target)) {
+         $error_message[] = "The image already exists";
          $upload_ok = false;
      }
      if($upload_ok){
@@ -25,4 +25,3 @@ function check_image_before_upload($image_size, $image_type, $target) {
             return $error_message;
         }
 }
-?>

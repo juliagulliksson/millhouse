@@ -1,5 +1,4 @@
 <?php
-require 'partials/functions/check_if_duplicate.php';
 // If fields for register is filled
 if(!empty($_POST["register-user"])){
     $user = trim($_POST["register_username"]);
