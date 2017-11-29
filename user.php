@@ -26,7 +26,11 @@ require 'partials/functions/split_email.php';
         </div>
         <div class="profile-info">
             <h1><?= $user_info['username']?></h1>
-            <h2><?= split_email($user_info['email']);?></h2>
+            <h2>
+                <a href="mailto:<?= ($user_info['email']);?>">
+                    <?= split_email($user_info['email']);?>
+                </a>
+            </h2>
         </div>
     </div>
     <!-- /.profile-container-collapse -->

@@ -147,7 +147,7 @@ endif;// End of main get if
 if(isset($_GET['edit'])): ?>
 <div class="edit-account">
     <h1>Edit profile</h1>
-    <p>Not happy with your username or profile photo? Here you can edit it.</p>
+    <p>Not happy with your username or profile photo? Feel happy to make changes.</p>
     <form action="">
         <label for="new_profile_photo">Upload new profile photo:</label>
         <input type="file" name="new_profile_photo" id="">
