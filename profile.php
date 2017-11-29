@@ -7,7 +7,7 @@ if(!isset($_SESSION['signed_in']) && empty($_SESSION['signed_in'])){
 }
 //If newpost is set and user is not logged in, redirect to index
 if(isset($_GET['newpost'])):
-    if (!isset($_SESSION['username']) 
+    if (!isset($_SESSION['signed_in']) 
     || $_SESSION['contributor'] == false 
     || isset($_GET['id'])):
         header('location: index.php');
