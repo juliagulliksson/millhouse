@@ -5,13 +5,20 @@ if(!isset($_SESSION['signed_in']) && empty($_SESSION['signed_in'])){
     header('location: index.php');
     exit();
 }
-//if newpost is set and user is not logged in, redirect to index
+//If newpost is set and user is not logged in, redirect to index
 if(isset($_GET['newpost'])):
     if (!isset($_SESSION['username']) 
     || $_SESSION['contributor'] == false 
     || isset($_GET['id'])):
         header('location: index.php');
         exit();
+    endif;
+endif;
+
+//If the submit button for write new blogpost has been clicked
+if(isset($_GET['newpost'])):
+    if(isset($_POST['newpost_submit'])):
+        include 'actions/insert_blogpost_sql.php';
     endif;
 endif;
 
