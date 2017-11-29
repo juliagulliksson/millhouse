@@ -1,11 +1,13 @@
 <?php
-// If fields for register is filled
-if(!empty($_POST["register-user"])){
-    $user = trim($_POST["register_username"]);
-    $pass = trim($_POST["register_password"]);
+
+// If register submit button is clicked
+if(isset($_POST["register-user"])){
+    
     $pass_verify = trim($_POST['verify_password']);
     $mail = trim($_POST["register_email"]);
-    
+    $user = trim($_POST["register_username"]);
+    $pass = trim($_POST["register_password"]);
+
     //Set error messages as an empty array
     $error_messages = array();
 
@@ -16,12 +18,12 @@ if(!empty($_POST["register-user"])){
         break;
         }
     }
-        
+
     // No spaces
     if(preg_match('/\s/',$user) ) {
         $error_messages[] = "Blank space is not allowed in username";
     }
-
+    
     if(preg_match('/\s/',$pass) ){
         $error_messages[] = "Blank space is not allowed in password";
     }

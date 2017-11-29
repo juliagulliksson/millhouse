@@ -51,7 +51,4 @@ if(gettype($upload_ok) == 'boolean'){
     header('location: index.php');
   } 
 }
-    elseif(gettype($upload_ok) == 'string') { 
-        echo $upload_ok; 
-    }//end if
 ?>

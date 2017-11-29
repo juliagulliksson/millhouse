@@ -6,7 +6,7 @@ function check_image_before_upload($image_size, $image_type, $target) {
          $upload_ok = true;
      }
         else {
-             $error_message[] = "Image type must be gif, jpeg, pgn or bmp! <br/>";
+             $error_message[] = "Image type must be gif, jpeg, pgn or bmp!";
              $upload_ok = false;
         }//End if
          
