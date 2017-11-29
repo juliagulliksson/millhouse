@@ -38,11 +38,7 @@ if(!isset($_GET['newpost']) && !isset($_GET['editpost'])
         </div>
         <div class="profile-info">
             <h1><?= $_SESSION['username']?></h1>
-            <h2>
-                <a href="mailto:<?= ($_SESSION['email']); ?>">
-                    <?= split_email($_SESSION['email']); ?>
-                </a>
-            </h2>
+            <h2><?= split_email($_SESSION['email']); ?></h2>
             <?php 
             if($_SESSION['contributor'] == true):
             ?>
@@ -144,58 +140,21 @@ if(!isset($_GET['newpost']) && !isset($_GET['editpost'])
 endif;// End of main get if
 
 // Edit account
-if(isset($_GET['edit'])): ?>
-<div class="edit-account">
-    <h1>Edit profile</h1>
-    <p>Not happy with your username or profile photo? Feel happy to make changes.</p>
-    <form action="">
-        <label for="new_profile_photo">Upload new profile photo:</label>
-        <input type="file" name="new_profile_photo" id="">
-        <br />
-        <label for="new_username" class="visuallyhidden">New username:</label>
-        <input name="new_username" type="text" placeholder="New username">
-        <br />
-        <label for="new_password" class="visuallyhidden">New password:</label>
-        <input name="new_password" type="text" placeholder="New password">
-        <br />
-        <label for="verify_new_password" class="visuallyhidden">Verify new username:</label>
-        <input name="verify_new_password" type="text" placeholder="Verify new password">
-        <br />
-        <input type="submit" value="Update profile!">
-    </form>
-    <h2>
-        <a href="profile.php">
-            <i class="fa fa-arrow-left" aria-hidden="true"></i> No, I'm happy as it is. Take me back!
-        </a>
-    </h2>        
-</div>
-<?php 
+if(isset($_GET['edit'])): 
+    require 'profile_includes/edit_profile.php';
 endif; // End of edit if
 
 // Delete account
-if(isset($_GET['delete'])): ?>
-    <div class="delete-account">
-        <h3><i class="fa fa-frown-o" aria-hidden="true"></i></h3>
-        <h1>Are you sure you want to delete your account?</h1>
-        <p>Deleting your account will also delete all your comments and blogposts.
-        <br />No take backsies.</p>
-        <h2>
-            <a href="profile.php">
-                <i class="fa fa-arrow-left" aria-hidden="true"></i> No, please! Take me back!
-            </a>
-        </h2>
-        <a class="delete" href="actions/delete_account.php?id=<?= $_SESSION['id']?>">
-        Delete account</a>          
-    </div>
-<?php 
+if(isset($_GET['delete'])): 
+    require 'profile_includes/delete_profile.php';
 endif; // End of delete if
 
 if(isset($_GET['newpost'])):
-    require 'partials/new_post.php';
+    require 'profile_includes/new_post.php';
 endif; // End of newpost if
 
 if(isset($_GET['editpost'])):
-    require 'partials/edit_blogpost.php';
+    require 'profile_includes/edit_blogpost.php';
 endif;// End of editpost if
 
 if(isset($_GET['editcomment'])):
