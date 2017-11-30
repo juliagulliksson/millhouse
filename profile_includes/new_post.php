@@ -5,7 +5,7 @@
         </a>
     </div>
     
-    <?php require 'partials/newpost_errors.php'; ?>
+    <?php require 'profile_includes/newpost_errors.php'; ?>
 
     <div class="center-heading"><h1>Write a new blog post</h1></div>
     <form action="profile.php?newpost=true" method="POST"
