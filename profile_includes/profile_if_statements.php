@@ -1,9 +1,10 @@
 <?php
 // Checks if user is logged in
-if(!isset($_SESSION['signed_in']) && empty($_SESSION['signed_in'])){
+if(!isset($_SESSION['signed_in']) && empty($_SESSION['signed_in'])):
     header('location: index.php');
     exit();
-}
+endif;
+
 //If newpost is set and user is not logged in, redirect to index
 if(isset($_GET['newpost'])):
     if (!isset($_SESSION['signed_in']) 
@@ -17,7 +18,10 @@ endif;
 //If the submit button for write new blogpost has been clicked
 if(isset($_GET['newpost'])):
     if(isset($_POST['newpost_submit'])):
-        include 'actions/insert_blogpost_sql.php';
+        require 'actions/insert_blogpost_sql.php';
+        if(!empty($_FILES["image"]["name"]) && !empty($_POST["alt_text"])):
+            require "actions/upload_image_sql.php";
+        endif;
     endif;
 endif;//end of newpost if
 
