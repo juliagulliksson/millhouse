@@ -1,6 +1,6 @@
 <?php 
 
-require "partials/functions/check_image_before_upload.php";
+//require "partials/functions/check_image_before_upload.php";
 
 
 //Declaring variables for image upload
