@@ -34,8 +34,11 @@ require 'partials/head.php';
         include 'actions/category_articles.php';  
     if (count($category_articles) > 1):
     ?>  
-        <h4>Sort by date | <a name="newest" href="index.php?category=<?= $category ?>
-        &asc=true#oldest">Oldest</a></h4>
+        <h4 class="sort">
+            Sort by date: 
+            <b><a href="index.php?category=<?= $category ?>&asc=true#scroll">Oldest 
+            <i class="fa fa-arrow-up" aria-hidden="true"></i></a></b>
+        </h4>
         
     <?php 
     endif;//End of count category_articles if
@@ -48,8 +51,10 @@ require 'partials/head.php';
         $category = $_GET['category'];
         include 'actions/category_articles.php';
         ?>
-    <h4>Sort by date | <a name="oldest" href="index.php?category=<?= $category ?>
-    #newest">Newest</a></h4>
+        <h4 class="sort">
+            Sort by date: <b><a href="index.php?category=<?= $category ?>#scroll">Newest 
+            <i class="fa fa-arrow-up" aria-hidden="true"></i></a></b>
+        </h4>
         <?php
         foreach($category_articles_asc as $article):
             include 'partials/blog_posts.php';

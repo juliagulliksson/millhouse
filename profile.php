@@ -7,7 +7,7 @@ if(!isset($_SESSION['signed_in']) && empty($_SESSION['signed_in'])){
 }
 //If newpost is set and user is not logged in, redirect to index
 if(isset($_GET['newpost'])):
-    if (!isset($_SESSION['username']) 
+    if (!isset($_SESSION['signed_in']) 
     || $_SESSION['contributor'] == false 
     || isset($_GET['id'])):
         header('location: index.php');
@@ -28,7 +28,8 @@ require 'partials/functions/split_email.php';
 
 if(!isset($_GET['newpost']) && !isset($_GET['editpost'])
 && !isset($_GET['editcomment']) 
-&& !isset($_GET['delete'])):
+&& !isset($_GET['delete'])
+&& !isset($_GET['edit'])):
 ?>
 <div class="profile-wrapper">
     <div class="profile-container">
@@ -37,7 +38,7 @@ if(!isset($_GET['newpost']) && !isset($_GET['editpost'])
         </div>
         <div class="profile-info">
             <h1><?= $_SESSION['username']?></h1>
-            <h2><?= split_email($_SESSION['email']);?></h2>
+            <h2><?= split_email($_SESSION['email']); ?></h2>
             <?php 
             if($_SESSION['contributor'] == true):
             ?>
@@ -129,7 +130,8 @@ if(!isset($_GET['newpost']) && !isset($_GET['editpost'])
         </ul>    
     </div>
     <!-- /.list-container-collapse -->
-    <div class="delete-container">
+    <div class="button-container">
+        <a class="edit" href="profile.php?edit=true#scroll">Edit profile</a>
         <a class="delete" href="profile.php?delete=true#scroll">Delete account</a>  
     </div>
 </div>
@@ -137,28 +139,22 @@ if(!isset($_GET['newpost']) && !isset($_GET['editpost'])
 <?php
 endif;// End of main get if
 
+// Edit account
+if(isset($_GET['edit'])): 
+    require 'profile_includes/edit_profile.php';
+endif; // End of edit if
+
 // Delete account
-if(isset($_GET['delete'])):?>
-    <div class="delete-account">
-        <h3><i class="fa fa-frown-o" aria-hidden="true"></i></h3>
-        <h1>Are you sure you want to delete your account?</h1>
-        <p>Deleting your account will also delete all your comments and blogposts.
-        <br />No take backsies.</p>
-        <h2><a href="profile.php">
-            <i class="fa fa-arrow-left" aria-hidden="true"></i> No, please! Take me back!
-        </a></h2>
-        <a class="delete" href="actions/delete_account.php?id=<?= $_SESSION['id']?>">
-        Delete account</a>          
-    </div>
-<?php 
+if(isset($_GET['delete'])): 
+    require 'profile_includes/delete_profile.php';
 endif; // End of delete if
 
 if(isset($_GET['newpost'])):
-    require 'partials/new_post.php';
+    require 'profile_includes/new_post.php';
 endif; // End of newpost if
 
 if(isset($_GET['editpost'])):
-    require 'partials/edit_blogpost.php';
+    require 'profile_includes/edit_blogpost.php';
 endif;// End of editpost if
 
 if(isset($_GET['editcomment'])):
