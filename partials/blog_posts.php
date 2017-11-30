@@ -16,7 +16,7 @@
              alt="<?=$article['alt_text']?>" 
              class="article_image">
         <?php endif; ?>
-        <p><?= string_length($article['text'], 65, $article['postID'])?></p>
+        <p><?= string_length($article['text'], 45, $article['postID'])?></p>
         <a href="index.php?id=<?= $article['postID'] ?>#scroll" class="comments-counter">
         COMMENTS (<?= $article['comments']?>)
         </a>

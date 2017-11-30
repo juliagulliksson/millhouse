@@ -44,7 +44,6 @@ function log_in ($username, $password){
 
     $_SESSION["admin"] =
             $fetched_user["admin"];
-
     }
 }
 ?>

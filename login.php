@@ -35,7 +35,7 @@ require 'partials/head.php';
                id="submit_login"
                value="Login">
     </form>
-    <b>Not a member yet?</b> <a href="register.php#scroll">Register here!</a>
+    Not a member yet? <b><a href="register.php#scroll">Register here!</a></b>
 </div>
 <!-- /.login-collapse -->
 <?php require 'partials/footer.php'; ?>

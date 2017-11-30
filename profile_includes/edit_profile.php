@@ -19,7 +19,7 @@
         <input type="submit" value="Save Profile Settings">
     </form>
     <h2>
-        <a href="profile.php">
+        <a href="profile.php#scroll">
             <i class="fa fa-arrow-left" aria-hidden="true"></i> No, I'm happy as it is. Take me back!
         </a>
     </h2>        

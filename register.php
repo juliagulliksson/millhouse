@@ -20,7 +20,7 @@ require 'partials/head.php'; ?>
 if(isset($_GET['register'], $_GET['username'])){
     if($_GET['register'] == 'success' && $exists == true){ ?>
         <p class="success-message"><?= $username ?> was successfully registered!
-        <a href="login.php#scroll">Login here</a></p>
+        <a href="login.php#scroll">Login here!</a></p>
         <?php
     }//end of check exist
 }
@@ -59,7 +59,7 @@ if(!empty($error_messages)) {
         <br />
         <input type="submit" name="register-user" value="Register">
     </form>    
-    <b>Already signed up?</b> <a href="login.php#scroll">Login here!</a>
+    Already signed up? <b><a href="login.php#scroll">Login here!</a></b>
 </div>
 <!-- /.register-collapse -->
 <?php require 'partials/footer.php'; ?>
