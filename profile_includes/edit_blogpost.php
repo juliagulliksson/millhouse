@@ -7,17 +7,23 @@ $statement->execute(array(
     ":id" => $post_id
 ));
 $edit_post = $statement->fetch(PDO::FETCH_ASSOC);
+
 ?>
+
 <div class="insert-form">
     <div class="go-back">
         <a href="index.php?id=<?= $post_id ?>#scroll">
             <i class="fa fa-arrow-left" aria-hidden="true"></i>
         </a>
     </div>
+    
+    <?php require 'profile_includes/editpost_errors.php'; ?>
+
     <div class="center-heading">
         <h1>Edit blogpost</h1>
     </div>
-    <form action="actions/edit_blogpost_sql.php?id=<?= $post_id ?>" method="POST" enctype="multipart/form-data">
+    <form action="profile.php?editpost=true&id=<?= $post_id ?>" method="POST" 
+    enctype="multipart/form-data">
     <div class="form-group">
         <div class="form-group__title">
             <label for="edit_title">Title:</label><br />
@@ -67,7 +73,7 @@ $edit_post = $statement->fetch(PDO::FETCH_ASSOC);
             <input type="text" name="edit_alt_text" value="<?=$edit_post['alt_text'] ?>">
         </div><!--/.form-group__alt_text-collapse-->
     </div><!--/.form-group-collapse-->
-    <input type="submit" name="submit" value="Submit">
+    <input type="submit" name="editpost_submit" value="Submit">
     </form>
 </div>
 <!-- /.insert-form-collapse -->
