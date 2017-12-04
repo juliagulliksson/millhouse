@@ -32,16 +32,16 @@ require 'partials/head.php';
     if(isset($_GET['category']) && !isset($_GET['asc'])):
         $category = $_GET['category'];
         include 'actions/category_articles.php';  
-    if (count($category_articles) > 1):
-    ?>  
-        <h4 class="sort">
-            Sort by date: 
-            <b><a href="index.php?category=<?= $category ?>&asc=true#scroll">Oldest 
-            <i class="fa fa-arrow-up" aria-hidden="true"></i></a></b>
-        </h4>
-        
-    <?php 
-    endif;//End of count category_articles if
+        if (count($category_articles) > 1):
+        ?>  
+            <h4 class="sort">
+                Sort by date: 
+                <b><a href="index.php?category=<?= $category ?>&asc=true#scroll">Oldest 
+                <i class="fa fa-arrow-up" aria-hidden="true"></i></a></b>
+            </h4>
+            
+        <?php 
+        endif;//End of count category_articles if
 
     foreach($category_articles as $article):
         include 'partials/blog_posts.php';    

@@ -5,6 +5,12 @@ if(isset($_GET['error'])): ?>
 endif;
 
 if(isset($_POST['editpost_submit'])):
+
+    if(!empty($_FILES['edit_image']['name']) && empty($_POST['edit_alt_text'])): 
+        ?>
+            <p class="error-message">Error: Enter an image text</p>
+        <?php
+    endif;
     // If blog post with image is posted
     if (!empty($_FILES["edit_image"]) && !empty($_POST["edit_alt_text"])):
         if(is_array($upload_ok) && !empty($upload_ok)):
