@@ -7,7 +7,7 @@ endif;
 
 require 'partials/head.php';
 ?>
-<main>
+<main role="main">
     <?php
    
     // Startpage blog posts
@@ -79,7 +79,7 @@ require 'partials/head.php';
         
         ?>
 </main>
-<aside>
+<aside role="complementary">
     <?php require 'partials/aside.php'; ?>
 </aside>
 <?php require 'partials/footer.php'; ?>
