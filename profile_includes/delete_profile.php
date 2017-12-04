@@ -4,7 +4,7 @@
         <p>Deleting your account will also delete all your comments and blogposts.
         <br />No take backsies.</p>
         <h2>
-            <a href="profile.php">
+            <a href="profile.php#scroll">
                 <i class="fa fa-arrow-left" aria-hidden="true"></i> 
                 No, please! Take me back!
             </a>

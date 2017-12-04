@@ -16,8 +16,9 @@
 .page-number{
     text-align: center;
     margin-bottom: 20px;
-    a:link{
+    a:link, a:visited{
     @extend #current-page;
+    color: $dark_blue;
     font-size: 0.8em;
     background-color: $light_gray;
     padding: 5px;

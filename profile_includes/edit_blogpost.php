@@ -19,9 +19,7 @@ $edit_post = $statement->fetch(PDO::FETCH_ASSOC);
     
     <?php require 'profile_includes/edit_blogpost_errors.php'; ?>
 
-    <div class="center-heading">
-        <h1>Edit blogpost</h1>
-    </div>
+    <h1>Edit blogpost</h1>
     <form action="profile.php?editpost=true&id=<?= $post_id ?>" method="POST" 
     enctype="multipart/form-data">
     <div class="form-group">

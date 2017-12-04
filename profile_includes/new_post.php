@@ -4,10 +4,15 @@
             <i class="fa fa-arrow-left" aria-hidden="true"></i>
         </a>
     </div>
+<<<<<<< HEAD
     
     <?php require 'profile_includes/new_post_errors.php'; ?>
 
     <div class="center-heading"><h1>Write a new blog post</h1></div>
+=======
+    <?php require 'profile_includes/newpost_errors.php'; ?>
+    <h1>Write a new blog post</h1>
+>>>>>>> master
     <form action="profile.php?newpost=true" method="POST"
        enctype="multipart/form-data">
         <div class="form-group">
