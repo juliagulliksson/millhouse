@@ -1,7 +1,7 @@
         
         </div>
     </div> <!-- /.wrapper-collapse -->
-    <footer>
+    <footer role="contentinfo">
         <div class="footer-wrapper">
             <div class="footer-container">
                 <div class="footer-logo">

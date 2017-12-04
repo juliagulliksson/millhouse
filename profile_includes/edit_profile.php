@@ -14,6 +14,7 @@
         <input name="new_password" id="new_password" type="text" placeholder="New password">
         <br />
         <label for="verify_new_password" class="visuallyhidden">Verify new password:</label>
+        <br />
         <input name="verify_new_password" id="verify_new_password" type="text" placeholder="Verify new password">
         <br />
         <input type="submit" value="Save Profile Settings">

@@ -1,6 +1,6 @@
 <?php
 $comment_id = $_GET['comment_id'];
-require 'actions/sql.php';
+require 'actions/main_sql.php';
 $statement = $pdo->prepare("SELECT * FROM comments 
 WHERE id = :id");
 $statement->execute(array(

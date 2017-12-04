@@ -10,9 +10,7 @@ if(isset($_POST['newpost_submit'])):
         <p class="error-message">Error: Enter an image text</p>
     <?php
     endif;
-endif;
 
-if(isset($_POST['newpost_submit'])):
     // If blog post with image is posted
     if (!empty($_FILES["image"]) && !empty($_POST["alt_text"])):
         if(is_array($upload_ok) && !empty($upload_ok)):
@@ -21,5 +19,5 @@ if(isset($_POST['newpost_submit'])):
             <?php endforeach;
         endif;//end of check if in array and not empty
     endif;//end of check if not empty
-endif; //end of isset
+endif; //end of isset newpost submit
 ?>
