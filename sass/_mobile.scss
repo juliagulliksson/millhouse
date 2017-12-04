@@ -233,6 +233,7 @@ select{
 @import '_profile.scss';
 
 .about-container{
+    width: 100%;
     text-align: center;
     h1{
         margin-bottom: 10px;
@@ -240,19 +241,15 @@ select{
     }
     h2{
         margin-top: 20px;
-        font-size: 1.8em;
+        margin-bottom: 5px;
+        font-size: 1.2em;
     }
-    img{
-        width: 200px;
-        margin-bottom: 20px;
-        border-radius: 50%;
-        -moz-border-radius: 50%;
-        -webkit-border-radius: 50%;
+    h3{
+        margin: 20px 0px 0px 0px;
+        font-family: 'Georgia', serif;
+        font-style: italic;
+        font-size: 2em;
     }
-}
-
-.about-text{
-    max-width: 75ch;
 }
 
 .success-message{
