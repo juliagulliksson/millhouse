@@ -4,14 +4,19 @@
             <i class="fa fa-arrow-left" aria-hidden="true"></i> Back
         </a>
     </div>
-    <?php require 'profile_includes/newpost_errors.php'; ?>
-    <h1>Write a new blog post</h1>
+    
+    <?php require 'profile_includes/new_post_errors.php'; ?>
+    
+    <div class="center-heading"><h1>Write a new blog post</h1></div>
     <form action="profile.php?newpost=true" method="POST"
        enctype="multipart/form-data">
         <div class="form-group">
             <div class="form-group__title">
-                <label for="blog_title">Title:</label><br />
-                <input type="text" class="form-control" name="blog_title" id="blog_title">
+                <label for="title">Title:</label><br />
+                <input type="text" class="form-control" name="blog_title" id="blog_title"
+                value="<?php if(isset($_POST['blog_title'])){
+                    echo $_POST['blog_title'];
+                    } ?>">
             </div>
             <div class="form-group__category">
                 <label for="category">Choose category:</label><br />
@@ -24,7 +29,9 @@
         </div>
         <!-- /.form-group-collapse -->
         
-        <textarea name="post_text" id="editor"></textarea>
+        <textarea name="post_text" id="editor">
+        <?php if(isset($_POST['post_text'])){ echo $_POST['post_text'];} ?>
+        </textarea>
         <script>
             ClassicEditor
             .create(document.querySelector('#editor'))
@@ -43,7 +50,7 @@
             <input type="text" name="alt_text" id="alt_text" placeholder="Write something about your image..">
         </div><!--/.form-group__category-collapse-->
     </div><!--/.form-group-collapse-->
-    <input type="submit" name="newpost_submit" value="Submit">
+        <input type="submit" name="newpost_submit" value="Submit">
     </form>
 </div>
 <!-- /.insert-form-collapse -->
