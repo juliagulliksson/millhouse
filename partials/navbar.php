@@ -47,8 +47,6 @@
                 <?php else: ?>
                 <li class="button nav-margin"><a href="login.php#scroll">Login</a></li>
                 <li class="button"><a href="register.php#scroll">Register</a></li>
-                </div>
-                <!-- /.buttons-collapse -->
                 <?php endif; ?>
             </ul>
         </div>

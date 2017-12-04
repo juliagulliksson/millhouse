@@ -7,14 +7,14 @@
         <br />
         <label for="new_username">Change username:</label>
         <br />
-        <input name="new_username" type="text" placeholder="New username">
+        <input name="new_username" id="new_username" type="text" placeholder="New username">
         <br />
         <label for="new_password">Change password:</label>
         <br/ >
-        <input name="new_password" type="text" placeholder="New password">
+        <input name="new_password" id="new_password" type="text" placeholder="New password">
         <br />
         <label for="verify_new_password" class="visuallyhidden">Verify new password:</label>
-        <input name="verify_new_password" type="text" placeholder="Verify new password">
+        <input name="verify_new_password" id="verify_new_password" type="text" placeholder="Verify new password">
         <br />
         <input type="submit" value="Save Profile Settings">
     </form>

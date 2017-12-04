@@ -33,29 +33,33 @@ if(!empty($error_messages)) {
 } ?>
     <h1>Register</h1>
     <form method="POST" action="register.php">
-        <label for="register_username" class="visuallyhidden">Username:</label>
+        <label for="register_username">Username:</label>
+        <br />
         <input type="text" 
                name="register_username" 
+               id="register_username"
                value="<?php if(isset($_POST["register_username"])){
-                    echo $_POST["register_username"];} ?>" 
-               placeholder="Username">
+                    echo $_POST["register_username"];} ?>">
         <br />
-        <label for="register_email" class="visuallyhidden">E-mail:</label>
+        <label for="register_email">E-mail:</label>
+        <br />
         <input type="email"
                name="register_email"
+               id="register_email"
                value="<?php if(isset($_POST['register_email'])){
-                    echo $_POST['register_email'];} ?>"
-               placeholder="E-mail">
+                    echo $_POST['register_email'];} ?>">
         <br />
-        <label for="register_password" class="visuallyhidden">Password:</label>
+        <label for="register_password">Password:</label>
+        <br />
         <input type="password"
-               name="register_password" 
-               placeholder="Password">
+               name="register_password"
+               id="register_password">
         <br />
-        <label for="verify_password" class="visuallyhidden">Verify password:</label>
+        <label for="verify_password">Verify password:</label>
+        <br />
         <input type="password" 
                name="verify_password"
-               placeholder="Verify Password">
+               id="verify_password">
         <br />
         <input type="submit" name="register-user" value="Register">
     </form>    
