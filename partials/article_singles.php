@@ -10,7 +10,7 @@ require 'actions/article_single_sql.php';
 <div class="blog-post">
     <div class="go-back">
         <a href="index.php">
-            <i class="fa fa-arrow-left" aria-hidden="true"></i>
+            <i class="fa fa-arrow-left" aria-hidden="true"></i> Back
         </a>
     </div>
     <article>

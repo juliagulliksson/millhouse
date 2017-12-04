@@ -72,8 +72,6 @@ require 'partials/functions/split_email.php';
             if($user_comments[0]['number_of_comments'] > 0):
                 echo "</a>";
             endif; ?>
-            
-        </a>
     </div>
     <!-- /.amount-container-collapse -->
     <div class="list-container">

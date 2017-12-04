@@ -19,17 +19,17 @@ require 'partials/head.php';
 
     <h1>Login</h1>
     <form action="index.php" class="form_toggle" id="login_form" method="POST">
-        <label for="username" class="visuallyhidden">Username:</label>
+        <label for="input_login_username">Username:</label>
+        <br />
         <input type="text"
                id="input_login_username"
-               name="username"
-               placeholder="Username">
+               name="username">
         <br />
-        <label for="password" class="visuallyhidden">Password:</label>
+        <label for="input_login_password">Password:</label>
+        <br />
         <input type="password" 
                id="input_login_password"
-               name="password"
-               placeholder="Password">
+               name="password">
         <br />
         <input type="submit"
                id="submit_login"
