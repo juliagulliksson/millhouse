@@ -233,19 +233,21 @@ select{
 @import '_profile.scss';
 
 .about-container{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     text-align: center;
     h1{
+        margin-bottom: 10px;
         font-size: 2.2em;
     }
     h2{
+        margin-top: 20px;
         font-size: 1.8em;
     }
     img{
-        width: 100%;
+        width: 200px;
         margin-bottom: 20px;
+        border-radius: 50%;
+        -moz-border-radius: 50%;
+        -webkit-border-radius: 50%;
     }
 }
 
@@ -263,7 +265,7 @@ select{
 
 .error-message{
     @extend .success-message;
-    color: #cd5c5c;
+    color: $red;
 }
 
 @import '_pagination.scss';
