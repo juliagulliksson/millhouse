@@ -1,6 +1,6 @@
 <?php
 $post_id = $_GET['id'];
-require 'actions/sql.php';
+require 'actions/main_sql.php';
 $statement = $pdo->prepare("SELECT * FROM posts WHERE id = :id
   ");
 $statement->execute(array(
