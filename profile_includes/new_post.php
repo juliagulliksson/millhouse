@@ -39,7 +39,7 @@
                 console.error(error);
             });
         </script>
-        <input value="<?= $_SESSION['id']?>" name="user_id">
+        <input type="hidden" value="<?= $_SESSION['id']?>" name="user_id">
         <div class="form-group">
         <div class="form-group__title">
             <label for="upload_image">Choose image:</label><br />
