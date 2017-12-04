@@ -17,7 +17,7 @@ $edit_post = $statement->fetch(PDO::FETCH_ASSOC);
         </a>
     </div>
     
-    <?php require 'profile_includes/editpost_errors.php'; ?>
+    <?php require 'profile_includes/edit_blogpost_errors.php'; ?>
 
     <h1>Edit blogpost</h1>
     <form action="profile.php?editpost=true&id=<?= $post_id ?>" method="POST" 
@@ -25,7 +25,11 @@ $edit_post = $statement->fetch(PDO::FETCH_ASSOC);
     <div class="form-group">
         <div class="form-group__title">
             <label for="edit_title">Title:</label><br />
-            <input type="text" class="form-control" name="edit_title" value="<?= $edit_post['post_title'] ?>">
+            <input type="text" class="form-control" name="edit_title" 
+            value="<?php if(isset($_POST['edit_title'])){
+                echo $_POST['edit_title'];
+            }else { 
+                echo $edit_post['post_title']; } ?>">
         </div>
         <div class="form-group__category">
             <label for="category">Choose category:</label><br />
@@ -43,7 +47,10 @@ $edit_post = $statement->fetch(PDO::FETCH_ASSOC);
     </div>
     <!-- /.form-group-collapse -->
    
-    <textarea name="edit_text" id="editor"><?= $edit_post['text']?></textarea>
+    <textarea name="edit_text" id="editor"><?php if(isset($_POST['edit_title'])){
+                echo $_POST['edit_text'];
+            }else { 
+                echo $edit_post['text']; } ?></textarea>
     <script>
         ClassicEditor
         .create(document.querySelector('#editor'))
