@@ -17,7 +17,7 @@
     <link rel="shortcut icon" href="images/millhouse.ico">
 </head>
 <body>
-    <header>
+    <header role="banner">
         <?php require 'navbar.php'; ?>
         <div class="hero">
             <h2>Feel the magic of Millhouse</h2>
