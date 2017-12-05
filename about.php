@@ -24,31 +24,25 @@ require 'partials/head.php';
     <div class="about-group">
         <div class="press">
             <h2 id="press">Press</h2>
-            <p class="about-text">
-                Massa vitae tortor condimentum lacinia quis vel eros donec. Pulvinar pellentesque
-                habitant morbi tristique senectus et netus.
-            </p> 
+            <p>Massa vitae tortor condimentum lacinia quis vel eros donec. Pulvinar pellentesque
+            habitant morbi tristique senectus et netus.</p> 
         </div>
         <div class="sustainability">
             <h2 id="sustainability">Sustainability</h2>
-            <p class="about-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            </p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+            incididunt ut labore et dolore magna aliqua.</p>
         </div>
     </div>
     <div class="about-group">
         <div class="investors">
             <h2 id="investors">Investors</h2>
-            <p class="about-text">Est placerat in egestas
-                erat imperdiet sed euismod nisi. Pretium quam vulputate dignissim suspendisse in
-                est ante in nibh.
-            </p>
+            <p>Est placerat in egestas erat imperdiet sed euismod nisi. Pretium quam vulputate
+            dignissim suspendisse in est ante in nibh.</p>
         </div>
         <div class="jobs">
             <h2 id="jobs">Jobs</h2>
             <p>Want to work with us at Millhouse?<br />
-                We always look for new colleagues here at Millhouse. Please send us your CV!
-            </p>
+            We always look for new colleagues here at Millhouse. Please send us your CV!</p>
         </div>
     </div>
     <h2 id="contact">Contact</h2>

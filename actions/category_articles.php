@@ -1,5 +1,4 @@
 <?php
-
 $statement = $pdo->prepare(" SELECT posts.date, posts.id as postID, 
   posts.image, posts.alt_text, posts.text, 
   posts.post_title, posts.date, categories.title, 
@@ -37,4 +36,3 @@ $statement = $pdo->prepare(" SELECT posts.date, posts.id as postID,
     ":category_id" => $category
   ));
   $category_articles_asc = $statement->fetchAll(PDO::FETCH_ASSOC);
-

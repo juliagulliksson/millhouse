@@ -2,7 +2,7 @@
 require 'partials/database.php';
 require 'partials/pagination.php';
 
-//Main article fetch
+// Main article fetch
 $statement = $pdo->prepare("SELECT posts.date, posts.id as postID, 
 posts.text, posts.post_title, categories.title, categories.id AS category_id,
 users.username, users.email, users.id as user_id, COUNT(comments.post_id) AS comments,
@@ -21,7 +21,7 @@ LIMIT 5 OFFSET $offset_number
 $statement->execute();
 $articles = $statement->fetchAll(PDO::FETCH_ASSOC);
 
-//Categories (number of posts)
+// Categories (number of posts)
 $statement = $pdo->prepare(" SELECT categories.title, categories.id, 
 COUNT(posts.id) AS number_of_posts
 FROM categories 
@@ -32,14 +32,14 @@ GROUP BY categories.id
 $statement->execute();
 $categories_disctinct = $statement->fetchAll(PDO::FETCH_ASSOC);
 
-//Categories fetch
+// Categories fetch
 $statement = $pdo->prepare("SELECT *
 FROM categories
 ");
 $statement->execute();
 $categories = $statement->fetchAll(PDO::FETCH_ASSOC);
 
-//Distinct months fetch
+// Distinct months fetch
 $statement = $pdo->prepare("SELECT DISTINCT MONTH(date) as month, 
 COUNT(posts.id) as number_of_posts
 FROM posts 
@@ -47,6 +47,3 @@ GROUP BY MONTH(date)
 ORDER BY MONTH(date) DESC");
 $statement->execute();
 $months_number = $statement->fetchAll(PDO::FETCH_ASSOC);
-
-
- 

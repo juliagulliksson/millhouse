@@ -5,18 +5,17 @@ require 'partials/head.php';
     <?php
     if(isset($_GET['login'])):
         if($_GET['login'] == 'fail'): ?>
-            <p class="error-message">Login failed! Username does not exist</p>
+        <p class="error-message">Login failed! Username does not exist</p>
         <?php
         endif;
     endif;
     if(isset($_GET['password'])):
         if($_GET['password'] == 'fail'): ?>
-            <p class="error-message">Login failed! Incorrect password</p>
+        <p class="error-message">Login failed! Incorrect password</p>
         <?php
         endif;
     endif;
     ?>
-
     <h1>Login</h1>
     <form action="index.php" class="form_toggle" id="login_form" method="POST">
         <label for="input_login_username">Username:</label>
