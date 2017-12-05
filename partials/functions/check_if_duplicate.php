@@ -6,7 +6,6 @@ function check_if_duplicate($column, $value){
         FROM users
         WHERE $column = '$value'"); 
 
-
         $my_sql->execute();
         $existing = $my_sql->fetch(PDO::FETCH_NUM);
     
@@ -16,4 +15,3 @@ function check_if_duplicate($column, $value){
             $is_duplicate = false;
         } return $is_duplicate;
     }
-?>

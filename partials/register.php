@@ -1,5 +1,4 @@
 <?php
-
 // If register submit button is clicked
 if(isset($_POST["register-user"])){
     
@@ -81,5 +80,4 @@ if(isset($_POST["register-user"])){
             $admin);                 
     }
 }
-
 ?>

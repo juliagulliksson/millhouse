@@ -22,7 +22,7 @@ if(isset($_GET['register'], $_GET['username'])){
         <p class="success-message"><?= $username ?> was successfully registered!
         <a href="login.php#scroll">Login here!</a></p>
         <?php
-    }//end of check exist
+    }// End of check exist
 }
 
 if(!empty($error_messages)) {

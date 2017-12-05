@@ -1,6 +1,5 @@
 <?php
-
-//single articles fetch
+// Single articles fetch
 $statement = $pdo->prepare("SELECT posts.date, posts.id as postID, 
 posts.text, posts.post_title, posts.date, categories.title, categories.id AS category_id,
 users.username, users.email, users.id as user_id,
@@ -31,5 +30,3 @@ $statement->execute(array(
   ":id" => $id
 ));
 $comments = $statement->fetchAll(PDO::FETCH_ASSOC);
-
-  

@@ -3,7 +3,6 @@ header('location: ../index.php');
 require '../partials/database.php';
 $user_id = $_GET['id'];
 
-
 $statement = $pdo->prepare("DELETE FROM posts WHERE user_id = :user_id");
 $statement->execute(array(
   ":user_id" => $user_id

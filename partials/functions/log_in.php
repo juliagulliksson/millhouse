@@ -46,4 +46,3 @@ function log_in ($username, $password){
             $fetched_user["admin"];
     }
 }
-?>

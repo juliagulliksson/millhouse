@@ -15,13 +15,14 @@ require 'actions/article_single_sql.php';
     </div>
     <article>
         <h1><?= $article_single['post_title']; ?></h1>
-        <h2><b><a href="index.php?category=<?= $article_single['category_id']?>">
-        <?= $article_single['title']; ?></a></b>
+        <h2>
+            <b><a href="index.php?category=<?= $article_single['category_id']?>">
+            <?= $article_single['title']; ?></a></b>
             <span class="dot">&bull;</span>
             <?= replace_date($article_single['date']) ?>
             <span class="dot">&bull;</span> 
             <b><a href="user.php?uid=<?= $article_single['user_id'] ?>#scroll">
-               <?= $article_single['username'] ?></a></b>
+            <?= $article_single['username'] ?></a></b>
         </h2>
         <?php if(!empty($article_single['image'])): ?>
         <img src="partials/<?=$article_single['image']?>" 
@@ -38,8 +39,8 @@ require 'actions/article_single_sql.php';
             href="profile.php?editpost=true&id=<?= $article_single['postID']?>#scroll">
             Edit <i class="fa fa-pencil" aria-hidden="true"></i></a>
         <a class="delete-button" 
-            href="actions/delete_blogpost.php?id=<?= $article_single['postID']?>">
-            Delete <i class="fa fa-trash" aria-hidden="true"></i></a>
+           href="actions/delete_blogpost.php?id=<?= $article_single['postID']?>">
+           Delete <i class="fa fa-trash" aria-hidden="true"></i></a>
         <?php
             endif;// End of check user/admin 
         endif;// End of signed in if 
@@ -65,12 +66,13 @@ require 'actions/article_single_sql.php';
                 if($comment['user_id'] == $_SESSION['id'] 
                 || $_SESSION['admin'] == true):
             ?>
-                    <a class="edit-button"href=
-                    "profile.php?editcomment=true&comment_id=<?= $comment['comment_id']?>&post_id=<?= $comment['post_id']?>#scroll">
-                    Edit <i class="fa fa-pencil" aria-hidden="true"></i></a>
-                    <a class="delete-button"
-                    href="actions/delete_comment.php?id=<?= $comment['comment_id']?>#scroll">
-                    Delete <i class="fa fa-trash" aria-hidden="true"></i></a>
+            <a class="edit-button" 
+               href="profile.php?editcomment=true&comment_id=<?= $comment['comment_id']?>
+               &post_id=<?= $comment['post_id']?>#scroll">
+               Edit <i class="fa fa-pencil" aria-hidden="true"></i></a>
+            <a class="delete-button"
+               href="actions/delete_comment.php?id=<?= $comment['comment_id']?>#scroll">
+               Delete <i class="fa fa-trash" aria-hidden="true"></i></a>
                     <?php 
                 endif;//end of check user/admin
             endif;//end of signed in if ?>
@@ -85,19 +87,19 @@ require 'actions/article_single_sql.php';
     if(isset($_SESSION['signed_in'])):
     ?>
         <div class="comment-field">
-            <?php 
-            if(!empty($error_message)): ?>
-                <p class="error-message"><?= $error_message ?></p>
-            <?php endif;
-            ?>
-            <h4>Comment the blog post here:</h4>
-            <form action="index.php?id=<?= $id ?>" method="POST">
-                <input type="hidden" value="<?= $_SESSION['id'] ?>" name="user_id">
-                <textarea name="comment" placeholder="Type your comment" required></textarea>
-                <br />
-                <input type="submit" name="comment_submit" value="Comment">
-            </form> 
-        </div>
+        <?php 
+        if(!empty($error_message)): ?>
+        <p class="error-message"><?= $error_message ?></p>
+        <?php endif;
+        ?>
+        <h4>Comment the blog post here:</h4>
+        <form action="index.php?id=<?= $id ?>" method="POST">
+            <input type="hidden" value="<?= $_SESSION['id'] ?>" name="user_id">
+            <textarea name="comment" placeholder="Type your comment" required></textarea>
+            <br />
+            <input type="submit" name="comment_submit" value="Comment">
+        </form> 
+    </div>
     <!-- /.comment-field-collapse -->
     <?php 
         else:
