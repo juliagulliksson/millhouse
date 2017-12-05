@@ -35,7 +35,7 @@ if(gettype($upload_ok) == 'boolean' &&
         category_id    = :new_category,
         image          = :new_image,
         alt_text       = :new_alt_text
-        WHERE id = :id"
+        WHERE id       = :id"
         );
 
         $statement->execute(array(
@@ -59,7 +59,7 @@ if (empty($_FILES["edit_image"]["name"])) {
         SET post_title = :new_title, 
         text           = :new_text, 
         category_id    = :new_category
-        WHERE id = :id"
+        WHERE id       = :id"
         );
 
         $statement->execute(array(
