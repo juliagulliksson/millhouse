@@ -11,5 +11,4 @@ function string_length($blog_string, $length, $link){
     } else {
     return $blog_string;
     }
-    
   }

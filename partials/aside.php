@@ -31,9 +31,7 @@
     <div class="categories-list">
         <h3 class="archive">Archive</h3>
         <ul>
-        <?php foreach ($months_number as $month):
-            $month_number = $month['month'];
-        ?>
+        <?php foreach ($months_number as $month): $month_number = $month['month']; ?>
             <li>
                 <a href="index.php?month=<?= $month['month']?>">
                 <?= replace_month($month_number) ?> (<?= $month['number_of_posts']?>)</a>

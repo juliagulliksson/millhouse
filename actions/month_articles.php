@@ -1,5 +1,5 @@
 <?php
-//Months fetch
+// Months fetch
 $statement = $pdo->prepare("SELECT posts.date, posts.id as postID, 
 posts.image, posts.alt_text, posts.text, 
 posts.post_title, posts.date, categories.title, 
@@ -16,5 +16,3 @@ ORDER BY posts.date DESC
   ");
   $statement->execute();
   $month_articles = $statement->fetchAll(PDO::FETCH_ASSOC);
-
-
