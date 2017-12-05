@@ -1,7 +1,7 @@
 <div class="edit-account">
     <h1>Edit profile</h1>
     <p>Not happy with your username or profile photo? Feel happy to make changes.</p>
-    <form action="">
+    <form action="profile.php?edit=true">
         <label for="new_profile_photo">Upload new profile photo:</label>
         <input type="file" name="new_profile_photo" id="">
         <br />
