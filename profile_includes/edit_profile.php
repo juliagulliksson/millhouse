@@ -7,17 +7,25 @@
         <br />
         <label for="new_username">Change username:</label>
         <br />
-        <input name="new_username" id="new_username" type="text" placeholder="New username">
+        <input name="new_username" id="new_username" type="text">
         <br />
-        <label for="new_password">Change password:</label>
+        <input type="submit" value="Save Profile Settings">
+    </form>
+
+    <form action="profile.php?edit=true">
+        <label for="old_password">Current password:</label>
         <br/ >
-        <input name="new_password" id="new_password" type="text" placeholder="New password">
+        <input name="old_password" id="old_password" type="text">
+        <br />
+        <label for="new_password">New password:</label>
+        <br/ >
+        <input name="new_password" id="new_password" type="text">
         <br />
         <label for="verify_new_password" class="visuallyhidden">Verify new password:</label>
         <br />
-        <input name="verify_new_password" id="verify_new_password" type="text" placeholder="Verify new password">
+        <input name="verify_new_password" id="verify_new_password" type="text">
         <br />
-        <input type="submit" value="Save Profile Settings">
+        <input type="submit" value="Change Password">
     </form>
     <h2>
         <a href="profile.php#scroll">

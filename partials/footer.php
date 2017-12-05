@@ -1,4 +1,3 @@
-        
         </div>
     </div> <!-- /.wrapper-collapse -->
     <footer role="contentinfo">
@@ -8,21 +7,27 @@
                     <img src="images/millhouse-logo.png" Alt="Millhouse Logo" />
                 </div>
                 <div class="footer-margin">
-                    <ul>
-                        <li><b>OUR SHOPS</b></li>
-                        <li><a href="#">Watches</a></li>
-                        <li><a href="#">Sunglasses</a></li>
-                        <li><a href="#">Interior design</a></li>
-                    </ul>
+                <ul>
+                    <li><b>OUR SHOPS</b></li>
+                    <li>
+                        <a href="webshop/watches.php">Watches</a>
+                    </li>
+                    <li>
+                        <a href="webshop/sunglasses.php">Sunglasses</a>
+                    </li>
+                    <li>
+                        <a href="webshop/interiordesign.php">Interior Design</a>
+                    </li>
+                </ul>
                 </div>
                 <div class="footer-margin">
                     <ul>
                         <li><b>ABOUT MILLHOUSE</b></li>
-                        <li><a href="#">Press</a></li>
-                        <li><a href="#">Contact</a></li>
-                        <li><a href="#">Sustainability</a></li>
-                        <li><a href="#">Jobs</a></li>
-                        <li><a href="#">Investors</a></li>
+                        <li><a href="about.php#press">Press</a></li>
+                        <li><a href="about.php#sustainability">Sustainability</a></li>
+                        <li><a href="about.php#investors">Investors</a></li>
+                        <li><a href="about.php#jobs">Jobs</a></li>
+                        <li><a href="about.php#contact">Contact</a></li>
                     </ul>
                 </div>
                 <div class="social-media">
@@ -34,7 +39,7 @@
                         <li><a href="http://www.facebook.com" target="_blank">
                             <i class="fa fa-facebook-square" aria-hidden="true"></i> Facebook
                         </a></li>
-                        <li><a href="#">
+                        <li><a href="newsletter.php">
                             <i class="fa fa-envelope" aria-hidden="true"></i> Newsletter
                         </a></li>
                         <li><a href="http://www.youtube.com" target="_blank">

@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Millhouse</title>
-    <meta name="description" content="Millhouse - A Fashion Blog about Watches, Sunglasses and Interior design." />
+    <meta name="description"
+          content="Based in the heart of Stockholm, Millhouse brings you some ofthe finest fashion
+                   items of the world." />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.rawgit.com/tonsky/FiraCode/1.204/distr/fira_code.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,800" rel="stylesheet">

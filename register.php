@@ -33,7 +33,7 @@ if(isset($_POST['register-user'])):
     endif;//end of check if in array and not empty
 endif;//end of check if 
 
-if(!empty($error_messages)) {
+if(!empty($error_messages)){
     foreach($error_messages as $error){ ?>
             <p class="error-message"><?= $error ?></p>
         <?php 
@@ -72,7 +72,7 @@ if(!empty($error_messages)) {
         <br />
         <input type="submit" name="register-user" value="Register">
     </form>    
-    Already signed up? <b><a href="login.php#scroll">Login here!</a></b>
+    <p>Already signed up? <b><a href="login.php#scroll">Login here!</a></b></p>
 </div>
 <!-- /.register-collapse -->
 <?php require 'partials/footer.php'; ?>
