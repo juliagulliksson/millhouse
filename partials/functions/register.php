@@ -17,4 +17,3 @@ $my_sql->execute(array(
 ));
     header("location: register.php?register=success&username=$username#scroll");
 }
-?>

@@ -41,33 +41,28 @@ require 'partials/functions/split_email.php';
             <?php
             endif;
         ?>
-            <div class="amount">
-                <h4>
-                    <?= $user_articles[0]['number_of_posts'] ?>
-                </h4>
-                <p>Blog posts</p>
-            </div>
-            <!-- /.amount-collapse -->
+        <div class="amount">
+            <h4><?= $user_articles[0]['number_of_posts'] ?></h4>
+            <p>Blog posts</p>
+        </div>
+        <!-- /.amount-collapse -->
         <?php
             if($user_articles[0]['number_of_posts'] > 0):
                 echo "</a>";
             endif;
-
-        endif; //end of check if contributor ?>
+        endif; // End of check if contributor ?>
         
-            <?php
-            if($user_comments[0]['number_of_comments'] > 0): ?>
-                <a href="index.php?ucomments=true&ucid=<?= $user_info['id'] ?>#scroll">
-            <?php
-            endif;
+        <?php
+        if($user_comments[0]['number_of_comments'] > 0): ?>
+        <a href="index.php?ucomments=true&ucid=<?= $user_info['id'] ?>#scroll">
+        <?php
+        endif;
         ?>
-            <div class="amount">
-                <h4>
-                    <?= $user_comments[0]['number_of_comments'] ?>
-                </h4>
-                <p>Comments</p>
-            </div>
-            <!-- /.amount-collapse -->
+        <div class="amount">
+            <h4><?= $user_comments[0]['number_of_comments'] ?></h4>
+            <p>Comments</p>
+        </div>
+        <!-- /.amount-collapse -->
         <?php
             if($user_comments[0]['number_of_comments'] > 0):
                 echo "</a>";
@@ -75,25 +70,22 @@ require 'partials/functions/split_email.php';
     </div>
     <!-- /.amount-container-collapse -->
     <div class="list-container">
+        <?php if($user_info['contributor'] == true): ?>
+        <h4>Most recent blog posts:</h4>
+        <ul>
         <?php
-        if($user_info['contributor'] == true):
-        ?>
-            <h4>Most recent blog posts:</h4>
-            <ul>
-                <?php
-                if(count($user_blogposts) > 0):
-                    foreach($user_blogposts as $blogpost):
-                ?>
-                <li>
-                    <a href="index.php?id=<?= $blogpost['id']?>#scroll">
-                    <?= $blogpost['post_title'] ?></a>
-                </li>
-                <?php
-                    endforeach;
-            else:
-                echo "<i>This user has not written any blogposts yet</i>";
+        if(count($user_blogposts) > 0):
+            foreach($user_blogposts as $blogpost): ?>
+            <li>
+                <a href="index.php?id=<?= $blogpost['id']?>#scroll">
+                <?= $blogpost['post_title'] ?></a>
+            </li>
+            <?php
+            endforeach;
+                else:
+                    echo "<i>This user has not written any blogposts yet</i>";
         endif;
-            ?>
+        ?>
         </ul>
         <?php endif;//end of check if contributor ?>
         <h4>Most recent comments:</h4>

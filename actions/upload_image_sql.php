@@ -1,9 +1,5 @@
 <?php 
-
-//require "partials/functions/check_image_before_upload.php";
-
-
-//Declaring variables for image upload
+// Declaring variables for image upload
 $target = "article_images/" . basename($_FILES["image"]["name"]);
 $path = $_FILES["image"]["tmp_name"]; 
 $filename = $_FILES["image"]["name"]; 
@@ -12,14 +8,10 @@ $alt_text = $_POST["alt_text"];
 $check_image = getimagesize($path); 
 $image_type = $check_image[2]; 
 
+// Check image before upload
+$upload_ok = check_image_before_upload($image_size, $image_type, $target); 
 
-//Check image before upload
-$upload_ok = check_image_before_upload($image_size, 
-                                       $image_type, 
-                                       $target); 
-
-
-//Inserts to database
+// Inserts to database
 if(gettype($upload_ok) == 'boolean'){
   if(move_uploaded_file($path, 'partials/' . $target)) { 
     $statement = $pdo->prepare( 
@@ -51,4 +43,3 @@ if(gettype($upload_ok) == 'boolean'){
     header('location: index.php');
   } 
 }
-?>

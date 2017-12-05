@@ -34,11 +34,11 @@ require 'partials/head.php';
         include 'actions/category_articles.php';  
         if (count($category_articles) > 1):
         ?>  
-            <h4 class="sort">
-                Sort by date: 
-                <b><a href="index.php?category=<?= $category ?>&asc=true#scroll">Oldest 
-                <i class="fa fa-arrow-up" aria-hidden="true"></i></a></b>
-            </h4>
+        <h4 class="sort">
+            Sort by date: 
+            <b><a href="index.php?category=<?= $category ?>&asc=true#scroll">Oldest 
+            <i class="fa fa-arrow-up" aria-hidden="true"></i></a></b>
+        </h4>
             
         <?php 
         endif;//End of count category_articles if

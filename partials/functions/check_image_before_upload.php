@@ -8,16 +8,13 @@ function check_image_before_upload($image_size, $image_type, $target) {
      }
         else {
              $error_message[] = "Image type must be gif, jpeg, pgn or bmp!";
-             $upload_ok = false;
         }//End if
          
      if ($image_size > 500000000) { 
          $error_message[] = "The image file is too large";
-         $upload_ok = false;
      }
-     elseif (file_exists("partials/" . $target)) {
+     if (file_exists("partials/" . $target)) {
          $error_message[] = "The image already exists";
-         $upload_ok = false;
      }
      if($upload_ok){
          return $upload_ok;

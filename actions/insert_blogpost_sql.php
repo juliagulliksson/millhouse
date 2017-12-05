@@ -10,8 +10,7 @@ if(empty($body) || empty($category)
     header('Location: profile.php?newpost=true&error=true#scroll');
 }elseif(empty($_FILES["image"]["name"]) && empty($_POST["alt_text"])){
     // If blog post without image is posted
-    
-        
+       
     $statement = $pdo->prepare(
         "INSERT INTO posts (post_title, category_id, text, 
         date, user_id, image, alt_text) 
@@ -28,4 +27,3 @@ if(empty($body) || empty($category)
     ));
     header('location: index.php');
 }// End elseif
-

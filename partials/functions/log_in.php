@@ -43,7 +43,6 @@ function log_in ($username, $password){
     $_SESSION["signed_in"] = true;
 
     $_SESSION["admin"] =
-            $fetched_user["admin"];
+        $fetched_user["admin"];
     }
 }
-?>

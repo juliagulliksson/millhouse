@@ -1,5 +1,4 @@
 <?php
-
 function split_email($user_email){
     $length_of_user_email = strlen($user_email);
     if($length_of_user_email > 20){

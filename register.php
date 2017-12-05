@@ -1,5 +1,6 @@
 <?php 
 require 'partials/includes.php';
+require 'partials/functions/check_user_values.php';
 require 'partials/functions/check_if_duplicate.php';
 require 'partials/register.php';
 
@@ -22,15 +23,23 @@ if(isset($_GET['register'], $_GET['username'])){
         <p class="success-message"><?= $username ?> was successfully registered!
         <a href="login.php#scroll">Login here!</a></p>
         <?php
-    }//end of check exist
+    }// End of check exist
 }
+if(isset($_POST['register-user'])):
+    if(is_array($check_user_input) && !empty($check_user_input)):
+        foreach ($check_user_input as $error_message):?>
+        <p class="error-message"><?= $error_message ?><br/></p>
+        <?php endforeach;
+    endif;//end of check if in array and not empty
+endif;//end of check if 
 
 if(!empty($error_messages)) {
     foreach($error_messages as $error){ ?>
             <p class="error-message"><?= $error ?></p>
         <?php 
     }
-} ?>
+}
+?>
     <h1>Register</h1>
     <form method="POST" action="register.php">
         <label for="register_username">Username:</label>
