@@ -7,8 +7,8 @@ $user_id    = $_POST['user_id'];
 
 if(empty($body) || empty($category)
 || empty($title)){
-    header('Location: profile.php?newpost=error&error=error#scroll');
-}elseif(empty($_FILES["image"]) && empty($_POST["alt_text"])){
+    header('Location: profile.php?newpost=true&error=true#scroll');
+}elseif(empty($_FILES["image"]["name"]) && empty($_POST["alt_text"])){
     // If blog post without image is posted
     
         

@@ -9,12 +9,21 @@ function log_in ($username, $password){
 
     $my_sql = $pdo->prepare(
         "SELECT * FROM users 
-        WHERE BINARY username = :username"
+        WHERE username = :username"
     );
     $my_sql->execute(array(
         ":username"    => $username
     ));
-    $fetched_user = $my_sql->fetch(PDO::FETCH_ASSOC);  
+    $fetched_user = $my_sql->fetch(PDO::FETCH_ASSOC);
+    
+    if(!$existing_username){
+        header('location: login.php?login=fail#scroll');
+        exit();
+    }
+    if(!password_verify($password, $fetched_user["password"])){
+        header('location: login.php?password=fail#scroll');
+        exit();
+    }
 
     //Initiates session variables if password is correct
     if (password_verify($password, $fetched_user["password"]) 
@@ -35,13 +44,6 @@ function log_in ($username, $password){
 
     $_SESSION["admin"] =
             $fetched_user["admin"];
-
-    }elseif(!$existing_username){
-        header('location: login.php?login=fail#scroll');
-        exit();
-    }elseif(!password_verify($password, $fetched_user["password"])){
-            header('location: login.php?password=fail#scroll');
-            exit();
-        }
+    }
 }
 ?>

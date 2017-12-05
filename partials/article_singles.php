@@ -10,7 +10,7 @@ require 'actions/article_single_sql.php';
 <div class="blog-post">
     <div class="go-back">
         <a href="index.php">
-            <i class="fa fa-arrow-left" aria-hidden="true"></i>
+            <i class="fa fa-arrow-left" aria-hidden="true"></i> Back
         </a>
     </div>
     <article>
@@ -67,10 +67,10 @@ require 'actions/article_single_sql.php';
             ?>
                     <a class="edit-button"href=
                     "profile.php?editcomment=true&comment_id=<?= $comment['comment_id']?>&post_id=<?= $comment['post_id']?>#scroll">
-                    Edit comment <i class="fa fa-pencil" aria-hidden="true"></i></a>
+                    Edit <i class="fa fa-pencil" aria-hidden="true"></i></a>
                     <a class="delete-button"
                     href="actions/delete_comment.php?id=<?= $comment['comment_id']?>#scroll">
-                    Delete comment <i class="fa fa-trash" aria-hidden="true"></i></a>
+                    Delete <i class="fa fa-trash" aria-hidden="true"></i></a>
                     <?php 
                 endif;//end of check user/admin
             endif;//end of signed in if ?>

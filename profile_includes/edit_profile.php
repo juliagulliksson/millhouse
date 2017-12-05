@@ -5,30 +5,36 @@ $existing_email = $_SESSION['email'];
 <div class="edit-account">
     <h1>Edit profile</h1>
     <p>Not happy with your username or profile photo? Feel happy to make changes.</p>
-    <form action="">
-        <label for="new_profile_picture">Upload new profile picture:</label>
-        <input type="file" name="new_profile_picture" id="">
+
+    <form action="profile.php?edit=true">
+        <label for="new_profile_photo">Upload new profile photo:</label>
+        <input type="file" name="new_profile_photo" id="">
         <br />
         <label for="new_username">Change username:</label>
         <br />
-        <input name="new_username" type="text" value="<?= $existing_username ?>">
+        <input name="new_username" id="new_username" type="text">
         <br />
-        <label for="new_email">Change e-mail:</label>
-        <br />
-        <input name="new_email" type="email" value="<?= $existing_email ?>">
-        <br />
-        <label for="new_password">Change password:</label>
+        <input type="submit" value="Save Profile Settings">
+    </form>
+
+    <form action="">
+        <label for="old_password">Old password:</label>
         <br/ >
-        <input name="new_password" type="password" placeholder="New password">
+        <input name="old_password" id="old_password" type="text">
         <br />
-        <label for="verify_new_password">Verify new password:</label>
+        <label for="new_password">New password:</label>
+        <br/ >
+
+        <input name="new_password" id="new_password" type="text">
         <br />
-        <input name="verify_new_password" type="password" placeholder="Verify new password">
+        <label for="verify_new_password" class="visuallyhidden">Verify new password:</label>
         <br />
-        <input type="submit" name="edit_profile_submit" value="Save Profile Settings">
+        <input name="verify_new_password" id="verify_new_password" type="text">
+        <br />
+        <input type="submit" value="Change Password">
     </form>
     <h2>
-        <a href="profile.php">
+        <a href="profile.php#scroll">
             <i class="fa fa-arrow-left" aria-hidden="true"></i> No, I'm happy as it is. Take me back!
         </a>
     </h2>        

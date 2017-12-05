@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default navbar-static-top">
+<nav role ="navigation" class="navbar navbar-default navbar-static-top">
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
@@ -47,8 +47,6 @@
                 <?php else: ?>
                 <li class="button nav-margin"><a href="login.php#scroll">Login</a></li>
                 <li class="button"><a href="register.php#scroll">Register</a></li>
-                </div>
-                <!-- /.buttons-collapse -->
                 <?php endif; ?>
             </ul>
         </div>
