@@ -1,10 +1,9 @@
 <?php
 $id = $_GET['id'];
-//post_id=<?= $article_single['postID']
 if(isset($_POST['comment_submit'])):
     include 'actions/comment_insert.php';
 endif;
-//require SQL-queries
+// Require SQL-queries
 require 'actions/article_single_sql.php';
 ?>
 <div class="blog-post">
@@ -47,7 +46,7 @@ require 'actions/article_single_sql.php';
         ?>  <!-- End of edit and delete buttons -->
     </article>
     <?php
-    // article_single_sql.php is where $comments is made
+    // Article_single_sql.php is where $comments is made
     if(count($comments) > 0):
     ?>
     <div class="comments-container">
@@ -74,15 +73,15 @@ require 'actions/article_single_sql.php';
                href="actions/delete_comment.php?id=<?= $comment['comment_id']?>#scroll">
                Delete <i class="fa fa-trash" aria-hidden="true"></i></a>
                     <?php 
-                endif;//end of check user/admin
-            endif;//end of signed in if ?>
+                endif;// End of check user/admin
+            endif;// End of signed in if ?>
         </div>
         <!-- comments-collapse -->
         <?php endforeach; ?>
     </div>
     <!-- /.comments-container-collapse -->
     <?php 
-    endif; // END OF count comments if 
+    endif; // End of count comments if 
 
     if(isset($_SESSION['signed_in'])):
     ?>
