@@ -1,4 +1,3 @@
-        
         </div>
     </div> <!-- /.wrapper-collapse -->
     <footer role="contentinfo">
@@ -10,11 +9,15 @@
                 <div class="footer-margin">
                 <ul>
                     <li><b>OUR SHOPS</b></li>
-                    <?php foreach ($categories_disctinct as $category): ?>
                     <li>
-                        <a href="index.php?category=<?= $category['id']?>#scroll"><?= $category['title'] ?></a>
+                        <a href="webshop/watches.php">Watches</a>
                     </li>
-                    <?php endforeach; ?>
+                    <li>
+                        <a href="webshop/sunglasses.php">Sunglasses</a>
+                    </li>
+                    <li>
+                        <a href="webshop/interiordesign.php">Interior Design</a>
+                    </li>
                 </ul>
                 </div>
                 <div class="footer-margin">
