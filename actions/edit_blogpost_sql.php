@@ -13,7 +13,7 @@ if(empty($new_title) || empty($new_text)){
 if (!empty($_FILES["edit_image"]["name"]) && 
    !empty($_POST["edit_alt_text"])) {
 
-    //Declaring variables for image upload
+    // Declaring variables for image upload
     $new_target = "article_images/" . basename($_FILES["edit_image"]["name"]);
     $new_path = $_FILES["edit_image"]["tmp_name"];
     $new_filename = $_FILES["edit_image"]["name"]; 
@@ -22,7 +22,7 @@ if (!empty($_FILES["edit_image"]["name"]) &&
     $check_image = getimagesize($new_path); 
     $new_image_type = $check_image[2];
     
-    //Check image before upload
+    // Check image before upload
     $upload_ok = check_image_before_upload($new_image_size,
                                             $new_image_type,
                                             $new_target);
@@ -36,7 +36,7 @@ if (!empty($_FILES["edit_image"]["name"]) &&
         category_id    = :new_category,
         image          = :new_image,
         alt_text       = :new_alt_text
-        WHERE id = :id"
+        WHERE id       = :id"
         );
 
         $statement->execute(array(
@@ -49,9 +49,9 @@ if (!empty($_FILES["edit_image"]["name"]) &&
         ));
 
         header("location: index.php?id=$post_id");
-    }//End if
+    }// End if
     
-}//End if(!empty..)
+}// End if(!empty..)
 
 if(empty($_FILES["edit_image"]["name"])){
         $statement = $pdo->prepare(
@@ -59,7 +59,7 @@ if(empty($_FILES["edit_image"]["name"])){
         SET post_title = :new_title, 
         text           = :new_text, 
         category_id    = :new_category
-        WHERE id = :id"
+        WHERE id       = :id"
         );
 
         $statement->execute(array(

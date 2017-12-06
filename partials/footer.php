@@ -7,18 +7,12 @@
                     <img src="images/millhouse-logo.png" Alt="Millhouse Logo" />
                 </div>
                 <div class="footer-margin">
-                <ul>
-                    <li><b>OUR SHOPS</b></li>
-                    <li>
-                        <a href="webshop/watches.php">Watches</a>
-                    </li>
-                    <li>
-                        <a href="webshop/sunglasses.php">Sunglasses</a>
-                    </li>
-                    <li>
-                        <a href="webshop/interiordesign.php">Interior Design</a>
-                    </li>
-                </ul>
+                    <ul>
+                        <li><b>OUR SHOPS</b></li>
+                        <li><a href="webshop/watches.php">Watches</a></li>
+                        <li><a href="webshop/sunglasses.php">Sunglasses</a></li>
+                        <li><a href="webshop/interiordesign.php">Interior Design</a></li>
+                    </ul>
                 </div>
                 <div class="footer-margin">
                     <ul>
