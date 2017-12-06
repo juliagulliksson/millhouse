@@ -6,10 +6,13 @@ $filename = $_FILES["image"]["name"];
 $image_size = $_FILES["image"]["size"]; 
 $alt_text = $_POST["alt_text"]; 
 $check_image = getimagesize($path); 
-$image_type = $check_image[2]; 
+$image_type = $check_image[2];
+$folder = "partials/";
 
 // Check image before upload
-$upload_ok = check_image_before_upload($image_size, $image_type, $target); 
+$upload_ok = check_image_before_upload($folder, 
+                                       $image_size, $image_type, 
+                                       $target); 
 
 // Inserts to database
 if(gettype($upload_ok) == 'boolean'){
