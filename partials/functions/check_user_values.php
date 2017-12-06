@@ -6,7 +6,7 @@ $email_column, $new_username, $new_email){
     $check_ok = true;
 
     // No spaces
-    if(preg_match('/\s/',$username) ) {
+    if(preg_match('/\s/',$username)){
         $error_messages[] = "Blank space is not allowed in username";
         $check_ok = false;
     }
@@ -44,7 +44,7 @@ $email_column, $new_username, $new_email){
     if($check_ok){
         return $check_ok;
     }
-       else {
+       else{
            return $error_messages;
         }
 }

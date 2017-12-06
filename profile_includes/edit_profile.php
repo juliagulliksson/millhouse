@@ -2,9 +2,7 @@
 $existing_username = $_SESSION['username'];
 $existing_email = $_SESSION['email'];
 $user_id = $_SESSION['id'];
-
-   
-               
+      
 //If the submit button to change username or email is set    
 if(isset($_POST['edit_profile_submit'])){
     $new_username = $_POST['new_username'];
