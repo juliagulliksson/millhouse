@@ -1,5 +1,5 @@
 <?php
-require "../partials/database.php";
+require "partials/database.php";
 
 $statement = $pdo->prepare( 
         "UPDATE users 
