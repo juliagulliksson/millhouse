@@ -1,20 +1,17 @@
 <?php
-function log_in ($username, $password){
+function log_in($username, $password){
     require "partials/database.php";
     require "partials/functions/check_if_duplicate.php";
+    require 'partials/functions/fetch_all_where_condition.php';
 
-    //check if username is present in database
-    $user_column = 'username';
+    //Check if username is present in database
+    $user_column = "username";
     $existing_username = check_if_duplicate($user_column, $username);
 
-    $my_sql = $pdo->prepare(
-        "SELECT * FROM users 
-        WHERE username = :username"
-    );
-    $my_sql->execute(array(
-        ":username"    => $username
-    ));
-    $fetched_user = $my_sql->fetch(PDO::FETCH_ASSOC);
+    //Fetch the user from database
+    $table = "users";
+    $column = "username";
+    $fetched_user = fetch_all_where_condition($table, $column, $username);
     
     if(!$existing_username){
         header('location: login.php?login=fail#scroll');
