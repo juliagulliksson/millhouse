@@ -28,7 +28,7 @@
             <ul class="nav navbar-nav navbar-right">
                 <?php 
                 if(isset($_SESSION['signed_in'])): ?>
-                <li class="navbar-image">
+                <li class="navbar-profile-picture">
                     <img src="images/profile-photo.jpg" alt="Profile photo" />
                 </li>
                 <?php 
