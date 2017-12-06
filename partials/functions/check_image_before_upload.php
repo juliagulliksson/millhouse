@@ -1,5 +1,5 @@
 <?php
-function check_image_before_upload($image_size, $image_type, $target) {
+function check_image_before_upload($folder, $image_size, $image_type, $target) {
      $error_message = array();
      $upload_ok = false;
     
@@ -13,7 +13,7 @@ function check_image_before_upload($image_size, $image_type, $target) {
      if ($image_size > 500000000) { 
          $error_message[] = "The image file is too large";
      }
-     if (file_exists("partials/" . $target)) {
+     if (file_exists($folder . $target)) {
          $error_message[] = "The image already exists";
      }
      if($upload_ok){

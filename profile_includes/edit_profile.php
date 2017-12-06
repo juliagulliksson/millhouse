@@ -40,13 +40,13 @@ if(isset($_POST['edit_profile_submit'])){
 
 
 //Uploads profile picture
-if(!empty($_FILES['new_profile_picture']) &&
+if(!empty($_FILES['new_profile_picture']['name']) &&
 $update_ok){
-    require "profile_includes/update_profile_pic_sql.php";
+    require "profile_includes/profile_actions/update_profile_pic_sql.php";
 }
-    elseif(empty($_FILES['new_profile_picture']) &&
+    elseif(empty($_FILES['new_profile_picture']['name']) &&
         $update_ok){
-        require "profile_includes/update_profile_sql.php";
+        require "profile_includes/profile_actions/update_profile_sql.php";
         }
 }
      
@@ -55,53 +55,4 @@ $update_ok){
 if(isset($_POST['change_password'])){
     require "profile_includes/change_password.php";
 }
-?>
-    <div class="edit-account">
-        <?php
-    if(!empty($error_messages)):
-        foreach ($error_messages as $error_messages):?>
-            <p class="error-message">
-                <?= $error_messages ?><br/></p>
-            <?php endforeach;
-    endif;
-    ?>
-            <h1>Edit profile</h1>
-            <p>Not happy with your username or profile photo? Feel happy to make changes.</p>
-
-            <form action="profile.php?edit=true" method="POST">
-                <label for="new_profile_photo">Upload new profile photo:</label>
-                <input type="file" name="new_profile_photo" id="">
-                <br />
-                <label for="new_username">Change username:</label>
-                <br />
-                <input name="new_username" id="new_username" type="text" value="<?= $existing_username ?>">
-                <br />
-                <label for="new_email">Change e-mail:</label>
-                <br />
-                <input name="new_email" id="new_username" type="email" value="<?= $existing_email ?>">
-                <br />
-                <input type="submit" name="edit_profile_submit" value="Save Profile Settings">
-            </form>
-
-            <form action="">
-                <label for="old_password">Old password:</label>
-                <br/>
-                <input name="old_password" id="old_password" type="password">
-                <br />
-                <label for="new_password">New password:</label>
-                <br/>
-
-                <input name="new_password" id="new_password" type="password">
-                <br />
-                <label for="verify_new_password" class="visuallyhidden">Verify new password:</label>
-                <br />
-                <input name="verify_new_password" id="verify_new_password" type="password">
-                <br />
-                <input type="submit" name="change_password" value="Change Password">
-            </form>
-            <h2>
-                <a href="profile.php#scroll">
-            <i class="fa fa-arrow-left" aria-hidden="true"></i> No, I'm happy as it is. Take me back!
-        </a>
-            </h2>
-    </div>
+?>  

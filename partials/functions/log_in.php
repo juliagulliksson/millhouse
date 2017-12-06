@@ -44,5 +44,8 @@ function log_in ($username, $password){
 
     $_SESSION["admin"] =
         $fetched_user["admin"];
+        
+    $_SESSION["profile_picture"] =
+        $fetched_user["profile_picture"];
     }
 }

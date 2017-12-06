@@ -13,4 +13,7 @@ $statement = $pdo->prepare(
         ":email"           => $new_email,
         ":id"              => $user_id
     )); 
+    
+    $_SESSION["username"] = $new_username;
+    $_SESSION["email"]    = $new_email;
 ?>
