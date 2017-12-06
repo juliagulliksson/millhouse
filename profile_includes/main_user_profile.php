@@ -1,7 +1,7 @@
 <div class="profile-wrapper">
     <div class="profile-container">
         <div class="profile">
-            <img src="images/profile-photo.jpg" Alt="Profile photo" />
+            <img src="profile_includes/<?= $user_info['profile_picture'] ?>" Alt="Profile photo" />
         </div>
         <div class="profile-info">
             <h1><?= $user_info['username']?></h1>

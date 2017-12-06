@@ -7,6 +7,14 @@
                 <?= $error_messages ?><br/></p>
             <?php endforeach;
     endif;
+
+    if (isset($_POST['edit_profile_submit'])):
+        if(is_array($upload_ok) && !empty($upload_ok)):
+            foreach ($upload_ok as $error_message):?>
+                <p class="error-message"><?= $error_message ?><br/></p>
+            <?php endforeach;
+        endif;//end of check if in array and not empty
+    endif;//end of check if not empty
     ?>
             <h1>Edit profile</h1>
             <p>Not happy with your username or profile photo? Feel happy to make changes.</p>
@@ -28,7 +36,7 @@
                 <input type="submit" name="edit_profile_submit" value="Save Profile Settings">
             </form>
 
-            <form action="">
+            <form action="profile.php?edit=true" method ="POST">
                 <label for="old_password">Old password:</label>
                 <br/>
                 <input name="old_password" id="old_password" type="password">
