@@ -7,11 +7,10 @@ $image_size = $_FILES["upload_image"]["size"];
 $alt_text = $_POST["alt_text"]; 
 $check_image = getimagesize($path); 
 $image_type = $check_image[2];
-$folder = "partials/";
 
 //Validate image before upload
-$upload_ok = check_image_before_upload($folder, 
-                                       $image_size, $image_type, 
+$upload_ok = check_image_before_upload($image_size, 
+                                       $image_type, 
                                        $target); 
 
 // Inserts to database
