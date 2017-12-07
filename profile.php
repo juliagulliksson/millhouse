@@ -6,7 +6,7 @@ require 'partials/head.php';
 require 'profile_includes/profile_actions/profile_sql.php';
 require 'partials/functions/split_email.php';
 
-if(empty($_GET)):
+if(empty($_GET) || isset($_GET['update']) || isset($_GET['pass'])):
     require 'profile_includes/main_profile.php';
 endif;// End of main get if
 

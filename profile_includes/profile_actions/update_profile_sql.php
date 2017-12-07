@@ -1,5 +1,6 @@
 <?php
 require "partials/database.php";
+$user_id = $_SESSION['id'];
 
 $statement = $pdo->prepare( 
         "UPDATE users 
@@ -16,4 +17,6 @@ $statement = $pdo->prepare(
     
     $_SESSION["username"] = $new_username;
     $_SESSION["email"]    = $new_email;
+
+    header('location: profile.php?update=success');
 ?>
