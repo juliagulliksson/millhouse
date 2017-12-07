@@ -16,4 +16,6 @@ $statement = $pdo->prepare(
     
     $_SESSION["username"] = $new_username;
     $_SESSION["email"]    = $new_email;
+
+    header('location: profile.php?update=success');
 ?>

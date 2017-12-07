@@ -31,3 +31,14 @@ if(isset($_GET['editpost'])):
         include 'actions/edit_blogpost_sql.php';
     endif;
 endif;// End of editpost if
+
+//If the submit button for edit profile has been clicked
+if(isset($_POST['edit_profile_submit'])):
+    require 'profile_includes/edit_profile.php';
+endif;
+
+//If submit button for change password is set
+if(isset($_POST['change_password'])){
+    require "profile_includes/change_password.php";
+}
+?>  
