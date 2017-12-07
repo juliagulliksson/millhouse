@@ -9,9 +9,9 @@ require 'partials/head.php';
 ?>
 <main role="main">
 <?php
-
 // Startpage blog posts
-if(empty($_GET) || isset($_GET['end_session'])):
+if(empty($_GET) || isset($_GET['end_session']) 
+|| isset($_GET['page'])):
 foreach ($articles as $article):
     include 'partials/blog_posts.php';
 endforeach;
