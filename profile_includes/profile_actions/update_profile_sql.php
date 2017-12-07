@@ -1,5 +1,6 @@
 <?php
 require "partials/database.php";
+$user_id = $_SESSION['id'];
 
 $statement = $pdo->prepare( 
         "UPDATE users 

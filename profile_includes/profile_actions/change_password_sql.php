@@ -1,5 +1,6 @@
 <?php
 require "partials/database.php";
+
 $statement = $pdo->prepare( 
         "UPDATE users 
         SET password = :password
@@ -10,4 +11,5 @@ $statement = $pdo->prepare(
         ":password" => $new_password,
         ":id"       => $user_id
     )); 
+    header('location: profile.php?pass=success');
 ?>

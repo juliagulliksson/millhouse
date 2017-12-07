@@ -7,7 +7,7 @@ if(!empty($_POST['new_password'])
 
     $table = "users";
     $column = "username";
-
+    //Run the function for fetching the user
     $fetched_user = fetch_all_where_condition($table, $column, $username);
 
     if(password_verify($password, $fetched_user['password'])){
@@ -19,7 +19,9 @@ if(!empty($_POST['new_password'])
             $error_messages[] = "The passwords do not match";
         }else{
             $update_ok = true;
+            $user_id = $_SESSION['id'];
             $new_password = password_hash($_POST['new_password'], PASSWORD_DEFAULT);
+            //The password is updated
             require "profile_includes/profile_actions/change_password_sql.php";
         }
     }else{
