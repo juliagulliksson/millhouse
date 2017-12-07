@@ -5,11 +5,7 @@
         </a>
     </div>
     
-    <?php require 'profile_includes/new_post_errors.php'; 
-    
-        var_dump($_FILES);
-        echo "<br/>";
-        var_dump($_POST); ?>
+    <?php require 'profile_includes/new_post_errors.php'; ?>
     
     <div class="center-heading"><h1>Write a new blog post</h1></div>
     <form action="profile.php?newpost=true" method="POST" 
