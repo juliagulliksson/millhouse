@@ -40,7 +40,8 @@ if(gettype($upload_ok) == 'boolean'){
     $_SESSION["username"]        = $new_username;
     $_SESSION["email"]           = $new_email;
     $_SESSION["profile_picture"] = $target;
-    //header('location: index.php');
+
+    header('location: profile.php?update=success');
   } 
 }
 ?>

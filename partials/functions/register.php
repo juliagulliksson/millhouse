@@ -24,7 +24,7 @@ $my_sql->execute(array(
     ":contributor"      => $boolean,
     ":email"            => $email,
     ":admin"            => $admin,
-    ":profile_picture"  => "profile_includes/profile_pictures/default_profile_picture.jpg"
+    ":profile_picture"  => "profile_pictures/default_profile_picture.jpg"
 ));
     header("location: register.php?register=success&username=$username#scroll");
 }
