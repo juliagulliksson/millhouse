@@ -5,9 +5,8 @@ require 'partials/pagination.php';
 // Main article fetch
 $statement = $pdo->prepare("SELECT posts.date, posts.id as postID, 
 posts.text, posts.post_title, categories.title, categories.id AS category_id,
-users.username, users.email, users.id as user_id, COUNT(comments.post_id) AS comments,
-image,
-alt_text
+users.username, users.email, users.id as user_id, 
+COUNT(comments.post_id) AS comments, image, alt_text
 FROM posts 
 INNER JOIN categories 
 ON posts.category_id=categories.id
@@ -32,13 +31,6 @@ GROUP BY categories.id
 $statement->execute();
 $categories_disctinct = $statement->fetchAll(PDO::FETCH_ASSOC);
 
-// Categories fetch
-$statement = $pdo->prepare("SELECT *
-FROM categories
-");
-$statement->execute();
-$categories = $statement->fetchAll(PDO::FETCH_ASSOC);
-
 // Distinct months fetch
 $statement = $pdo->prepare("SELECT DISTINCT MONTH(date) as month, 
 COUNT(posts.id) as number_of_posts
@@ -47,3 +39,8 @@ GROUP BY MONTH(date)
 ORDER BY MONTH(date) DESC");
 $statement->execute();
 $months_number = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+//Categories fetch
+$category_table = "categories";
+$categories = fetch_all($category_table);
+

@@ -11,6 +11,8 @@ require 'partials/functions/register.php';
 require 'partials/functions/date_replace.php';
 require 'partials/functions/string_length.php';
 require 'partials/database.php';
+require 'partials/functions/sql_functions.php';
+
 require 'actions/main_sql.php';
 require 'partials/log_out.php';
 

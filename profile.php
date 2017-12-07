@@ -6,10 +6,7 @@ require 'partials/head.php';
 require 'profile_includes/profile_actions/profile_sql.php';
 require 'partials/functions/split_email.php';
 
-if(!isset($_GET['newpost']) && !isset($_GET['editpost'])
-&& !isset($_GET['editcomment']) 
-&& !isset($_GET['delete'])
-&& !isset($_GET['edit'])):
+if(empty($_GET)):
     require 'profile_includes/main_profile.php';
 endif;// End of main get if
 

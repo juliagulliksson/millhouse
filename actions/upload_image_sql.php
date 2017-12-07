@@ -1,15 +1,15 @@
 <?php 
 // Declaring variables for image upload
-$target = "article_images/" . basename($_FILES["image"]["name"]);
-$path = $_FILES["image"]["tmp_name"]; 
-$filename = $_FILES["image"]["name"]; 
-$image_size = $_FILES["image"]["size"]; 
+$target = "article_images/" . basename($_FILES["upload_image"]["name"]);
+$path = $_FILES["upload_image"]["tmp_name"]; 
+$filename = $_FILES["upload_image"]["name"]; 
+$image_size = $_FILES["upload_image"]["size"]; 
 $alt_text = $_POST["alt_text"]; 
 $check_image = getimagesize($path); 
 $image_type = $check_image[2];
 $folder = "partials/";
 
-// Check image before upload
+//Validate image before upload
 $upload_ok = check_image_before_upload($folder, 
                                        $image_size, $image_type, 
                                        $target); 

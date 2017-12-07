@@ -16,5 +16,6 @@ if(isset($_SESSION['signed_in'])){
 require 'partials/head.php';
 require 'profile_includes/profile_actions/user_sql.php';
 require 'partials/functions/split_email.php';
+ //user html
 require 'profile_includes/main_user_profile.php';
 require 'partials/footer.php'; ?>
