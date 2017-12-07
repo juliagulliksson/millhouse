@@ -11,12 +11,7 @@ require 'partials/functions/register.php';
 require 'partials/functions/date_replace.php';
 require 'partials/functions/string_length.php';
 require 'partials/database.php';
-require 'partials/functions/fetch_all_from_table.php';
-require 'partials/functions/fetch_all_where_condition.php';
-require 'partials/functions/fetch_count_column_as.php';
-require 'partials/functions/fetch_all_articles_by_user.php';
-require 'partials/functions/fetch_all_comments_by_user.php';
-require 'partials/functions/fetch_all_limit_5.php';
+require 'partials/functions/sql_functions.php';
 
 require 'actions/main_sql.php';
 require 'partials/log_out.php';

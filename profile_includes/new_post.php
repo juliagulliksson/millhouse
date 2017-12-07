@@ -5,11 +5,15 @@
         </a>
     </div>
     
-    <?php require 'profile_includes/new_post_errors.php'; ?>
+    <?php require 'profile_includes/new_post_errors.php'; 
+    
+        var_dump($_FILES);
+        echo "<br/>";
+        var_dump($_POST); ?>
     
     <div class="center-heading"><h1>Write a new blog post</h1></div>
-    <form action="profile.php?newpost=true" method="POST"
-       enctype="multipart/form-data">
+    <form action="profile.php?newpost=true" method="POST" 
+    enctype="multipart/form-data">
         <div class="form-group">
             <div class="form-group__title">
                 <label for="title">Title:</label><br />
@@ -30,7 +34,8 @@
         <!-- /.form-group-collapse -->
         
         <textarea name="post_text" id="editor">
-        <?php if(isset($_POST['post_text'])){ echo $_POST['post_text'];} ?>
+        <?php if(isset($_POST['post_text'])){ 
+            echo $_POST['post_text'];} ?>
         </textarea>
         <script>
             ClassicEditor

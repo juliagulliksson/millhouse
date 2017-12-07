@@ -19,7 +19,7 @@ endif;
 if(isset($_GET['newpost'])):
     if(isset($_POST['newpost_submit'])):
         require 'actions/insert_blogpost_sql.php';
-        if(!empty($_FILES["image"]["name"]) && !empty($_POST["alt_text"])):
+        if(!empty($_FILES["upload_image"]["name"]) && !empty($_POST["alt_text"])):
             require "actions/upload_image_sql.php";
         endif;
     endif;

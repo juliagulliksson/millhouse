@@ -8,7 +8,7 @@ $user_id    = $_POST['user_id'];
 if(empty($body) || empty($category)
 || empty($title)){
     header('Location: profile.php?newpost=true&error=true#scroll');
-}elseif(empty($_FILES["image"]["name"]) && empty($_POST["alt_text"])){
+}elseif(empty($_FILES["upload_image"]["name"]) && empty($_POST["alt_text"])){
     // If blog post without image is posted
        
     $statement = $pdo->prepare(
@@ -26,4 +26,4 @@ if(empty($body) || empty($category)
         
     ));
     header('location: index.php');
-}// End elseif
+}
