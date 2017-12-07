@@ -13,7 +13,7 @@ if(isset($_POST['newpost_submit'])):
 
     // If blog post with image is posted
     if (!empty($_FILES["upload_image"]["name"]) && !empty($_POST["alt_text"])):
-        //if $upload_ok is an array, error messages is displayed
+        //if $upload_ok is an array, error messages are displayed
         if(is_array($upload_ok) && !empty($upload_ok)):
             foreach ($upload_ok as $error_message):?>
             <p class="error-message"><?= $error_message ?><br/></p>

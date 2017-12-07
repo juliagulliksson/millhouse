@@ -10,7 +10,7 @@ function fetch_all($table){
     return $statement->fetchAll(PDO::FETCH_ASSOC);
 }
 
-function fetch_all_articles_by_users($user_id){
+function fetch_all_articles_by_user($user_id){
     require 'partials/database.php';
 
     $statement = $pdo->prepare("SELECT posts.date, posts.id as postID, 
@@ -52,12 +52,12 @@ function fetch_all_comments_by_user($user_id){
     return $statement->fetchAll(PDO::FETCH_ASSOC);
 }
 
-function fetch_count_as($column, $renamed, $table, $condition, $value){
+function fetch_count_as($column, $renamed, $table, $value){
     require 'partials/database.php';
 
     $statement = $pdo->prepare("SELECT COUNT($column) as $renamed 
     FROM $table
-    WHERE $condition = '$value'
+    WHERE user_id = '$value'
     ");
     $statement->execute();
 

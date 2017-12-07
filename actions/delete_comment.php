@@ -1,10 +1,9 @@
 <?php
-// Where should it redirect?
 header('location: ../index.php');
-require '../partials/database.php';
+require '../partials/functions/delete_all_where_sql.php';
+
+$table = "comments";
+$column = "id";
 $comment_id = $_GET['id'];
 
-$statement = $pdo->prepare("DELETE FROM comments WHERE id = :id");
-$statement->execute(array(
-  ":id" => $comment_id
-));
+delete_all_where($table, $column, $comment_id);

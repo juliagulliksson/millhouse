@@ -36,7 +36,7 @@ if(isset($_POST["register-user"])){
     $email_column, $new_username, $new_email);
 
     //If the error messages array is empty, the registration runs
-    if(gettype($check_user_input) == 'boolean'){  
+    if(gettype($check_user_input) == 'boolean' && empty($error_messages)){  
         $new_password = password_hash($_POST["register_password"], PASSWORD_DEFAULT);     
         $contributor = false;
         $admin = false;
