@@ -5,6 +5,7 @@ $categories = fetch_all($categories_table);
 
 $posts_table = "posts";
 $column = "id";
+//Fetch the original post
 $edit_post = fetch_all_where_condition($posts_table, $column, $post_id);
 ?>
 

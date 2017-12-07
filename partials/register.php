@@ -24,13 +24,30 @@ if(isset($_POST["register-user"])){
         $error_messages[] = "Blank space is not allowed in password";
     }
 
-    //Variables to be checked in check_user_input
-    $new_username = $_POST["register_username"];     
-    $new_email = $_POST["register_email"];  
+     //Variables to be checked
+     $new_username = $_POST["register_username"];     
+     $new_email = $_POST["register_email"];  
+ 
+     // Variables with the name of the column to be checked
+     $user_column = 'username';
+     $email_column = 'email';
 
-    // Variables with the name of the column to be checked
-    $user_column = 'username';
-    $email_column = 'email';
+    // Checks if username already exists
+    $is_duplicate_username = check_if_duplicate($user_column, $new_username);
+    
+    // Checks if email already exists
+    $is_duplicate_email = check_if_duplicate($email_column, $new_email);
+
+    //Checks if username is already registered
+    if ($is_duplicate_username){
+        $error_messages[] = "This username already exists!";
+    }
+
+    //Checks if email is aldready registered
+    if($is_duplicate_email){
+        $error_messages[] = "This email adress is already registered!";
+    }
+   
 
     $check_user_input = check_user_values($user, $mail, $user_column, 
     $email_column, $new_username, $new_email);
