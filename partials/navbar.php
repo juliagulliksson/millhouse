@@ -29,7 +29,7 @@
                 <?php 
                 if(isset($_SESSION['signed_in'])): ?>
                 <li class="navbar-profile-picture">
-                    <img src="images/profile-photo.jpg" alt="Profile photo" />
+                    <img src="profile_includes/<?= $_SESSION['profile_picture']?>" alt="Profile picture" />
                 </li>
                 <?php 
                 if($_SESSION['contributor'] == true): ?>

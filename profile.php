@@ -3,7 +3,7 @@ require 'partials/includes.php';
 require 'partials/functions/check_image_before_upload.php';
 require 'profile_includes/profile_if_statements.php';
 require 'partials/head.php';
-require 'profile_includes/profile_sql.php';
+require 'profile_includes/profile_actions/profile_sql.php';
 require 'partials/functions/split_email.php';
 
 if(!isset($_GET['newpost']) && !isset($_GET['editpost'])
@@ -15,7 +15,7 @@ endif;// End of main get if
 
 // Edit account
 if(isset($_GET['edit'])): 
-    require 'profile_includes/edit_profile.php';
+    require 'profile_includes/main_edit_profile.php';
 endif; // End of edit if
 
 // Delete account

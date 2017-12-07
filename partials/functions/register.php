@@ -4,8 +4,18 @@ function register ($username, $password, $boolean, $email, $admin){
 
 $my_sql = $pdo->prepare(
     "INSERT INTO users 
-    (username, password, contributor, email, admin) 
-    VALUES (:username, :password, :contributor, :email, :admin)"
+    (username, 
+    password, 
+    contributor, 
+    email, 
+    admin, 
+    profile_picture) 
+    VALUES (:username, 
+    :password, 
+    :contributor, 
+    :email, 
+    :admin,
+    :profile_picture)"
 ); 
 
 $my_sql->execute(array( 
@@ -13,7 +23,8 @@ $my_sql->execute(array(
     ":password"         => $password,
     ":contributor"      => $boolean,
     ":email"            => $email,
-    ":admin"            => $admin
+    ":admin"            => $admin,
+    ":profile_picture"  => "profile_includes/profile_pictures/default_profile_picture.jpg"
 ));
     header("location: register.php?register=success&username=$username#scroll");
 }

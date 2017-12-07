@@ -1,7 +1,7 @@
 <div class="profile-wrapper">
     <div class="profile-container">
         <div class="profile">
-            <img src="images/profile-photo.jpg" alt="Profile photo" />
+            <img src="profile_includes/<?= $_SESSION['profile_picture'] ?>" alt="Profile photo" />
         </div>
         <div class="profile-info">
             <h1><?= $_SESSION['username']?></h1>
