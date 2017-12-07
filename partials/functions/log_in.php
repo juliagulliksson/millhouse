@@ -15,7 +15,7 @@ function log_in ($username, $password){
         ":username"    => $username
     ));
     $fetched_user = $my_sql->fetch(PDO::FETCH_ASSOC);
-    
+ 
     if(!$existing_username){
         header('location: login.php?login=fail#scroll');
         exit();

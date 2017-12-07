@@ -1,70 +1,33 @@
 <?php
 $user_id = $_GET['uid'];
 
-$statement = $pdo->prepare("SELECT * FROM users
-WHERE id = :id
-");
-$statement->execute(array(
-    ":id" => $user_id
-));
-$user_info = $statement->fetch(PDO::FETCH_ASSOC);
+//Fetch all user info
+$user_table = "users";
+$user_column = "id";
+$user_info = fetch_all_where_condition($user_table, $user_column, $user_id);
 
-$statement = $pdo->prepare("SELECT COUNT(comments.id) as number_of_comments 
-FROM comments
-WHERE user_id = :id
-");
-$statement->execute(array(
-    ":id" => $user_id
-));
-$user_comments = $statement->fetchAll(PDO::FETCH_ASSOC);
-
-//Fetch all blogposts made by the user, limit to 5
-$statement = $pdo->prepare("SELECT * FROM posts 
-WHERE user_id = :id
-ORDER BY posts.date DESC
-LIMIT 5
-");
-$statement->execute(array(
-    ":id" => $user_id
-));
-$user_blogposts = $statement->fetchAll(PDO::FETCH_ASSOC);
+//Fetch the number of comments made by user
+$column = "comments.id";
+$renamed = "number_of_comments";
+$table = "comments";
+$user_comments = fetch_count_as($column, $renamed, $table, $user_id);
 
 //Fetch the number of posts made by the user
-$statement = $pdo->prepare("SELECT COUNT(posts.id) as number_of_posts 
-FROM posts
-WHERE user_id = :id
-");
-$statement->execute(array(
-    ":id" => $user_id
-));
-$user_articles = $statement->fetchAll(PDO::FETCH_ASSOC);
+$column = "posts.id";
+$renamed = "number_of_posts";
+$table = "posts";
+$user_articles = fetch_count_as($column, $renamed, $table, $user_id);
+
+//Fetch all blogposts made by the user, limit to 5
+$table = "posts";
+$order_by = "posts.date";
+$user_blogposts = fetch_all_limit_5($table, $user_id, $order_by);
 
 //Fetch all user comments made by the user, limit to 5
-$statement = $pdo->prepare("SELECT * FROM comments 
-WHERE user_id = :id
-ORDER BY comments.date DESC
-LIMIT 5
-");
-$statement->execute(array(
-    ":id" => $user_id
-));
-$user_comments_title = $statement->fetchAll(PDO::FETCH_ASSOC);
+$table = "comments";
+$order_by = "comments.date";
+$user_comments_title = fetch_all_limit_5($table, $user_id, $order_by);
 
-$statement = $pdo->prepare("SELECT posts.date, posts.id as postID, 
-posts.image, posts.alt_text, posts.text, posts.post_title, 
-categories.title, categories.id AS category_id, posts.user_id,
-COUNT(comments.post_id) AS comments
-FROM posts 
-INNER JOIN categories 
-ON posts.category_id=categories.id
-INNER JOIN users
-ON posts.user_id=users.id
-LEFT JOIN comments ON posts.id=comments.post_id
-WHERE posts.user_id = :id
-GROUP BY posts.id
-ORDER BY posts.date DESC");
-$statement->execute(array(
-    ":id" => $user_id
-));
-$user_all_articles = $statement->fetchAll(PDO::FETCH_ASSOC);
+//Fetch all articles made by user
+$user_all_articles = fetch_all_articles_by_user($user_id);
 

@@ -1,13 +1,11 @@
 <?php
 $post_id = $_GET['id'];
-require 'actions/main_sql.php';
-$statement = $pdo->prepare("SELECT * FROM posts WHERE id = :id
-  ");
-$statement->execute(array(
-    ":id" => $post_id
-));
-$edit_post = $statement->fetch(PDO::FETCH_ASSOC);
+$categories_table = "categories";
+$categories = fetch_all($categories_table);
 
+$posts_table = "posts";
+$column = "id";
+$edit_post = fetch_all_where_condition($posts_table, $column, $post_id);
 ?>
 
 <div class="insert-form">
@@ -63,9 +61,11 @@ $edit_post = $statement->fetch(PDO::FETCH_ASSOC);
             
     <div class="form-group">
         <div class="file-input">
+            <?php if(!empty($edit_post['image'])): ?>
             <div class="form-image">
                 <img src="partials/<?=$edit_post['image']?>" class="edit_blogpost" alt="Edit photo">
            </div>
+            <?php endif; ?>
             <div class="form-group__file">
                 <label for="edit_image">Choose new image:</label><br />
                 <input type="file" name="edit_image" id="edit_image">

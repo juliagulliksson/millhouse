@@ -84,5 +84,13 @@
         </ul>
     </div>
     <!-- /.list-container-collapse -->
+    <?php if(isset($_SESSION['admin'])):
+            if($_SESSION['admin'] == true): ?>
+                <div class="button-container">
+                    <a class="delete" href="user.php?uid=<?= $id ?>&delete=true#scroll">
+                    Delete account</a>  
+                </div>
+    <?php   endif;
+        endif; ?>
 </div>
 <!-- /.profile-wrapper-collapse -->

@@ -1,23 +1,14 @@
 <?php
 header('location: ../index.php');
-require '../partials/database.php';
 $user_id = $_GET['id'];
+require '../partials/functions/delete_account.php';
 
-$statement = $pdo->prepare("DELETE FROM posts WHERE user_id = :user_id");
-$statement->execute(array(
-  ":user_id" => $user_id
-));
+//Run the function for delete account
+delete_account($user_id);
 
-$statement = $pdo->prepare("DELETE FROM comments WHERE user_id = :user_id");
-$statement->execute(array(
-  ":user_id" => $user_id
-));
-
-$statement = $pdo->prepare("DELETE FROM users WHERE id = :user_id");
-$statement->execute(array(
-  ":user_id" => $user_id
-));
-
-session_start();
-session_unset();
-session_destroy();
+//If admin has not deleted the user, the user is logged out
+if(!isset($_GET['admin'])):
+    session_start();
+    session_unset();
+    session_destroy();
+endif;
