@@ -1,7 +1,7 @@
 <?php 
 require 'partials/includes.php';
-require 'partials/functions/check_user_values.php';
 require 'partials/functions/check_if_duplicate.php';
+require 'partials/functions/check_user_values.php';
 require 'partials/register.php';
 
 if(isset($_GET['register'], $_GET['username'])){

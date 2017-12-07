@@ -1,7 +1,7 @@
 <?php
 //ucid = user comments id
 if(!isset($_GET['ucid'])):
-    require 'profile_includes/profile_sql.php';
+    require 'profile_includes/profile_actions/profile_sql.php';
     if(count($profile_all_comments) > 0):
         foreach($profile_all_comments as $comment):  
             include 'profile_includes/profile_comments_indv.php';
@@ -10,7 +10,6 @@ if(!isset($_GET['ucid'])):
         header('location: profile.php');
         exit();
     endif; //end of count if
-
 
 elseif(isset($_GET['ucid'])):
     $user_id = $_GET['ucid'];

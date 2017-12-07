@@ -9,6 +9,14 @@
     endif;
 
     if(isset($_POST['edit_profile_submit'])):
+        if(is_array($check_user_input) && !empty($check_user_input)):
+            foreach ($check_user_input as $error_message):?>
+            <p class="error-message"><?= $error_message ?><br/></p>
+            <?php endforeach;
+        endif;//end of check if in array and not empty
+    endif;//end of check if 
+
+    if(isset($_POST['edit_profile_submit'])):
         if(!empty($_FILES['new_profile_picture']['name'])):
             if(is_array($upload_ok) && !empty($upload_ok)):
                 foreach ($upload_ok as $error_message):?>

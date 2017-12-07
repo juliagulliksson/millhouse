@@ -3,7 +3,11 @@
     <?php if(isset($_GET['update'])):?>
         <p class="success-message">Your profile has been updated!</p>
     <?php endif; ?>
-    
+
+    <?php if(isset($_GET['pass'])):?>
+        <p class="success-message">Your password has been updated!</p>
+    <?php endif; ?>
+
     <div class="profile-container">
         <div class="profile">
             <img src="profile_includes/<?= $_SESSION['profile_picture'] ?>" alt="Profile photo" />
