@@ -43,4 +43,3 @@ $months_number = $statement->fetchAll(PDO::FETCH_ASSOC);
 //Categories fetch
 $category_table = "categories";
 $categories = fetch_all($category_table);
-

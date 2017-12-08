@@ -12,4 +12,3 @@ $statement = $pdo->prepare(
         ":id"       => $user_id
     )); 
     header('location: profile.php?pass=success');
-?>

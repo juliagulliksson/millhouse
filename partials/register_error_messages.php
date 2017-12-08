@@ -20,4 +20,3 @@ if(!empty($error_messages)){
         <?php 
     }
 }
-?>

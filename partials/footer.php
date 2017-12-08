@@ -6,7 +6,7 @@
                 <div class="footer-logo">
                     <img src="images/millhouse-logo.png" Alt="Millhouse Logo" />
                 </div>
-                <div class="footer-margin">
+                <div class="footer-shops">
                     <ul>
                         <li><b>OUR SHOPS</b></li>
                         <li><a href="webshop/watches.php">Watches</a></li>
@@ -14,7 +14,7 @@
                         <li><a href="webshop/interiordesign.php">Interior Design</a></li>
                     </ul>
                 </div>
-                <div class="footer-margin">
+                <div class="footer-about">
                     <ul>
                         <li><b>ABOUT MILLHOUSE</b></li>
                         <li><a href="about.php#press">Press</a></li>
@@ -28,16 +28,16 @@
                     <ul>
                         <li><b>FOLLOW US</b></li>
                         <li><a href="http://www.instagram.com" target="_blank">
-                            <i class="fa fa-instagram" aria-hidden="true"></i> Instagram
+                            <i class="fa fa-instagram" aria-hidden="true"> </i> Instagram
                         </a></li>
                         <li><a href="http://www.facebook.com" target="_blank">
-                            <i class="fa fa-facebook-square" aria-hidden="true"></i> Facebook
+                            <i class="fa fa-facebook-square" aria-hidden="true"> </i> Facebook
                         </a></li>
                         <li><a href="newsletter.php">
-                            <i class="fa fa-envelope" aria-hidden="true"></i> Newsletter
+                            <i class="fa fa-envelope" aria-hidden="true"> </i> Newsletter
                         </a></li>
                         <li><a href="http://www.youtube.com" target="_blank">
-                            <i class="fa fa-youtube" aria-hidden="true"></i> YouTube
+                            <i class="fa fa-youtube" aria-hidden="true"> </i> YouTube
                         </a></li>
                     </ul>
                 </div>

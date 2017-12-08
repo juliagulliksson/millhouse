@@ -7,7 +7,7 @@ $table = "posts";
 $column = "id";
 delete_all_where($table, $column, $post_id);
 
-//delete all the blogposts's comments
+// Delete all the blogposts's comments
 $table = "comments";
 $column = "post_id";
 delete_all_where($table, $column, $post_id);

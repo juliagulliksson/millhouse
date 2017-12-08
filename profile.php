@@ -33,4 +33,3 @@ if(isset($_GET['editcomment'])):
 endif;// End of editcomment if
 
 require 'partials/footer.php';
-?>

@@ -1,7 +1,7 @@
 <?php
 require "partials/database.php";
 
-//Declaring variables for image upload
+// Declaring variables for image upload
 $target = "profile_pictures/" . basename($_FILES["new_profile_picture"]["name"]);
 $path = $_FILES["new_profile_picture"]["tmp_name"]; 
 $filename = $_FILES["new_profile_picture"]["name"]; 
@@ -17,10 +17,10 @@ if ($width != $height) {
 } else {
 
 //Check image before upload
-$upload_ok = check_image_before_upload($image_size, 
-                                       $image_type, 
-                                       $target); 
-
+$upload_ok = check_image_before_upload(
+  $image_size, 
+  $image_type, 
+  $target); 
 
 //Inserts to database
 if(gettype($upload_ok) == 'boolean'){
@@ -46,6 +46,4 @@ if(gettype($upload_ok) == 'boolean'){
 
     header('location: profile.php?update=success');
   } 
-}
-}
-?>
+}}

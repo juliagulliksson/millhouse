@@ -14,5 +14,4 @@ else:
         ":comment" => $comment,
         ":user_id" => $user_id
     ));
-
 endif;

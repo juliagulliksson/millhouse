@@ -5,7 +5,7 @@ $categories = fetch_all($categories_table);
 
 $posts_table = "posts";
 $column = "id";
-//Fetch the original post
+// Fetch the original post
 $edit_post = fetch_all_where_condition($posts_table, $column, $post_id);
 ?>
 
@@ -57,9 +57,7 @@ $edit_post = fetch_all_where_condition($posts_table, $column, $post_id);
             console.error(error);
         });
     </script>
-    <br />
-
-            
+    <br />  
     <div class="form-group">
         <div class="file-input">
             <?php if(!empty($edit_post['image'])): ?>

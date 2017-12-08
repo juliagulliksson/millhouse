@@ -54,9 +54,9 @@
         if($user_info['contributor'] == true): ?>
             <h4>Most recent blog posts:</h4>
             <ul>
-                <?php
-                if(count($user_blogposts) > 0):
-                    foreach($user_blogposts as $blogpost): ?>
+            <?php
+            if(count($user_blogposts) > 0):
+                foreach($user_blogposts as $blogpost): ?>
                 <li>
                     <a href="index.php?id=<?= $blogpost['id']?>#scroll">
                     <?= $blogpost['post_title'] ?></a>

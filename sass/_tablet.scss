@@ -15,12 +15,12 @@ nav, .navbar-nav, .navbar-right{
 }
 
 .navbar-image img{
-    display: block;
     margin: 5px 15px 0px 0px;
     max-width: 40px;
-    border-radius: 25px;
-    -moz-border-radius: 25px;
-    -webkit-border-radius: 25px;
+    display: block;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
 }
 
 .nav-margin{

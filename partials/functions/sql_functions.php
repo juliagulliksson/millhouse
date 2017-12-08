@@ -88,4 +88,3 @@ function fetch_all_limit_5($table, $value, $order_by){
 
     return $statement->fetchAll(PDO::FETCH_ASSOC);
 }
-

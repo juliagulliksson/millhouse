@@ -21,12 +21,12 @@ if (!empty($_FILES["edit_image"]["name"]) &&
     $new_alt_text = $_POST["edit_alt_text"]; 
     $check_image = getimagesize($new_path); 
     $new_image_type = $check_image[2];
-    $folder = "partials/";
     
     // Check image before upload
-    $upload_ok = check_image_before_upload($folder, $new_image_size,
-                                           $new_image_type,
-                                           $new_target);
+    $upload_ok = check_image_before_upload(
+        $new_image_size,
+        $new_image_type,
+        $new_target);
 
     if(gettype($upload_ok) == 'boolean' &&
     move_uploaded_file($new_path, 'partials/' . $new_target)) {

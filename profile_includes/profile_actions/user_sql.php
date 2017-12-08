@@ -19,4 +19,3 @@ $user_comments_title = fetch_all_limit_5("comments", $user_id, "comments.date");
 
 //Fetch all articles made by user
 $user_all_articles = fetch_all_articles_by_user($user_id);
-

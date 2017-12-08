@@ -2,7 +2,6 @@
 require 'partials/includes.php';
 require 'partials/head.php'; 
 ?>
-
 <div class="about-container">
     <!-- <img src="images/office.jpg" alt="Office" /> -->
     <h1 id="about">About Millhouse</h1>
@@ -54,5 +53,4 @@ require 'partials/head.php';
         <br /><a href="mailto:info@millhouse.se">info@millhouse.se</a>
     </p>
 </div>
-
 <?php require 'partials/footer.php'; ?>

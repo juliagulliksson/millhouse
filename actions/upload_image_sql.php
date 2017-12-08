@@ -9,9 +9,10 @@ $check_image = getimagesize($path);
 $image_type = $check_image[2];
 
 //Validate image before upload
-$upload_ok = check_image_before_upload($image_size, 
-                                       $image_type, 
-                                       $target); 
+$upload_ok = check_image_before_upload(
+  $image_size, 
+  $image_type, 
+  $target); 
 
 // Inserts to database
 if(gettype($upload_ok) == 'boolean'){
