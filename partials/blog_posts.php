@@ -12,7 +12,7 @@
             <?= $article['username'] ?></a></b>
         </h2>
         <?php if(!empty($article['image'])): ?>
-        <img src="partials/<?=$article['image']?>" 
+            <img src="partials/<?=$article['image']?>" 
              alt="<?=$article['alt_text']?>" 
              class="article_image">
         <?php endif; ?>

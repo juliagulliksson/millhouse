@@ -1,5 +1,4 @@
 <?php
-
 if(!isset($_GET['uid'])):
     require 'profile_includes/profile_actions/profile_sql.php';
     if(count($profile_all_articles) > 0):
@@ -18,5 +17,3 @@ elseif(isset($_GET['uid'])):
         
     endif; //End of count if
 endif;//end of check get requests if
-
-    ?>

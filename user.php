@@ -13,7 +13,7 @@ if(isset($_SESSION['signed_in'])){
 		exit();
     }
 }
-//if delete isset, but admin is false, redirect to same page
+// If delete isset, but admin is false, redirect to same page
 if(isset($_GET['delete'])){
     if($_SESSION['admin'] == false){
         header("location: user.php?uid=$id");
@@ -24,7 +24,7 @@ require 'partials/head.php';
 require 'profile_includes/profile_actions/user_sql.php';
 require 'partials/functions/split_email.php';
 
- //User html
+ // User html
 if(!isset($_GET['delete'])):
     require 'profile_includes/main_user_profile.php';
 endif;

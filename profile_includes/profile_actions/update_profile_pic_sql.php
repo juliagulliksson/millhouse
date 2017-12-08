@@ -9,17 +9,20 @@ $image_size = $_FILES["new_profile_picture"]["size"];
 $check_image = getimagesize($path); 
 $image_type = $check_image[2]; 
 $user_id = $_SESSION["id"];
-$folder = "profile_includes/";
+list($width, $height) = $check_image;
 
-// Check image before upload
+if ($width != $height) {
+    $error_messages[] = "The image is not square";   
+    $upload_ok = false;
+} else {
+
+//Check image before upload
 $upload_ok = check_image_before_upload(
-  $folder,
   $image_size, 
   $image_type, 
-  $target
-); 
+  $target); 
 
-// Inserts to database
+//Inserts to database
 if(gettype($upload_ok) == 'boolean'){
   if(move_uploaded_file($path, 'profile_includes/' . $target)) { 
     $statement = $pdo->prepare( 
@@ -43,4 +46,4 @@ if(gettype($upload_ok) == 'boolean'){
 
     header('location: profile.php?update=success');
   } 
-}
+}}

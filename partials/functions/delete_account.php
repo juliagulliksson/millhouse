@@ -16,5 +16,4 @@ function delete_account($user_id){
   $statement->execute(array(
     ":user_id" => $user_id
   ));
-
 }

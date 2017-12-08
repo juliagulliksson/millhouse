@@ -4,7 +4,7 @@
         <p>Deleting this account will also delete all the comments and blogposts made by the user.
         <br />No take backsies.</p>
         <h2>
-            <a href="profile.php#scroll">
+            <a href="user.php?uid=<?= $_GET['uid'] ?>#scroll">
                 <i class="fa fa-arrow-left" aria-hidden="true"></i> 
                 No, please! Take me back!
             </a>

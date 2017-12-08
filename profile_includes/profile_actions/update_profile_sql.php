@@ -19,4 +19,3 @@ $statement = $pdo->prepare(
     $_SESSION["email"]    = $new_email;
 
     header('location: profile.php?update=success');
-?>

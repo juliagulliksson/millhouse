@@ -66,4 +66,3 @@ if(isset($_POST["register-user"])){
             $admin);                 
     }
 }
-?>

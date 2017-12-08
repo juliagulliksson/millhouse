@@ -3,26 +3,17 @@ require './partials/database.php';
 $id = $_SESSION['id'];
 
 //Fetch the number of posts made by the user
-$column = "posts.id";
-$renamed = "number_of_posts";
-$table = "posts";
-$profile_articles = fetch_count_as($column, $renamed, $table, $id);
+$profile_articles = fetch_count_as("posts.id", "number_of_posts", "posts", $id);
 
 //Fetch the number of comments made by the user
-$column = "comments.id";
-$renamed = "number_of_comments";
-$table = "comments";
-$profile_comments = fetch_count_as($column, $renamed, $table, $id);
+$profile_comments = fetch_count_as("comments.id", 
+"number_of_comments", "comments", $id);
 
 //Fetch all blogposts made by the user, limit to 5
-$table = "posts";
-$order_by = "posts.date";
-$profile_blogposts = fetch_all_limit_5($table, $id, $order_by);
+$profile_blogposts = fetch_all_limit_5("posts", $id, "posts.date");
 
 //Fetch the title of comments made by the user, limit to 5
-$table = "comments";
-$order_by = "comments.date";
-$profile_comments_title = fetch_all_limit_5($table, $id, $order_by);
+$profile_comments_title = fetch_all_limit_5("comments", $id, "comments.date");
 
 //Fetch all blogposts made by the user
 $profile_all_articles = fetch_all_articles_by_user($id);
