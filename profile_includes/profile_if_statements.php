@@ -5,7 +5,7 @@ if(!isset($_SESSION['signed_in']) && empty($_SESSION['signed_in'])):
     exit();
 endif;
 
-// If newpost is set and user is not logged in, redirect to index
+// If newpost is set and user is not logged in and not contributor, redirect to index
 if(isset($_GET['newpost'])):
     if (!isset($_SESSION['signed_in']) 
     || $_SESSION['contributor'] == false 
@@ -37,7 +37,7 @@ if(isset($_POST['edit_profile_submit'])):
     require 'profile_includes/edit_profile.php';
 endif;
 
-// If submit button for change password is set
+// If submit button for change password has been clicked
 if(isset($_POST['change_password'])){
     require "profile_includes/change_password.php";
 }

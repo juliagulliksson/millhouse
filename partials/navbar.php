@@ -28,25 +28,26 @@
             <ul class="nav navbar-nav navbar-right">
                 <?php 
                 if(isset($_SESSION['signed_in'])): ?>
-                <li class="navbar-image">
-                    <img src="profile_includes/<?= $_SESSION['profile_picture']?>" alt="Profile picture" />
-                </li>
-                <?php 
-                if($_SESSION['contributor'] == true): ?>
-                <li class="navbar-image margin-minus">
-                    <a href="profile.php?newpost=true#scroll">
-                        <img src="images/pen.jpg" alt="Write new blog post" />
-                    </a>
-                </li>
-                <?php endif; ?>
-                <li class="new-blogpost">
-                    <a href="profile.php?newpost=true#scroll">WRITE A NEW BLOGPOST</a>
-                </li>
-                <li class="button nav-margin"><a href="profile.php#scroll">Profile</a></li>
-                <li class="button"><a href="index.php?end_session=true">Log out</a></li>
-                <?php else: ?>
-                <li class="button nav-margin"><a href="login.php#scroll">Login</a></li>
-                <li class="button"><a href="register.php#scroll">Register</a></li>
+                    <li class="navbar-image">
+                        <img src="profile_includes/<?= $_SESSION['profile_picture']?>" 
+                        alt="Profile picture" />
+                    </li>
+                    <?php 
+                    if($_SESSION['contributor'] == true): ?>
+                        <li class="navbar-image margin-minus">
+                            <a href="profile.php?newpost=true#scroll">
+                                <img src="images/pen.jpg" alt="Write new blog post" />
+                            </a>
+                        </li>
+                        <li class="new-blogpost">
+                            <a href="profile.php?newpost=true#scroll">WRITE A NEW BLOGPOST</a>
+                        </li>
+                    <?php endif; ?>
+                    <li class="button nav-margin"><a href="profile.php#scroll">Profile</a></li>
+                    <li class="button"><a href="index.php?end_session=true">Log out</a></li>
+                    <?php else: ?>
+                        <li class="button nav-margin"><a href="login.php#scroll">Login</a></li>
+                        <li class="button"><a href="register.php#scroll">Register</a></li>
                 <?php endif; ?>
             </ul>
         </div>

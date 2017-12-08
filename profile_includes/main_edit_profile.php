@@ -31,7 +31,8 @@
         enctype="multipart/form-data" 
         method="POST">
             <label for="new_profile_picture">Upload new profile photo:</label>
-            <p>The image must be 1:1 ratio</p>
+            <p>The image must be <a href="https://imageresize.org/" 
+            target="_blank"><b>1:1 ratio</b></a>.</p>
             <input type="file" name="new_profile_picture" id="new_profile_picture">
             <br />
             <label for="new_username">Change username:</label>

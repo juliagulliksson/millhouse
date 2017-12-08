@@ -1,9 +1,10 @@
 <?php
 // Months fetch
-$statement = $pdo->prepare("SELECT posts.date, posts.id as postID, 
+$statement = $pdo->prepare("SELECT posts.date, posts.id AS postID, 
 posts.image, posts.alt_text, posts.text, 
 posts.post_title, posts.date, categories.title, 
-users.username, users.id as user_id, COUNT(comments.post_id) AS comments
+users.username, users.id AS user_id, COUNT(comments.post_id) AS comments,
+categories.id AS category_id
 FROM posts 
 INNER JOIN categories 
 ON posts.category_id=categories.id
