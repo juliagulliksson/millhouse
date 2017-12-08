@@ -9,7 +9,12 @@ $image_size = $_FILES["new_profile_picture"]["size"];
 $check_image = getimagesize($path); 
 $image_type = $check_image[2]; 
 $user_id = $_SESSION["id"];
+list($width, $height) = $check_image;
 
+if ($width != $height) {
+    $error_messages[] = "The image is not square";   
+    $upload_ok = false;
+} else {
 
 //Check image before upload
 $upload_ok = check_image_before_upload($image_size, 
@@ -41,5 +46,6 @@ if(gettype($upload_ok) == 'boolean'){
 
     header('location: profile.php?update=success');
   } 
+}
 }
 ?>

@@ -1,5 +1,5 @@
 <?php
-function check_image_before_upload($folder, $image_size, $image_type, $target) {
+function check_image_before_upload($image_size, $image_type, $target) {
      $error_message = array();
      $upload_ok = false;
     
