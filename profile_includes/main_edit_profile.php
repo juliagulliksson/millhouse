@@ -1,17 +1,15 @@
-<?php //require "profile_includes/edit_profile.php"; ?>
    <div class="edit-account">
     <?php
     if(!empty($error_messages)):
-        foreach ($error_messages as $error_messages):?>
-            <p class="error-message">
-                <?= $error_messages ?><br/></p>
+        foreach ($error_messages as $error_message):?>
+            <p class="error-message"><?= $error_message ?></p>
             <?php endforeach;
     endif;
 
     if(isset($_POST['edit_profile_submit'])):
         if(is_array($check_user_input) && !empty($check_user_input)):
             foreach ($check_user_input as $error_message):?>
-            <p class="error-message"><?= $error_message ?><br/></p>
+            <p class="error-message"><?= $error_message ?></p>
             <?php endforeach;
         endif;//end of check if in array and not empty
     endif;//end of check if 
@@ -20,7 +18,7 @@
         if(!empty($_FILES['new_profile_picture']['name'])):
             if(is_array($upload_ok) && !empty($upload_ok)):
                 foreach ($upload_ok as $error_message):?>
-                    <p class="error-message"><?= $error_message ?><br/></p>
+                    <p class="error-message"><?= $error_message ?></p>
                 <?php endforeach;
             endif;//end of check if in array and not empty
         endif;//end of if $_FILES not empty

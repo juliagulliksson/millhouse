@@ -21,11 +21,12 @@ if (!empty($_FILES["edit_image"]["name"]) &&
     $new_alt_text = $_POST["edit_alt_text"]; 
     $check_image = getimagesize($new_path); 
     $new_image_type = $check_image[2];
+    $folder = "partials/";
     
     // Check image before upload
-    $upload_ok = check_image_before_upload($new_image_size,
-                                            $new_image_type,
-                                            $new_target);
+    $upload_ok = check_image_before_upload($folder, $new_image_size,
+                                           $new_image_type,
+                                           $new_target);
 
     if(gettype($upload_ok) == 'boolean' &&
     move_uploaded_file($new_path, 'partials/' . $new_target)) {
@@ -54,20 +55,20 @@ if (!empty($_FILES["edit_image"]["name"]) &&
 }// End if(!empty..)
 
 if(empty($_FILES["edit_image"]["name"])){
-        $statement = $pdo->prepare(
-        "UPDATE posts 
-        SET post_title = :new_title, 
-        text           = :new_text, 
-        category_id    = :new_category
-        WHERE id       = :id"
-        );
+    $statement = $pdo->prepare(
+    "UPDATE posts 
+    SET post_title = :new_title, 
+    text           = :new_text, 
+    category_id    = :new_category
+    WHERE id       = :id"
+    );
 
-        $statement->execute(array(
-        ":new_title"    => $new_title,
-        ":new_text"     => $new_text,
-        ":new_category" => $category,
-        ":id"           => $post_id
-        ));
+    $statement->execute(array(
+    ":new_title"    => $new_title,
+    ":new_text"     => $new_text,
+    ":new_category" => $category,
+    ":id"           => $post_id
+    ));
 
-        header("location: index.php?id=$post_id");
+    header("location: index.php?id=$post_id");
 }
