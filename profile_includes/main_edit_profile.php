@@ -31,12 +31,13 @@
         enctype="multipart/form-data" 
         method="POST">
             <label for="new_profile_picture">Upload new profile photo:</label>
+            <p>The image must be 1:1 ratio</p>
             <input type="file" name="new_profile_picture" id="new_profile_picture">
             <br />
             <label for="new_username">Change username:</label>
             <br />
             <input name="new_username" id="new_username" type="text"
-                value="<?= $_SESSION['username']; ?>">
+            value="<?= $_SESSION['username']; ?>">
             <br />
             <label for="new_email">Change e-mail:</label>
             <br />
