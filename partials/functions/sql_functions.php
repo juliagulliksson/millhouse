@@ -81,7 +81,7 @@ function fetch_all_limit_5($table, $value, $order_by){
 
     $statement = $pdo->prepare("SELECT * FROM $table 
     WHERE user_id = '$value'
-    ORDER BY posts.date DESC
+    ORDER BY $order_by DESC
     LIMIT 5
     ");
     $statement->execute();

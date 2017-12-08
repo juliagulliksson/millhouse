@@ -1,6 +1,6 @@
 <?php
 function check_user_values($username, $mail){
-    //Set error messages as an empty array
+    
     $error_messages = array();
     $check_ok = true;
 

@@ -44,7 +44,6 @@
                 echo "</a>";
             endif;
         endif; // End of check if contributor 
-
         if($profile_comments[0]['number_of_comments'] > 0):
             echo "<a href='index.php?ucomments=true#scroll'>";
         endif;

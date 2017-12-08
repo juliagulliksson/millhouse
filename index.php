@@ -12,10 +12,10 @@ require 'partials/head.php';
 // Startpage blog posts
 if(empty($_GET) || isset($_GET['end_session']) 
 || isset($_GET['page'])):
-foreach ($articles as $article):
-    include 'partials/blog_posts.php';
-endforeach;
-    include 'partials/pagination_links.php';
+    foreach ($articles as $article):
+        include 'partials/blog_posts.php';
+    endforeach;
+        include 'partials/pagination_links.php';
 endif;
 
 // Individual blog posts

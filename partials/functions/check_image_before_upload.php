@@ -14,9 +14,11 @@ function check_image_before_upload($folder, $image_size, $image_type, $target) {
      if ($image_size > 500000000) { 
          $error_message[] = "The image file is too large";
      }
+
      if (file_exists($folder . $target)) {
          $error_message[] = "The image already exists";
      }
+     
      if($upload_ok){
          return $upload_ok;
      }
