@@ -28,7 +28,6 @@
             </div>
         </div>
         <!-- /.form-group-collapse -->
-        
         <textarea name="post_text" id="editor">
         <?php if(isset($_POST['post_text'])){ 
             echo $_POST['post_text'];} ?>

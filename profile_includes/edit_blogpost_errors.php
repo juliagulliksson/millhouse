@@ -17,7 +17,6 @@ if(isset($_POST['editpost_submit'])):
             foreach ($upload_ok as $error_message):?>
                 <p class="error-message"><?= $error_message ?><br/></p>
             <?php endforeach;
-        endif;//end of check if in array and not empty
-    endif;//end of check if not empty
-endif; //end of isset
-?>
+        endif;// End of check if in array and not empty
+    endif;// End of check if not empty
+endif; // End of isset

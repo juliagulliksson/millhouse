@@ -1,7 +1,8 @@
 <div class="profile-wrapper">
     <div class="profile-container">
         <div class="profile">
-            <img src="profile_includes/<?= $user_info['profile_picture'] ?>" Alt="Profile photo" />
+            <img src="profile_includes/<?= $user_info['profile_picture'] ?>" 
+            alt="Profile photo" />
         </div>
         <div class="profile-info">
             <h1><?= $user_info['username']?></h1>
@@ -53,9 +54,9 @@
         if($user_info['contributor'] == true): ?>
             <h4>Most recent blog posts:</h4>
             <ul>
-                <?php
-                if(count($user_blogposts) > 0):
-                    foreach($user_blogposts as $blogpost): ?>
+            <?php
+            if(count($user_blogposts) > 0):
+                foreach($user_blogposts as $blogpost): ?>
                 <li>
                     <a href="index.php?id=<?= $blogpost['id']?>#scroll">
                     <?= $blogpost['post_title'] ?></a>
